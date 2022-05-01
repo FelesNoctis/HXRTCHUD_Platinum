@@ -1,0 +1,19 @@
+///////////////////////////////////////////////
+// DECORATE FOR GAME CHECKING RELATED ACTORS //
+///////////////////////////////////////////////
+
+// GAMETYPE TESTERS (RIPPED FROM PSYCHIC)
+
+ACTOR GameDoom { Game Doom SpawnID 255 Radius 1 Height 1 }
+ACTOR GameHeretic { Game Heretic SpawnID 255 Radius 1 Height 1 }
+ACTOR GameHexen { Game Hexen SpawnID 255 Radius 1 Height 1 }
+ACTOR GameStrife { Game Strife SpawnID 255  Radius 1 Height 1 }
+ACTOR GameChex { Game Chex SpawnID 255 Radius 1 Height 1 }
+
+// GAMETYPE TESTERS
+
+ACTOR BFGameDoom : Inventory { Game Doom Inventory.MaxAmount 1 }
+ACTOR BFGameHeretic : Inventory { Game Heretic }
+ACTOR BFGameHexen : Inventory { Game Hexen }
+ACTOR BFGameStrife : Inventory { Game Strife }
+ACTOR BFGameChex : Inventory { Game Chex }

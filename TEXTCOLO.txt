@@ -1,0 +1,22 @@
+// TEXT COLORS FOR HXRTC HUD 7.0 (CLASSIC DOOM VERSION)
+
+HXRTCLightWhite
+{
+	#FFFFFF  #FFFFFF
+Flat:
+	#FFFFFF
+}
+
+HXRTCLightGrey
+{
+	#808080  #808080
+Flat:
+	#808080
+}
+
+HXRTCDarkGrey
+{
+	#404040  #404040
+Flat:
+	#404040
+}
