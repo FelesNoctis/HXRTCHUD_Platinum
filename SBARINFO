@@ -6,6 +6,8 @@
 
 Base Doom;
 Height 0;
+InterpolateHealth TRUE, 1024;
+InterpolateArmor TRUE, 1024;
 Resolution 512, 320;
 
 StatusBar Fullscreen, FullscreenOffsets

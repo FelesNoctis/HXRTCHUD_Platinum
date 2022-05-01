@@ -7,6 +7,16 @@ Flat:
 	#FFFFFF
 }
 
+HXRTCSilver
+{
+	#808080 #808080
+Console:
+	#000000 #808080 0 127
+	#808080 #FFFFFF 128 256
+Flat:
+	#808080
+}
+
 HXRTCLightGrey
 {
 	#808080  #808080
@@ -14,9 +24,39 @@ Flat:
 	#808080
 }
 
+HXRTCGrey
+{
+	#404040 #404040
+Console:
+	#000000 #404040 0 127
+	#404040 #FFFFFF 128 256
+Flat:
+	#404040
+}
+
 HXRTCDarkGrey
 {
 	#404040  #404040
 Flat:
 	#404040
+}
+
+HXRTCYellow
+{
+	#FFFF20 #FFFF20
+Console:
+	#000000 #FFFF20 0 127
+	#FFFF20 #FFFFFF 128 256
+Flat:
+	#FFFF20
+}
+
+HXRTCGold
+{
+	#FF6000 #FF6000
+Console:
+	#000000 #FF6000 0 127
+	#FF6000 #FFFFFF 128 256
+Flat:
+	#FF6000
 }
