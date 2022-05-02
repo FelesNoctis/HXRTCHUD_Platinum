@@ -58,7 +58,6 @@ StatusBar Fullscreen, FullscreenOffsets
 	// CURRENT WEAPON PANEL
 	DrawImage "HXWEAPON", -134, -53;
 	DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail {
-		/* DrawString STATUSFONTY, red, weapontag, -112, -43; */
 		DrawString CONFONT, white, weapontag, -112, -43;
 	}
 
@@ -72,8 +71,8 @@ StatusBar Fullscreen, FullscreenOffsets
 		// Ammo Tally by type
 		WeaponAmmo Clip			{ DrawNumber 4, INDEXFONTY, untranslated, ammo Clip, -6, -30; DrawImage "HX-CLIP", -73, -30; }
 		WeaponAmmo Shell		{ DrawNumber 4, INDEXFONTY, untranslated, ammo Shell,  -6, -24; DrawImage "HX-SHEL", -73, -24; }
-		WeaponAmmo RocketAmmo 	{ DrawNumber 4, INDEXFONTY, untranslated, ammo RocketAmmo, -6, -18; DrawImage "HX-ROCK", -73, -18; }
-		WeaponAmmo Cell 		{ DrawNumber 4, INDEXFONTY, untranslated, ammo Cell, -6, -12; DrawImage "HX-CELL", -73, -12; }
+		WeaponAmmo RocketAmmo	{ DrawNumber 4, INDEXFONTY, untranslated, ammo RocketAmmo, -6, -18; DrawImage "HX-ROCK", -73, -18; }
+		WeaponAmmo Cell			{ DrawNumber 4, INDEXFONTY, untranslated, ammo Cell, -6, -12; DrawImage "HX-CELL", -73, -12; }
 	}
 	// Ammoless
 	else {
