@@ -1,9 +1,16 @@
 // FONT DEFINITIONS FOR HXRTC HUD PLATINUM
 
-// MEDIUM: Imitates the embedded fonts in the images
+// SMALL: Imitates the smaller embedded fonts in the images
+HXGENERALFONTS
+{
+	TEMPLATE HXSML%03d
+}
+
+// MEDIUM: Imitates the larger embedded fonts in the images
 HXGENERALFONTM
 {
-	Template HXMED%03d
+//	SPACEWIDTH 4
+	TEMPLATE HXMED%03d
 }
 
 // SMALL: Used for ammo tally, etc
