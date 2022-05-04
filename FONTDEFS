@@ -29,3 +29,8 @@ STATUSFONTY
 	9 HXTNUM9
 	NOTRANSLATION 109 // (Don't touch the shadow color!)
 }
+
+HXMEDFNT
+{
+	Template HXMED%03d
+}

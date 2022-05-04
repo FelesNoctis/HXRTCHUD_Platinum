@@ -58,7 +58,7 @@ StatusBar Fullscreen, FullscreenOffsets
 	// CURRENT WEAPON PANEL
 	DrawImage "HXWEAPON", -134, -53;
 	DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail {
-		DrawString CONFONT, white, weapontag, -112, -43;
+		DrawString HXMEDFNT, untranslated, weapontag, -112, -43;
 	}
 
 
