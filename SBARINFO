@@ -8,6 +8,7 @@ Base Doom;
 Height 0;
 InterpolateHealth TRUE, 1024;
 InterpolateArmor TRUE, 1024;
+MonospaceFonts TRUE, "0";
 Resolution 512, 320;
 
 StatusBar Fullscreen, FullscreenOffsets
@@ -58,7 +59,7 @@ StatusBar Fullscreen, FullscreenOffsets
 	// CURRENT WEAPON PANEL
 	DrawImage "HXWEAPON", -134, -53;
 	DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail {
-		DrawString HXGENERALFONTM, untranslated, weapontag, -112, -43;
+		DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
 	}
 
 
