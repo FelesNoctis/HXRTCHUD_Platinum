@@ -76,7 +76,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		WeaponAmmo Cell			{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12; DrawImage "HX-CELL", -73, -12; }
 	}
 	// Ammoless
-	else {
+	Else {
 		DrawImage "HXNOAVAI", -134, -33;
 	}
 
@@ -117,18 +117,41 @@ StatusBar Fullscreen, FullscreenOffsets
 	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 32;
 
 
-	// POWERUP PANELS & TIMEBAR INDICATOR
-	DrawSwitchableImage "PowerInvulnerable", "HXINVUNO", "HXINVUOK", -98, 2;
-	DrawSwitchableImage "PowerInvisibility", "HXBLURNO", "HXBLUROK", -74, 2;
-	DrawSwitchableImage "PowerIronfeet", "HXRADSNO", "HXRADSOK", -50, 2;
-	DrawSwitchableImage "PowerLightamp", "HXLGHTNO", "HXLGHTOK", -26, 2;
+	// POWERUP PANELS & TIME INDICATOR
+	DrawImage "HXINVUNO", -98, 2;
+	DrawImage "HXBLURNO", -74, 2;
+	DrawImage "HXRADSNO", -50, 2;
+	DrawImage "HXLGHTNO", -26, 2;
 
-	DrawImage "HXPOWBAR", -97, 25;
+	DrawImage "HXBUFFT", -98, 25;
+	DrawImage "HXBUFFT", -74, 25;
+	DrawImage "HXBUFFT", -50, 25;
+	DrawImage "HXBUFFT", -26, 25;
 
-	InInventory "PowerInvulnerable" { DrawBar "HXPBLON", "HXPBLOFF", poweruptime invulnerabilitysphere, horizontal, -94, 28; }
-	InInventory "PowerInvisibility" { DrawBar "HXPBLON", "HXPBLOFF", poweruptime blursphere, horizontal, -94, 28; }
-	InInventory "PowerIronfeet" { DrawBar "HXPBLON", "HXPBLOFF", poweruptime radsuit, horizontal, -94, 28; }
-	InInventory "PowerLightamp" { DrawBar "HXPBLON", "HXPBLOFF", poweruptime infrared, horizontal, -94, 28; }
+	InInventory "PowerInvulnerable" {
+		DrawBar "HXINVUOK", "HXINVOFF", poweruptime invulnerabilitysphere, vertical, -98, 2;	// Active icon + border
+		DrawImage "HXINVUT", -98, 25;	// Active timer border
+		DrawImage "HXSML058", -95, 29;	// Active colon character
+		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime invulnerabilitysphere, -77, 29;	// Time remaining
+	}
+	InInventory "PowerInvisibility" {
+		DrawBar "HXBLUROK", "HXINVOFF", poweruptime blursphere, vertical, -74, 2;	// Active icon + border
+		DrawImage "HXBLURT", -74, 25;	// Active timer border
+		DrawImage "HXSML058", -71, 29;	// Active colon character
+		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime blursphere, -53, 29;	// Time remaining
+		}
+	InInventory "PowerIronfeet" {
+		DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, -50, 2;	// Active icon + border
+		DrawImage "HXRADST", -50, 25;	// Active timer border
+		DrawImage "HXSML058", -47, 29;	// Active colon character
+		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;	// Time remaining
+		}
+	InInventory "PowerLightamp" {
+		DrawBar "HXLGHTOK", "HXINVOFF", poweruptime infrared, vertical, -26, 2;	// Active icon + border
+		DrawImage "HXLGHTT", -26, 25;	// Active timer border
+		DrawImage "HXSML058", -23, 29;	// Active colon character
+		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime infrared, -5, 29;	// Time remaining
+	}
 
 }
 
