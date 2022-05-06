@@ -56,29 +56,33 @@ StatusBar Fullscreen, FullscreenOffsets
 	DrawImage "HXBUFFT", -50, 25;
 	DrawImage "HXBUFFT", -26, 25;
 
-	InInventory "PowerInvulnerable" {
+	InInventory "PowerInvulnerable"
+	{
 		DrawBar "HXINVUOK", "HXINVOFF", poweruptime invulnerabilitysphere, vertical, -98, 2;	// Active icon + border
 		DrawImage "HXINVUT", -98, 25;	// Active timer border
 		DrawImage "HXSML058", -95, 29;	// Active colon character
 		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime invulnerabilitysphere, -77, 29;	// Time remaining
 	}
-	InInventory "PowerInvisibility" {
-		DrawBar "HXBLUROK", "HXINVOFF", poweruptime blursphere, vertical, -74, 2;	// Active icon + border
-		DrawImage "HXBLURT", -74, 25;	// Active timer border
-		DrawImage "HXSML058", -71, 29;	// Active colon character
-		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime blursphere, -53, 29;	// Time remaining
-		}
-	InInventory "PowerIronfeet" {
-		DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, -50, 2;	// Active icon + border
-		DrawImage "HXRADST", -50, 25;	// Active timer border
-		DrawImage "HXSML058", -47, 29;	// Active colon character
-		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;	// Time remaining
-		}
-	InInventory "PowerLightamp" {
-		DrawBar "HXLGHTOK", "HXINVOFF", poweruptime infrared, vertical, -26, 2;	// Active icon + border
-		DrawImage "HXLGHTT", -26, 25;	// Active timer border
-		DrawImage "HXSML058", -23, 29;	// Active colon character
-		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime infrared, -5, 29;	// Time remaining
+	InInventory "PowerInvisibility"
+	{
+		DrawBar "HXBLUROK", "HXINVOFF", poweruptime blursphere, vertical, -74, 2;
+		DrawImage "HXBLURT", -74, 25;
+		DrawImage "HXSML058", -71, 29;
+		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime blursphere, -53, 29;
+	}
+	InInventory "PowerIronfeet"
+	{
+		DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, -50, 2;
+		DrawImage "HXRADST", -50, 25;
+		DrawImage "HXSML058", -47, 29;
+		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;
+	}
+	InInventory "PowerLightamp"
+	{
+		DrawBar "HXLGHTOK", "HXINVOFF", poweruptime infrared, vertical, -26, 2;
+		DrawImage "HXLGHTT", -26, 25;
+		DrawImage "HXSML058", -23, 29;
+		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime infrared, -5, 29;
 	}
 
 
@@ -110,8 +114,14 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 	// ITEM PANELS (BERSERK, ARMORTYPE & BACKPACK)
-	InInventory "PowerStrength" { DrawImage "HXBERSRK", 48, -63; }
-	Else { DrawImage "HXHEALTH", 48, -63; }
+	InInventory "PowerStrength"
+	{
+		DrawImage "HXBERSRK", 48, -63;
+	}
+	Else
+	{
+		DrawImage "HXHEALTH", 48, -63;
+	}
 
 	DrawImage "HXARMTYP", 72, -63;
 	DrawImage armoricon, 84, -51, center, 18, 15;
@@ -141,7 +151,8 @@ StatusBar Fullscreen, FullscreenOffsets
 
 	// CURRENT WEAPON PANEL
 	DrawImage "HXWEAPON", -134, -53;
-	DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail {
+	DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail
+	{
 		DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
 	}
 
@@ -153,24 +164,42 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 
 		// Ammo Tally by type
-		WeaponAmmo Clip			{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30; DrawImage "HX-CLIP", -73, -30; }
-		WeaponAmmo Shell		{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24; DrawImage "HX-SHEL", -73, -24; }
-		WeaponAmmo RocketAmmo	{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18; DrawImage "HX-ROCK", -73, -18; }
-		WeaponAmmo Cell			{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12; DrawImage "HX-CELL", -73, -12; }
+		WeaponAmmo Clip
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
+			DrawImage "HX-CLIP", -73, -30;
+		}
+		WeaponAmmo Shell
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
+			DrawImage "HX-SHEL", -73, -24;
+		}
+		WeaponAmmo RocketAmmo
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+			DrawImage "HX-ROCK", -73, -18;
+		}
+		WeaponAmmo Cell
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+			DrawImage "HX-CELL", -73, -12;
+		}
 	}
-	Else {	// Ammoless
+	Else
+	{
+		// Ammoless
 		DrawImage "HXNOAVAI", -134, -33;
 	}
 
 	// KEYS BAR
 	DrawImage "HXKEYS", -90, -48;
 
-	InInventory "BlueCard", 1 {DrawImage "HXKEYS0", -58, -45;}
-	InInventory "YellowCard", 1 {DrawImage "HXKEYS1", -49, -45;}
-	InInventory "RedCard", 1 {DrawImage "HXKEYS2", -40, -45;}
-	InInventory "BlueSkull", 1 {DrawImage "HXKEYS3", -31, -45;}
-	InInventory "YellowSkull", 1 {DrawImage "HXKEYS4", -22, -45;}
-	InInventory "RedSkull", 1 {DrawImage "HXKEYS5", -13, -45;}
+	InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -45; }
+	InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -45; }
+	InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -45; }
+	InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -45; }
+	InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -45; }
+	InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -45; }
 
 
 	// ARMS BAR
