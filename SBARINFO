@@ -14,6 +14,21 @@ Resolution 512, 320;
 StatusBar Fullscreen, FullscreenOffsets
 
 {
+	
+
+	// LEVEL STATES (TIME, KILLS, ITEMS & SECRETS)
+	DrawImage "HXPT+KIS", 2, 2;
+
+	DrawString CONFONT, white, time, 9, 6;
+
+	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 20;
+	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 26;
+	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, secrets, 54, 32;
+
+	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 20;
+	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 26;
+	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 32;
+
 
 	// DOOMGUY'S MUGSHOT
 	DrawSwitchableImage "PowerInvulnerable", "HXMGSHT1", "HXMGSHT2", 2, -85;
@@ -101,20 +116,6 @@ StatusBar Fullscreen, FullscreenOffsets
 	DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -57;
 	DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -57;
 	DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -57;
-
-
-	// LEVEL STATES (TIME, KILLS, ITEMS & SECRETS)
-	DrawImage "HXPT+KIS", 2, 2;
-
-	DrawString CONFONT, white, time, 9, 6;
-
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 20;
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 26;
-	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, secrets, 54, 32;
-
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 20;
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 26;
-	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 32;
 
 
 	// POWERUP PANELS & TIME INDICATOR
