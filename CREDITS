@@ -1,6 +1,19 @@
-===== CREDITS =====
+# CREDITS
 
+## General
 
--- Fonts --
-HXGENERALFONTM/HXMEDFNT - Modified from Bitdust One, copyright 2000-2001 by dustBUST fonts - Andreas Nylin
-HXGENERALFONTS/HXSMLFNT - Modified from SHAKAGRAPHICS 04, copyright [unknown years] by Shakagraphics
+* __Original HXRTC HUD__  
+_Hexereticdoom_
+
+## Fonts
+
+* __HXGENERALFONTM/HXMEDFNT__  
+_Modified from Bitdust One, copyright 2000-2001 by dustBUST fonts - Andreas Nylin_
+* __HXGENERALFONTS/HXSMLFNT__  
+_Modified from SHAKAGRAPHICS 04, copyright [unknown years] by Shakagraphics_
+
+## Special Thanks
+
+* Cotton_Disciple for their work updating HXRTC HUD, which was my inspiration to start this
+* EmeraldCoasttt for Brutal Doom Platinum and answering my dumb questions
+* Shockwave_S08 for sharing their work as a reference and pointing out improvements
