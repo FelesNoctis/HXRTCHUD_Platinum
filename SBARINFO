@@ -14,7 +14,14 @@ Resolution 512, 320;
 StatusBar Fullscreen, FullscreenOffsets
 
 {
-	
+
+
+/***************************************
+*
+* TOP LEFT PANELS
+*
+***************************************/
+
 
 	// LEVEL STATES (TIME, KILLS, ITEMS & SECRETS)
 	DrawImage "HXPT+KIS", 2, 2;
@@ -30,92 +37,12 @@ StatusBar Fullscreen, FullscreenOffsets
 	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 32;
 
 
-	// DOOMGUY'S MUGSHOT
-	DrawSwitchableImage "PowerInvulnerable", "HXMGSHT1", "HXMGSHT2", 2, -85;
-	DrawMugShot "STF", 5, 8, -79;
 
-
-	// HEALTH, ARMOR, RAGEMETER & ARMORSAVE % PANEL
-	DrawImage "HXHPAP", 2, -40;
-
-	DrawBar "HXHABROK", "HXHABRNO", health, horizontal, 46, -34;
-	DrawBar "HXHABROK", "HXHABRNO", armor, horizontal, 46, -27;
-	DrawBar "HXRMBROK", "HXRMBRNO", airtime, horizontal, 46, -20;
-	DrawBar "HXSPBROK", "HXSPBRNO", savepercent, horizontal, 46, -13;
-
-	DrawNumber 4, CONFONT, yellow, health, 122, -36, 0, red, 24, green, 51;
-	DrawNumber 4, CONFONT, yellow, armor, 122, -29, 0, red, 24, green, 51;
-	DrawNumber 3, CONFONT, red, airtime, 122, -22;
-	DrawNumber 3, CONFONT, blue, savepercent, 122, -15;
-
-
-	// ITEM PANELS (BERSERK, ARMORTYPE & BACKPACK)
-	InInventory "PowerStrength" { DrawImage "HXBERSRK", 48, -63; }
-	Else { DrawImage "HXHEALTH", 48, -63; }
-
-	DrawImage "HXARMTYP", 72, -63;
-	DrawImage armoricon, 84, -51, center, 18, 15;
-
-
-	// AMMO TALLIES PANEL
-	DrawImage "HXAMMOS", -78, -35;
-
-	DrawBar "HXAMMON", "HXAMMOFF", ammo Clip, horizontal, -56, -30;
-	DrawBar "HXAMMON", "HXAMMOFF", ammo Shell, horizontal, -56, -24;
-	DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo, horizontal, -56, -18;
-	DrawBar "HXAMMON", "HXAMMOFF", ammo Cell, horizontal, -56, -12;
-
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip, -6, -30;
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell, -6, -24;
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo, -6, -18;
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell, -6, -12;
-
-
-	// CURRENT WEAPON PANEL
-	DrawImage "HXWEAPON", -134, -53;
-	DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail {
-		DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
-	}
-
-
-	// CURRENT AMMO PANEL
-	UsesAmmo {
-		DrawImage "HXAMMO", -134, -33;
-		DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
-		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
-
-		// Ammo Tally by type
-		WeaponAmmo Clip			{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30; DrawImage "HX-CLIP", -73, -30; }
-		WeaponAmmo Shell		{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24; DrawImage "HX-SHEL", -73, -24; }
-		WeaponAmmo RocketAmmo	{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18; DrawImage "HX-ROCK", -73, -18; }
-		WeaponAmmo Cell			{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12; DrawImage "HX-CELL", -73, -12; }
-	}
-	// Ammoless
-	Else {
-		DrawImage "HXNOAVAI", -134, -33;
-	}
-
-	// KEYS BAR
-	DrawImage "HXKEYS", -90, -48;
-
-	InInventory "BlueCard", 1 {DrawImage "HXKEYS0", -58, -45;}
-	InInventory "YellowCard", 1 {DrawImage "HXKEYS1", -49, -45;}
-	InInventory "RedCard", 1 {DrawImage "HXKEYS2", -40, -45;}
-	InInventory "BlueSkull", 1 {DrawImage "HXKEYS3", -31, -45;}
-	InInventory "YellowSkull", 1 {DrawImage "HXKEYS4", -22, -45;}
-	InInventory "RedSkull", 1 {DrawImage "HXKEYS5", -13, -45;}
-
-
-	// ARMS BAR
-	DrawImage "HXARMS", -90, -61;
-
-	DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -57;
-	DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -57;
-	DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -57;
-	DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -57;
-	DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -57;
-	DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -57;
-	DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -57;
+/***************************************
+*
+* TOP RIGHT PANELS
+*
+***************************************/
 
 
 	// POWERUP PANELS & TIME INDICATOR
@@ -153,6 +80,110 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawImage "HXSML058", -23, 29;	// Active colon character
 		DrawNumber 4, HXINDEXFONTS, untranslated, poweruptime infrared, -5, 29;	// Time remaining
 	}
+
+
+
+/***************************************
+*
+* BOTTOM LEFT PANELS
+*
+***************************************/
+
+
+	// DOOMGUY'S MUGSHOT
+	DrawSwitchableImage "PowerInvulnerable", "HXMGSHT1", "HXMGSHT2", 2, -85;
+	DrawMugShot "STF", 5, 8, -79;
+
+
+	// HEALTH, ARMOR, RAGEMETER & ARMORSAVE % PANEL
+	DrawImage "HXHPAP", 2, -40;
+
+	DrawBar "HXHABROK", "HXHABRNO", health, horizontal, 46, -34;
+	DrawBar "HXHABROK", "HXHABRNO", armor, horizontal, 46, -27;
+	DrawBar "HXRMBROK", "HXRMBRNO", airtime, horizontal, 46, -20;
+	DrawBar "HXSPBROK", "HXSPBRNO", savepercent, horizontal, 46, -13;
+
+	DrawNumber 4, CONFONT, yellow, health, 122, -36, 0, red, 24, green, 51;
+	DrawNumber 4, CONFONT, yellow, armor, 122, -29, 0, red, 24, green, 51;
+	DrawNumber 3, CONFONT, red, airtime, 122, -22;
+	DrawNumber 3, CONFONT, blue, savepercent, 122, -15;
+
+
+	// ITEM PANELS (BERSERK, ARMORTYPE & BACKPACK)
+	InInventory "PowerStrength" { DrawImage "HXBERSRK", 48, -63; }
+	Else { DrawImage "HXHEALTH", 48, -63; }
+
+	DrawImage "HXARMTYP", 72, -63;
+	DrawImage armoricon, 84, -51, center, 18, 15;
+
+
+
+/***************************************
+*
+* BOTTOM RIGHT PANELS
+*
+***************************************/
+
+
+	// AMMO TALLIES PANEL
+	DrawImage "HXAMMOS", -78, -35;
+
+	DrawBar "HXAMMON", "HXAMMOFF", ammo Clip, horizontal, -56, -30;
+	DrawBar "HXAMMON", "HXAMMOFF", ammo Shell, horizontal, -56, -24;
+	DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo, horizontal, -56, -18;
+	DrawBar "HXAMMON", "HXAMMOFF", ammo Cell, horizontal, -56, -12;
+
+	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip, -6, -30;
+	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell, -6, -24;
+	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo, -6, -18;
+	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell, -6, -12;
+
+
+	// CURRENT WEAPON PANEL
+	DrawImage "HXWEAPON", -134, -53;
+	DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail {
+		DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
+	}
+
+
+	// CURRENT AMMO PANEL
+	UsesAmmo {
+		DrawImage "HXAMMO", -134, -33;
+		DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+
+		// Ammo Tally by type
+		WeaponAmmo Clip			{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30; DrawImage "HX-CLIP", -73, -30; }
+		WeaponAmmo Shell		{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24; DrawImage "HX-SHEL", -73, -24; }
+		WeaponAmmo RocketAmmo	{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18; DrawImage "HX-ROCK", -73, -18; }
+		WeaponAmmo Cell			{ DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12; DrawImage "HX-CELL", -73, -12; }
+	}
+	Else {	// Ammoless
+		DrawImage "HXNOAVAI", -134, -33;
+	}
+
+	// KEYS BAR
+	DrawImage "HXKEYS", -90, -48;
+
+	InInventory "BlueCard", 1 {DrawImage "HXKEYS0", -58, -45;}
+	InInventory "YellowCard", 1 {DrawImage "HXKEYS1", -49, -45;}
+	InInventory "RedCard", 1 {DrawImage "HXKEYS2", -40, -45;}
+	InInventory "BlueSkull", 1 {DrawImage "HXKEYS3", -31, -45;}
+	InInventory "YellowSkull", 1 {DrawImage "HXKEYS4", -22, -45;}
+	InInventory "RedSkull", 1 {DrawImage "HXKEYS5", -13, -45;}
+
+
+	// ARMS BAR
+	DrawImage "HXARMS", -90, -61;
+
+	DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -57;
+	DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -57;
+	DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -57;
+	DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -57;
+	DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -57;
+	DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -57;
+	DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -57;
+
 
 }
 
