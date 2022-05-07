@@ -1,0 +1,5 @@
+// CVAR TOKENS
+ACTOR HX_PerkSmooth_blackgloves: Inventory { Inventory.MaxAmount 1 }
+ACTOR HX_PerkSmooth_glovedfist: Inventory { Inventory.MaxAmount 1 }
+ACTOR HX_SmoothDoom2_wetoggle1: Inventory { Inventory.MaxAmount 1 }
+ACTOR HX_SmoothDoom2_wetoggle2: Inventory { Inventory.MaxAmount 1 }
