@@ -146,13 +146,36 @@ StatusBar Fullscreen, FullscreenOffsets
 // CURRENT WEAPON ICON PANEL
 	DrawImage "HXWEAPON", -134, -53;
 
+	/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
+	*
+	*	CVAR bool zperk_glovedfist
+	*	CVAR bool zperk_blackgloves: only display on ZPerkFist if "zperk_glovedfist" is also true
+	*/
+	InInventory ZPerkFist, 1
+	{
+		IsSelected ZPerkFist
+		{
+			/* IfCVarInt zperk_glovedfist, 1, equal
+			{
+				IfCVarInt zperk_blackgloves, 1, equal { DrawImage "BKFSE0", -112, -43, center, 36, 12; }
+				else { DrawImage "PKFSE0", -112, -43, center, 36, 12; }
+			}
+			else { DrawImage "PKF2E0", -112, -43, center, 36, 12; } */
+			DrawImage "PKF2E0", -112, -43, center, 36, 12;
+		}
+		else
+		{	// Everything not a fist, at the moment
+			DrawImage weaponicon, -112, -43, center, 36, 12;
+		}
+	}
+
 	/*	SmoothDoom 2.0WIP
 	*
-	*	CVAR wetoggle:	0, "Classic Doom"
-	*					1, "Doom 64"
-	*					2, "Black Gloves"
+	*	CVAR int wetoggle:	0, "Classic Doom"
+	*						1, "Doom 64"
+	*						2, "Black Gloves"
 	*/
-	InInventory PerkFist, 1
+	else InInventory PerkFist, 1
 	{
 		IsSelected PerkFist
 		{
@@ -203,7 +226,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "BFG9A0", -112, -43, center, 36, 12;
 		}
 		else
-		{	// Pistol, Rifle
+		{	// PerkPistol, Rifle
 			DrawImage weaponicon, -112, -43, center, 36, 12;
 		}
 	}
