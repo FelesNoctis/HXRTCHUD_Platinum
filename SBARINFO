@@ -293,6 +293,18 @@ StatusBar Fullscreen, FullscreenOffsets
 	DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -57;
 
 
+// DEV STUFF DON'T LOOK AT THIS IT'S SPOOKY
+/* 
+	// Bruh, what's your class?
+	DrawString HXGENERALFONTM, HXRTCGold, playerclass, 2, 44, 0, alignment(left), drawshadow(1,1);
+	// What's that badass boomstick you got?
+	DrawString HXGENERALFONTM, HXRTCGold, weapontag, 2, 52, 0, alignment(left), drawshadow(1,1);
+	// How bout dat ammo, yo?!
+	DrawString HXGENERALFONTM, HXRTCGold, ammo1tag, 2, 60, 0, alignment(left), drawshadow(1,1);
+	DrawString HXGENERALFONTM, HXRTCGold, ammo2tag, 2, 68, 0, alignment(left), drawshadow(1,1);
+*/
+
+
 }
 
 // HUD DISABLED FOR STATUSBAR AND AUTOMAP
