@@ -156,43 +156,51 @@ StatusBar Fullscreen, FullscreenOffsets
 	{
 		IsSelected PerkFist
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "PUNFE0", -112, -43, center, 36, 12; }
-			else { DrawImage "PKFSE0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "PUNFE0", -112, -43, center, 36, 12; }
+			else { DrawImage "PKFSE0", -112, -43, center, 36, 12; } */
+			DrawImage "PKFSE0", -112, -43, center, 36, 12;
 		}
 		else IsSelected Z86Chainsaw
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "SW64G0", -112, -43, center, 36, 12; }
-			else { DrawImage "CSAWA0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "SW64G0", -112, -43, center, 36, 12; }
+			else { DrawImage "CSAWA0", -112, -43, center, 36, 12; } */
+			DrawImage "CSAWA0", -112, -43, center, 36, 12;
 		}
 		else IsSelected PerkShotgun
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "64SGB0", -112, -43, center, 36, 12; }
-			else { DrawImage "SHOTA0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "64SGB0", -112, -43, center, 36, 12; }
+			else { DrawImage "SHOTA0", -112, -43, center, 36, 12; } */
+			DrawImage "SHOTA0", -112, -43, center, 36, 12;
 		}
 		else IsSelected PerkSuperShotgun
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "64S2A0", -112, -43, center, 36, 12; }
-			else { DrawImage "SGN2A0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "64S2A0", -112, -43, center, 36, 12; }
+			else { DrawImage "SGN2A0", -112, -43, center, 36, 12; } */
+			DrawImage "SGN2A0", -112, -43, center, 36, 12;
 		}
 		else IsSelected Z86Chaingun
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "64CGB0", -112, -43, center, 36, 12; }
-			else { DrawImage "MGUNA0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "64CGB0", -112, -43, center, 36, 12; }
+			else { DrawImage "MGUNA0", -112, -43, center, 36, 12; } */
+			DrawImage "MGUNA0", -112, -43, center, 36, 12;
 		}
 		else IsSelected PerkRocketLauncher
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "64LAA0", -112, -43, center, 36, 12; }
-			else { DrawImage "LAUNA0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "64LAA0", -112, -43, center, 36, 12; }
+			else { DrawImage "LAUNA0", -112, -43, center, 36, 12; } */
+			DrawImage "LAUNA0", -112, -43, center, 36, 12;
 		}
 		else IsSelected BloxPlasmaRifle
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "PL64A0", -112, -43, center, 36, 12; }
-			else { DrawImage "PLRLA0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "PL64A0", -112, -43, center, 36, 12; }
+			else { DrawImage "PLRLA0", -112, -43, center, 36, 12; } */
+			DrawImage "PLRLA0", -112, -43, center, 36, 12;
 		}
 		else IsSelected Z86BFG9000
 		{
-			IfCVarInt wetoggle, 1, equal { DrawImage "BFUGA0", -112, -43, center, 36, 12; }
-			else { DrawImage "BFG9A0", -112, -43, center, 36, 12; }
+			/* IfCVarInt wetoggle, 1, equal { DrawImage "BFUGA0", -112, -43, center, 36, 12; }
+			else { DrawImage "BFG9A0", -112, -43, center, 36, 12; } */
+			DrawImage "BFG9A0", -112, -43, center, 36, 12;
 		}
 		else
 		{	// Pistol, Rifle
