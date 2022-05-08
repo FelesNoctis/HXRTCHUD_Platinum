@@ -1,9 +1,11 @@
 /*
 *	CVAR TOKENS
 */
+//	HXRTC HUD Platinum
+ACTOR HXSYS_DebugTagToken: Inventory { Inventory.MaxAmount 1 }
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HX_PerkSmooth_blackgloves: Inventory { Inventory.MaxAmount 1 }
 ACTOR HX_PerkSmooth_glovedfist: Inventory { Inventory.MaxAmount 1 }
-// SmoothDoom 2.0 WIP
+//	SmoothDoom 2.0 WIP
 ACTOR HX_SmoothDoom2_blackgloves: Inventory { Inventory.MaxAmount 1 }
 ACTOR HX_SmoothDoom2_doom64: Inventory { Inventory.MaxAmount 1 }

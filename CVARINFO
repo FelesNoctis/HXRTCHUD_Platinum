@@ -1,1 +1,1 @@
-// server int wetoggle;
+server bool hxsys_debugtag;
