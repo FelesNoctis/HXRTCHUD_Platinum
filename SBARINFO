@@ -148,8 +148,8 @@ StatusBar Fullscreen, FullscreenOffsets
 
 	/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
 	*
-	*	ITEM HX_PerkSmooth_glovedfist
-	*	ITEM HX_PerkSmooth_blackgloves: only display if "HX_PerkSmooth_glovedfist" is also found
+	*	ACTOR HX_PerkSmooth_glovedfist
+	*	ACTOR HX_PerkSmooth_blackgloves: only display if "HX_PerkSmooth_glovedfist" is also found
 	*/
 	InInventory ZPerkFist, 1
 	{
@@ -168,61 +168,52 @@ StatusBar Fullscreen, FullscreenOffsets
 		}
 	}
 
-	/*	SmoothDoom 2.0WIP
+	/*	SmoothDoom 2.0 WIP
 	*
-	*	CVAR int wetoggle:	0, "Classic Doom"
-	*						1, "Doom 64"
-	*						2, "Black Gloves"
+	*	ACTOR HX_SmoothDoom2_blackgloves
+	*	ACTOR HX_SmoothDoom2_doom64
 	*/
 	else InInventory PerkFist, 1
 	{
 		IsSelected PerkFist
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "PUNFE0", -112, -43, center, 36, 12; }
-			else { DrawImage "PKFSE0", -112, -43, center, 36, 12; } */
-			DrawImage "PKFSE0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "PUNFE0", -112, -43, center, 36, 12; }
+			else { DrawImage "PKFSE0", -112, -43, center, 36, 12; }
 		}
 		else IsSelected Z86Chainsaw
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "SW64G0", -112, -43, center, 36, 12; }
-			else { DrawImage "CSAWA0", -112, -43, center, 36, 12; } */
-			DrawImage "CSAWA0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "SW64G0", -112, -43, center, 36, 12; }
+			else { DrawImage "CSAWA0", -112, -43, center, 36, 12; }
 		}
 		else IsSelected PerkShotgun
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "64SGB0", -112, -43, center, 36, 12; }
-			else { DrawImage "SHOTA0", -112, -43, center, 36, 12; } */
-			DrawImage "SHOTA0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "64SGB0", -112, -43, center, 36, 12; }
+			else { DrawImage "SHOTA0", -112, -43, center, 36, 12; }
 		}
 		else IsSelected PerkSuperShotgun
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "64S2A0", -112, -43, center, 36, 12; }
-			else { DrawImage "SGN2A0", -112, -43, center, 36, 12; } */
-			DrawImage "SGN2A0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "64S2A0", -112, -43, center, 36, 12; }
+			else { DrawImage "SGN2A0", -112, -43, center, 36, 12; }
 		}
 		else IsSelected Z86Chaingun
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "64CGB0", -112, -43, center, 36, 12; }
-			else { DrawImage "MGUNA0", -112, -43, center, 36, 12; } */
-			DrawImage "MGUNA0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "64CGB0", -112, -43, center, 36, 12; }
+			else { DrawImage "MGUNA0", -112, -43, center, 36, 12; }
 		}
 		else IsSelected PerkRocketLauncher
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "64LAA0", -112, -43, center, 36, 12; }
-			else { DrawImage "LAUNA0", -112, -43, center, 36, 12; } */
-			DrawImage "LAUNA0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "64LAA0", -112, -43, center, 36, 12; }
+			else { DrawImage "LAUNA0", -112, -43, center, 36, 12; }
 		}
 		else IsSelected BloxPlasmaRifle
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "PL64A0", -112, -43, center, 36, 12; }
-			else { DrawImage "PLRLA0", -112, -43, center, 36, 12; } */
-			DrawImage "PLRLA0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "PL64A0", -112, -43, center, 36, 12; }
+			else { DrawImage "PLRLA0", -112, -43, center, 36, 12; }
 		}
 		else IsSelected Z86BFG9000
 		{
-			/* IfCVarInt wetoggle, 1, equal { DrawImage "BFUGA0", -112, -43, center, 36, 12; }
-			else { DrawImage "BFG9A0", -112, -43, center, 36, 12; } */
-			DrawImage "BFG9A0", -112, -43, center, 36, 12;
+			InInventory HX_SmoothDoom2_doom64 { DrawImage "BFUGA0", -112, -43, center, 36, 12; }
+			else { DrawImage "BFG9A0", -112, -43, center, 36, 12; }
 		}
 		else
 		{	// PerkPistol, Rifle
