@@ -142,6 +142,30 @@ StatusBar Fullscreen, FullscreenOffsets
 	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo, -6, -18;
 	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell, -6, -12;
 
+	UsesAmmo {
+// Ammo Tally highlight by type
+		WeaponAmmo Clip
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
+			DrawImage "HX-CLIP", -73, -30;
+		}
+		WeaponAmmo Shell
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
+			DrawImage "HX-SHEL", -73, -24;
+		}
+		WeaponAmmo RocketAmmo
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+			DrawImage "HX-ROCK", -73, -18;
+		}
+		WeaponAmmo Cell
+		{
+			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+			DrawImage "HX-CELL", -73, -12;
+		}
+	}
+
 
 // CURRENT WEAPON ICON PANEL
 	DrawImage "HXWEAPON", -134, -53;
@@ -227,32 +251,11 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // CURRENT AMMO PANEL
-	UsesAmmo {
+	UsesAmmo
+	{
 		DrawImage "HXAMMO", -134, -33;
 		DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
 		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
-
-// Ammo Tally by type
-		WeaponAmmo Clip
-		{
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
-			DrawImage "HX-CLIP", -73, -30;
-		}
-		WeaponAmmo Shell
-		{
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
-			DrawImage "HX-SHEL", -73, -24;
-		}
-		WeaponAmmo RocketAmmo
-		{
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
-			DrawImage "HX-ROCK", -73, -18;
-		}
-		WeaponAmmo Cell
-		{
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
-			DrawImage "HX-CELL", -73, -12;
-		}
 	}
 	else
 	{
