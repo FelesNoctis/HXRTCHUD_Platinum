@@ -9,7 +9,7 @@ Height 0;
 InterpolateHealth TRUE, 1024;
 InterpolateArmor TRUE, 1024;
 MonospaceFonts TRUE, "0";
-Resolution 512, 320;
+Resolution 320, 240;
 
 StatusBar Fullscreen, FullscreenOffsets
 
@@ -232,7 +232,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
 		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 
-		// Ammo Tally by type
+// Ammo Tally by type
 		WeaponAmmo Clip
 		{
 			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
@@ -284,7 +284,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // DEV STUFF DON'T LOOK AT THIS IT'S SPOOKY
-/* 
+
 	// Bruh, what's your class?
 	DrawString HXGENERALFONTM, HXRTCGold, playerclass, 2, 44, 0, alignment(left), drawshadow(1,1);
 	// What's that badass boomstick you got?
@@ -292,7 +292,7 @@ StatusBar Fullscreen, FullscreenOffsets
 	// How bout dat ammo, yo?!
 	DrawString HXGENERALFONTM, HXRTCGold, ammo1tag, 2, 60, 0, alignment(left), drawshadow(1,1);
 	DrawString HXGENERALFONTM, HXRTCGold, ammo2tag, 2, 68, 0, alignment(left), drawshadow(1,1);
-*/
+
 
 
 }
