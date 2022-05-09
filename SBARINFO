@@ -408,7 +408,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		}
 		else
 		{	// Everything not a fist, at the moment
-			DrawImage weaponicon, -112, -43, center, 36, 12;
+			DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst;
 		}
 	}
 
@@ -461,12 +461,12 @@ StatusBar Fullscreen, FullscreenOffsets
 		}
 		else
 		{	// PerkPistol, Rifle
-			DrawImage weaponicon, -112, -43, center, 36, 12;
+			DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst;
 		}
 	}
 	else 
 	{
-		DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail
+		DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst, alternateonfail
 		{
 			DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
 		}
