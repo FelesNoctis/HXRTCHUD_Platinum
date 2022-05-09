@@ -129,63 +129,261 @@ StatusBar Fullscreen, FullscreenOffsets
 ***************************************/
 
 
-// AMMO TALLIES PANEL
-	DrawImage "HXAMMTOP", -78, -35;
-	DrawImage "HXAMMROW", -78, -25;
-	DrawImage "HXAMMROW", -78, -19;
-	DrawImage "HXAMMBOT", -78, -13;
-
-	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -30, 0, alignment(left);
-	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -24, 0, alignment(left);
-	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -18, 0, alignment(left);
-	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -12, 0, alignment(left);
-
-	DrawBar "HXAMMON", "HXAMMOFF", ammo Clip, horizontal, -56, -30;
-	DrawBar "HXAMMON", "HXAMMOFF", ammo Shell, horizontal, -56, -24;
-	DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo, horizontal, -56, -18;
-	DrawBar "HXAMMON", "HXAMMOFF", ammo Cell, horizontal, -56, -12;
-
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip, -6, -30;
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell, -6, -24;
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo, -6, -18;
-	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell, -6, -12;
-
-	UsesAmmo {
-// Ammo Tally highlight by type
-		WeaponAmmo Clip
-		{
-			DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
-		}
-		WeaponAmmo Shell
-		{
-			DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
-		}
-		WeaponAmmo RocketAmmo
-		{
-			DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
-		}
-		WeaponAmmo Cell
-		{
-			DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
-			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
-		}
-	}
-
-
-// CURRENT AMMO PANEL
-	UsesAmmo
+	/*	Brutal Doom Lite 
+	*
+	*	SEKRIT will reorganize HUD appropriately
+	*/
+	InInventory BdMeleeAttacks, 1
 	{
-		DrawImage "HXAMMO", -134, -33;
-		DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
-		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+		InInventory not FlakCannon
+		{
+		// AMMO TALLIES PANEL - Brutal Doom Lite (No Sekrit)
+			DrawImage "HXAMMTOP", -78, -41;
+			DrawImage "HXAMMROW", -78, -31;
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -36, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -30, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -18, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+
+			DrawBar "HXAMMON", "HXAMMOFF", ammo RifleAmmo,		horizontal, -56, -36;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,			horizontal, -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,		horizontal, -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo PlasmaAmmo,		horizontal, -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, -56, -12;
+
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RifleAmmo,		-6, -36;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Shell,			-6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,	-6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PlasmaAmmo,	-6, -18;
+			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+
+			// Ammo Tally highlight equipped by type
+			UsesAmmo
+			{
+				WeaponAmmo RifleAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -36;
+				}
+				WeaponAmmo Shell
+				{
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -30;
+				}
+				WeaponAmmo RocketAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -24, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -24;
+				}
+				WeaponAmmo PlasmaAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -18;
+				}
+				// CURRENT AMMO PANEL
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+		// ARMS BAR - Brutal Doom Lite (No Sekrit)
+			DrawImage "HXARMS", -90, -67;
+
+			DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -63;
+			DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -63;
+			DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -63;
+			DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -63;
+			DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -63;
+			DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -63;
+			DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -63;
+		// KEYS BAR - Brutal Doom Lite (No Sekrit)
+			DrawImage "HXKEYS", -90, -54;
+
+			InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -51; }
+			InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -51; }
+			InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -51; }
+			InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -51; }
+			InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -51; }
+			InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -51; }
+		}
+		else
+		{
+		// AMMO TALLIES PANEL - Brutal Doom Lite (Sekrit!)
+			DrawImage "HXAMMTOP", -78, -47;
+			DrawImage "HXAMMROW", -78, -37;
+			DrawImage "HXAMMROW", -78, -31;
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -42, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -36, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -30, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAK", -73, -18, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+
+			DrawBar "HXAMMON", "HXAMMOFF", ammo RifleAmmo,		horizontal, -56, -42;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,			horizontal, -56, -36;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,		horizontal, -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo PlasmaAmmo,		horizontal, -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo FlakAmmo,		horizontal, -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, -56, -12;
+
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RifleAmmo,		-6, -42;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Shell,			-6, -36;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,	-6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PlasmaAmmo,	-6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo FlakAmmo,		-6, -18;
+			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+
+			// Ammo Tally highlight equipped by type
+			UsesAmmo
+			{
+				WeaponAmmo RifleAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -42;
+				}
+				WeaponAmmo Shell
+				{
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -36, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -36;
+				}
+				WeaponAmmo RocketAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -30;
+				}
+				WeaponAmmo PlasmaAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -24;
+				}
+				WeaponAmmo FlakAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "FLAK", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo FlakAmmo, -6, -18;
+				}
+				// CURRENT AMMO PANEL
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+		// ARMS BAR - Brutal Doom Lite (Sekrit!)
+			DrawImage "HXARMS", -90, -73;
+
+			DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -69;
+			DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -69;
+			DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -69;
+			DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -69;
+			DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -69;
+			DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -69;
+			DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -69;
+		// KEYS BAR - Brutal Doom Lite (Sekrit!)
+			DrawImage "HXKEYS", -90, -60;
+
+			InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -57; }
+			InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -57; }
+			InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -57; }
+			InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -57; }
+			InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -57; }
+			InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -57; }
+		}
 	}
+	/*	Vanilla
+	*
+	*	Anything that doesn't change the default ammos should "Just Work"
+	*/
 	else
 	{
-		// Ammoless
-		DrawImage "HXNOAVAI", -134, -33;
+	// AMMO TALLIES PANEL - Vanilla
+		DrawImage "HXAMMTOP", -78, -35;
+		DrawImage "HXAMMROW", -78, -25;
+		DrawImage "HXAMMROW", -78, -19;
+		DrawImage "HXAMMBOT", -78, -13;
+
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -30, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -24, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -18, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -12, 0, alignment(left);
+
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,		horizontal, -56, -30;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,		horizontal, -56, -24;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,	horizontal, -56, -18;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,		horizontal, -56, -12;
+
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,		-6, -30;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell,		-6, -24;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,	-6, -18;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,		-6, -12;
+
+		// Ammo Tally highlight equipped by type
+		UsesAmmo
+		{
+			WeaponAmmo Clip
+			{
+				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
+			}
+			WeaponAmmo Shell
+			{
+				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
+			}
+			WeaponAmmo RocketAmmo
+			{
+				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+			}
+			WeaponAmmo Cell
+			{
+				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+			}
+			// CURRENT AMMO PANEL
+			DrawImage "HXAMMO", -134, -33;
+			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+			DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+		}
+		else
+		{
+			// Ammoless
+			DrawImage "HXNOAVAI", -134, -33;
+		}
+	// ARMS BAR - Brutal Doom Lite (Sekrit!)
+		DrawImage "HXARMS", -90, -61;
+
+		DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -57;
+		DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -57;
+		DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -57;
+		DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -57;
+		DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -57;
+		DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -57;
+		DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -57;
+	// KEYS BAR - Vanilla
+		DrawImage "HXKEYS", -90, -48;
+
+		InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -45; }
+		InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -45; }
+		InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -45; }
+		InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -45; }
+		InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -45; }
+		InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -45; }
 	}
 
 
@@ -273,29 +471,6 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
 		}
 	}
-
-
-// KEYS BAR
-	DrawImage "HXKEYS", -90, -48;
-
-	InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -45; }
-	InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -45; }
-	InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -45; }
-	InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -45; }
-	InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -45; }
-	InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -45; }
-
-
-// ARMS BAR
-	DrawImage "HXARMS", -90, -61;
-
-	DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -57;
-	DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -57;
-	DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -57;
-	DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -57;
-	DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -57;
-	DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -57;
-	DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -57;
 
 
 // DEV STUFF DON'T LOOK AT THIS IT'S SPOOKY
