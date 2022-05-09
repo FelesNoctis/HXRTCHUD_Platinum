@@ -175,6 +175,20 @@ StatusBar Fullscreen, FullscreenOffsets
 	}
 
 
+// CURRENT AMMO PANEL
+	UsesAmmo
+	{
+		DrawImage "HXAMMO", -134, -33;
+		DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+	}
+	else
+	{
+		// Ammoless
+		DrawImage "HXNOAVAI", -134, -33;
+	}
+
+
 // CURRENT WEAPON ICON PANEL
 	DrawImage "HXWEAPON", -134, -53;
 
@@ -260,19 +274,6 @@ StatusBar Fullscreen, FullscreenOffsets
 		}
 	}
 
-
-// CURRENT AMMO PANEL
-	UsesAmmo
-	{
-		DrawImage "HXAMMO", -134, -33;
-		DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
-		DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
-	}
-	else
-	{
-		// Ammoless
-		DrawImage "HXNOAVAI", -134, -33;
-	}
 
 // KEYS BAR
 	DrawImage "HXKEYS", -90, -48;
