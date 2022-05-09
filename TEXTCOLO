@@ -7,7 +7,7 @@ Flat:
 	#FFFFFF
 }
 
-HXRTCSilver
+HXRTCLightGrey
 {
 	#808080 #808080
 Console:
@@ -17,14 +17,7 @@ Flat:
 	#808080
 }
 
-HXRTCLightGrey
-{
-	#808080  #808080
-Flat:
-	#808080
-}
-
-HXRTCGrey
+HXRTCDarkGrey
 {
 	#404040 #404040
 Console:
@@ -34,11 +27,11 @@ Flat:
 	#404040
 }
 
-HXRTCDarkGrey
+HXRTCVeryDarkGrey
 {
-	#404040  #404040
+	#202020  #202020
 Flat:
-	#404040
+	#202020
 }
 
 HXRTCYellow

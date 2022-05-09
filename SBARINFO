@@ -130,7 +130,15 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // AMMO TALLIES PANEL
-	DrawImage "HXAMMOS", -78, -35;
+	DrawImage "HXAMMTOP", -78, -35;
+	DrawImage "HXAMMROW", -78, -25;
+	DrawImage "HXAMMROW", -78, -19;
+	DrawImage "HXAMMBOT", -78, -13;
+
+	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -30, 0, alignment(left);
+	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -24, 0, alignment(left);
+	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -18, 0, alignment(left);
+	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -12, 0, alignment(left);
 
 	DrawBar "HXAMMON", "HXAMMOFF", ammo Clip, horizontal, -56, -30;
 	DrawBar "HXAMMON", "HXAMMOFF", ammo Shell, horizontal, -56, -24;
@@ -146,23 +154,23 @@ StatusBar Fullscreen, FullscreenOffsets
 // Ammo Tally highlight by type
 		WeaponAmmo Clip
 		{
+			DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
 			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
-			DrawImage "HX-CLIP", -73, -30;
 		}
 		WeaponAmmo Shell
 		{
+			DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
 			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
-			DrawImage "HX-SHEL", -73, -24;
 		}
 		WeaponAmmo RocketAmmo
 		{
+			DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
 			DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
-			DrawImage "HX-ROCK", -73, -18;
 		}
 		WeaponAmmo Cell
 		{
+			DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 			DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
-			DrawImage "HX-CELL", -73, -12;
 		}
 	}
 
@@ -244,9 +252,12 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage weaponicon, -112, -43, center, 36, 12;
 		}
 	}
-	else DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail
+	else 
 	{
-		DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
+		DrawImage weaponicon, -112, -43, center, 36, 12, alternateonfail
+		{
+			DrawString HXGENERALFONTS, untranslated, weapontag, -131, -50, 0, alignment(left), linebreaks(38);
+		}
 	}
 
 
