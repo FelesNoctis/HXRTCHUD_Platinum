@@ -1,1 +1,2 @@
-server bool hxsys_debugtag;
+server int hxcus_HXPTKIS = 3;
+server bool hxsys_debugtag = false;

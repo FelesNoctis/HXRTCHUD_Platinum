@@ -2,6 +2,8 @@
 *	CVAR TOKENS
 */
 //	HXRTC HUD Platinum
+ACTOR HXCUS_KISToken: Inventory { Inventory.MaxAmount 1 }
+ACTOR HXCUS_PTToken: Inventory { Inventory.MaxAmount 1 }
 ACTOR HXSYS_DebugTagToken: Inventory { Inventory.MaxAmount 1 }
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HX_PerkSmooth_blackgloves: Inventory { Inventory.MaxAmount 1 }

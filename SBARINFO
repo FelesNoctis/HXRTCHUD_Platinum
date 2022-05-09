@@ -23,19 +23,42 @@ StatusBar Fullscreen, FullscreenOffsets
 ***************************************/
 
 
-// LEVEL STATES (TIME, KILLS, ITEMS & SECRETS)
-	DrawImage "HXPT+KIS", 2, 2;
+// LEVEL STATS (TIME, KILLS, ITEMS & SECRETS)
+	InInventory "HXCUS_KISToken"
+	{
+		InInventory "HXCUS_PTToken"
+		{
+			DrawImage "HXPTKIS", 2, 2;
 
-	DrawString CONFONT, white, time, 9, 6;
+			DrawString CONFONT, white, time, 9, 6;
 
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 20;
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 26;
-	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, secrets, 54, 32;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 20;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 26;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 32;
 
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 20;
-	DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 26;
-	DrawNumber 3, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 32;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 20;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 26;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 32;
+		}
+		else
+		{
+			DrawImage "HXKIS", 2, 2;
 
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 7;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 13;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 19;
+
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
+			DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
+		}
+	}
+	else InInventory "HXCUS_PTToken"
+	{
+		DrawImage "HXPT", 2, 2;
+
+		DrawString CONFONT, white, time, 9, 6;
+	}
 
 
 /***************************************
