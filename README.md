@@ -1,4 +1,4 @@
-# [![HXRTC Hud Platinum Logo](https://i.imgur.com/YzemjEF.png)](https://forum.zdoom.org/viewtopic.php?f=46&t=75282)
+# [![HXRTC Hud Platinum Logo](https://i.imgur.com/I86LiiT.png)](https://forum.zdoom.org/viewtopic.php?f=46&t=75282)
 
 Updating HXRTC HUD with a more flexible approach in mind for wider mod support.
 
