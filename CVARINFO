@@ -1,2 +1,8 @@
+server bool hxcus_HXArmorSave = true;
+server bool hxcus_HXArmsBar = true;
+server bool hxcus_HXArtifact = false;
+server int hxcus_HXPowerupBox = 2;
+server int hxcus_HXPowerupTimer = 1;
 server int hxcus_HXPTKIS = 3;
+server bool hxcus_HXWepIcon = true;
 server bool hxsys_debugtag = false;
