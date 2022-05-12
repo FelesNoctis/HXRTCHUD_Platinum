@@ -231,12 +231,12 @@ StatusBar Fullscreen, FullscreenOffsets
 		// KEYS BAR - Brutal Doom Lite (No Sekrit)
 			DrawImage "HXKEYS", -90, -54;
 
-			InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -51; }
-			InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -51; }
-			InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -51; }
-			InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -51; }
-			InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -51; }
-			InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -51; }
+			InInventory "SmoothBlueCard", 1 	{ DrawImage "HXKEYS0", -58, -51; }
+			InInventory "SmoothYellowCard", 1	{ DrawImage "HXKEYS1", -49, -51; }
+			InInventory "SmoothRedCard", 1 		{ DrawImage "HXKEYS2", -40, -51; }
+			InInventory "SmoothSkullBlu", 1		{ DrawImage "HXKEYS3", -31, -51; }
+			InInventory "SmoothSkullYel", 1		{ DrawImage "HXKEYS4", -22, -51; }
+			InInventory "SmoothSkullRed", 1		{ DrawImage "HXKEYS5", -13, -51; }
 		}
 		else
 		{
@@ -320,12 +320,12 @@ StatusBar Fullscreen, FullscreenOffsets
 		// KEYS BAR - Brutal Doom Lite (Sekrit!)
 			DrawImage "HXKEYS", -90, -60;
 
-			InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -57; }
-			InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -57; }
-			InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -57; }
-			InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -57; }
-			InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -57; }
-			InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -57; }
+			InInventory "SmoothBlueCard", 1 	{ DrawImage "HXKEYS0", -58, -57; }
+			InInventory "SmoothYellowCard", 1	{ DrawImage "HXKEYS1", -49, -57; }
+			InInventory "SmoothRedCard", 1 		{ DrawImage "HXKEYS2", -40, -57; }
+			InInventory "SmoothSkullBlu", 1		{ DrawImage "HXKEYS3", -31, -57; }
+			InInventory "SmoothSkullYel", 1		{ DrawImage "HXKEYS4", -22, -57; }
+			InInventory "SmoothSkullRed", 1		{ DrawImage "HXKEYS5", -13, -57; }
 		}
 	}
 	/*	Vanilla
