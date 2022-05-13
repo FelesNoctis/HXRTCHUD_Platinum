@@ -371,3 +371,4 @@ MigrationBackup/
 .ionide/
 *.pk3
 *.pdn
+*.zip
