@@ -641,7 +641,29 @@ StatusBar Fullscreen, FullscreenOffsets
 	}
 
 
-// DEV STUFF DON'T LOOK AT THIS IT'S SPOOKY
+
+/***************************************
+*
+* BOTTOM CENTER PANELS
+*
+***************************************/
+
+
+// Stamina Bar
+	InInventory "IsTacticalClass", 1
+	{
+		DrawImage "HXSTAMFR", -77 + center, -15;
+		DrawBar "HXSTAMOK", "HXSTAMNO", HXSYS_StaminaToken, horizontal, interpolate(8), -73 + center, -11;
+	}
+
+
+
+
+/***************************************
+*
+* DEV STUFF DON'T LOOK AT THIS IT'S SPOOKY
+*
+***************************************/
 	InInventory "HXSYS_DebugTagToken", 1
 	{
 		// Bruh, what's your class?
@@ -667,7 +689,14 @@ StatusBar Fullscreen, FullscreenOffsets
 
 StatusBar InventoryFullscreen, FullscreenOffsets
 {
-	DrawInventoryBar Doom, alwaysshowcounter, 5, HXINDEXFONTS, -76 + center, -32, -50 + center, -12, untranslated;
+	InInventory "IsTacticalClass", 1
+	{
+		DrawInventoryBar Doom, alwaysshowcounter, 5, HXINDEXFONTS, -76 + center, -45, -50 + center, -25, untranslated;
+	}
+	else
+	{
+		DrawInventoryBar Doom, alwaysshowcounter, 5, HXINDEXFONTS, -76 + center, -32, -50 + center, -12, untranslated;
+	}
 }
 
 
