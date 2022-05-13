@@ -324,13 +324,16 @@ StatusBar Fullscreen, FullscreenOffsets
 			{
 				DrawImage "HXARMS", -90, -67;
 
-				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -63;
-				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -63;
-				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -63;
-				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -63;
-				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -63;
-				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -63;
-				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -63;
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -63;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -63;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -63;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -63;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -63;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -63;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -63;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -63;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -63;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -63;
 			}
 		// KEYS BAR - Brutal Doom Lite (No Sekrit)
 			DrawImage "HXKEYS", -90, -54;
@@ -416,13 +419,16 @@ StatusBar Fullscreen, FullscreenOffsets
 			{
 				DrawImage "HXARMS", -90, -73;
 
-				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -69;
-				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -69;
-				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -69;
-				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -69;
-				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -69;
-				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -69;
-				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -69;
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -69;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -69;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -69;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -69;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -69;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -69;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -69;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -69;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -69;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -69;
 			}
 		// KEYS BAR - Brutal Doom Lite (Sekrit!)
 			DrawImage "HXKEYS", -90, -60;
@@ -500,13 +506,16 @@ StatusBar Fullscreen, FullscreenOffsets
 		{
 			DrawImage "HXARMS", -90, -61;
 
-			DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -59, -57;
-			DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -51, -57;
-			DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -43, -57;
-			DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -35, -57;
-			DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -27, -57;
-			DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -19, -57;
-			DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -11, -57;
+			DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -57;
+			DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -57;
+			DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -57;
+			DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -57;
+			DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -57;
+			DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -57;
+			DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -57;
+			DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -57;
+			DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -57;
+			DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -57;
 		}
 	// KEYS BAR - Vanilla
 		DrawImage "HXKEYS", -90, -48;
