@@ -192,7 +192,7 @@ StatusBar Fullscreen, FullscreenOffsets
 	else { DrawImage "HXMGCGW", 2, -71; }
 
 	// Air Supply and Rage Meter (HXRTC Gold default)
-	IfWaterLevel 3 { DrawBar "HXARBROK", "HXARRGNO", airtime, vertical, interpolate(64), 6, -67; }
+	InInventory "HXCUS_AirMeterToken", 1 { DrawBar "HXARBROK", "HXARRGNO", airtime, vertical, interpolate(64), 6, -67; }
 	InInventory "HXRTCPlayerRagePoints", 1 { DrawBar "HXRGBROK", "HXARRGNO", HXRTCPlayerRagePoints, vertical, interpolate(64), 41, -67; }
 
 	// SmoothDoom 2.0 WIP death mugshot

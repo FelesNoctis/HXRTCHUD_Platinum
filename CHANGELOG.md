@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.11
+
+- **Bottom-Left Panels:**
+  - Air Supply bar is now on a toggle, default "false", due to Zandronum not supporting "IfWaterLevel"
+
 ## v0.10
 
 - **General:**
