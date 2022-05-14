@@ -100,8 +100,18 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawImage "HXLGHTNO", -26, 2;		
 		// Active icon + border
 		InInventory "PowerInvulnerable" { DrawBar "HXINVUOK", "HXINVOFF", poweruptime invulnerabilitysphere, vertical, interpolate(64), -98, 2; }
+
 		InInventory "PowerInvisibility" { DrawBar "HXBLUROK", "HXINVOFF", poweruptime blursphere, vertical, interpolate(64), -74, 2; }
-		InInventory "PowerIronfeet" { DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, interpolate(64), -50, 2; }
+
+		InInventory "HX_RadSuitPowerUpToken"
+		{
+			InInventory "HXMOD_LedsGenericWeaponMod", 1
+			{
+				DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; 
+			}
+			else { DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, interpolate(64), -50, 2; }
+		}
+		
 		InInventory "PowerLightamp" { DrawBar "HXLGHTOK", "HXINVOFF", poweruptime infrared, vertical, interpolate(64), -26, 2; }
 	}
 	else InInventory "HXCUS_PowerupBoxToken", 1
@@ -116,10 +126,14 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "HXBLURNO", -74, 2;
 			DrawBar "HXBLUROK", "HXINVOFF", poweruptime blursphere, vertical, interpolate(64), -74, 2;
 		}
-		InInventory "PowerIronfeet"
+		InInventory "HX_RadSuitPowerUpToken"
 		{
 			DrawImage "HXRADSNO", -50, 2;
-			DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, interpolate(64), -50, 2;
+			InInventory "HXMOD_LedsGenericWeaponMod", 1
+			{
+				DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2;
+			}
+			else { DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, interpolate(64), -50, 2; }
 		}
 		InInventory "PowerLightamp"
 		{
@@ -150,11 +164,20 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "HXSML058", -71, 29;
 			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime blursphere, -53, 29;
 		}
-		InInventory "PowerIronfeet"
+		InInventory "HX_RadSuitPowerUpToken"
 		{
-			DrawImage "HXRADST", -50, 25;
-			DrawImage "HXSML058", -47, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;
+			InInventory "HXMOD_LedsGenericWeaponMod", 1
+			{
+				DrawImage "HXRADST", -50, 25;
+				DrawImage "HXSML058", -47, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
+			}
+			else
+			{
+				DrawImage "HXRADST", -50, 25;
+				DrawImage "HXSML058", -47, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;
+			}
 		}
 		InInventory "PowerLightamp"
 		{
@@ -179,12 +202,22 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "HXSML058", -71, 29;
 			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime blursphere, -53, 29;
 		}
-		InInventory "PowerIronfeet"
+		InInventory "HX_RadSuitPowerUpToken"
 		{
-			DrawImage "HXBUFFT", -50, 25;
-			DrawImage "HXRADST", -50, 25;
-			DrawImage "HXSML058", -47, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;
+			InInventory "HXMOD_LedsGenericWeaponMod", 1
+			{
+				DrawImage "HXBUFFT", -50, 25;
+				DrawImage "HXRADST", -50, 25;
+				DrawImage "HXSML058", -47, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
+			}
+			else
+			{
+				DrawImage "HXBUFFT", -50, 25;
+				DrawImage "HXRADST", -50, 25;
+				DrawImage "HXSML058", -47, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;
+			}
 		}
 		InInventory "PowerLightamp"
 		{
@@ -233,13 +266,13 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // ITEM PANELS (BERSERK, ARMOR SAVE, ARMOR TYPE)
-	InInventory "PowerStrength"
+	InInventory "HX_BerserkPowerUpToken", 1
 	{
 		DrawImage "HXARMTYP", 72, -49;
 		DrawImage "HXBERSRK", 72, -49;
 	}
 
-	InInventory "HXCUS_ArmorSaveToken"
+	InInventory "HXCUS_ArmorSaveToken", 1
 	{
 		DrawImage "HXARMSV", 48, -62;
 		DrawNumber 3, HXGENERALFONTS, untranslated, savepercent, interpolate(128), whennotzero, 64, -58, 0;
@@ -464,6 +497,113 @@ StatusBar Fullscreen, FullscreenOffsets
 			InInventory "SmoothSkullRed", 1		{ DrawImage "HXKEYS5", -13, -57; }
 		}
 	}
+	/*	Led's Generic Weapon Mod
+	*
+	*/
+	else InInventory "HXMOD_LedsGenericWeaponMod", 1
+	{
+	// AMMO TALLIES PANEL - Led's Generic Weapon Mod
+		DrawImage "HXAMMTOP", -78, -47;
+		DrawImage "HXAMMROW", -78, -37;
+		DrawImage "HXAMMROW", -78, -31;
+		DrawImage "HXAMMROW", -78, -25;
+		DrawImage "HXAMMROW", -78, -19;
+		DrawImage "HXAMMBOT", -78, -13;
+
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "PIST", -73, -42, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -36, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -30, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "NATO", -73, -24, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -18, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -12, 0, alignment(left);
+
+		DrawBar "HXAMMON", "HXAMMOFF", ammo HX_LedsGenWep9mmAmmo,	horizontal, interpolate(64), -56, -42;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo RifleAmmo,				horizontal, interpolate(64), -56, -36;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,					horizontal, interpolate(64), -56, -30;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Nato,					horizontal, interpolate(64), -56, -24;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,				horizontal, interpolate(64), -56, -18;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,					horizontal, interpolate(64), -56, -12;
+
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo HX_LedsGenWep9mmAmmo,	-6, -42;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RifleAmmo,				-6, -36;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell,					-6, -30;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Nato,					-6, -24;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,				-6, -18;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,					-6, -12;
+
+		// Ammo Tally highlight equipped by type
+		IsSelected "Beretta"
+		{
+				DrawString HXGENERALFONTS, untranslated, "PIST", -73, -42, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo HX_LedsGenWep9mmAmmo, -6, -42;
+				// CURRENT AMMO PANEL
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+		}
+		else UsesAmmo
+		{
+			WeaponAmmo RifleAmmo
+			{
+				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -36;
+			}
+			WeaponAmmo Shell
+			{
+				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -30;
+			}
+			WeaponAmmo Nato
+			{
+				DrawString HXGENERALFONTS, untranslated, "NATO", -73, -24, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Nato,  -6, -24;
+			}
+			WeaponAmmo RocketAmmo
+			{
+				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+			}
+			WeaponAmmo Cell
+			{
+				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+			}
+			// CURRENT AMMO PANEL
+			DrawImage "HXAMMO", -134, -33;
+			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+			DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+		}
+		else
+		{
+			// Ammoless
+			DrawImage "HXNOAVAI", -134, -33;
+		}
+	// ARMS BAR - Led's Generic Weapon Mod
+		InInventory "HXCUS_ArmsBarToken", 1
+		{
+			DrawImage "HXARMS", -90, -73;
+
+			DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -69;
+			DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -69;
+			DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -69;
+			DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -69;
+			DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -69;
+			DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -69;
+			DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -69;
+			DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -69;
+			DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -69;
+			DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -69;
+		}
+	// KEYS BAR - Led's Generic Weapon Mod
+		DrawImage "HXKEYS", -90, -60;
+
+		InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -57; }
+		InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -57; }
+		InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -57; }
+		InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -57; }
+		InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -57; }
+		InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -57; }
+	}
 	/*	Vanilla
 	*
 	*	Anything that doesn't change the default ammos should "Just Work"
@@ -667,12 +807,12 @@ StatusBar Fullscreen, FullscreenOffsets
 	InInventory "HXSYS_DebugTagToken", 1
 	{
 		// Bruh, what's your class?
-		DrawString HXGENERALFONTM, HXRTCGold, playerclass, 2, 44, 0, alignment(left), drawshadow(1,1);
+		DrawString HXGENERALFONTM, HXRTCGold, playerclass, 2, 54, 0, alignment(left), drawshadow(1,1);
 		// What's that badass boomstick you got?
-		DrawString HXGENERALFONTM, HXRTCGold, weapontag, 2, 52, 0, alignment(left), drawshadow(1,1);
+		DrawString HXGENERALFONTM, HXRTCGold, weapontag, 2, 62, 0, alignment(left), drawshadow(1,1);
 		// How bout dat ammo, yo?!
-		DrawString HXGENERALFONTM, HXRTCGold, ammo1tag, 2, 60, 0, alignment(left), drawshadow(1,1);
-		DrawString HXGENERALFONTM, HXRTCGold, ammo2tag, 2, 68, 0, alignment(left), drawshadow(1,1);
+		DrawString HXGENERALFONTM, HXRTCGold, ammo1tag, 2, 70, 0, alignment(left), drawshadow(1,1);
+		DrawString HXGENERALFONTM, HXRTCGold, ammo2tag, 2, 78, 0, alignment(left), drawshadow(1,1);
 	}
 
 

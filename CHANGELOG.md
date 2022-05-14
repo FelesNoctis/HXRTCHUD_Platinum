@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.12
+
+- **Top-Left Panels:**
+  - Togglable "extended" version of the KIS tally, for those occasional maps that need 5 digits
+
+- **Bottom-Center Panels:**
+  - New stamina bar. Appears when needed, sticks for roughly 3 seconds after completely refilling, then disappears
+  - **Inventory Bar** updated to reposition above stamina bar when both are active
+
+- **Bottom-Right Panels:**
+  - **Arms Bar** now always shows all ten (1-0) digits. This is to simplify mod support, but may be subject to change
+
+- **Mod Support:**
+  - Led's Generic Weapon Mod
+
 ## v0.11
 
 - **Bottom-Left Panels:**

@@ -17,6 +17,16 @@ ACTOR HXSYS_DebugTagToken: Inventory { Inventory.MaxAmount 1 }
 ACTOR HXSYS_HealthOverMaxToken: Inventory { Inventory.MaxAmount 100 }
 ACTOR HXSYS_StaminaStickyToken: Inventory { Inventory.MaxAmount 15 }
 ACTOR HXSYS_StaminaToken: Inventory { Inventory.MaxAmount 110 }
+//	HX General Mod Support
+ACTOR HX_BerserkPowerUpToken: Inventory { Inventory.MaxAmount 1 }
+ACTOR HX_RadSuitPowerUpToken: Inventory { Inventory.MaxAmount 60 }
+//	Led's Generic Weapon Mod 20220412
+ACTOR HXMOD_LedsGenericWeaponMod: Inventory { Inventory.MaxAmount 1 }
+ACTOR HX_LedsGenWep9mmAmmo: Ammo
+{
+	Inventory.MaxAmount 200
+	Ammo.BackpackMaxAmount 400
+}
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HX_PerkSmooth_blackgloves: Inventory { Inventory.MaxAmount 1 }
 ACTOR HX_PerkSmooth_glovedfist: Inventory { Inventory.MaxAmount 1 }
