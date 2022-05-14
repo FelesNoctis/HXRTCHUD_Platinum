@@ -650,7 +650,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // Stamina Bar
-	InInventory "IsTacticalClass", 1
+	InInventory "IsTacticalClass", 1 && "HXSYS_StaminaStickyToken", 1
 	{
 		DrawImage "HXSTAMFR", -77 + center, -15;
 		DrawBar "HXSTAMOK", "HXSTAMNO", HXSYS_StaminaToken, horizontal, interpolate(8), -73 + center, -11;
@@ -689,7 +689,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 StatusBar InventoryFullscreen, FullscreenOffsets
 {
-	InInventory "IsTacticalClass", 1
+	InInventory "IsTacticalClass", 1 && "HXSYS_StaminaStickyToken", 1
 	{
 		DrawInventoryBar Doom, alwaysshowcounter, 5, HXINDEXFONTS, -76 + center, -45, -50 + center, -25, untranslated;
 	}

@@ -15,6 +15,7 @@ ACTOR HXCUS_WeaponIconToken: Inventory { Inventory.MaxAmount 1 }
 ACTOR HXSYS_ArmorOverMaxToken: Inventory { Inventory.MaxAmount 100 }
 ACTOR HXSYS_DebugTagToken: Inventory { Inventory.MaxAmount 1 }
 ACTOR HXSYS_HealthOverMaxToken: Inventory { Inventory.MaxAmount 100 }
+ACTOR HXSYS_StaminaStickyToken: Inventory { Inventory.MaxAmount 15 }
 ACTOR HXSYS_StaminaToken: Inventory { Inventory.MaxAmount 110 }
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HX_PerkSmooth_blackgloves: Inventory { Inventory.MaxAmount 1 }
