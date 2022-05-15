@@ -91,7 +91,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // POWERUP PANELS
-	InInventory "HXCUS_PowerupBoxToken", 2
+	InInventory "HXCUS_PowerupBoxToken", 2	// Always
 	{
 		// Background panels + inactive icons
 		DrawImage "HXINVUNO", -98, 2;
@@ -99,52 +99,41 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawImage "HXRADSNO", -50, 2;
 		DrawImage "HXLGHTNO", -26, 2;		
 		// Active icon + border
-		InInventory "PowerInvulnerable" { DrawBar "HXINVUOK", "HXINVOFF", poweruptime invulnerabilitysphere, vertical, interpolate(64), -98, 2; }
+		InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2; }
 
-		InInventory "PowerInvisibility" { DrawBar "HXBLUROK", "HXINVOFF", poweruptime blursphere, vertical, interpolate(64), -74, 2; }
+		InInventory "HX_InvisibilityPowerUpToken" { DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2; }
 
-		InInventory "HX_RadSuitPowerUpToken"
-		{
-			InInventory "HXMOD_LedsGenericWeaponMod", 1
-			{
-				DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; 
-			}
-			else { DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, interpolate(64), -50, 2; }
-		}
+		InInventory "HX_RadSuitPowerUpToken" { DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; }
 		
-		InInventory "PowerLightamp" { DrawBar "HXLGHTOK", "HXINVOFF", poweruptime infrared, vertical, interpolate(64), -26, 2; }
+		InInventory "HX_InfraredPowerUpToken" { DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
 	}
-	else InInventory "HXCUS_PowerupBoxToken", 1
+	else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
 	{
-		InInventory "PowerInvulnerable"
+		InInventory "HX_InvulnerabilityPowerUpToken"
 		{
 			DrawImage "HXINVUNO", -98, 2;
-			DrawBar "HXINVUOK", "HXINVOFF", poweruptime invulnerabilitysphere, vertical, interpolate(64), -98, 2;
+			DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2;
 		}
-		InInventory "PowerInvisibility"
+		InInventory "HX_InvisibilityPowerUpToken"
 		{
 			DrawImage "HXBLURNO", -74, 2;
-			DrawBar "HXBLUROK", "HXINVOFF", poweruptime blursphere, vertical, interpolate(64), -74, 2;
+			DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2;
 		}
 		InInventory "HX_RadSuitPowerUpToken"
 		{
 			DrawImage "HXRADSNO", -50, 2;
-			InInventory "HXMOD_LedsGenericWeaponMod", 1
-			{
-				DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2;
-			}
-			else { DrawBar "HXRADSOK", "HXINVOFF", poweruptime radsuit, vertical, interpolate(64), -50, 2; }
+			DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2;
 		}
-		InInventory "PowerLightamp"
+		InInventory "HX_InfraredPowerUpToken"
 		{
 			DrawImage "HXLGHTNO", -26, 2;
-			DrawBar "HXLGHTOK", "HXINVOFF", poweruptime infrared, vertical, interpolate(64), -26, 2;
+			DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2;
 		}
 	}
 
 
 // POWERUP TIME INDICATORS
-	InInventory "HXCUS_PowerupTimerToken", 2
+	InInventory "HXCUS_PowerupTimerToken", 2	// Always
 	{
 		// Background panels
 		DrawImage "HXBUFFT", -98, 25;
@@ -152,79 +141,60 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawImage "HXBUFFT", -50, 25;
 		DrawImage "HXBUFFT", -26, 25;
 		// Active timers
-		InInventory "PowerInvulnerable"
+		InInventory "HX_InvulnerabilityPowerUpToken"
 		{
 			DrawImage "HXINVUT", -98, 25;	// Active timer border
 			DrawImage "HXSML058", -95, 29;	// Active colon character
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime invulnerabilitysphere, -77, 29;	// Time remaining
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -77, 29;	// Time remaining
 		}
-		InInventory "PowerInvisibility"
+		InInventory "HX_InvisibilityPowerUpToken"
 		{
 			DrawImage "HXBLURT", -74, 25;
 			DrawImage "HXSML058", -71, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime blursphere, -53, 29;
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpToken, -53, 29;
 		}
 		InInventory "HX_RadSuitPowerUpToken"
 		{
-			InInventory "HXMOD_LedsGenericWeaponMod", 1
-			{
-				DrawImage "HXRADST", -50, 25;
-				DrawImage "HXSML058", -47, 29;
-				DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
-			}
-			else
-			{
-				DrawImage "HXRADST", -50, 25;
-				DrawImage "HXSML058", -47, 29;
-				DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;
-			}
+			DrawImage "HXRADST", -50, 25;
+			DrawImage "HXSML058", -47, 29;
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
 		}
-		InInventory "PowerLightamp"
+		InInventory "HX_InfraredPowerUpToken"
 		{
 			DrawImage "HXLGHTT", -26, 25;
 			DrawImage "HXSML058", -23, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime infrared, -5, 29;
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
 		}
 	}
-	else InInventory "HXCUS_PowerupTimerToken", 1
+	else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
 	{
-		InInventory "PowerInvulnerable"
+		InInventory "HX_InvulnerabilityPowerUpToken"
 		{
 			DrawImage "HXBUFFT", -98, 25;	// Background panel
 			DrawImage "HXINVUT", -98, 25;	// Active timer border
 			DrawImage "HXSML058", -95, 29;	// Active colon character
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime invulnerabilitysphere, -77, 29;	// Time remaining
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -77, 29;	// Time remaining
 		}
-		InInventory "PowerInvisibility"
+		InInventory "HX_InvisibilityPowerUpToken"
 		{
 			DrawImage "HXBUFFT", -74, 25;
 			DrawImage "HXBLURT", -74, 25;
 			DrawImage "HXSML058", -71, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime blursphere, -53, 29;
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpToken, -53, 29;
 		}
 		InInventory "HX_RadSuitPowerUpToken"
 		{
-			InInventory "HXMOD_LedsGenericWeaponMod", 1
-			{
-				DrawImage "HXBUFFT", -50, 25;
-				DrawImage "HXRADST", -50, 25;
-				DrawImage "HXSML058", -47, 29;
-				DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
-			}
-			else
-			{
-				DrawImage "HXBUFFT", -50, 25;
-				DrawImage "HXRADST", -50, 25;
-				DrawImage "HXSML058", -47, 29;
-				DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime radsuit, -29, 29;
-			}
+			DrawImage "HXBUFFT", -50, 25;
+			DrawImage "HXRADST", -50, 25;
+			DrawImage "HXSML058", -47, 29;
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
 		}
-		InInventory "PowerLightamp"
+		InInventory "HX_InfraredPowerUpToken"
 		{
 			DrawImage "HXBUFFT", -26, 25;
 			DrawImage "HXLGHTT", -26, 25;
 			DrawImage "HXSML058", -23, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, poweruptime infrared, -5, 29;
+			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
 		}
 	}
 
@@ -241,10 +211,10 @@ StatusBar Fullscreen, FullscreenOffsets
 	DrawImage "HXMGSHT", 2, -71;
 
 	// Mugshot reactive border - Invulnerability
-	InInventory "PowerInvulnerable" { DrawImage "HXMGBFY", 2, -71; }
+	InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", 2, -71; }
 	else { DrawImage "HXMGBFG", 2, -71; }
 	// Mugshot reactive corners - Berserk
-	InInventory "PowerStrength" { DrawImage "HXMGCGR", 2, -71; }
+	InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", 2, -71; }
 	else { DrawImage "HXMGCGW", 2, -71; }
 
 	// Air Supply and Rage Meter (HXRTC Gold default)
@@ -252,7 +222,7 @@ StatusBar Fullscreen, FullscreenOffsets
 	InInventory "HXRTCPlayerRagePoints", 1 { DrawBar "HXRGBROK", "HXARRGNO", HXRTCPlayerRagePoints, vertical, interpolate(64), 41, -67; }
 
 	// SmoothDoom 2.0 WIP death mugshot
-	InInventory "PerkFist", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
+	InInventory "HXMOD_SmoothDoom2", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
 	// Vanilla mugshot
 	else { DrawMugShot "STF", 5, 8, -65; }
 
@@ -313,7 +283,7 @@ StatusBar Fullscreen, FullscreenOffsets
 	*
 	*	SEKRIT will reorganize HUD appropriately
 	*/
-	InInventory "BdMeleeAttacks", 1
+	InInventory "HXMOD_BDLite", 1
 	{
 		InInventory not "FlakCannon"
 		{
@@ -394,12 +364,12 @@ StatusBar Fullscreen, FullscreenOffsets
 		// KEYS BAR - Brutal Doom Lite (No Sekrit)
 			DrawImage "HXKEYS", -90, -54;
 
-			InInventory "SmoothBlueCard", 1 	{ DrawImage "HXKEYS0", -58, -51; }
-			InInventory "SmoothYellowCard", 1	{ DrawImage "HXKEYS1", -49, -51; }
-			InInventory "SmoothRedCard", 1 		{ DrawImage "HXKEYS2", -40, -51; }
-			InInventory "SmoothSkullBlu", 1		{ DrawImage "HXKEYS3", -31, -51; }
-			InInventory "SmoothSkullYel", 1		{ DrawImage "HXKEYS4", -22, -51; }
-			InInventory "SmoothSkullRed", 1		{ DrawImage "HXKEYS5", -13, -51; }
+			InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -51; }
+			InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -51; }
+			InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -51; }
+			InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -51; }
+			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -51; }
+			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -51; }
 		}
 		else
 		{
@@ -489,12 +459,12 @@ StatusBar Fullscreen, FullscreenOffsets
 		// KEYS BAR - Brutal Doom Lite (Sekrit!)
 			DrawImage "HXKEYS", -90, -60;
 
-			InInventory "SmoothBlueCard", 1 	{ DrawImage "HXKEYS0", -58, -57; }
-			InInventory "SmoothYellowCard", 1	{ DrawImage "HXKEYS1", -49, -57; }
-			InInventory "SmoothRedCard", 1 		{ DrawImage "HXKEYS2", -40, -57; }
-			InInventory "SmoothSkullBlu", 1		{ DrawImage "HXKEYS3", -31, -57; }
-			InInventory "SmoothSkullYel", 1		{ DrawImage "HXKEYS4", -22, -57; }
-			InInventory "SmoothSkullRed", 1		{ DrawImage "HXKEYS5", -13, -57; }
+			InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -57; }
+			InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -57; }
+			InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -57; }
+			InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -57; }
+			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -57; }
+			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -57; }
 		}
 	}
 	/*	Led's Generic Weapon Mod
@@ -532,38 +502,34 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,					-6, -12;
 
 		// Ammo Tally highlight equipped by type
-		IsSelected "Beretta"
+		UsesAmmo
 		{
+			IsSelected "Beretta"
+			{
 				DrawString HXGENERALFONTS, untranslated, "PIST", -73, -42, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo HX_LedsGenWep9mmAmmo, -6, -42;
-				// CURRENT AMMO PANEL
-				DrawImage "HXAMMO", -134, -33;
-				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
-		}
-		else UsesAmmo
-		{
-			WeaponAmmo RifleAmmo
+			}
+			else WeaponAmmo RifleAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -36;
 			}
-			WeaponAmmo Shell
+			else WeaponAmmo Shell
 			{
 				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -30;
 			}
-			WeaponAmmo Nato
+			else WeaponAmmo Nato
 			{
 				DrawString HXGENERALFONTS, untranslated, "NATO", -73, -24, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Nato,  -6, -24;
 			}
-			WeaponAmmo RocketAmmo
+			else WeaponAmmo RocketAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
 			}
-			WeaponAmmo Cell
+			else WeaponAmmo Cell
 			{
 				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
@@ -597,12 +563,12 @@ StatusBar Fullscreen, FullscreenOffsets
 	// KEYS BAR - Led's Generic Weapon Mod
 		DrawImage "HXKEYS", -90, -60;
 
-		InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -57; }
-		InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -57; }
-		InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -57; }
-		InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -57; }
-		InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -57; }
-		InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -57; }
+		InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -57; }
+		InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -57; }
+		InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -57; }
+		InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -57; }
+		InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -57; }
+		InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -57; }
 	}
 	/*	Vanilla
 	*
@@ -683,12 +649,12 @@ StatusBar Fullscreen, FullscreenOffsets
 	// KEYS BAR - Vanilla
 		DrawImage "HXKEYS", -90, -48;
 
-		InInventory "BlueCard", 1 		{ DrawImage "HXKEYS0", -58, -45; }
-		InInventory "YellowCard", 1		{ DrawImage "HXKEYS1", -49, -45; }
-		InInventory "RedCard", 1 		{ DrawImage "HXKEYS2", -40, -45; }
-		InInventory "BlueSkull", 1		{ DrawImage "HXKEYS3", -31, -45; }
-		InInventory "YellowSkull", 1	{ DrawImage "HXKEYS4", -22, -45; }
-		InInventory "RedSkull", 1		{ DrawImage "HXKEYS5", -13, -45; }
+		InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -45; }
+		InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -45; }
+		InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -45; }
+		InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -45; }
+		InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -45; }
+		InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -45; }
 	}
 
 
@@ -699,10 +665,12 @@ StatusBar Fullscreen, FullscreenOffsets
 
 		/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
 		*
+		*	ACTOR HXMOD_PerkSmootherWeaponsEnh: mod token
+		*
 		*	ACTOR HX_PerkSmooth_glovedfist
 		*	ACTOR HX_PerkSmooth_blackgloves: only display if "HX_PerkSmooth_glovedfist" is also found
 		*/
-		InInventory "ZPerkFist", 1
+		InInventory "HXMOD_PerkSmootherWeaponsEnh", 1
 		{
 			IsSelected "ZPerkFist"
 			{
@@ -721,10 +689,12 @@ StatusBar Fullscreen, FullscreenOffsets
 
 		/*	SmoothDoom 2.0 WIP
 		*
+		*	ACTOR HXMOD_SmoothDoom2: mod token
+		*
 		*	ACTOR HX_SmoothDoom2_blackgloves
 		*	ACTOR HX_SmoothDoom2_doom64
 		*/
-		else InInventory "PerkFist", 1
+		else InInventory "HXMOD_SmoothDoom2", 1
 		{
 			IsSelected "PerkFist"
 			{
@@ -790,7 +760,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // Stamina Bar
-	InInventory "IsTacticalClass", 1 && "HXSYS_StaminaStickyToken", 1
+	InInventory "HXSYS_StaminaStickyToken", 1
 	{
 		DrawImage "HXSTAMFR", -77 + center, -15;
 		DrawBar "HXSTAMOK", "HXSTAMNO", HXSYS_StaminaToken, horizontal, interpolate(8), -73 + center, -11;
@@ -813,6 +783,8 @@ StatusBar Fullscreen, FullscreenOffsets
 		// How bout dat ammo, yo?!
 		DrawString HXGENERALFONTM, HXRTCGold, ammo1tag, 2, 70, 0, alignment(left), drawshadow(1,1);
 		DrawString HXGENERALFONTM, HXRTCGold, ammo2tag, 2, 78, 0, alignment(left), drawshadow(1,1);
+		DrawKeyBar 3, horizontal, auto, 2, 86;
+		DrawKeyBar 3, horizontal, auto, 2, 94, 3;
 	}
 
 
@@ -829,7 +801,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 StatusBar InventoryFullscreen, FullscreenOffsets
 {
-	InInventory "IsTacticalClass", 1 && "HXSYS_StaminaStickyToken", 1
+	InInventory "HXSYS_StaminaStickyToken", 1
 	{
 		DrawInventoryBar Doom, alwaysshowcounter, 5, HXINDEXFONTS, -76 + center, -45, -50 + center, -25, untranslated;
 	}

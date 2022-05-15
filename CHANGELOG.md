@@ -2,6 +2,10 @@
 
 ## v0.12
 
+- **General:**
+  - More extensive mod compatibility has been created, and parts of the SBARINFO file are being converted to this system.  
+  This is likely an ongoing process, continuing into the future as I find more efficient ways to handle mod support.
+
 - **Top-Left Panels:**
   - Togglable "extended" version of the KIS tally, for those occasional maps that need 5 digits
 

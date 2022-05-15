@@ -2,34 +2,51 @@
 *	CVAR TOKENS
 */
 //	HXRTC HUD Platinum
-ACTOR HXCUS_AirMeterToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXCUS_ArmorSaveToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXCUS_ArmsBarToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXCUS_ArtifactToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXCUS_KISExtendedToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXCUS_KISToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXCUS_PowerupBoxToken: Inventory { Inventory.MaxAmount 2 }
-ACTOR HXCUS_PowerupTimerToken: Inventory { Inventory.MaxAmount 2 }
-ACTOR HXCUS_PTToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXCUS_WeaponIconToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXSYS_ArmorOverMaxToken: Inventory { Inventory.MaxAmount 100 }
-ACTOR HXSYS_DebugTagToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HXSYS_HealthOverMaxToken: Inventory { Inventory.MaxAmount 100 }
-ACTOR HXSYS_StaminaStickyToken: Inventory { Inventory.MaxAmount 15 }
-ACTOR HXSYS_StaminaToken: Inventory { Inventory.MaxAmount 110 }
+ACTOR HXCUS_AirMeterToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_ArmorSaveToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_ArmsBarToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_ArtifactToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_KISExtendedToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_KISToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_PowerupBoxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
+ACTOR HXCUS_PowerupTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
+ACTOR HXCUS_PTToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_WeaponIconToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXSYS_ArmorOverMaxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
+ACTOR HXSYS_DebugTagToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXSYS_HealthOverMaxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
+ACTOR HXSYS_StaminaStickyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 15 }
+ACTOR HXSYS_StaminaToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 110 }
 //	HX General Mod Support
-ACTOR HX_BerserkPowerUpToken: Inventory { Inventory.MaxAmount 1 }
-ACTOR HX_RadSuitPowerUpToken: Inventory { Inventory.MaxAmount 60 }
+ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
+ACTOR HX_InvisibilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_BlueCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BlueSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_RedCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_RedSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_YellowCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_YellowSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	BDLite 1.2
+ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Brutal Doom v21/Platinum
+ACTOR HXMOD_BrutalDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_BrutalDoomPlatinum: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Led's Generic Weapon Mod 20220412
-ACTOR HXMOD_LedsGenericWeaponMod: Inventory { Inventory.MaxAmount 1 }
+ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_LedsGenWep9mmAmmo: Ammo
 {
+	+INVENTORY.UNDROPPABLE
 	Inventory.MaxAmount 200
 	Ammo.BackpackMaxAmount 400
 }
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
-ACTOR HX_PerkSmooth_blackgloves: Inventory { Inventory.MaxAmount 1 }
+ACTOR HXMOD_PerkSmootherWeaponsEnh: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_PerkSmooth_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_PerkSmooth_glovedfist: Inventory { Inventory.MaxAmount 1 }
 //	SmoothDoom 2.0 WIP
-ACTOR HX_SmoothDoom2_blackgloves: Inventory { Inventory.MaxAmount 1 }
-ACTOR HX_SmoothDoom2_doom64: Inventory { Inventory.MaxAmount 1 }
+ACTOR HXMOD_SmoothDoom2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_SmoothDoom2_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_SmoothDoom2_doom64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
