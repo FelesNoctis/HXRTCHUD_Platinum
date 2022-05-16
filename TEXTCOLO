@@ -53,3 +53,13 @@ Console:
 Flat:
 	#FF6000
 }
+
+HXRTCRed
+{
+	#FF0000 #FF0000
+Console:
+	#000000 #FF0000 0 127
+	#FF6000 #FFFFFF 128 256
+Flat:
+	#FF0000
+}

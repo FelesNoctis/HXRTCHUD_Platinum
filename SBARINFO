@@ -312,32 +312,37 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PlasmaAmmo,	-6, -18;
 			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
 
-			// Ammo Tally highlight equipped by type
+			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
 			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+				
 				WeaponAmmo RifleAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -36;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
 				}
 				WeaponAmmo Shell
 				{
 					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -30;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo RocketAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -24, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -24;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo PlasmaAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -18, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -18;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 15;
 				}
 				// CURRENT AMMO PANEL
-				DrawImage "HXAMMO", -134, -33;
-				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
 				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 			}
 			else
@@ -402,38 +407,42 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo FlakAmmo,		-6, -18;
 			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
 
-			// Ammo Tally highlight equipped by type
+			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
 			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+
 				WeaponAmmo RifleAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -42;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 10;
 				}
 				WeaponAmmo Shell
 				{
 					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -36, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -36;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 2;
 				}
 				WeaponAmmo RocketAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -30;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 2;
 				}
 				WeaponAmmo PlasmaAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -24;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 15;
 				}
 				WeaponAmmo FlakAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "FLAK", -73, -18, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo FlakAmmo, -6, -18;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 				}
-				// CURRENT AMMO PANEL
-				DrawImage "HXAMMO", -134, -33;
-				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 			}
 			else
 			{
@@ -501,43 +510,50 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,				-6, -18;
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,					-6, -12;
 
-		// Ammo Tally highlight equipped by type
+		// Ammo Tally highlight and Current Ammo equipped by type
 		UsesAmmo
 		{
+			DrawImage "HXAMMO", -134, -33;
+			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+
 			IsSelected "Beretta"
 			{
 				DrawString HXGENERALFONTS, untranslated, "PIST", -73, -42, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo HX_LedsGenWep9mmAmmo, -6, -42;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 4;
 			}
 			else WeaponAmmo RifleAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -36;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
 			}
 			else WeaponAmmo Shell
 			{
 				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -30;
+				IsSelected "DoubleSG" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 1; }
+				else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2; }
 			}
 			else WeaponAmmo Nato
 			{
 				DrawString HXGENERALFONTS, untranslated, "NATO", -73, -24, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Nato,  -6, -24;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 30;
 			}
 			else WeaponAmmo RocketAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
 			}
 			else WeaponAmmo Cell
 			{
 				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+				IsSelected "BFG9K" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 40; }
+				else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15; }
 			}
-			// CURRENT AMMO PANEL
-			DrawImage "HXAMMO", -134, -33;
-			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
-			DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 		}
 		else
 		{
@@ -597,33 +613,38 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,	-6, -18;
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,		-6, -12;
 
-		// Ammo Tally highlight equipped by type
+		// Ammo Tally highlight and Current Ammo equipped by type
 		UsesAmmo
 		{
+			DrawImage "HXAMMO", -134, -33;
+			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+
 			WeaponAmmo Clip
 			{
 				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
 			}
 			WeaponAmmo Shell
 			{
 				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 1;
 			}
 			WeaponAmmo RocketAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
 			}
 			WeaponAmmo Cell
 			{
 				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15;
 			}
-			// CURRENT AMMO PANEL
-			DrawImage "HXAMMO", -134, -33;
-			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
-			DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 		}
 		else
 		{
