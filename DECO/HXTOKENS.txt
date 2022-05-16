@@ -33,6 +33,7 @@ ACTOR HX_YellowSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAm
 ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Brutal Doom v21/Platinum
 ACTOR HXMOD_BrutalDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_BrutalDoomBWCE: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoomPlatinum: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Led's Generic Weapon Mod 20220412
 ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
