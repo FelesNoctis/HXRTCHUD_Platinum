@@ -2,6 +2,8 @@
 
 ## General
 
+* __Co-Author and Tester__*
+Shockwave_S08
 * __Original HXRTC HUD__  
 _Hexereticdoom_
 * __HXRTC HUD Misc Updates__  
@@ -22,5 +24,5 @@ _Modern LCD-7, copyright 2013 by Style-7 - Sizenko Alexander_
 * __Cotton_Disciple__ (again) for their work being my inspiration to start this whole mess, as well as _sekrit dev stuff_
 * __EmeraldCoasttt__ for Brutal Doom Platinum, answering my dumb questions, and just being overall awesome
 * __Jekyll Grim Payne__ for confirming my suspicions that I was on the right path, because ACS can only do so much
-* __Shockwave_S08__ for sharing their work as a reference, pointing out improvements, and finding weapon actors, and basically being my partner in crime through this whole thing
+* __Shockwave_S08__ for sharing their work as a reference, pointing out improvements, and finding weapon actors, correcting my stupidity, and generally just putting up with me
 * __TonynUBares__ for wading through my ACS woes and implementation questions and showing me the token solution
