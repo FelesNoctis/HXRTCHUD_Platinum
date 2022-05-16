@@ -340,10 +340,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				{
 					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -18, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -18;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 15;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15;
 				}
-				// CURRENT AMMO PANEL
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
 			}
 			else
 			{
@@ -417,31 +415,31 @@ StatusBar Fullscreen, FullscreenOffsets
 				{
 					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -42;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 10;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
 				}
 				WeaponAmmo Shell
 				{
 					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -36, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -36;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 2;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo RocketAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -30;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 2;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo PlasmaAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -24;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, HXRTCRed, 15;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15;
 				}
 				WeaponAmmo FlakAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "FLAK", -73, -18, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo FlakAmmo, -6, -18;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0;
 				}
 			}
 			else
