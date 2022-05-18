@@ -35,6 +35,12 @@ ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoomBWCE: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoomPlatinum: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BrutalDoomPlat_glassslugs: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BrutalDoomPlat_laserguiderockets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BrutalDoomPlat_meatammo: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
+ACTOR HX_BrutalDoomPlat_needlegun: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BrutalDoomPlat_plasmashells: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BrutalDoomPlat_stickygrenades: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Led's Generic Weapon Mod 20220412
 ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_LedsGenWep9mmAmmo: Ammo

@@ -316,31 +316,31 @@ StatusBar Fullscreen, FullscreenOffsets
 			UsesAmmo
 			{
 				DrawImage "HXAMMO", -134, -33;
-				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
 				
 				WeaponAmmo RifleAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -36;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 				}
 				WeaponAmmo Shell
 				{
 					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -30;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo RocketAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -24, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -24;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo PlasmaAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -18, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -18;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15;
 				}
 			}
 			else
@@ -409,37 +409,37 @@ StatusBar Fullscreen, FullscreenOffsets
 			UsesAmmo
 			{
 				DrawImage "HXAMMO", -134, -33;
-				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
 
 				WeaponAmmo RifleAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -42;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 				}
 				WeaponAmmo Shell
 				{
 					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -36, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -36;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo RocketAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -30;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 				}
 				WeaponAmmo PlasmaAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PlasmaAmmo, -6, -24;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15;
 				}
 				WeaponAmmo FlakAmmo
 				{
 					DrawString HXGENERALFONTS, untranslated, "FLAK", -73, -18, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo FlakAmmo, -6, -18;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
 				}
 			}
 			else
@@ -473,6 +473,298 @@ StatusBar Fullscreen, FullscreenOffsets
 			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -57; }
 			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -57; }
 		}
+	}
+	/*	Brutal Doom Platinum
+	*
+	*	The mod that inspired the overhaul of one of my favorite HUDs in the first place  ~Felis
+	*/
+	InInventory "HXMOD_BrutalDoom", 1 && "HXMOD_BrutalDoomPlatinum", 1
+	{
+	// AMMO TALLIES PANEL - Brutal Doom Platinum
+		DrawImage "HXAMMTOP", -78, -59;
+		DrawImage "HXAMMROW", -78, -49;
+		DrawImage "HXAMMROW", -78, -43;
+		DrawImage "HXAMMROW", -78, -37;
+		DrawImage "HXAMMROW", -78, -31;
+		DrawImage "HXAMMROW", -78, -25;
+		DrawImage "HXAMMROW", -78, -19;
+		DrawImage "HXAMMBOT", -78, -13;
+
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"PIST", -73, -54, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -48, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -42, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -36, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -30, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SOUL", -73, -24, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -18, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Clip1,			horizontal, interpolate(64), -56, -54;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoShell,		horizontal, interpolate(64), -56, -48;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Clip2,			horizontal, interpolate(64), -56, -42;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoRocket,		horizontal, interpolate(64), -56, -36;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoCell,		horizontal, interpolate(64), -56, -30;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo SoulAmmo,		horizontal, interpolate(64), -56, -24;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo Gas,			horizontal, interpolate(64), -56, -18;
+		DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, interpolate(64), -56, -12;
+
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip1,			-6, -54;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoShell,		-6, -48;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip2,			-6, -42;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoRocket,	-6, -36;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoCell,		-6, -30;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo SoulAmmo,		-6, -24;
+		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Gas,			-6, -18;
+		DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+
+		// Ammo Tally highlight and Current Ammo equipped by type
+		UsesAmmo
+		{
+			WeaponAmmo Clip1
+			{
+				DrawString HXGENERALFONTS, untranslated, "PIST", -73, -54, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip1, -6, -54;
+
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
+
+				IsSelected "BrutalPistol"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 4; }
+				IsSelected "DualPistols"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 8; }
+				IsSelected "BrutalSMG"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+				IsSelected "DualSMG"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+				IsSelected "MP40"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 8; }
+				IsSelected "DualMP40"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 16; }
+			}
+			WeaponAmmo AmmoShell
+			{
+				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -48, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoShell, -6, -48;
+
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
+
+				IsSelected "AssaultShotgun"
+				{
+					InInventory not "HX_BrutalDoomPlat_plasmashells"
+											{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 4; }
+					else					{ DrawNumber 4, HXSTATUSFONT, HXRTCBDPPlasma, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 4;
+												DrawString HXGENERALFONTM, HXRTCBDPPlasma, "AMMO", -90, -12, 0; }
+				}
+				IsSelected "Shot_Gun"
+				{
+					InInventory not "HX_BrutalDoomPlat_glassslugs"
+											{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+					else					{ DrawNumber 4, HXSTATUSFONT, HXRTCBDPGlass, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+												DrawString HXGENERALFONTM, HXRTCBDPGlass, "AMMO", -90, -12, 0; }
+				}
+				IsSelected "SSG"
+				{
+					InInventory not "UsingDragonBreath"
+											{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 1; }
+					else					{ DrawNumber 4, HXSTATUSFONT, HXRTCBDPDragon, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 1;
+												DrawString HXGENERALFONTM, HXRTCBDPDragon, "AMMO", -90, -12, 0; }
+				}
+			}
+			WeaponAmmo Clip2
+			{
+				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip2, -6, -42;
+
+				IsSelected not "Machinegun", "MiniGun"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
+				}
+				else { DrawImage "HXAMMODU", -134, -33; }
+
+				IsSelected "Machinegun"
+				{						// Left Ammo
+											DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -130, -28;
+											DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -98, -29, 0, HXRTCRed, 50;
+										// Right Ammo
+											InInventory "FiredMGGrenade" { DrawNumber 1, HXSTATUSFONT, HXRTCRed, 0, interpolate(128), -84, -29; }
+											else InInventory not "AmmoRocket", 1 { DrawNumber 1, HXSTATUSFONT, HXRTCRed, 0, interpolate(128), -84, -29; }
+											else
+											{
+												DrawImage "HXAMDROK", -87, -28;
+												DrawNumber 1, HXSTATUSFONT, untranslated, 1, interpolate(128), -84, -29;
+											}
+
+				}
+				IsSelected "Rifle"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+				IsSelected "DualRifles"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+				IsSelected "MiniGun"
+				{						// Left Ammo
+											DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -130, -28;
+											DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -98, -29, 0, HXRTCRed, 50;
+										// Right Ammo
+											DrawBar "HXAMDROK", "HXAMDUNO", ammo2, vertical, interpolate(64), -87, -28;
+											DrawNumber 1, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 0;
+				}
+				IsSelected "Nailgun"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 8; }
+			}
+			WeaponAmmo AmmoRocket
+			{	
+				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -36, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoRocket, -6, -36;
+
+				IsSelected not "Machinegun"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
+				}
+				IsSelected "Rocket_Launcher"
+				{
+					InInventory not "HX_BrutalDoomPlat_laserguiderockets"
+											{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+					else					{ DrawNumber 4, HXSTATUSFONT, HXRTCDarkRed, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+												DrawString HXGENERALFONTM, HXRTCDarkRed, "AMMO", -90, -12, 0; }
+				}
+				IsSelected "GrenadeLauncher"
+				{
+					InInventory not "HX_BrutalDoomPlat_stickygrenades"
+											{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 0; }
+					else					{ DrawNumber 4, HXSTATUSFONT, HXRTCBDPStickyGrenades, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 0;
+												DrawString HXGENERALFONTM, HXRTCBDPStickyGrenades, "AMMO", -90, -12, 0; }
+				}
+			}
+			WeaponAmmo AmmoCell
+			{
+				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -30, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoCell, -6, -30;
+
+				IsSelected not "BFG10k"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					IsSelected not "BIG_FUCKING_GUN" { DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29; }
+				}
+				else { DrawImage "HXAMMODU", -134, -33; }
+
+				IsSelected "Plasma_Gun"
+				{
+					InInventory not "HX_BrutalDoomPlat_needlegun"
+											{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
+					else					{ DrawNumber 4, HXSTATUSFONT, HXRTCBDPNeedler, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 15;
+												DrawString HXGENERALFONTM, HXRTCBDPNeedler, "AMMO", -90, -12, 0; }
+				}
+				IsSelected "DualPlasmaRifles"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 30; }
+				IsSelected "RailGun"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+				IsSelected "Freezer"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
+				IsSelected "BIG_FUCKING_GUN"
+				{
+												DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+												DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 100;
+				}
+				IsSelected "BFG10k"
+				{							// Left Ammo
+												DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -130, -28;
+												DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -98, -29, 0, HXRTCRed, 100;
+											// Right Ammo
+												DrawBar "HXAMDROK", "HXAMDUNO", ammo2, vertical, interpolate(64), -87, -28;
+												DrawNumber 1, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 0;
+				}
+			}
+			WeaponAmmo SoulAmmo
+			{
+				DrawString HXGENERALFONTS, untranslated, "SOUL", -73, -24, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo SoulAmmo, -6, -24;
+
+				IsSelected not "HellishMissileLauncher"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 66;
+				}
+			}
+			WeaponAmmo Gas
+			{
+				DrawString HXGENERALFONTS, untranslated, "FLAM", -73, -18, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Gas, -6, -18;
+
+				IsSelected not "HellishMissileLauncher"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50;
+				}
+			}
+			WeaponAmmo GrenadeAmmo
+			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				DrawString HXGENERALFONTS, untranslated, "GREN", -73, -12, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo GrenadeAmmo, -6, -12;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+			}
+			WeaponAmmo MeatAmmo
+			{
+				DrawString HXGENERALFONTS, untranslated, "PIST", -73, -54, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip1, -6, -54;
+
+				DrawImage "HXAMMEAT", -144, -33;
+
+				// Left Ammo
+					DrawBar "HXAMDLOK", "HXAMDUNO", HX_BrutalDoomPlat_meatammo, vertical, interpolate(64), -140, -28;
+					DrawNumber 3, HXSTATUSFONT, HXRTCRed, HX_BrutalDoomPlat_meatammo, interpolate(128), -108, -29, 0, HXRTCDarkRed, 25, HXRTCLightRed, 75;
+				// Right Ammo
+					DrawBar "HXAMDROK", "HXAMDUNO", ammo1, vertical, interpolate(64), -87, -28;
+					DrawNumber 2, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 4;
+					DrawString HXGENERALFONTS, untranslated, "PST", -89, -12, 0; 
+			}
+			IsSelected "NukeLauncher"
+			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 0;
+			}
+			IsSelected "HellishMissileLauncher"
+			{
+				DrawImage "HXAMMODW", -154, -33;
+				// Left Ammo
+					DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -150, -28;
+					DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 66;
+				// Right Ammo
+					DrawBar "HXAMDROK", "HXAMDUNO", ammo2, vertical, interpolate(64), -87, -28;
+					DrawNumber 3, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 66;
+			}
+			IsSelected "CyberdemonsMissileLauncher", "MastermindChaingun"
+			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+			}
+		}
+		else
+		{
+			// Ammoless
+			DrawImage "HXNOAVAI", -134, -33;
+			IsSelected "DSweap" { DrawString HXSTATUSFONT, HXRTCDarkRed, "6UT5", -84, -29, 0; }
+		}
+	// ARMS BAR - Brutal Doom Platinum
+		InInventory "HXCUS_ArmsBarToken", 1
+		{
+			DrawImage "HXARMS", -90, -85;
+
+			DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -81;
+			DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -81;
+			DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -81;
+			DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -81;
+			DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -81;
+			DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -81;
+			DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -81;
+			DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -81;
+			DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -81;
+			DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -81;
+		}
+	// KEYS BAR - Brutal Doom Platinum
+		DrawImage "HXKEYS", -90, -72;
+
+		InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -69; }
+		InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -69; }
+		InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -69; }
+		InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -69; }
+		InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -69; }
+		InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -69; }
 	}
 	/*	Led's Generic Weapon Mod
 	*
@@ -512,45 +804,45 @@ StatusBar Fullscreen, FullscreenOffsets
 		UsesAmmo
 		{
 			DrawImage "HXAMMO", -134, -33;
-			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
 
 			IsSelected "Beretta"
 			{
 				DrawString HXGENERALFONTS, untranslated, "PIST", -73, -42, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo HX_LedsGenWep9mmAmmo, -6, -42;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 4;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 4;
 			}
 			else WeaponAmmo RifleAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RifleAmmo, -6, -36;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 			}
 			else WeaponAmmo Shell
 			{
 				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -30;
-				IsSelected "DoubleSG" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 1; }
-				else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2; }
+				IsSelected "DoubleSG" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 1; }
+				else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
 			}
 			else WeaponAmmo Nato
 			{
 				DrawString HXGENERALFONTS, untranslated, "NATO", -73, -24, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Nato,  -6, -24;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 30;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 30;
 			}
 			else WeaponAmmo RocketAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 			}
 			else WeaponAmmo Cell
 			{
 				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
-				IsSelected "BFG9K" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 40; }
-				else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15; }
+				IsSelected "BFG9K" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 40; }
+				else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
 			}
 		}
 		else
@@ -615,33 +907,31 @@ StatusBar Fullscreen, FullscreenOffsets
 		UsesAmmo
 		{
 			DrawImage "HXAMMO", -134, -33;
-			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -128, -28;
+			DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
 
 			WeaponAmmo Clip
 			{
 				DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 10;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 			}
 			WeaponAmmo Shell
 			{
 				DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 1;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 1;
 			}
 			WeaponAmmo RocketAmmo
 			{
 				DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 2;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 			}
 			WeaponAmmo Cell
 			{
 				DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 				DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -82, -29, 0, HXRTCRed, 15;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15;
 			}
 		}
 		else
@@ -682,6 +972,21 @@ StatusBar Fullscreen, FullscreenOffsets
 	{
 		DrawImage "HXWEAPON", -134, -53;
 
+		/*	Brutal Doom Platinum
+		*
+		*	ACTOR HXMOD_BrutalDoomPlatinum: mod token
+		*
+		*	ACTOR MeatAmmo
+		*/
+		InInventory "HXMOD_BrutalDoomPlatinum", 1
+		{
+			InInventory "MeatAmmo" { DrawImage "", -112, -43, center, 36, 12; }
+			else
+			{	// Everything not a meat shield
+				DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst;
+			}
+		}
+
 		/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
 		*
 		*	ACTOR HXMOD_PerkSmootherWeaponsEnh: mod token
@@ -689,7 +994,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		*	ACTOR HX_PerkSmooth_glovedfist
 		*	ACTOR HX_PerkSmooth_blackgloves: only display if "HX_PerkSmooth_glovedfist" is also found
 		*/
-		InInventory "HXMOD_PerkSmootherWeaponsEnh", 1
+		else InInventory "HXMOD_PerkSmootherWeaponsEnh", 1
 		{
 			IsSelected "ZPerkFist"
 			{
