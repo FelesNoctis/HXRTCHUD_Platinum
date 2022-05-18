@@ -36,6 +36,7 @@ ACTOR HXMOD_BrutalDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1
 ACTOR HXMOD_BrutalDoomBWCE: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoomPlatinum: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_glassslugs: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BrutalDoomPlat_grenadetype: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 3 }
 ACTOR HX_BrutalDoomPlat_laserguiderockets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_meatammo: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
 ACTOR HX_BrutalDoomPlat_needlegun: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

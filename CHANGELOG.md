@@ -17,6 +17,7 @@
   - **Arms Bar** now always shows all ten (1-0) digits. This is to simplify mod support, but may be subject to change
 
 - **Mod Support:**
+  - Brutal Doom Platinum
   - Led's Generic Weapon Mod
 
 ## v0.11

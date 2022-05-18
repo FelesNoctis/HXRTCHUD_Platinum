@@ -223,6 +223,12 @@ StatusBar Fullscreen, FullscreenOffsets
 
 	// SmoothDoom 2.0 WIP death mugshot
 	InInventory "HXMOD_SmoothDoom2", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
+	// Brutal Doom Platinum
+	else InInventory "HXMOD_BrutalDoom", 1 && "HXMOD_BrutalDoomPlatinum", 1
+	{
+		InInventory GenderFemale, 1 { drawmugshot "GAL", 5, custom, 8, -65; }
+		else { DrawMugShot "STF", 5, 8, -65; }
+	}
 	// Vanilla mugshot
 	else { DrawMugShot "STF", 5, 8, -65; }
 
@@ -497,7 +503,11 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -30, 0, alignment(left);
 		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SOUL", -73, -24, 0, alignment(left);
 		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -18, 0, alignment(left);
-		DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+		DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left);
+		InInventory "HX_BrutalDoomPlat_grenadetype", 3			{ DrawString HXGENERALFONTS, HXRTCBDPPlasma, "VOID", -73, -12, 0, alignment(left); }
+		else InInventory "HX_BrutalDoomPlat_grenadetype", 2		{ DrawString HXGENERALFONTS, HXRTCYellow, "PIPE", -73, -12, 0, alignment(left); }
+		else InInventory "HX_BrutalDoomPlat_grenadetype", 1		{ DrawString HXGENERALFONTS, HXRTCBDPStickyGrenades, "FREZ", -73, -12, 0, alignment(left); }
+		else InInventory not "HX_BrutalDoomPlat_grenadetype"	{ DrawString HXGENERALFONTS, HXRTCGold, "CLST", -73, -12, 0, alignment(left); }
 
 		DrawBar "HXAMMON", "HXAMMOFF", ammo Clip1,			horizontal, interpolate(64), -56, -54;
 		DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoShell,		horizontal, interpolate(64), -56, -48;
@@ -515,7 +525,10 @@ StatusBar Fullscreen, FullscreenOffsets
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoCell,		-6, -30;
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo SoulAmmo,		-6, -24;
 		DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Gas,			-6, -18;
-		DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+		InInventory "HX_BrutalDoomPlat_grenadetype", 3			{ DrawNumber 4, HXINDEXFONTS, HXRTCBDPPlasma, ammo GrenadeAmmo, -6, -12; }
+		else InInventory "HX_BrutalDoomPlat_grenadetype", 2		{ DrawNumber 4, HXINDEXFONTS, HXRTCYellow, ammo GrenadeAmmo, -6, -12; }
+		else InInventory "HX_BrutalDoomPlat_grenadetype", 1		{ DrawNumber 4, HXINDEXFONTS, HXRTCBDPStickyGrenades, ammo GrenadeAmmo, -6, -12; }
+		else InInventory not "HX_BrutalDoomPlat_grenadetype"	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo GrenadeAmmo, -6, -12; }
 
 		// Ammo Tally highlight and Current Ammo equipped by type
 		UsesAmmo
@@ -692,9 +705,27 @@ StatusBar Fullscreen, FullscreenOffsets
 			{
 				DrawImage "HXAMMO", -134, -33;
 				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
-				DrawString HXGENERALFONTS, untranslated, "GREN", -73, -12, 0, alignment(left);
-				DrawNumber 4, HXINDEXFONTS, untranslated, ammo GrenadeAmmo, -6, -12;
-				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+
+				InInventory "HX_BrutalDoomPlat_grenadetype", 3
+				{
+					DrawNumber 4, HXSTATUSFONT, HXRTCBDPPlasma, ammo GrenadeAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+					DrawString HXGENERALFONTM, HXRTCBDPPlasma, "AMMO", -90, -12, 0;
+				}
+				else InInventory "HX_BrutalDoomPlat_grenadetype", 2
+				{
+					DrawNumber 4, HXSTATUSFONT, HXRTCYellow, ammo GrenadeAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+					DrawString HXGENERALFONTM, HXRTCYellow, "AMMO", -90, -12, 0;
+				}
+				else InInventory "HX_BrutalDoomPlat_grenadetype", 1
+				{
+					DrawNumber 4, HXSTATUSFONT, HXRTCBDPStickyGrenades, ammo GrenadeAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+					DrawString HXGENERALFONTM, HXRTCBDPStickyGrenades, "AMMO", -90, -12, 0;
+				}
+				else InInventory not "HX_BrutalDoomPlat_grenadetype"
+				{
+					DrawNumber 4, HXSTATUSFONT, HXRTCGold, ammo GrenadeAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+					DrawString HXGENERALFONTM, HXRTCGold, "AMMO", -90, -12, 0;
+				}
 			}
 			WeaponAmmo MeatAmmo
 			{
