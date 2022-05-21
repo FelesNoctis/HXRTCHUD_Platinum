@@ -13,6 +13,9 @@
   - New stamina bar. Appears when needed, sticks for roughly 3 seconds after completely refilling, then disappears
   - **Inventory Bar** updated to reposition above stamina bar when both are active
 
+- **Bottom-Left Panels:**
+  - RIP female mugshots for mods that support the swap. Apparently the flag for getting it to display isn't supported by Zandronum.
+
 - **Bottom-Right Panels:**
   - **Arms Bar** now always shows all ten (1-0) digits. This is to simplify mod support, but may be subject to change
 

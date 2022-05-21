@@ -12,20 +12,23 @@ ACTOR HXCUS_PowerupBoxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmo
 ACTOR HXCUS_PowerupTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 ACTOR HXCUS_PTToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_WeaponIconToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXSYS_AltitudeMetersToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
 ACTOR HXSYS_ArmorOverMaxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
 ACTOR HXSYS_DebugTagToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXSYS_HealthOverMaxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
 ACTOR HXSYS_StaminaStickyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 15 }
 ACTOR HXSYS_StaminaToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 110 }
+ACTOR HXSYS_TransformationHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXSYS_VehicleHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	HX General Mod Support
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 29 }
-ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 119 }
-ACTOR HX_InvisibilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 59 }
-ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 29 }
-ACTOR HX_QuadDamagePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 29 }
-ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 59 }
-/* ACTOR HX_ShieldPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 59 } */
+ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
+ACTOR HX_InvisibilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_QuadDamagePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_ShieldPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BlueCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BlueSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_RedCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
@@ -40,6 +43,7 @@ ACTOR HXMOD_BrutalDoomBWCE: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmou
 ACTOR HXMOD_BrutalDoomPlatinum: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_glassslugs: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_grenadetype: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 3 }
+ACTOR HX_BrutalDoomPlat_helllaserguiderockets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_laserguiderockets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_meatammo: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
 ACTOR HX_BrutalDoomPlat_meatshield: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
