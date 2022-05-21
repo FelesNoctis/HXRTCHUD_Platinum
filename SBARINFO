@@ -861,6 +861,10 @@ StatusBar Fullscreen, FullscreenOffsets
 				// Ammoless
 				DrawImage "HXNOAVAI", -134, -33;
 				IsSelected "DSweap" { DrawString HXSTATUSFONT, HXRTCDarkRed, "6UT5", -84, -29, 0; }
+				InInventory "FistsSelected", 1 && "PowerStrength", 1
+				{
+					InInventory not "NoFatality" { DrawString HXSTATUSFONT, HXRTCDarkRed, "TEAr", -84, -29, 0; }
+				}
 			}
 		// ARMS BAR - Brutal Doom Platinum
 			InInventory "HXCUS_ArmsBarToken", 1
