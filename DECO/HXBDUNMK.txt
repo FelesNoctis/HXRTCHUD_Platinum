@@ -1,0 +1,51 @@
+/*
+*	These tokens are used to facilitate the Unmaker's effects over the HUD during a hell rush
+*/
+// Master Proces Token
+ACTOR HX_BDP_UnmakingSanity: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+// Level Timer
+ACTOR HX_BDP_UTime1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99 }
+ACTOR HX_BDP_UTime2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99 }
+ACTOR HX_BDP_UTime3: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99 }
+// Level Stats
+ACTOR HX_BDP_UKills: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
+ACTOR HX_BDP_UItems: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
+ACTOR HX_BDP_USecrets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
+ACTOR HX_BDP_UTotalMonsters: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
+ACTOR HX_BDP_UTotalItems: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
+ACTOR HX_BDP_UTotalSecrets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
+// Powerups
+ACTOR HX_BDP_UBuff1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_BDP_UBuff2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_BDP_UBuff3: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_BDP_UBuff4: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_BDP_UBuff5: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_BDP_UBuff6: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+// Character Stats Panels
+ACTOR HX_BDP_UAir: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99 }
+ACTOR HX_BDP_URage: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_BDP_UArmor: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+// Ammo Tallies
+ACTOR HX_BDP_UClip1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HX_BDP_UShell: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HX_BDP_UClip2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HX_BDP_URocket: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HX_BDP_UCell: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HX_BDP_UGas: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }	
+// Grenades
+ACTOR HX_BDP_UGrenade1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UGrenade2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UGrenade3: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UGrenade4: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UGrenadeR: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 3 }
+// Weaponslots
+ACTOR HX_BDP_UWeaponslot1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot3: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot4: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot5: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot6: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot7: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot8: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot9: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }
+ACTOR HX_BDP_UWeaponslot0: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9 }

@@ -23,63 +23,66 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // LEVEL STATS (TIME, KILLS, ITEMS & SECRETS)
-	InInventory "HXCUS_KISToken"
+	InInventory not "HXSYS_NormalHUDKillerToken", 1
 	{
-		InInventory "HXCUS_PTToken"
+		InInventory "HXCUS_KISToken"
 		{
-			/* DrawImage "HXPTKIS", 2, 2; */
+			InInventory "HXCUS_PTToken"
+			{
+				/* DrawImage "HXPTKIS", 2, 2; */
+				DrawImage "HXPT", 2, 2;
+				DrawString CONFONT, white, time, 9, 6;
+
+				InInventory not "HXCUS_KISExtendedToken"
+				{
+					DrawImage "HXKIS", 2, 19;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 24;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 30;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 36;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 24;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 30;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 36;
+				}
+				else
+				{
+					DrawImage "HXKISE", 2, 19;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, kills, 44, 24;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, items, 44, 30;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, secrets, 44, 36;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 24;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 30;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 36;
+				}
+			}
+			else
+			{
+				InInventory not "HXCUS_KISExtendedToken"
+				{
+					DrawImage "HXKIS", 2, 2;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 7;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 13;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 19;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
+				}
+				else
+				{
+					DrawImage "HXKISE", 2, 2;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, kills, 44, 7;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, items, 44, 13;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, secrets, 44, 19;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
+					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
+				}
+			}
+		}
+		else InInventory "HXCUS_PTToken"
+		{
 			DrawImage "HXPT", 2, 2;
 			DrawString CONFONT, white, time, 9, 6;
-
-			InInventory not "HXCUS_KISExtendedToken"
-			{
-				DrawImage "HXKIS", 2, 19;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 24;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 30;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 36;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 24;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 30;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 36;
-			}
-			else
-			{
-				DrawImage "HXKISE", 2, 19;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, kills, 44, 24;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, items, 44, 30;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, secrets, 44, 36;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 24;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 30;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 36;
-			}
 		}
-		else
-		{
-			InInventory not "HXCUS_KISExtendedToken"
-			{
-				DrawImage "HXKIS", 2, 2;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 7;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 13;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 19;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
-				DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
-			}
-			else
-			{
-				DrawImage "HXKISE", 2, 2;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, kills, 44, 7;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, items, 44, 13;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, secrets, 44, 19;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
-				DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
-			}
-		}
-	}
-	else InInventory "HXCUS_PTToken"
-	{
-		DrawImage "HXPT", 2, 2;
-		DrawString CONFONT, white, time, 9, 6;
 	}
 
 
@@ -91,173 +94,176 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 // POWERUP PANELS
-/*	Standard */
-	InInventory "HXCUS_PowerupBoxToken", 2	// Always
+	InInventory not "HXSYS_NormalHUDKillerToken", 1
 	{
-		// Background panels + inactive icons
-		DrawImage "HXINVUNO", -98, 2;
-		DrawImage "HXBLURNO", -74, 2;
-		DrawImage "HXRADSNO", -50, 2;
-		DrawImage "HXLGHTNO", -26, 2;		
-		// Active icon + border
-		InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2; }
-		InInventory "HX_InvisibilityPowerUpToken" { DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2; }
-		InInventory "HX_RadSuitPowerUpToken" { DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; }		
-		InInventory "HX_InfraredPowerUpToken" { DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
-	}
-	else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
-	{
-		InInventory "HX_InvulnerabilityPowerUpToken"
-		{
-			DrawImage "HXINVUNO", -98, 2;
-			DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2;
-		}
-		InInventory "HX_InvisibilityPowerUpToken"
-		{
-			DrawImage "HXBLURNO", -74, 2;
-			DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2;
-		}
-		InInventory "HX_RadSuitPowerUpToken"
-		{
-			DrawImage "HXRADSNO", -50, 2;
-			DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2;
-		}
-		InInventory "HX_InfraredPowerUpToken"
-		{
-			DrawImage "HXLGHTNO", -26, 2;
-			DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2;
-		}
-	}
-/*	Brutal Doom Platinum */
-	InInventory "HXMOD_BrutalDoomPlatinum", 1
-	{
+	/*	Standard */
 		InInventory "HXCUS_PowerupBoxToken", 2	// Always
 		{
 			// Background panels + inactive icons
-			DrawImage "HXBDSHNO", -146, 2;
-			DrawImage "HXQUADNO", -122, 2;
+			DrawImage "HXINVUNO", -98, 2;
+			DrawImage "HXBLURNO", -74, 2;
+			DrawImage "HXRADSNO", -50, 2;
+			DrawImage "HXLGHTNO", -26, 2;		
 			// Active icon + border
-			InInventory "HX_HastePowerUpToken" { DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -146, 2; }
-			InInventory "HX_QuadDamagePowerUpToken" { DrawBar "HXQUADOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2; }
+			InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2; }
+			InInventory "HX_InvisibilityPowerUpToken" { DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2; }
+			InInventory "HX_RadSuitPowerUpToken" { DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; }		
+			InInventory "HX_InfraredPowerUpToken" { DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
 		}
 		else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
 		{
-			InInventory "HX_HastePowerUpToken"
+			InInventory "HX_InvulnerabilityPowerUpToken"
 			{
-				DrawImage "HXBDSHNO", -146, 2;	// Background panel + inactive icon
-				DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -146, 2;	// Active icon + border
+				DrawImage "HXINVUNO", -98, 2;
+				DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2;
 			}
-			InInventory "HX_QuadDamagePowerUpToken"
+			InInventory "HX_InvisibilityPowerUpToken"
 			{
-				DrawImage "HXQUADNO", -122, 2;	// Background panel + inactive icon
-				DrawBar "HXQUADOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2;	// Active icon + border
+				DrawImage "HXBLURNO", -74, 2;
+				DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2;
+			}
+			InInventory "HX_RadSuitPowerUpToken"
+			{
+				DrawImage "HXRADSNO", -50, 2;
+				DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2;
+			}
+			InInventory "HX_InfraredPowerUpToken"
+			{
+				DrawImage "HXLGHTNO", -26, 2;
+				DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2;
 			}
 		}
-	}
+	/*	Brutal Doom Platinum */
+		InInventory "HXMOD_BrutalDoomPlatinum", 1
+		{
+			InInventory "HXCUS_PowerupBoxToken", 2	// Always
+			{
+				// Background panels + inactive icons
+				DrawImage "HXBDSHNO", -146, 2;
+				DrawImage "HXQUADNO", -122, 2;
+				// Active icon + border
+				InInventory "HX_HastePowerUpToken" { DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -146, 2; }
+				InInventory "HX_QuadDamagePowerUpToken" { DrawBar "HXQUADOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2; }
+			}
+			else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
+			{
+				InInventory "HX_HastePowerUpToken"
+				{
+					DrawImage "HXBDSHNO", -146, 2;	// Background panel + inactive icon
+					DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -146, 2;	// Active icon + border
+				}
+				InInventory "HX_QuadDamagePowerUpToken"
+				{
+					DrawImage "HXQUADNO", -122, 2;	// Background panel + inactive icon
+					DrawBar "HXQUADOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2;	// Active icon + border
+				}
+			}
+		}
 
 // POWERUP TIME INDICATORS
-/*	Standard */
-	InInventory "HXCUS_PowerupTimerToken", 2	// Always
-	{
-		// Background panels
-		DrawImage "HXBUFFT", -98, 25;
-		DrawImage "HXBUFFT", -74, 25;
-		DrawImage "HXBUFFT", -50, 25;
-		DrawImage "HXBUFFT", -26, 25;
-		// Active timers
-		InInventory "HX_InvulnerabilityPowerUpToken"
-		{
-			DrawImage "HXINVUT", -98, 25;
-			DrawImage "HXSML058", -95, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -77, 29;
-		}
-		InInventory "HX_InvisibilityPowerUpToken"
-		{
-			DrawImage "HXBLURT", -74, 25;
-			DrawImage "HXSML058", -71, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpToken, -53, 29;
-		}
-		InInventory "HX_RadSuitPowerUpToken"
-		{
-			DrawImage "HXRADST", -50, 25;
-			DrawImage "HXSML058", -47, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
-		}
-		InInventory "HX_InfraredPowerUpToken"
-		{
-			DrawImage "HXLGHTT", -26, 25;
-			DrawImage "HXSML058", -23, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
-		}
-	}
-	else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
-	{
-		InInventory "HX_InvulnerabilityPowerUpToken"
-		{
-			DrawImage "HXBUFFT", -98, 25;
-			DrawImage "HXINVUT", -98, 25;
-			DrawImage "HXSML058", -95, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -77, 29;
-		}
-		InInventory "HX_InvisibilityPowerUpToken"
-		{
-			DrawImage "HXBUFFT", -74, 25;
-			DrawImage "HXBLURT", -74, 25;
-			DrawImage "HXSML058", -71, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpToken, -53, 29;
-		}
-		InInventory "HX_RadSuitPowerUpToken"
-		{
-			DrawImage "HXBUFFT", -50, 25;
-			DrawImage "HXRADST", -50, 25;
-			DrawImage "HXSML058", -47, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
-		}
-		InInventory "HX_InfraredPowerUpToken"
-		{
-			DrawImage "HXBUFFT", -26, 25;
-			DrawImage "HXLGHTT", -26, 25;
-			DrawImage "HXSML058", -23, 29;
-			DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
-		}
-	}
-/*	Brutal Doom Platinum */
-	InInventory "HXMOD_BrutalDoomPlatinum", 1
-	{
+	/*	Standard */
 		InInventory "HXCUS_PowerupTimerToken", 2	// Always
 		{
 			// Background panels
-			DrawImage "HXBUFFT", -146, 25;
-			DrawImage "HXBUFFT", -122, 25;
+			DrawImage "HXBUFFT", -98, 25;
+			DrawImage "HXBUFFT", -74, 25;
+			DrawImage "HXBUFFT", -50, 25;
+			DrawImage "HXBUFFT", -26, 25;
 			// Active timers
-			InInventory "HX_HastePowerUpToken"
+			InInventory "HX_InvulnerabilityPowerUpToken"
 			{
-				DrawImage "HXBDSHT", -146, 25;	// Active timer border
-				DrawImage "HXSML058", -143, 29;	// Active colon character
-				DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpToken, -125, 29;	// Time remaining
+				DrawImage "HXINVUT", -98, 25;
+				DrawImage "HXSML058", -95, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -77, 29;
 			}
-			InInventory "HX_QuadDamagePowerUpToken"
+			InInventory "HX_InvisibilityPowerUpToken"
 			{
-				DrawImage "HXQUADT", -122, 25;	// Active timer border
-				DrawImage "HXSML058", -119, 29;	// Active colon character
-				DrawNumber 3, HXINDEXFONTS, untranslated, HX_QuadDamagePowerUpToken, -101, 29;	// Time remaining
+				DrawImage "HXBLURT", -74, 25;
+				DrawImage "HXSML058", -71, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpToken, -53, 29;
+			}
+			InInventory "HX_RadSuitPowerUpToken"
+			{
+				DrawImage "HXRADST", -50, 25;
+				DrawImage "HXSML058", -47, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
+			}
+			InInventory "HX_InfraredPowerUpToken"
+			{
+				DrawImage "HXLGHTT", -26, 25;
+				DrawImage "HXSML058", -23, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
 			}
 		}
 		else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
 		{
-			InInventory "HX_HastePowerUpToken"
+			InInventory "HX_InvulnerabilityPowerUpToken"
 			{
-				DrawImage "HXBUFFT", -146, 25;	// Background panel
-				DrawImage "HXBDSHT", -146, 25;	// Active timer border
-				DrawImage "HXSML058", -143, 29;	// Active colon character
-				DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpToken, -125, 29;	// Time remaining
+				DrawImage "HXBUFFT", -98, 25;
+				DrawImage "HXINVUT", -98, 25;
+				DrawImage "HXSML058", -95, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -77, 29;
 			}
-			InInventory "HX_QuadDamagePowerUpToken"
+			InInventory "HX_InvisibilityPowerUpToken"
 			{
-				DrawImage "HXBUFFT", -122, 25;	// Background panel
-				DrawImage "HXQUADT", -122, 25;	// Active timer border
-				DrawImage "HXSML058", -119, 29;	// Active colon character
-				DrawNumber 3, HXINDEXFONTS, untranslated, HX_QuadDamagePowerUpToken, -101, 29;	// Time remaining
+				DrawImage "HXBUFFT", -74, 25;
+				DrawImage "HXBLURT", -74, 25;
+				DrawImage "HXSML058", -71, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpToken, -53, 29;
+			}
+			InInventory "HX_RadSuitPowerUpToken"
+			{
+				DrawImage "HXBUFFT", -50, 25;
+				DrawImage "HXRADST", -50, 25;
+				DrawImage "HXSML058", -47, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
+			}
+			InInventory "HX_InfraredPowerUpToken"
+			{
+				DrawImage "HXBUFFT", -26, 25;
+				DrawImage "HXLGHTT", -26, 25;
+				DrawImage "HXSML058", -23, 29;
+				DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
+			}
+		}
+	/*	Brutal Doom Platinum */
+		InInventory "HXMOD_BrutalDoomPlatinum", 1
+		{
+			InInventory "HXCUS_PowerupTimerToken", 2	// Always
+			{
+				// Background panels
+				DrawImage "HXBUFFT", -146, 25;
+				DrawImage "HXBUFFT", -122, 25;
+				// Active timers
+				InInventory "HX_HastePowerUpToken"
+				{
+					DrawImage "HXBDSHT", -146, 25;	// Active timer border
+					DrawImage "HXSML058", -143, 29;	// Active colon character
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpToken, -125, 29;	// Time remaining
+				}
+				InInventory "HX_QuadDamagePowerUpToken"
+				{
+					DrawImage "HXQUADT", -122, 25;	// Active timer border
+					DrawImage "HXSML058", -119, 29;	// Active colon character
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_QuadDamagePowerUpToken, -101, 29;	// Time remaining
+				}
+			}
+			else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
+			{
+				InInventory "HX_HastePowerUpToken"
+				{
+					DrawImage "HXBUFFT", -146, 25;	// Background panel
+					DrawImage "HXBDSHT", -146, 25;	// Active timer border
+					DrawImage "HXSML058", -143, 29;	// Active colon character
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpToken, -125, 29;	// Time remaining
+				}
+				InInventory "HX_QuadDamagePowerUpToken"
+				{
+					DrawImage "HXBUFFT", -122, 25;	// Background panel
+					DrawImage "HXQUADT", -122, 25;	// Active timer border
+					DrawImage "HXSML058", -119, 29;	// Active colon character
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_QuadDamagePowerUpToken, -101, 29;	// Time remaining
+				}
 			}
 		}
 	}
@@ -270,7 +276,7 @@ StatusBar Fullscreen, FullscreenOffsets
 *
 ***************************************/
 
-	InInventory not "HXSYS_VehicleHUDToken"
+	InInventory not "HXSYS_VehicleHUDToken", 1 || "HXSYS_NormalHUDKillerToken", 1
 	{
 	// DOOMGUY'S MUGSHOT
 		DrawImage "HXMGSHT", 2, -71;
@@ -364,7 +370,7 @@ StatusBar Fullscreen, FullscreenOffsets
 *
 ***************************************/
 
-	InInventory not "HXSYS_VehicleHUDToken"
+	InInventory not "HXSYS_VehicleHUDToken", 1 || "HXSYS_NormalHUDKillerToken", 1
 	{
 	// AMMO AND WEAPONS
 		/*	Brutal Doom Lite 
@@ -571,8 +577,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		InInventory "HXMOD_BrutalDoomPlatinum", 1
 		{
 		// AMMO TALLIES PANEL - Brutal Doom Platinum
-			DrawImage "HXAMMTOP", -78, -59;
-			DrawImage "HXAMMROW", -78, -49;
+			DrawImage "HXAMMTOP", -78, -53;
 			DrawImage "HXAMMROW", -78, -43;
 			DrawImage "HXAMMROW", -78, -37;
 			DrawImage "HXAMMROW", -78, -31;
@@ -580,51 +585,44 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "HXAMMROW", -78, -19;
 			DrawImage "HXAMMBOT", -78, -13;
 
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"PIST", -73, -54, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -48, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -42, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -36, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -30, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SOUL", -73, -24, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -18, 0, alignment(left);
-			InInventory "HX_BrutalDoomPlat_grenadetype", 3			{ DrawString HXGENERALFONTS, HXRTCBDPPlasma, "VOID", -73, -12, 0, alignment(left); }
-			else InInventory "HX_BrutalDoomPlat_grenadetype", 2		{ DrawString HXGENERALFONTS, HXRTCYellow, "PIPE", -73, -12, 0, alignment(left); }
-			else InInventory "HX_BrutalDoomPlat_grenadetype", 1		{ DrawString HXGENERALFONTS, HXRTCBDPStickyGrenades, "FREZ", -73, -12, 0, alignment(left); }
-			else InInventory not "HX_BrutalDoomPlat_grenadetype"	{ DrawString HXGENERALFONTS, HXRTCGold, "CLST", -73, -12, 0, alignment(left); }
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"PIST", -73, -48, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -42, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -36, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -30, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SOUL", -73, -18, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -12, 0, alignment(left);
 
-			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip1,			horizontal, interpolate(64), -56, -54;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoShell,		horizontal, interpolate(64), -56, -48;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip2,			horizontal, interpolate(64), -56, -42;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoRocket,		horizontal, interpolate(64), -56, -36;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoCell,		horizontal, interpolate(64), -56, -30;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo SoulAmmo,		horizontal, interpolate(64), -56, -24;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo Gas,			horizontal, interpolate(64), -56, -18;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, interpolate(64), -56, -12;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip1,			horizontal, interpolate(64), -56, -48;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoShell,		horizontal, interpolate(64), -56, -42;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip2,			horizontal, interpolate(64), -56, -36;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoRocket,		horizontal, interpolate(64), -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoCell,		horizontal, interpolate(64), -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo SoulAmmo,		horizontal, interpolate(64), -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Gas,			horizontal, interpolate(64), -56, -12;
 
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip1,			-6, -54;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoShell,		-6, -48;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip2,			-6, -42;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoRocket,	-6, -36;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoCell,		-6, -30;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo SoulAmmo,		-6, -24;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Gas,			-6, -18;
-			InInventory "HX_BrutalDoomPlat_grenadetype", 3			{ DrawNumber 4, HXINDEXFONTS, HXRTCBDPPlasma, ammo GrenadeAmmo, -6, -12; }
-			else InInventory "HX_BrutalDoomPlat_grenadetype", 2		{ DrawNumber 4, HXINDEXFONTS, HXRTCYellow, ammo GrenadeAmmo, -6, -12; }
-			else InInventory "HX_BrutalDoomPlat_grenadetype", 1		{ DrawNumber 4, HXINDEXFONTS, HXRTCBDPStickyGrenades, ammo GrenadeAmmo, -6, -12; }
-			else InInventory not "HX_BrutalDoomPlat_grenadetype"	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo GrenadeAmmo, -6, -12; }
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip1,			-6, -48;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoShell,		-6, -42;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip2,			-6, -36;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoRocket,	-6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AmmoCell,		-6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo SoulAmmo,		-6, -18;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Gas,			-6, -12;
 
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
 			{
 				WeaponAmmo Clip1
 				{
-					DrawString HXGENERALFONTS, untranslated, "PIST", -73, -54, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip1, -6, -54;
+					DrawString HXGENERALFONTS, untranslated, "PIST", -73, -48, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip1, -6, -48;
 
 					DrawImage "HXAMMO", -134, -33;
 					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
 					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
 
+					IsSelected "DoxsRevolver"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+					IsSelected "DualRevolver"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 4; }
 					IsSelected "BrutalPistol"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 4; }
 					IsSelected "DualPistols"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 8; }
 					IsSelected "BrutalSMG"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
@@ -634,8 +632,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo AmmoShell
 				{
-					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -48, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoShell, -6, -48;
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -42, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoShell, -6, -42;
 
 					DrawImage "HXAMMO", -134, -33;
 					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
@@ -665,8 +663,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo Clip2
 				{
-					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip2, -6, -42;
+					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip2, -6, -36;
 
 					IsSelected not "Machinegun", "MiniGun"
 					{
@@ -704,8 +702,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo AmmoRocket
 				{	
-					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -36, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoRocket, -6, -36;
+					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoRocket, -6, -30;
 
 					IsSelected not "Machinegun"
 					{
@@ -730,8 +728,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo AmmoCell
 				{
-					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -30, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoCell, -6, -30;
+					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoCell, -6, -24;
 
 					IsSelected not "BFG10k"
 					{
@@ -767,8 +765,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo SoulAmmo
 				{
-					DrawString HXGENERALFONTS, untranslated, "SOUL", -73, -24, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo SoulAmmo, -6, -24;
+					DrawString HXGENERALFONTS, untranslated, "SOUL", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo SoulAmmo, -6, -18;
 
 					IsSelected not "HellishMissileLauncher"
 					{
@@ -780,8 +778,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo Gas
 				{
-					DrawString HXGENERALFONTS, untranslated, "FLAM", -73, -18, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Gas, -6, -18;
+					DrawString HXGENERALFONTS, untranslated, "FLAM", -73, -12, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Gas, -6, -12;
 
 					IsSelected not "HellishMissileLauncher"
 					{
@@ -820,8 +818,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo MeatAmmo
 				{
-					DrawString HXGENERALFONTS, untranslated, "PIST", -73, -54, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip1, -6, -54;
+					DrawString HXGENERALFONTS, untranslated, "PIST", -73, -48, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip1, -6, -48;
 
 					DrawImage "HXAMMEAT", -144, -33;
 
@@ -868,31 +866,84 @@ StatusBar Fullscreen, FullscreenOffsets
 					InInventory not "NoFatality" { DrawString HXSTATUSFONT, HXRTCDarkRed, "TEAr", -84, -29, 0; }
 				}
 			}
+		// GRENADE PANEL - Brutal Doom Platinum
+			DrawImage "HXGREN", -78, -73;
+
+			// Void Grenades
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,					"VOID",	-10, -62, 0;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo AmmoVoidGrenade,		-5,  -62, 0;
+			// Pipebombs
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,					"PIPE",	-33, -62, 0;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo AmmoPipeBomb,			-28, -62, 0;
+			// Freeze Grenades
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,					"FREZ",	-10, -69, 0;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo AmmoIceGrenade,			-5,  -69, 0;
+			// Cluster Grenades
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,					"CLST",	-33, -69, 0;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo AmmoFragGrenade,		-28, -69, 0;
+
+			InInventory "HX_BrutalDoomPlat_grenadetype", 3
+			{
+				DrawImage "BDPGRNV", -63, -63, center, 22, 12;
+				DrawString HXGENERALFONTS, HXRTCBDPPlasma,					"VOID", -10, -62, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCBDPPlasma, ammo AmmoVoidGrenade,	-5,  -62, 0;
+			}
+			else InInventory "HX_BrutalDoomPlat_grenadetype", 2
+			{
+				DrawImage "BDPGRNP", -63, -63, center, 22, 12;
+				DrawString HXGENERALFONTS, HXRTCYellow,						"PIPE", -33, -62, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCYellow, ammo AmmoPipeBomb,			-28, -62, 0;
+			}
+			else InInventory "HX_BrutalDoomPlat_grenadetype", 1
+			{
+				DrawImage "BDPGRNF", -63, -63, center, 22, 12;
+				DrawString HXGENERALFONTS, HXRTCBDPStickyGrenades,			"FREZ", -10, -69, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCBDPStickyGrenades, ammo AmmoIceGrenade, -5, -69, 0;
+			}
+			else InInventory not "HX_BrutalDoomPlat_grenadetype"
+			{
+				DrawImage "BDPGRNC", -63, -63, center, 22, 12;
+				DrawString HXGENERALFONTS, HXRTCGold,						"CLST", -33, -69, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo AmmoFragGrenade,		-28, -69, 0;
+			}
+
+		// NUKE PANEL - Brutal Doom Platinum
+			InInventory "HXCUS_WeaponIconToken", 1
+			{
+				DrawImage "HXBDNKNO", -98, -73;
+				InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -73; }
+			}
+			else
+			{
+				DrawImage "HXBDNKNO", -98, -53;
+				InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
+			}
+
 		// ARMS BAR - Brutal Doom Platinum
 			InInventory "HXCUS_ArmsBarToken", 1
 			{
-				DrawImage "HXARMS", -90, -85;
+				DrawImage "HXARMS", -90, -99;
 
-				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -81;
-				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -81;
-				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -81;
-				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -81;
-				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -81;
-				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -81;
-				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -81;
-				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -81;
-				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -81;
-				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -81;
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -95;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -95;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -95;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -95;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -95;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -95;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -95;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -95;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -95;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -95;
 			}
 		// KEYS BAR - Brutal Doom Platinum
-			DrawImage "HXKEYS", -90, -72;
+			DrawImage "HXKEYS", -90, -86;
 
-			InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -69; }
-			InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -69; }
-			InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -69; }
-			InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -69; }
-			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -69; }
-			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -69; }
+			InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -83; }
+			InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -83; }
+			InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -83; }
+			InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -83; }
+			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -83; }
+			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -83; }
 		}
 		/*	Led's Generic Weapon Mod
 		*
@@ -1111,6 +1162,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawImage "HXWEAPON", -122, -53;
 
 				InInventory "HX_BrutalDoomPlat_meatshield" { DrawImage "PISTG0", -100, -43, center, 36, 12; }
+				else IsSelected "DualRevolver" { DrawImage "REVOT0", -100, -43, center, 36, 12; }
 				else IsSelected "HandGrenades"
 				{
 					InInventory "HX_BrutalDoomPlat_grenadetype", 3 { DrawImage "BDPGRNV", -100, -43, center, 36, 12; }
@@ -1223,7 +1275,7 @@ StatusBar Fullscreen, FullscreenOffsets
 *
 ***************************************/
 
-	InInventory not "HXSYS_VehicleHUDToken"
+	InInventory not "HXSYS_VehicleHUDToken", 1 || "HXSYS_NormalHUDKillerToken", 1
 	{
 	// Stamina Bar
 		InInventory "HXSYS_StaminaStickyToken", 1
@@ -1246,23 +1298,26 @@ StatusBar Fullscreen, FullscreenOffsets
 	/*	Brutal Doom Platinum */
 		InInventory "HXMOD_BrutalDoomPlatinum", 1
 		{
-			// DOOMGUY'S MUGSHOT
-			DrawImage "HXMGSHT", -23 + center, -47;
+			// Demon Forms
+			InInventory not "UnmakerPhaserWeapon", 1
+			{
+				// DOOMGUY'S MUGSHOT
+				DrawImage "HXMGSHT", -23 + center, -47;
 
-			// Mugshot reactive border - Invulnerability
-			InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", -23 + center, -47; }
-			else { DrawImage "HXMGBFG", -23 + center, -47; }
-			// Mugshot reactive corners - Berserk
-			InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", -23 + center, -47; }
-			else { DrawImage "HXMGCGW", -23 + center, -47; }
+				// Mugshot reactive border - Invulnerability
+				InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", -23 + center, -47; }
+				else { DrawImage "HXMGBFG", -23 + center, -47; }
+				// Mugshot reactive corners - Berserk
+				InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", -23 + center, -47; }
+				else { DrawImage "HXMGCGW", -23 + center, -47; }
 
-			// Bars
-			DrawImage "HXTRBARL", -127 + center, -21;
-			DrawImage "HXTRBARR", 23 + center, -21;
-			// Timer
-			DrawImage "HXTRT", -61 + center, -34;
-			DrawImage "HXTRT", 23 + center, -34;
-
+				// Bars
+				DrawImage "HXTRBARL", -127 + center, -21;
+				DrawImage "HXTRBARR", 23 + center, -21;
+				// Timer
+				DrawImage "HXTRT", -61 + center, -34;
+				DrawImage "HXTRT", 23 + center, -34;
+			}
 			InInventory "PowerTransformBaron", 1
 			{
 				DrawMugShot "STF", 5, -18 + center, -41;
@@ -1296,6 +1351,277 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawImage "HXTRN", -61 + center, -47;
 				InInventory "HX_BrutalDoomPlat_helllaserguiderockets", 1 { DrawString HXGENERALFONTM, HXRTCRED, "LASER", -26 + center, -43, 0; }
 				else { DrawString HXGENERALFONTM, HXRTCVeryDarkGrey, "LASER", -26 + center, -43, 0; }
+			}
+
+			// Unmaker Rush
+			InInventory "UnmakerPhaserWeapon", 1
+			{
+				// LEVEL STATS (TIME, KILLS, ITEMS & SECRETS)
+				InInventory "HXCUS_KISToken"
+				{
+					InInventory "HXCUS_PTToken"
+					{
+						DrawImage "HXPT", 2, 2;
+						DrawNumber 2, CONFONT, white, HX_BDP_UTime1, fillzeros, 25, 6;
+						DrawString CONFONT, white, ":", 33, 6;
+						DrawNumber 2, CONFONT, white, HX_BDP_UTime2, fillzeros, 49, 6;
+						DrawString CONFONT, white, ":", 57, 6;
+						DrawNumber 2, CONFONT, white, HX_BDP_UTime3, fillzeros, 73, 6;
+
+						InInventory not "HXCUS_KISExtendedToken"
+						{
+							DrawImage "HXKIS", 2, 19;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UKills, fillzeros, 49, 24;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UItems, fillzeros, 49, 30;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_USecrets, fillzeros, 49, 36;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalMonsters, fillzeros, 74, 24;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalItems, fillzeros, 74, 30;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalSecrets, fillzeros, 74, 36;
+						}
+						else
+						{
+							DrawImage "HXKISE", 2, 19;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UKills, fillzeros, 44, 24;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UItems, fillzeros, 44, 30;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_USecrets, fillzeros, 44, 36;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalMonsters, fillzeros, 74, 24;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalItems, fillzeros, 74, 30;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalSecrets, fillzeros, 74, 36;
+						}
+					}
+					else
+					{
+						InInventory not "HXCUS_KISExtendedToken"
+						{
+							DrawImage "HXKIS", 2, 2;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UKills, fillzeros, 49, 7;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UItems, fillzeros, 49, 13;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_USecrets, fillzeros, 49, 19;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalMonsters, fillzeros, 74, 7;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalItems, fillzeros, 74, 13;
+							DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalSecrets, fillzeros, 74, 19;
+						}
+						else
+						{
+							DrawImage "HXKISE", 2, 2;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UKills, fillzeros, 44, 7;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UItems, fillzeros, 44, 13;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_USecrets, fillzeros, 44, 19;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalMonsters, fillzeros, 74, 7;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalItems, fillzeros, 74, 13;
+							DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, HX_BDP_UTotalSecrets, fillzeros, 74, 19;
+						}
+					}
+				}
+				else InInventory "HXCUS_PTToken"
+				{
+					DrawImage "HXPT", 2, 2;
+					DrawNumber 2, CONFONT, white, HX_BDP_UTime1, fillzeros, 25, 6;
+					DrawString CONFONT, white, ":", 33, 6;
+					DrawNumber 2, CONFONT, white, HX_BDP_UTime2, fillzeros, 49, 6;
+					DrawString CONFONT, white, ":", 57, 6;
+					DrawNumber 2, CONFONT, white, HX_BDP_UTime3, fillzeros, 73, 6;
+				}
+
+				// POWERUP PANELS
+				InInventory "HXCUS_PowerupBoxToken", 1
+				{
+					// Background panels + inactive icons
+					DrawImage "HXBDSHNO", -146, 2;	DrawImage "HXQUADNO", -122, 2;	DrawImage "HXINVUNO", -98, 2;
+					DrawImage "HXBLURNO", -74, 2;	DrawImage "HXRADSNO", -50, 2;	DrawImage "HXLGHTNO", -26, 2;		
+					// Active icon + border
+					DrawBar "HXBDSHOK", "HXINVOFF", HX_BDP_UBuff1, vertical, interpolate(256), -146, 2;
+					DrawBar "HXQUADOK", "HXINVOFF", HX_BDP_UBuff2, vertical, interpolate(256), -122, 2;
+					DrawBar "HXINVUOK", "HXINVOFF", HX_BDP_UBuff3, vertical, interpolate(256), -98, 2;
+					DrawBar "HXBLUROK", "HXINVOFF", HX_BDP_UBuff4, vertical, interpolate(256), -74, 2;
+					DrawBar "HXRADSOK", "HXINVOFF", HX_BDP_UBuff5, vertical, interpolate(256), -50, 2;	
+					DrawBar "HXLGHTOK", "HXINVOFF", HX_BDP_UBuff6, vertical, interpolate(256), -26, 2;
+				}
+
+				// POWERUP TIME INDICATORS
+				InInventory "HXCUS_PowerupTimerToken", 1
+				{
+					// Background timer panels
+					DrawImage "HXBUFFT", -146, 25;	DrawImage "HXBUFFT", -122, 25;	DrawImage "HXBUFFT", -98, 25;
+					DrawImage "HXBUFFT", -74, 25;	DrawImage "HXBUFFT", -50, 25;	DrawImage "HXBUFFT", -26, 25;
+					// Active timers
+					DrawImage "HXBDSHT", -146, 25;	DrawImage "HXQUADT", -122, 25;	DrawImage "HXINVUT", -98, 25;
+					DrawImage "HXBLURT", -74, 25;	DrawImage "HXRADST", -50, 25;	DrawImage "HXLGHTT", -26, 25;
+					DrawImage "HXSML058", -143, 29;	DrawImage "HXSML058", -119, 29;	DrawImage "HXSML058", -95, 29;
+					DrawImage "HXSML058", -71, 29;	DrawImage "HXSML058", -47, 29;	DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_BDP_UBuff1, fillzeros, -125, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_BDP_UBuff2, fillzeros, -101, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_BDP_UBuff3, fillzeros, -77, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_BDP_UBuff4, fillzeros, -53, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_BDP_UBuff5, fillzeros, -29, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_BDP_UBuff6, fillzeros, -5, 29;
+				}
+
+				// DOOMGUY'S MUGSHOT
+				DrawImage "HXMGSHT", 2, -71;
+
+				// Mugshot reactive border - Invulnerability
+				InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", 2, -71; }
+				else { DrawImage "HXMGBFG", 2, -71; }
+				// Mugshot reactive corners - Berserk
+				InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", 2, -71; }
+				else { DrawImage "HXMGCGW", 2, -71; }
+
+				// Air Supply and Rage Meter (HXRTC Gold default)
+				InInventory "HXCUS_AirMeterToken", 1 { DrawBar "HXARBROK", "HXARRGNO", HX_BDP_UAir, vertical, interpolate(256), 6, -67; }
+				InInventory "HXRTCPlayerRagePoints", 1 { DrawBar "HXRGBROK", "HXARRGNO", HX_BDP_URage, vertical, interpolate(256), 41, -67; }
+
+				// Vanilla mugshot
+				/* DrawMugShot "STF", 5, 8, -65; */
+				DrawImage "STFOUCH0", 8, -65;
+
+				// INVENTORY ARTIFACTS
+				InInventory "HXCUS_ArtifactToken"
+				{
+					DrawImage "HXINVSEL", 2, -106;
+					DrawSelectedInventory alwaysshowcounter, centerbottom, HXINDEXFONTS, 25, -75, 44, -81, untranslated;
+				}
+
+				// BERSERK
+				InInventory "HX_BerserkPowerUpToken", 1
+				{
+					DrawImage "HXARMTYP", 72, -49;
+					DrawImage "HXARMTFG", 72, -49;
+					InInventory not "NoFatality" { DrawImage "HXBERSRK", 72, -49; }
+					else { DrawImage "HXHEALTH", 72, -49; }
+				}
+
+				// ARMOR SAVE PERCENTAGE FRAME
+				InInventory "HXCUS_ArmorSaveToken", 1
+				{
+					DrawImage "HXARMSV", 48, -62;
+					DrawImage "HXARMSVR", 48, -62;
+					DrawNumber 3, HXGENERALFONTS, untranslated, 666, interpolate(256), 64, -58, 0;
+					DrawImage "HXSML037", 65, -58;
+				}
+
+				// ARMOR FRAME
+				DrawImage "HXARMTYP", 48, -49;
+				DrawImage "HXARMTFR", 48, -49;
+				DrawImage "HXBDSIGU", 48, -49;
+
+				// HEALTH, ARMOR
+				DrawImage "HXHPTOP", 2, -26;
+				DrawImage "HXHPBOTS", 2, -14;
+				
+				// Health, Overhealth
+				DrawString HXGENERALFONTM, HXRTCDarkRed, "HELLTH", 44, -20, 0;
+				DrawImage "HXBDUHOK", 46, -20;
+				DrawImage "HXBDUHHI", 46, -20;
+				DrawNumber 4, CONFONT, red, health, interpolate(256), 122, -22, 0;
+
+				// Armor, Overarmor
+				DrawString HXGENERALFONTM, HXRTCDarkRed, "ERROR", 43, -13, 1;
+				DrawBar "HXHABROK", "HXHABRBG", HX_BDP_UArmor, horizontal, interpolate(256), 46, -13;
+				DrawBar "HXHEBRHI", "HXHABRNO", HX_BDP_UArmor, horizontal, interpolate(256), 46, -13;
+				DrawNumber 4, CONFONT, red, HX_BDP_UArmor, interpolate(256), 122, -15, 0;
+
+				// AMMO TALLIES PANEL - General Types
+				DrawImage "HXAMMTOP", -78, -53;
+				DrawImage "HXAMMROW", -78, -43;
+				DrawImage "HXAMMROW", -78, -37;
+				DrawImage "HXAMMROW", -78, -31;
+				DrawImage "HXAMMROW", -78, -25;
+				DrawImage "HXAMMBOT", -78, -13;
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"PIST", -73, -48, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -42, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -36, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -30, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -24, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -12, 0, alignment(left);
+				DrawBar "HXAMMON", "HXAMMOFF", HX_BDP_UClip1,	horizontal, interpolate(256), -56, -48;
+				DrawBar "HXAMMON", "HXAMMOFF", HX_BDP_UShell,	horizontal, interpolate(256), -56, -42;
+				DrawBar "HXAMMON", "HXAMMOFF", HX_BDP_UClip2,	horizontal, interpolate(256), -56, -36;
+				DrawBar "HXAMMON", "HXAMMOFF", HX_BDP_URocket,	horizontal, interpolate(256), -56, -30;
+				DrawBar "HXAMMON", "HXAMMOFF", HX_BDP_UCell,	horizontal, interpolate(256), -56, -24;
+				DrawBar "HXAMMON", "HXAMMOFF", HX_BDP_UGas,		horizontal, interpolate(256), -56, -12;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	HX_BDP_UClip1,	fillzeros, -6, -48;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	HX_BDP_UShell,	fillzeros, -6, -42;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	HX_BDP_UClip2,	fillzeros, -6, -36;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	HX_BDP_URocket,	fillzeros, -6, -30;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	HX_BDP_UCell,	fillzeros, -6, -24;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	HX_BDP_UGas,	fillzeros, -6, -12;
+
+				// AMMO TALLIES PANEL - Soul
+				DrawImage "HXAMMROW", -78, -19;
+				DrawString HXGENERALFONTS, HXRTCRed, "SOUL", -73, -18, 0, alignment(left);
+				DrawBar "HXAMMON", "HXAMMOFF", ammo SoulAmmo,	horizontal, interpolate(64), -56, -18;
+				DrawNumber 4, HXINDEXFONTS, HXRTCRed, ammo SoulAmmo, -6, -18;
+
+				// CURRENT AMMO
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				DrawString HXGENERALFONTM, untranslated, "SOUL", -90, -12, 0;
+				DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 66;
+
+				// GRENADE PANEL
+				DrawImage "HXGREN", -78, -73;
+				// Void Grenades
+				DrawString HXGENERALFONTS, HXRTCBDPPlasma,						"VOID", -10, -62, 0;
+				DrawNumber 1, HXINDEXFONTS, HXRTCBDPPlasma, HX_BDP_UGrenade1,			-5,  -62, 0;
+				// Pipebombs
+				DrawString HXGENERALFONTS, HXRTCYellow,							"PIPE", -33, -62, 0;
+				DrawNumber 1, HXINDEXFONTS, HXRTCYellow, HX_BDP_UGrenade2,				-28, -62, 0;
+				// Freeze Grenades
+				DrawString HXGENERALFONTS, HXRTCBDPStickyGrenades,				"FREZ", -10, -69, 0;
+				DrawNumber 1, HXINDEXFONTS, HXRTCBDPStickyGrenades, HX_BDP_UGrenade3,	-5,  -69, 0;
+				// Cluster Grenades
+				DrawString HXGENERALFONTS, HXRTCGold,							"CLST", -33, -69, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCGold, HX_BDP_UGrenade4,				-28, -69, 0;
+				InInventory "HX_BDP_UGrenadeR", 3		{ DrawImage "BDPGRNV", -63, -63, center, 22, 12; }
+				else InInventory "HX_BDP_UGrenadeR", 2	{ DrawImage "BDPGRNP", -63, -63, center, 22, 12; }
+				else InInventory "HX_BDP_UGrenadeR", 1	{ DrawImage "BDPGRNF", -63, -63, center, 22, 12; }
+				else InInventory not "HX_BDP_UGrenadeR"	{ DrawImage "BDPGRNC", -63, -63, center, 22, 12; }
+
+				// NUKE PANEL
+				InInventory "HXCUS_WeaponIconToken", 1
+				{
+					DrawImage "HXBDNKNO", -98, -73;
+					InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -73; }
+				}
+				else
+				{
+					DrawImage "HXBDNKNO", -98, -53;
+					InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
+				}
+
+				// ARMS BAR
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					DrawImage "HXARMS", -90, -99;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot1, -53, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot2, -48, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot3, -43, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot4, -38, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot5, -33, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot6, -28, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot7, -23, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot8, -18, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot9, -13, -95, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot0,  -8, -95, 0;
+				}
+
+				// KEYS BAR
+				DrawImage "HXKEYS", -90, -86;
+				InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -83; }
+				InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -83; }
+				InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -83; }
+				InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -83; }
+				InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -83; }
+				InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -83; }
+
+				// CURRENT WEAPON ICON PANEL
+				InInventory "HXCUS_WeaponIconToken", 1
+				{
+					DrawImage "HXWEAPON", -122, -53;
+					DrawImage "UNHWA0", -100, -43, center, 36, 12, alticonfirst;
+				}
+
 			}
 		}
 	}
@@ -1724,11 +2050,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 StatusBar InventoryFullscreen, FullscreenOffsets
 {
-/* 	InInventory "HXSYS_VehicleHUDToken", 1
-	{
-		DrawInventoryBar Doom, alwaysshowcounter, 5, HXINDEXFONTS, -76 + center, 2, -50 + center, 22, untranslated;
-	}
-	else  */InInventory "HXSYS_StaminaStickyToken", 1
+	InInventory "HXSYS_StaminaStickyToken", 1
 	{
 		DrawInventoryBar Doom, alwaysshowcounter, 5, HXINDEXFONTS, -76 + center, -45, -50 + center, -25, untranslated;
 	}

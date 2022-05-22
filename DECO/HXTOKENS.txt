@@ -20,9 +20,10 @@ ACTOR HXSYS_StaminaStickyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.Max
 ACTOR HXSYS_StaminaToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 110 }
 ACTOR HXSYS_TransformationHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXSYS_VehicleHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXSYS_NormalHUDKillerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	HX General Mod Support
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
 ACTOR HX_InvisibilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
