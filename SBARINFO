@@ -304,7 +304,9 @@ StatusBar Fullscreen, FullscreenOffsets
 		InInventory "HX_BerserkPowerUpToken", 1
 		{
 			DrawImage "HXARMTYP", 72, -49;
-			DrawImage "HXBERSRK", 72, -49;
+			DrawImage "HXARMTFG", 72, -49;
+			InInventory not "NoFatality" { DrawImage "HXBERSRK", 72, -49; }
+			else { DrawImage "HXHEALTH", 72, -49; }
 		}
 
 		// ARMOR SAVE PERCENTAGE FRAME
