@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.21
+
+- **Mod Support:**
+  - Updated Brutal Doom Platinum v3.0 support to have generic fallbacks for BDPv2.0's addon weapons until support is confirmed
+
 ## v0.20
 
 - **Mod Support:**
