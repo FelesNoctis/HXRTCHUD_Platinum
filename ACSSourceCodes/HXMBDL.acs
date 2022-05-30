@@ -1,0 +1,67 @@
+#library "HXMBDL"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+
+str bdlitebluecard = "SmoothBlueCard";
+str bdliteblueskull = "SmoothSkullBlu";
+str bdliteredcard = "SmoothRedCard";
+str bdliteredskull = "SmoothSkullRed";
+str bdliteyellowcard = "SmoothYellowCard";
+str bdliteyellowskull = "SmoothSkullYel";
+
+script "HXS_BDLite35ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_bdlite))
+	{
+		while (true)
+		{
+	// Key Management Tokens
+		// Blue Keys
+			HXS_ItemSync(bdlitebluecard, hxgen_bluecard);
+			HXS_ItemSync(bdliteblueskull, hxgen_blueskull);
+		// Red Keys
+			HXS_ItemSync(bdliteredcard, hxgen_redcard);
+			HXS_ItemSync(bdliteredskull, hxgen_redskull);
+		// Yellow Keys
+			HXS_ItemSync(bdliteyellowcard, hxgen_yellowcard);
+			HXS_ItemSync(bdliteyellowskull, hxgen_yellowskull);
+
+	// Powerup Management Tokens
+		// Berserk
+			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+
+	// Timer
+			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
+			delay(35);
+		}
+	}
+}
+
+script "HXS_BDLite7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_bdlite))
+	{
+		while (true)
+		{
+		// Powerup Management Tokens
+			// Infrared
+			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			// Invisibility
+			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			// Invulnerability
+			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			// Radsuit
+			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+
+		// Timer
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
+	}
+}

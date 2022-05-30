@@ -1,0 +1,205 @@
+#library "HXMBDPUN"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+#import "HXMBD.acs"
+
+// Master Tokens
+/* str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum"; */
+/* str bdtransformunmaker = "UnmakerPhaserWeapon"; */
+str hx_rushactive = "HX_BDP_UnmakingSanity";
+
+// HUD States
+str hxsys_extendedstats = "HXCUS_KISExtendedToken";
+
+// Digit Constants
+int max1 = 9;
+int max2 = 99;
+int max3 = 999;
+int max4 = 9999;
+int max5 = 99999;
+
+// Randomized Tokens
+str timer1 = "HX_BDP_UTime1";
+str timer2 = "HX_BDP_UTime2";
+str timer3 = "HX_BDP_UTime3";
+str kills = "HX_BDP_UKills";
+str items = "HX_BDP_UItems";
+str secrets = "HX_BDP_USecrets";
+str totalmonsters = "HX_BDP_UTotalMonsters";
+str totalitems = "HX_BDP_UTotalItems";
+str totalsecrets = "HX_BDP_UTotalSecrets";
+str buff1 = "HX_BDP_UBuff1";
+str buff2 = "HX_BDP_UBuff2";
+str buff3 = "HX_BDP_UBuff3";
+str buff4 = "HX_BDP_UBuff4";
+str buff5 = "HX_BDP_UBuff5";
+str buff6 = "HX_BDP_UBuff6";
+str air = "HX_BDP_UBuff6";
+str rage = "HX_BDP_UBuff6";
+str armor = "HX_BDP_UArmor";
+str ammo1 = "HX_BDP_UClip1";
+str ammo2 = "HX_BDP_UShell";
+str ammo3 = "HX_BDP_UClip2";
+str ammo4 = "HX_BDP_URocket";
+str ammo5 = "HX_BDP_UCell";
+str ammo6 = "HX_BDP_UGas";
+str grenade1 = "HX_BDP_UGrenade1";
+str grenade2 = "HX_BDP_UGrenade2";
+str grenade3 = "HX_BDP_UGrenade3";
+str grenade4 = "HX_BDP_UGrenade4";
+str grenadeicon = "HX_BDP_UGrenadeR";
+str weaponslot1 = "HX_BDP_UWeaponslot1";
+str weaponslot2 = "HX_BDP_UWeaponslot2";
+str weaponslot3 = "HX_BDP_UWeaponslot3";
+str weaponslot4 = "HX_BDP_UWeaponslot4";
+str weaponslot5 = "HX_BDP_UWeaponslot5";
+str weaponslot6 = "HX_BDP_UWeaponslot6";
+str weaponslot7 = "HX_BDP_UWeaponslot7";
+str weaponslot8 = "HX_BDP_UWeaponslot8";
+str weaponslot9 = "HX_BDP_UWeaponslot9";
+str weaponslot0 = "HX_BDP_UWeaponslot0";
+
+script "HXMOD_BDPUnmaker7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_brutaldoomplat))
+	{
+		while (true)
+		{
+			// START THE CHAOS
+			if (CheckInventory(bdtransformunmaker) && !CheckInventory(hx_rushactive))
+				{ GiveInventory(hx_rushactive, 1); }
+
+			// RANDOM CHAOS
+			else if (CheckInventory(bdtransformunmaker) && CheckInventory(hx_rushactive))
+			{
+				// Level Timer
+				HX_RealityFailing(timer1, max2);
+				HX_RealityFailing(timer2, max2);
+				HX_RealityFailing(timer3, max2);
+				// Level Stats
+				if (!CheckInventory(hxsys_extendedstats))
+				{
+					HX_RealityFailing(kills, max4);
+					HX_RealityFailing(items, max4);
+					HX_RealityFailing(secrets, max4);
+					HX_RealityFailing(totalmonsters, max4);
+					HX_RealityFailing(totalitems, max4);
+					HX_RealityFailing(totalsecrets, max4);
+				}
+				else
+				{
+					HX_RealityFailing(kills, max5);
+					HX_RealityFailing(items, max5);
+					HX_RealityFailing(secrets, max5);
+					HX_RealityFailing(totalmonsters, max5);
+					HX_RealityFailing(totalitems, max5);
+					HX_RealityFailing(totalsecrets, max5);
+				}
+				// Powerups
+				HX_RealityFailing(buff1, max3);
+				HX_RealityFailing(buff2, max3);
+				HX_RealityFailing(buff3, max3);
+				HX_RealityFailing(buff4, max3);
+				HX_RealityFailing(buff5, max3);
+				HX_RealityFailing(buff6, max3);
+				// Character Stats Panels
+				HX_RealityFailing(air, max2);
+				HX_RealityFailing(rage, max3);
+				HX_RealityFailing(armor, max4);
+				// Ammo Tallies
+				HX_RealityFailing(ammo1, max4);
+				HX_RealityFailing(ammo2, max4);
+				HX_RealityFailing(ammo3, max4);
+				HX_RealityFailing(ammo4, max4);
+				HX_RealityFailing(ammo5, max4);
+				HX_RealityFailing(ammo6, max4);
+				// Grenades
+				HX_RealityFailing(grenade1, max1);
+				HX_RealityFailing(grenade2, max1);
+				HX_RealityFailing(grenade3, max1);
+				HX_RealityFailing(grenade4, max1);
+				HX_RealityFailing(grenadeicon, 3);
+				// Weaponslots
+				HX_RealityFailing(weaponslot1, max1);
+				HX_RealityFailing(weaponslot2, max1);
+				HX_RealityFailing(weaponslot3, max1);
+				HX_RealityFailing(weaponslot4, max1);
+				HX_RealityFailing(weaponslot5, max1);
+				HX_RealityFailing(weaponslot6, max1);
+				HX_RealityFailing(weaponslot7, max1);
+				HX_RealityFailing(weaponslot8, max1);
+				HX_RealityFailing(weaponslot9, max1);
+				HX_RealityFailing(weaponslot0, max1);
+			}
+
+			// CLEANUP
+			else if (!CheckInventory(bdtransformunmaker) && CheckInventory(hx_rushactive))
+			{
+				// Level Timer
+				HX_RealityFailing(timer1, 0);
+				HX_RealityFailing(timer2, 0);
+				HX_RealityFailing(timer3, 0);
+				// Level Stats
+				HX_RealityFailing(kills, 0);
+				HX_RealityFailing(items, 0);
+				HX_RealityFailing(secrets, 0);
+				HX_RealityFailing(totalmonsters, 0);
+				HX_RealityFailing(totalitems, 0);
+				HX_RealityFailing(totalsecrets, 0);
+				// Powerups
+				HX_RealityFailing(buff1, 0);
+				HX_RealityFailing(buff2, 0);
+				HX_RealityFailing(buff3, 0);
+				HX_RealityFailing(buff4, 0);
+				HX_RealityFailing(buff5, 0);
+				HX_RealityFailing(buff6, 0);
+				// Character Stats Panels
+				HX_RealityFailing(air, 0);
+				HX_RealityFailing(rage, 0);
+				HX_RealityFailing(armor, 0);
+				// Ammo Tallies
+				HX_RealityFailing(ammo1, 0);
+				HX_RealityFailing(ammo2, 0);
+				HX_RealityFailing(ammo3, 0);
+				HX_RealityFailing(ammo4, 0);
+				HX_RealityFailing(ammo5, 0);
+				HX_RealityFailing(ammo6, 0);
+				// Grenades
+				HX_RealityFailing(grenade1, 0);
+				HX_RealityFailing(grenade2, 0);
+				HX_RealityFailing(grenade3, 0);
+				HX_RealityFailing(grenade4, 0);
+				HX_RealityFailing(grenadeicon, 0);
+				// Weaponslots
+				HX_RealityFailing(weaponslot1, 0);
+				HX_RealityFailing(weaponslot2, 0);
+				HX_RealityFailing(weaponslot3, 0);
+				HX_RealityFailing(weaponslot4, 0);
+				HX_RealityFailing(weaponslot5, 0);
+				HX_RealityFailing(weaponslot6, 0);
+				HX_RealityFailing(weaponslot7, 0);
+				HX_RealityFailing(weaponslot8, 0);
+				HX_RealityFailing(weaponslot9, 0);
+				HX_RealityFailing(weaponslot0, 0);
+
+				// Finish Cleanup
+				TakeInventory(hx_rushactive, 1);
+			}
+
+		/* Timer */
+			// Wait 5 tics (1/7sec) before repeating, since we want this to be reasonably responsive
+			delay(1);
+		}
+	}
+}
+
+function void HX_RealityFailing (str hxitem, int maxnum)
+{
+	int hxitemcount = CheckInventory(hxitem);
+	int randomnumber = Random (0, maxnum);
+
+	HXS_ItemManagement(randomnumber, hxitem, hxitemcount);
+}

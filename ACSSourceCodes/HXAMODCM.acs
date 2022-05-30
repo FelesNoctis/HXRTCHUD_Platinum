@@ -1,0 +1,163 @@
+#library "HXAMODCM"
+#include "zcommon.acs"
+
+// Mod Master Tokens
+str hxmod_none = "HXMOD_VANILLA";
+str hxmod_resettoken = "HXMOD_IDontExist";
+str hxmod_bdlite = "HXMOD_BDLite";
+str hxmod_brutaldoom = "HXMOD_BrutalDoom";
+str hxmod_brutaldoomce = "HXMOD_BrutalDoomBWCE";
+str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
+str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
+str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
+str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
+
+// HUD Mode Switch
+str hxsys_normalhudkiller = "HXSYS_NormalHUDKillerToken";
+str hxsys_transformhud = "HXSYS_TransformationHUDToken";
+str hxsys_vehiclehud = "HXSYS_VehicleHUDToken";
+
+// General Items
+str vanillaberserk = "PowerStrength";
+str hxgen_berserk = "HX_BerserkPowerUpToken";
+str vanillainfrared = "PowerLightamp";
+str hxgen_infrared = "HX_InfraredPowerUpToken";
+str vanillainvisibility = "PowerInvisibility";
+str hxgen_invisibility = "HX_InvisibilityPowerUpToken";
+str vanillainvulnerability = "PowerInvulnerable";
+str hxgen_invulnerability = "HX_InvulnerabilityPowerUpToken";
+str vanillaradsuit = "PowerIronfeet";
+str hxgen_radsuit = "HX_RadSuitPowerUpToken";
+str vanillabluecard = "BlueCard";
+str hxgen_bluecard = "HX_BlueCardKeyToken";
+str vanillablueskull = "BlueSkull";
+str hxgen_blueskull = "HX_BlueSkullKeyToken";
+str vanillaredcard = "RedCard";
+str hxgen_redcard = "HX_RedCardKeyToken";
+str vanillaredskull = "RedSkull";
+str hxgen_redskull = "HX_RedSkullKeyToken";
+str vanillayellowcard = "YellowCard";
+str hxgen_yellowcard = "HX_YellowCardKeyToken";
+str vanillayellowskull = "YellowSkull";
+str hxgen_yellowskull = "HX_YellowSkullKeyToken";
+
+// BDLite
+str bdliteclass = "Doomer";
+str bdlitefist = "BdMeleeAttacks";
+str bdliterifle = "BdRifle";
+
+// Brutal Doom General
+str bdgenplayer = "IsPlayer";
+str bditemnottactical = "IsNOTTacticalClass";
+str bditempurist = "IsPlayingAsPurist";
+str bditemtactical = "IsTacticalClass";
+/* str bdclassarcadedoomer = "Arcade Rifle (No Reload)";
+str bdclassarcadedoomer2 = "Arcade Pistol (No Reload)";
+str bdclassarcadedoomer3 = "Arcade Shotgun (No Reload)";
+str bdclassbdoomer = "BDoomer";
+str bdclassdoomer2 = "Doomer2";
+str bdclassdoomer3 = "Shotgun Start"; */
+
+// Brutal Doom Platinum
+str bdplattotallyamenudummy = "IsNOTAMenuDummy";
+
+// Led's Generic Weapon Mod
+str ledclass = "DoomGuy";
+str ledfist = "Knuckle";
+str ledminigunmag = "MinigunMag";
+
+// PerK's Smoother Weapon Animations Enhanced
+str perkzfist = "ZPerkFist";
+str perkzpistol = "ZPerkPistol";
+
+// SmoothDoom 2.0 WIP
+str smoothdoomclass = "PerkDPlayer";
+str smoothdoomfist = "PerkFist";
+str smoothdoompistol = "PerkPistol";
+
+script "HXS_ModCompatibilityStartup" enter
+{
+// Mod Master Tokens
+	// BDLite
+		if (CheckActorClass(0, bdliteclass)
+			&& CheckInventory(bdlitefist)
+			&& CheckInventory(bdliterifle)
+			&& !CheckInventory(hxmod_bdlite))
+		{ GiveInventory(hxmod_bdlite, 1); }	
+	// Brutal Doom General
+		else if (CheckInventory(bdgenplayer)
+			&& !CheckInventory(hxmod_brutaldoom))
+		{
+			// Brutal Doom Platinum
+			if (CheckInventory(bdplattotallyamenudummy))
+			{
+				GiveInventory(hxmod_brutaldoom, 1);
+				GiveInventory(hxmod_brutaldoomplat, 1);
+			}
+			// Brutal Doom v21 / CE
+			else if (CheckInventory(bditemnottactical)
+					|| CheckInventory(bditemtactical)
+					|| CheckInventory(bditempurist))
+			{ GiveInventory(hxmod_brutaldoom, 1); }
+		}
+	// Led's Generic Weapon Mod
+		else if (CheckActorClass(0, ledclass)
+			&& CheckInventory(ledfist)
+			&& CheckInventory(ledminigunmag)
+			&& !CheckInventory(hxmod_ledgwmtoken))
+		{ GiveInventory(hxmod_ledgwmtoken, 1); }
+	// PerK's Smoother Weapon Animations Enhanced
+		else if (CheckInventory(perkzfist)
+			&& CheckInventory(perkzpistol)
+			&& !CheckInventory(hxmod_perksmoothenh))
+		{ GiveInventory(hxmod_perksmoothenh, 1); }
+	// SmoothDoom 2.0 WIP
+		else if (CheckActorClass(0, smoothdoomclass)
+			&& CheckInventory(smoothdoomfist)
+			&& CheckInventory(smoothdoompistol)
+			&& !CheckInventory(hxmod_smoothdoom))
+		{ GiveInventory(hxmod_smoothdoom, 1); }
+	// No supported mod detected
+		else if (!CheckInventory(hxmod_none)) { GiveInventory(hxmod_none, 1); }
+}
+
+function void HXS_ItemManagement (int moditemcount, str hxitem, int hxitemtokens)
+{
+	if (moditemcount > 0 && moditemcount != hxitemtokens)
+	{
+		if (moditemcount > hxitemtokens) { GiveInventory(hxitem, moditemcount - hxitemtokens); }
+		else if (moditemcount < hxitemtokens) { TakeInventory(hxitem, hxitemtokens - moditemcount); }
+	}
+	else if (moditemcount <= 0 && hxitemtokens) { TakeInventory(hxitem, hxitemtokens); }
+}
+
+function void HXS_ItemSync (str moditem, str hxitem)
+{
+	int moditemcount = CheckInventory(moditem);
+	int hxitemcount = CheckInventory(hxitem);
+
+	HXS_ItemManagement(moditemcount, hxitem, hxitemcount);
+}
+
+function void HXS_PowerupTimer (str moditem, str hxitem)
+{
+	int moditemduration = GetActorPowerupTics(0, moditem) / 35;
+	int hxitemcount = CheckInventory(hxitem);
+
+	HXS_ItemManagement(moditemduration, hxitem, hxitemcount);
+}
+
+function void HX_BDMeatFlip (str meatammo, str hxmeatammo)
+{
+	int meattoken = CheckInventory(meatammo);
+	int hxtoken = CheckInventory(hxmeatammo);
+	int bdmaxmeatammo = 100; // BD's max stamina count
+	int bdmeatcorrection = bdmaxmeatammo - meattoken; // the HX meat ammo we should have
+
+	if (meattoken)
+	{
+		if (bdmeatcorrection > hxtoken) { GiveInventory(hxmeatammo, bdmeatcorrection - hxtoken); }
+		else if (bdmeatcorrection < hxtoken) { TakeInventory(hxmeatammo, hxtoken - bdmeatcorrection); }
+	}
+	else if (!meattoken && hxtoken != bdmaxmeatammo) { GiveInventory(hxmeatammo, bdmaxmeatammo - hxtoken); }
+}

@@ -1,0 +1,57 @@
+#library "HXASTATS"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+
+str healthtoken = "HXSYS_HealthOverMaxToken";
+str armortoken = "HXSYS_ArmorOverMaxToken";
+str staminatoken = "HXSYS_StaminaToken";
+str staminastickytoken = "HXSYS_StaminaStickyToken";
+str altitudetoken = "HXSYS_AltitudeMetersToken";
+
+script "HXS_PlayerStats7ticHandler" enter
+{	
+	while (true)
+	{
+
+		HXS_StatSync(GetActorProperty(0, APROP_Health), healthtoken);
+		HXS_StatSync(CheckInventory("BasicArmor"), armortoken);
+		HXS_StamFlip(CheckInventory("UsedStamina"), staminatoken);
+		HXS_PlayerAltitude();
+
+		// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+		delay(7);
+	}
+}
+
+function void HXS_PlayerAltitude (void)
+{
+	int hxaltitude = ((GetActorZ (0) - GetActorFloorZ (0)) >> 16) / 42;
+	int tokencount = CheckInventory(altitudetoken);
+
+	HXS_ItemManagement(hxaltitude, altitudetoken, tokencount);
+}
+
+function void HXS_StamFlip (int usedstamina, str token)
+{
+	int bdmaxusedstamina = 110; // BD's max stamina count
+	int bdtokencorrection = bdmaxusedstamina - usedstamina; // the HX stamina tokens we should have
+	int tokencount = CheckInventory(token); // the HX stamina tokens we do have
+	int stickytoken = CheckInventory(staminastickytoken);
+
+	if (usedstamina)
+	{
+		if (!stickytoken) { GiveInventory(staminastickytoken, 15); }
+		if (bdtokencorrection > tokencount) { GiveInventory(token, bdtokencorrection - tokencount); }
+		else if (bdtokencorrection < tokencount) { TakeInventory(token, tokencount - bdtokencorrection); }
+	}
+	else if (!usedstamina && tokencount != bdmaxusedstamina) { GiveInventory(token, bdmaxusedstamina); }
+	else if (!usedstamina && tokencount == bdmaxusedstamina && staminastickytoken) { TakeInventory(staminastickytoken, 1); }
+}
+
+function void HXS_StatSync (int stat, str token)
+{
+	int overstat = stat - 100;
+	int tokencount = CheckInventory(token);
+
+	HXS_ItemManagement(overstat, token, tokencount);
+}

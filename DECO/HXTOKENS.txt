@@ -36,6 +36,7 @@ ACTOR HX_RedCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount
 ACTOR HX_RedSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_YellowCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_YellowSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_VANILLA: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	BDLite 1.2
 ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Brutal Doom v21/Platinum

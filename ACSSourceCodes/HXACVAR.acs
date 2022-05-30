@@ -1,0 +1,162 @@
+#library "HXACVAR"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+
+script "HXS_CVARBridge35ticHandler" enter
+{
+	while (true)
+	{
+	/*	HXRTC HUD Platinum
+	*
+	*	CVAR bool hxcus_HXArmorSave
+	*	CVAR bool hxcus_HXArtifact
+	*	CVAR bool hxsys_debugtag
+	*/
+		HXF_CVARConvert_Generic("hxcus_HXAirMeter", "HXCUS_AirMeterToken");
+		HXF_CVARConvert_Generic("hxcus_HXArmsBar", "HXCUS_ArmsBarToken");
+		HXF_CVARConvert_Generic("hxcus_HXArmorSave", "HXCUS_ArmorSaveToken");
+		HXF_CVARConvert_Generic("hxcus_HXArtifact", "HXCUS_ArtifactToken");
+		HXF_CVARConvert_Generic("hxcus_HXKISExtended", "HXCUS_KISExtendedToken");
+		HXF_CVARConvert_Generic("hxcus_HXPowerupBox", "HXCUS_PowerupBoxToken");
+		HXF_CVARConvert_Generic("hxcus_HXPowerupTimer", "HXCUS_PowerupTimerToken");
+		HXF_CVARConvert_Generic("hxcus_HXWepIcon", "HXCUS_WeaponIconToken");
+		HXF_CVARConvert_Generic("hxsys_debugtag", "HXSYS_DebugTagToken");
+		HXF_CVARConvert_HXPTKIS();
+
+	/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
+	*
+	*	ACTOR HXMOD_PerkSmootherWeaponsEnh
+	*	CVAR bool zperk_glovedfist
+	*	CVAR bool zperk_blackgloves
+	*/
+		if (CheckInventory("HXMOD_PerkSmootherWeaponsEnh"))
+		{
+			HXF_CVARConvert_Generic("zperk_blackgloves", "HX_PerkSmooth_blackgloves");
+			HXF_CVARConvert_Generic("zperk_glovedfist", "HX_PerkSmooth_glovedfist");
+		}
+
+	/*	SmoothDoom 2.0 WIP
+	*
+	*	ACTOR HXMOD_SmoothDoom2
+	*	CVAR int wetoggle:	0, "Classic Doom"
+	*						1, "Doom 64"
+	*						2, "Black Gloves"
+	*/
+		if (CheckInventory("HXMOD_SmoothDoom2"))
+		{
+			HXF_CVARConvert_SmoothDoom2();
+		}
+
+	/* Timer */
+		// Wait 1 second before repeating
+		delay(35);
+	}
+}
+
+script "HXS_CVARBridge7ticHandler" enter
+{
+	while (true)
+	{
+	/*	//	Brutal Doom Platinum
+	*
+	*	ACTOR HXMOD_BrutalDoomPlatinum
+	*	CVAR bool bd_ShotgunSlugs
+	*	CVAR bool bd_EnergyASG
+	*/
+		if (CheckInventory("HXMOD_BrutalDoomPlatinum"))
+		{
+			HXF_CVARConvert_Generic("bd_ShotgunSlugs", "HX_BrutalDoomPlat_glassslugs");
+			HXF_CVARConvert_Generic("bd_LaserRockets", "HX_BrutalDoomPlat_laserguiderockets");
+			HXF_CVARConvert_Generic("bd_HellishLaserRockets", "HX_BrutalDoomPlat_helllaserguiderockets");
+			HXF_CVARConvert_Generic("bd_needlegun", "HX_BrutalDoomPlat_needlegun");
+			HXF_CVARConvert_Generic("bd_EnergyASG", "HX_BrutalDoomPlat_plasmashells");
+			HXF_CVARConvert_Generic("BD_STICKYGRENADES", "HX_BrutalDoomPlat_stickygrenades");
+		}
+
+	/* Timer */
+		// Wait 1/5 second before repeating
+		delay(7);
+	}
+}
+
+function void HXF_CVARConvert_Generic (str modcvar, str hxtoken)
+{
+	int modcvarcount = GetCVar(modcvar);
+	int hxtokencount = CheckInventory(hxtoken);
+
+	HXS_ItemManagement(modcvarcount, hxtoken, hxtokencount);
+}
+
+function void HXF_CVARConvert_HXPTKIS (void)
+{
+	str hxcus_cvar = "hxcus_HXPTKIS";
+
+	str hxcus_kis = "HXCUS_KISToken";
+	str hxcus_ts = "HXCUS_PTToken";
+
+	switch(GetCVar(hxcus_cvar))
+	{
+		// Remove all tokens
+		case 0:
+			if (CheckInventory(hxcus_kis)) { TakeInventory(hxcus_kis, 1); }
+			if (CheckInventory(hxcus_ts)) { TakeInventory(hxcus_ts, 1); }
+			break;
+
+		// Add KIS, remove Timer
+		case 1:
+			if (!CheckInventory(hxcus_kis)) { GiveInventory(hxcus_kis, 1); }
+			if (CheckInventory(hxcus_ts)) { TakeInventory(hxcus_ts, 1); }
+			break;
+
+		// Remove KIS, add Timer
+		case 2:
+			if (CheckInventory(hxcus_kis)) { TakeInventory(hxcus_kis, 1); }
+			if (!CheckInventory(hxcus_ts)) { GiveInventory(hxcus_ts, 1); }
+			break;
+
+		// Add KIS, Add Timer
+		case 3:
+			if (!CheckInventory(hxcus_kis)) { GiveInventory(hxcus_kis, 1); }
+			if (!CheckInventory(hxcus_ts)) { GiveInventory(hxcus_ts, 1); }
+			break;
+
+		// Problems?
+		default:
+			log(s:"\cgHXRTC HUD ERR: \ciHX_CVARBridge::HXF_CVARConvert_HXPTKIS");
+			break;
+	}
+}
+
+function void HXF_CVARConvert_SmoothDoom2 (void)
+{
+	str hx_sd_cvar = "wetoggle";
+
+	str hx_sd_blackgloves = "HX_SmoothDoom2_blackgloves";
+	str hx_sd_doom64 = "HX_SmoothDoom2_doom64";
+
+	switch(GetCVar(hx_sd_cvar))
+	{
+		// Remove all tokens
+		case 0:
+			if (CheckInventory(hx_sd_blackgloves)) { TakeInventory(hx_sd_blackgloves, 1); }
+			if (CheckInventory(hx_sd_doom64)) { TakeInventory(hx_sd_doom64, 1); }
+			break;
+
+		// Remove Black Gloves, add Doom64
+		case 1:
+			if (CheckInventory(hx_sd_blackgloves)) { TakeInventory(hx_sd_blackgloves, 1); }
+			if (!CheckInventory(hx_sd_doom64)) { GiveInventory(hx_sd_doom64, 1); }
+			break;
+
+		// Add Black Gloves, remove Doom64
+		case 2:
+			if (!CheckInventory(hx_sd_blackgloves)) { GiveInventory(hx_sd_blackgloves, 1); }
+			if (CheckInventory(hx_sd_doom64)) { TakeInventory(hx_sd_doom64, 1); }
+			break;
+
+		// Problems?
+		default:
+			log(s:"\cgHXRTC HUD ERR: \ciHX_CVARBridge::HXF_CVARConvert_SmoothDoom2");
+			break;
+	}
+}

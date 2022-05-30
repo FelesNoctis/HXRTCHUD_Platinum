@@ -1,0 +1,141 @@
+#library "HXMBD"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+
+str bdgrenadetype = "nadetype";
+str bdhaste = "PowerSpeed2";
+str bdinfrared = "PowerTorch";
+str bditemmeatammo = "MeatAmmo";
+str bdmeatshieldcguy = "CGuyShield";
+str bdmeatshieldmarine = "EvilMarineShield";
+str bdmeatshieldimp = "ImpShield";
+str bdmeatshieldnazi = "NaziShield";
+str bdmeatshieldsguy = "SGuyShield";
+str bdmeatshieldzciv = "ZombieCivilianShield";
+str bdmeatshieldzguy = "ZManShield";
+str bdquaddamage = "Powerquakedamage";
+str bdradsuit = "PowerMask";
+str bdshield = "PowerShield";
+str bdtransformbaron = "PowerTransformBaron";
+str bdtransformmancubus = "PowerTransformMancubus";
+str bdtransformrevenant = "PowerTransformRevenant";
+str bdtransformunmaker = "UnmakerPhaserWeapon";
+str bdvehiclebike = "PowerBikeSwitch";
+str bdvehicleheavymg = "PowerHeavyMachinegunSwitch";
+str bdvehiclehelicopter = "PowerattackhelicopterSwitch";
+str bdvehiclemech = "PowerMechSwitch";
+str bdvehicletank = "PowerTankSwitch";
+str bdvehicletankart = "PowerArtilleryTankSwitch";
+str hxbd_grenadetype = "HX_BrutalDoomPlat_grenadetype";
+str hxbd_meatammo = "HX_BrutalDoomPlat_meatammo";
+str hxbd_meatshield = "HX_BrutalDoomPlat_meatshield";
+str hxgen_haste = "HX_HastePowerUpToken";
+str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
+str hxgen_shield = "HX_ShieldPowerUpToken";
+
+script "HXS_BrutalDoom35ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_brutaldoom))
+	{
+		while (true)
+		{
+	// Key Management Tokens
+		// Blue Keys
+			HXS_ItemSync(vanillabluecard, hxgen_bluecard);
+			HXS_ItemSync(vanillablueskull, hxgen_blueskull);
+		// Red Keys
+			HXS_ItemSync(vanillaredcard, hxgen_redcard);
+			HXS_ItemSync(vanillaredskull, hxgen_redskull);
+		// Yellow Keys
+			HXS_ItemSync(vanillayellowcard, hxgen_yellowcard);
+			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull);
+
+	// Powerup Management Tokens
+		// Berserk
+			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+		// Shield
+			HXS_ItemSync(bdshield, hxgen_shield);
+
+	// Timer
+			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
+			delay(35);
+		}
+	}
+}
+
+script "HXS_BrutalDoom7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_brutaldoom))
+	{
+		while (true)
+		{
+		// Powerup Management Tokens
+			// Haste
+			HXS_PowerupTimer(bdhaste, hxgen_haste);
+			// Infrared
+			HXS_PowerupTimer(bdinfrared, hxgen_infrared);
+			// Invisibility
+			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			// Invulnerability
+			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			// Quad Damage
+			HXS_PowerupTimer(bdquaddamage, hxgen_quaddamage);
+			// Radsuit
+			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+		
+		// Grenade Check
+			HXS_ItemSync(bdgrenadetype, hxbd_grenadetype);
+
+		// Meat Shield Check
+			if (CheckInventory(bdmeatshieldcguy)
+				|| CheckInventory(bdmeatshieldmarine)
+				|| CheckInventory(bdmeatshieldimp)
+				|| CheckInventory(bdmeatshieldnazi)
+				|| CheckInventory(bdmeatshieldsguy)
+				|| CheckInventory(bdmeatshieldzciv)
+				|| CheckInventory(bdmeatshieldzguy))
+			{ GiveInventory(hxbd_meatshield, 1); }
+			else
+			{ TakeInventory(hxbd_meatshield, 1); }			
+			HX_BDMeatFlip(bditemmeatammo, hxbd_meatammo);
+
+		// Vehicle Check
+			if (CheckInventory(bdtransformbaron)
+				|| CheckInventory(bdtransformmancubus)
+				|| CheckInventory(bdtransformrevenant)
+				|| CheckInventory(bdtransformunmaker)
+				|| CheckInventory(bdvehiclebike)
+				|| CheckInventory(bdvehicleheavymg)
+				|| CheckInventory(bdvehiclehelicopter)
+				|| CheckInventory(bdvehiclemech)
+				|| CheckInventory(bdvehicletank)
+				|| CheckInventory(bdvehicletankart))
+			{ GiveInventory(hxsys_vehiclehud, 1); }
+			else
+			{ TakeInventory(hxsys_vehiclehud, 1); }
+
+		// Transformation Check
+			if (CheckInventory(bdtransformbaron)
+				|| CheckInventory(bdtransformmancubus)
+				|| CheckInventory(bdtransformrevenant)
+				|| CheckInventory(bdtransformunmaker))
+			{ GiveInventory(hxsys_transformhud, 1); }
+			else
+			{ TakeInventory(hxsys_transformhud, 1); }
+
+		// Unmaker HUD Killer
+			if (CheckInventory(bdtransformunmaker))	{ GiveInventory(hxsys_normalhudkiller, 1); }
+			else									{ TakeInventory(hxsys_normalhudkiller, 1); }
+
+		// Timer
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
+	}
+}
