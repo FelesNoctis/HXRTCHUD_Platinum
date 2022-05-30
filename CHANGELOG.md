@@ -2,6 +2,11 @@
 
 ## v0.21
 
+- **General:**
+  - All mod- (also vanilla-) specific scripts have been pulled out of the shared file and now each have their own.
+  - Every mod supported will have its own script, even if it would still use vanilla tokens. This allows for quick changes in the future, and also cuts back on loops constantly running over logic checks.
+  - Due to both of the above, mod existence logic checks have been swapped to look for their token before running a loop, so they run once on map load and then never again if their mod isn't active.
+
 - **Mod Support:**
   - Updated Brutal Doom Platinum v3.0 support to have generic fallbacks for BDPv2.0's addon weapons until support is confirmed
 
