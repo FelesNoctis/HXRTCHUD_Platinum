@@ -574,7 +574,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		*
 		*	The mod that inspired the overhaul of one of my favorite HUDs in the first place  ~Felis
 		*/
-		InInventory "HXMOD_BrutalDoomPlatinum", 1
+		else InInventory "HXMOD_BrutalDoomPlatinum", 1
 		{
 		// AMMO TALLIES PANEL - Brutal Doom Platinum
 			DrawImage "HXAMMTOP", -78, -53;
