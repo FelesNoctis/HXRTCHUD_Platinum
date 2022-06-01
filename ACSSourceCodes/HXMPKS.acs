@@ -10,7 +10,7 @@ script "HXS_PerksSmooth35ticHandler" enter
 	if (CheckInventory(hxmod_perksmoothenh)) {
 		while (true)
 		{
-		// Key Management Tokens
+/* 		// Key Management Tokens
 			// Blue Keys
 			HXS_ItemSync(vanillabluecard, hxgen_bluecard);
 			HXS_ItemSync(vanillablueskull, hxgen_blueskull);
@@ -19,7 +19,7 @@ script "HXS_PerksSmooth35ticHandler" enter
 			HXS_ItemSync(vanillaredskull, hxgen_redskull);
 			// Yellow Keys
 			HXS_ItemSync(vanillayellowcard, hxgen_yellowcard);
-			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull);
+			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull); */
 
 		// Powerup Management Tokens
 			// Berserk

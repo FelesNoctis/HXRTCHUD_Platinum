@@ -28,7 +28,7 @@ str vanillainvulnerability = "PowerInvulnerable";
 str hxgen_invulnerability = "HX_InvulnerabilityPowerUpToken";
 str vanillaradsuit = "PowerIronfeet";
 str hxgen_radsuit = "HX_RadSuitPowerUpToken";
-str vanillabluecard = "BlueCard";
+/* str vanillabluecard = "BlueCard";
 str hxgen_bluecard = "HX_BlueCardKeyToken";
 str vanillablueskull = "BlueSkull";
 str hxgen_blueskull = "HX_BlueSkullKeyToken";
@@ -39,7 +39,7 @@ str hxgen_redskull = "HX_RedSkullKeyToken";
 str vanillayellowcard = "YellowCard";
 str hxgen_yellowcard = "HX_YellowCardKeyToken";
 str vanillayellowskull = "YellowSkull";
-str hxgen_yellowskull = "HX_YellowSkullKeyToken";
+str hxgen_yellowskull = "HX_YellowSkullKeyToken"; */
 
 // BDLite
 str bdliteclass = "Doomer";
