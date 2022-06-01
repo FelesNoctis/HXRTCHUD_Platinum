@@ -461,13 +461,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 		// KEYS BAR - Brutal Doom Lite (No Sekrit)
 				DrawImage "HXKEYS", -90, -54;
-
-				InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -51; }
-				InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -51; }
-				InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -51; }
-				InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -51; }
-				InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -51; }
-				InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -51; }
+				drawkeybar 6, horizontal, reverse, auto, -12, -51, 0, 6, auto;
 			}
 			else
 			{
@@ -561,13 +555,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 		// KEYS BAR - Brutal Doom Lite (Sekrit!)
 				DrawImage "HXKEYS", -90, -60;
-
-				InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -57; }
-				InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -57; }
-				InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -57; }
-				InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -57; }
-				InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -57; }
-				InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -57; }
+				drawkeybar 6, horizontal, reverse, auto, -12, -57, 0, 6, auto;
 			}
 		}
 		/*	Brutal Doom Platinum
@@ -943,13 +931,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			}
 		// KEYS BAR - Brutal Doom Platinum
 			DrawImage "HXKEYS", -90, -86;
-
-			InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -83; }
-			InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -83; }
-			InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -83; }
-			InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -83; }
-			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -83; }
-			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -83; }
+			drawkeybar 6, horizontal, reverse, auto, -12, -83, 0, 6, auto;
 		}
 		/*	Led's Generic Weapon Mod
 		*
@@ -1054,13 +1036,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			}
 		// KEYS BAR - Led's Generic Weapon Mod
 			DrawImage "HXKEYS", -90, -60;
-
-			InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -57; }
-			InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -57; }
-			InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -57; }
-			InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -57; }
-			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -57; }
-			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -57; }
+			drawkeybar 6, horizontal, reverse, auto, -12, -57, 0, 6, auto;
 		}
 		/*	Vanilla
 		*
@@ -1144,13 +1120,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			}
 		// KEYS BAR - Vanilla
 			DrawImage "HXKEYS", -90, -48;
-
-			InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -45; }
-			InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -45; }
-			InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -45; }
-			InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -45; }
-			InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -45; }
-			InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -45; }
+			drawkeybar 6, horizontal, reverse, auto, -12, -45, 0, 6, auto;
 		}
 
 
