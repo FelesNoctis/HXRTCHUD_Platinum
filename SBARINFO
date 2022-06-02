@@ -443,25 +443,51 @@ StatusBar Fullscreen, FullscreenOffsets
 					// Ammoless
 					DrawImage "HXNOAVAI", -134, -33;
 				}
-		// ARMS BAR - Brutal Doom Lite (No Sekrit)
+		// ARMS & KEYS BARS - Brutal Doom Lite (No Sekrit)
+				// Keys
 				InInventory "HXCUS_ArmsBarToken", 1
 				{
-					DrawImage "HXARMS", -90, -67;
-
-					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -63;
-					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -63;
-					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -63;
-					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -63;
-					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -63;
-					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -63;
-					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -63;
-					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -63;
-					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -63;
-					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -63;
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -85;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -65, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -67;
+						drawkeybar 6, horizontal, reverse, auto, -12, -64, 0, 6, auto;
+					}
 				}
-		// KEYS BAR - Brutal Doom Lite (No Sekrit)
-				DrawImage "HXKEYS", -90, -54;
-				drawkeybar 6, horizontal, reverse, auto, -12, -51, 0, 6, auto;
+				else 
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -72;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -52, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -54;
+						drawkeybar 6, horizontal, reverse, auto, -12, -51, 0, 6, auto;
+					}
+				}
+
+				// Arms
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					DrawImage "HXARMS", -90, -54;
+
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -50;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -50;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -50;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -50;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -50;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -50;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -50;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -50;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -50;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -50;
+				}
 			}
 			else
 			{
@@ -537,25 +563,51 @@ StatusBar Fullscreen, FullscreenOffsets
 					// Ammoless
 					DrawImage "HXNOAVAI", -134, -33;
 				}
-		// ARMS BAR - Brutal Doom Lite (Sekrit!)
+		// ARMS & KEYS BARS - Brutal Doom Lite (Sekrit!)
+				// Keys
 				InInventory "HXCUS_ArmsBarToken", 1
 				{
-					DrawImage "HXARMS", -90, -73;
-
-					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -69;
-					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -69;
-					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -69;
-					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -69;
-					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -69;
-					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -69;
-					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -69;
-					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -69;
-					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -69;
-					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -69;
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -91;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -71, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -73;
+						drawkeybar 6, horizontal, reverse, auto, -12, -70, 0, 6, auto;
+					}
 				}
-		// KEYS BAR - Brutal Doom Lite (Sekrit!)
-				DrawImage "HXKEYS", -90, -60;
-				drawkeybar 6, horizontal, reverse, auto, -12, -57, 0, 6, auto;
+				else 
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -78;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -58, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -60;
+						drawkeybar 6, horizontal, reverse, auto, -12, -57, 0, 6, auto;
+					}
+				}
+
+				// Arms
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					DrawImage "HXARMS", -90, -60;
+
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -56;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -56;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -56;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -56;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -56;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -56;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -56;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -56;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -56;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -56;
+				}
 			}
 		}
 		/*	Brutal Doom Platinum
@@ -913,25 +965,51 @@ StatusBar Fullscreen, FullscreenOffsets
 				InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
 			}
 
-		// ARMS BAR - Brutal Doom Platinum
+		// ARMS & KEYS BARS - Brutal Doom Platinum
+			// Keys
 			InInventory "HXCUS_ArmsBarToken", 1
 			{
-				DrawImage "HXARMS", -90, -99;
-
-				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -95;
-				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -95;
-				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -95;
-				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -95;
-				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -95;
-				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -95;
-				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -95;
-				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -95;
-				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -95;
-				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -95;
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -117;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -97, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -99;
+					drawkeybar 6, horizontal, reverse, auto, -12, -96, 0, 6, auto;
+				}
 			}
-		// KEYS BAR - Brutal Doom Platinum
-			DrawImage "HXKEYS", -90, -86;
-			drawkeybar 6, horizontal, reverse, auto, -12, -83, 0, 6, auto;
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -104;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -84, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -86;
+					drawkeybar 6, horizontal, reverse, auto, -12, -83, 0, 6, auto;
+				}
+			}
+
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -86;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -82;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -82;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -82;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -82;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -82;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -82;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -82;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -82;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -82;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -82;
+			}
 		}
 		/*	Led's Generic Weapon Mod
 		*
@@ -1018,25 +1096,52 @@ StatusBar Fullscreen, FullscreenOffsets
 				// Ammoless
 				DrawImage "HXNOAVAI", -134, -33;
 			}
-		// ARMS BAR - Led's Generic Weapon Mod
+
+		// ARMS & KEYS BARS - Led's Generic Weapon Mod
+			// Keys
 			InInventory "HXCUS_ArmsBarToken", 1
 			{
-				DrawImage "HXARMS", -90, -73;
-
-				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -69;
-				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -69;
-				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -69;
-				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -69;
-				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -69;
-				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -69;
-				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -69;
-				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -69;
-				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -69;
-				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -69;
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -91;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -71, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -73;
+					drawkeybar 6, horizontal, reverse, auto, -12, -70, 0, 6, auto;
+				}
 			}
-		// KEYS BAR - Led's Generic Weapon Mod
-			DrawImage "HXKEYS", -90, -60;
-			drawkeybar 6, horizontal, reverse, auto, -12, -57, 0, 6, auto;
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -78;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -58, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -60;
+					drawkeybar 6, horizontal, reverse, auto, -12, -57, 0, 6, auto;
+				}
+			}
+
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -60;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -56;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -56;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -56;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -56;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -56;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -56;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -56;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -56;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -56;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -56;
+			}
 		}
 		/*	Vanilla
 		*
@@ -1102,25 +1207,51 @@ StatusBar Fullscreen, FullscreenOffsets
 				// Ammoless
 				DrawImage "HXNOAVAI", -134, -33;
 			}
-		// ARMS BAR - Vanilla
+		// ARMS & KEYS BARS - Vanilla
+			// Keys
 			InInventory "HXCUS_ArmsBarToken", 1
 			{
-				DrawImage "HXARMS", -90, -61;
-
-				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -57;
-				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -57;
-				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -57;
-				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -57;
-				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -57;
-				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -57;
-				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -57;
-				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -57;
-				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -57;
-				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -57;
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -79;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -59, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -61;
+					drawkeybar 6, horizontal, reverse, auto, -12, -58, 0, 6, auto;
+				}
 			}
-		// KEYS BAR - Vanilla
-			DrawImage "HXKEYS", -90, -48;
-			drawkeybar 6, horizontal, reverse, auto, -12, -45, 0, 6, auto;
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -66;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -46, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -48;
+					drawkeybar 6, horizontal, reverse, auto, -12, -45, 0, 6, auto;
+				}
+			}
+			
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -48;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -44;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -44;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -44;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -44;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -44;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -44;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -44;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -44;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -44;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
+			}
 		}
 
 

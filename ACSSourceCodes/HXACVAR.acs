@@ -16,6 +16,7 @@ script "HXS_CVARBridge35ticHandler" enter
 		HXF_CVARConvert_Generic("hxcus_HXArmsBar", "HXCUS_ArmsBarToken");
 		HXF_CVARConvert_Generic("hxcus_HXArmorSave", "HXCUS_ArmorSaveToken");
 		HXF_CVARConvert_Generic("hxcus_HXArtifact", "HXCUS_ArtifactToken");
+		HXF_CVARConvert_Generic("hxcus_HXKeysExtended", "HXCUS_KeysExtendedToken");
 		HXF_CVARConvert_Generic("hxcus_HXKISExtended", "HXCUS_KISExtendedToken");
 		HXF_CVARConvert_Generic("hxcus_HXPowerupBox", "HXCUS_PowerupBoxToken");
 		HXF_CVARConvert_Generic("hxcus_HXPowerupTimer", "HXCUS_PowerupTimerToken");

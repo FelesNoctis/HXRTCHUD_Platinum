@@ -6,6 +6,7 @@ ACTOR HXCUS_AirMeterToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmoun
 ACTOR HXCUS_ArmorSaveToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_ArmsBarToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_ArtifactToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXCUS_KeysExtendedToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_KISExtendedToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_KISToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_PowerupBoxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
