@@ -7,6 +7,10 @@
   - Every mod supported will have its own script, even if it would still use vanilla tokens. This allows for quick changes in the future, and also cuts back on loops constantly running over logic checks.
   - Due to both of the above, mod existence logic checks have been swapped to look for their token before running a loop, so they run once on map load and then never again if their mod isn't active.
 
+- **Bottom-Right Panels:**
+  - **Keys Bar** now uses DrawKeysBar function. This means the HUD now uses the default icon assigned to a key, but is much more flexible regarding mod support
+  - **Keys Bar** is now a panel that can toggle between 1x6 and 3x8 layouts, for when maps have crazy numbers of keys
+
 - **Mod Support:**
   - Updated Brutal Doom Platinum v3.0 support to have generic fallbacks for BDPv2.0's addon weapons until support is confirmed
 
