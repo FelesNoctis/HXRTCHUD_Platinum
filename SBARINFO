@@ -870,8 +870,8 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawImage "HXAMMEAT", -144, -33;
 
 					// Left Ammo
-						DrawBar "HXAMDLOK", "HXAMDUNO", HX_BrutalDoomPlat_meatammo, vertical, interpolate(64), -140, -28;
-						DrawNumber 3, HXSTATUSFONT, HXRTCRed, HX_BrutalDoomPlat_meatammo, interpolate(128), -108, -29, 0, HXRTCDarkRed, 25, HXRTCLightRed, 75;
+						DrawBar "HXAMDLOK", "HXAMDUNO", HX_BrutalDoom_meatammo, vertical, interpolate(64), -140, -28;
+						DrawNumber 3, HXSTATUSFONT, HXRTCRed, HX_BrutalDoom_meatammo, interpolate(128), -108, -29, 0, HXRTCDarkRed, 25, HXRTCLightRed, 75;
 					// Right Ammo
 						DrawBar "HXAMDROK", "HXAMDUNO", ammo1, vertical, interpolate(64), -87, -28;
 						DrawNumber 2, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 4;
@@ -1009,6 +1009,129 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -82;
 				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -82;
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -82;
+			}
+		}
+		/*	Brutal Doom v21/CE
+		*
+		*	Respects standard and purist modes
+		*/
+		else InInventory "HXMOD_BrutalDoom", 1
+		{
+			InInventory "IsPlayingAsPurist", 1
+			{
+		// AMMO TALLIES PANEL - Brutal Doom Purist
+				DrawImage "HXAMMTOP", -78, -41;
+				DrawImage "HXAMMROW", -78, -31;
+				DrawImage "HXAMMROW", -78, -25;
+				DrawImage "HXAMMROW", -78, -19;
+				DrawImage "HXAMMBOT", -78, -13;
+
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -36, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -30, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -24, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -18, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "FLAM", -73, -12, 0, alignment(left);
+
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Clip2,		horizontal, interpolate(64), -56, -36;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoShell,	horizontal, interpolate(64), -56, -30;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoRocket,	horizontal, interpolate(64), -56, -24;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo AmmoCell,	horizontal, interpolate(64), -56, -18;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Gas,		horizontal, interpolate(64), -56, -12;
+
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip2,		-6, -36;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo AmmoShell,	-6, -30;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo AmmoRocket,	-6, -24;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo AmmoCell,	-6, -18;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Gas,		-6, -12;
+
+				// Ammo Tally highlight and Current Ammo equipped by type
+				UsesAmmo
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+
+					WeaponAmmo Clip2
+					{
+						DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -36, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip2, -6, -36;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
+					}
+					WeaponAmmo AmmoShell
+					{
+						DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoShell,  -6, -30;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
+					}
+					WeaponAmmo AmmoRocket
+					{
+						DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -24, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoRocket, -6, -24;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
+					}
+					WeaponAmmo AmmoCell
+					{
+						DrawString HXGENERALFONTS, untranslated, "CELL", -73, -18, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo AmmoCell, -6, -18;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
+					}
+					WeaponAmmo Gas
+					{
+						DrawString HXGENERALFONTS, untranslated, "FLAM", -73, -12, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Gas, -6, -12;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
+					}
+				}
+				else
+				{
+					// Ammoless
+					DrawImage "HXNOAVAI", -134, -33;
+				}
+		// ARMS & KEYS BARS - Brutal Doom Purist
+				// Keys
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -85;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -65, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -67;
+						drawkeybar 6, horizontal, reverse, auto, -12, -64, 0, 6, auto;
+					}
+				}
+				else 
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -72;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -52, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -54;
+						drawkeybar 6, horizontal, reverse, auto, -12, -51, 0, 6, auto;
+					}
+				}
+
+				// Arms
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					DrawImage "HXARMS", -90, -54;
+
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -50;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -50;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -50;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -50;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -50;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -50;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -50;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -50;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -50;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -50;
+				}
 			}
 		}
 		/*	Led's Generic Weapon Mod
@@ -1268,7 +1391,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			{
 				DrawImage "HXWEAPON", -122, -53;
 
-				InInventory "HX_BrutalDoomPlat_meatshield" { DrawImage "PISTG0", -100, -43, center, 36, 12; }
+				InInventory "HX_BrutalDoom_meatshield" { DrawImage "PISTG0", -100, -43, center, 36, 12; }
 				else IsSelected "DualRevolver" { DrawImage "REVOT0", -100, -43, center, 36, 12; }
 				else IsSelected "HandGrenades"
 				{
