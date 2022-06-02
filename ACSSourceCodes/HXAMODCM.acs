@@ -146,18 +146,3 @@ function void HXS_PowerupTimer (str moditem, str hxitem)
 
 	HXS_ItemManagement(moditemduration, hxitem, hxitemcount);
 }
-
-function void HX_BDMeatFlip (str meatammo, str hxmeatammo)
-{
-	int meattoken = CheckInventory(meatammo);
-	int hxtoken = CheckInventory(hxmeatammo);
-	int bdmaxmeatammo = 100; // BD's max stamina count
-	int bdmeatcorrection = bdmaxmeatammo - meattoken; // the HX meat ammo we should have
-
-	if (meattoken)
-	{
-		if (bdmeatcorrection > hxtoken) { GiveInventory(hxmeatammo, bdmeatcorrection - hxtoken); }
-		else if (bdmeatcorrection < hxtoken) { TakeInventory(hxmeatammo, hxtoken - bdmeatcorrection); }
-	}
-	else if (!meattoken && hxtoken != bdmaxmeatammo) { GiveInventory(hxmeatammo, bdmaxmeatammo - hxtoken); }
-}

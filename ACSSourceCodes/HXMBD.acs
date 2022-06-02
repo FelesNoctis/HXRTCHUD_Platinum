@@ -27,8 +27,8 @@ str bdvehiclemech = "PowerMechSwitch";
 str bdvehicletank = "PowerTankSwitch";
 str bdvehicletankart = "PowerArtilleryTankSwitch";
 str hxbd_grenadetype = "HX_BrutalDoomPlat_grenadetype";
-str hxbd_meatammo = "HX_BrutalDoomPlat_meatammo";
-str hxbd_meatshield = "HX_BrutalDoomPlat_meatshield";
+str hxbd_meatammo = "HX_BrutalDoom_meatammo";
+str hxbd_meatshield = "HX_BrutalDoom_meatshield";
 str hxgen_haste = "HX_HastePowerUpToken";
 str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
 str hxgen_shield = "HX_ShieldPowerUpToken";
@@ -76,21 +76,21 @@ script "HXS_BrutalDoom7ticHandler" enter
 		while (true)
 		{
 		// Powerup Management Tokens
-			// Haste
-			HXS_PowerupTimer(bdhaste, hxgen_haste);
+			// Haste (BDP)
+			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_PowerupTimer(bdhaste, hxgen_haste); }
 			// Infrared
 			HXS_PowerupTimer(bdinfrared, hxgen_infrared);
 			// Invisibility
 			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
 			// Invulnerability
 			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
-			// Quad Damage
-			HXS_PowerupTimer(bdquaddamage, hxgen_quaddamage);
+			// Quad Damage (BDP)
+			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_PowerupTimer(bdquaddamage, hxgen_quaddamage); }
 			// Radsuit
 			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
 		
 		// Grenade Check
-			HXS_ItemSync(bdgrenadetype, hxbd_grenadetype);
+			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_ItemSync(bdgrenadetype, hxbd_grenadetype); }
 
 		// Meat Shield Check
 			if (CheckInventory(bdmeatshieldcguy)
@@ -138,4 +138,19 @@ script "HXS_BrutalDoom7ticHandler" enter
 			delay(7);
 		}
 	}
+}
+
+function void HX_BDMeatFlip (str meatammo, str hxmeatammo)
+{
+	int meattoken = CheckInventory(meatammo);
+	int hxtoken = CheckInventory(hxmeatammo);
+	int bdmaxmeatammo = 100; // BD's max stamina count
+	int bdmeatcorrection = bdmaxmeatammo - meattoken; // the HX meat ammo we should have
+
+	if (meattoken)
+	{
+		if (bdmeatcorrection > hxtoken) { GiveInventory(hxmeatammo, bdmeatcorrection - hxtoken); }
+		else if (bdmeatcorrection < hxtoken) { TakeInventory(hxmeatammo, hxtoken - bdmeatcorrection); }
+	}
+	else if (!meattoken && hxtoken != bdmaxmeatammo) { GiveInventory(hxmeatammo, bdmaxmeatammo - hxtoken); }
 }
