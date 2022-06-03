@@ -1820,30 +1820,49 @@ StatusBar Fullscreen, FullscreenOffsets
 					InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
 				}
 
+				// KEYS BAR
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -117;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -97, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -99;
+						drawkeybar 6, horizontal, reverse, auto, -12, -96, 0, 6, auto;
+					}
+				}
+				else 
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -104;
+						drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -84, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -86;
+						drawkeybar 6, horizontal, reverse, auto, -12, -83, 0, 6, auto;
+					}
+				}
+
 				// ARMS BAR
 				InInventory "HXCUS_ArmsBarToken", 1
 				{
-					DrawImage "HXARMS", -90, -99;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot1, -53, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot2, -48, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot3, -43, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot4, -38, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot5, -33, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot6, -28, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot7, -23, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot8, -18, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot9, -13, -95, 0;
-					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot0,  -8, -95, 0;
+					DrawImage "HXARMS", -90, -86;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot1, -53, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot2, -48, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot3, -43, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot4, -38, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot5, -33, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot6, -28, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot7, -23, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot8, -18, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot9, -13, -82, 0;
+					DrawNumber 4, HXINDEXFONTS, untranslated, HX_BDP_UWeaponslot0,  -8, -82, 0;
 				}
-
-				// KEYS BAR
-				DrawImage "HXKEYS", -90, -86;
-				InInventory "HX_BlueCardKeyToken", 1 	{ DrawImage "HXKEYS0", -58, -83; }
-				InInventory "HX_YellowCardKeyToken", 1	{ DrawImage "HXKEYS1", -49, -83; }
-				InInventory "HX_RedCardKeyToken", 1 	{ DrawImage "HXKEYS2", -40, -83; }
-				InInventory "HX_BlueSkullKeyToken", 1	{ DrawImage "HXKEYS3", -31, -83; }
-				InInventory "HX_YellowSkullKeyToken", 1	{ DrawImage "HXKEYS4", -22, -83; }
-				InInventory "HX_RedSkullKeyToken", 1	{ DrawImage "HXKEYS5", -13, -83; }
 
 				// CURRENT WEAPON ICON PANEL
 				InInventory "HXCUS_WeaponIconToken", 1
