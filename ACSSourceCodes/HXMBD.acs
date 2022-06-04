@@ -29,6 +29,7 @@ str bdvehicletankart = "PowerArtilleryTankSwitch";
 str hxbd_grenadetype = "HX_BrutalDoomPlat_grenadetype";
 str hxbd_meatammo = "HX_BrutalDoom_meatammo";
 str hxbd_meatshield = "HX_BrutalDoom_meatshield";
+str hxbd_tfduration = "HX_BrutalDoom_TransformationDuration";
 str hxgen_haste = "HX_HastePowerUpToken";
 str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
 str hxgen_shield = "HX_ShieldPowerUpToken";
@@ -128,6 +129,16 @@ script "HXS_BrutalDoom7ticHandler" enter
 			{ GiveInventory(hxsys_transformhud, 1); }
 			else
 			{ TakeInventory(hxsys_transformhud, 1); }
+
+			if (CheckInventory(hxsys_transformhud))
+			{
+				if (CheckInventory(bdtransformbaron)) { HXS_PowerupTimer(bdtransformbaron, hxbd_tfduration); }
+				if (CheckInventory(bdtransformmancubus)) { HXS_PowerupTimer(bdtransformmancubus, hxbd_tfduration); }
+				if (CheckInventory(bdtransformrevenant)) { HXS_PowerupTimer(bdtransformrevenant, hxbd_tfduration); }
+			}
+			else { TakeInventory(hxbd_tfduration, hxbd_tfduration); }
+
+
 
 		// Unmaker HUD Killer
 			if (CheckInventory(bdtransformunmaker))	{ GiveInventory(hxsys_normalhudkiller, 1); }
