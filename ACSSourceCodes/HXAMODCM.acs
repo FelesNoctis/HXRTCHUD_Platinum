@@ -12,6 +12,7 @@ str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
 str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
+str hxmod_supercharge = "HXMOD_Supercharge";
 
 // HUD Mode Switch
 str hxsys_normalhudkiller = "HXSYS_NormalHUDKillerToken";
@@ -81,6 +82,11 @@ str smoothdoomclass = "PerkDPlayer";
 str smoothdoomfist = "PerkFist";
 str smoothdoompistol = "PerkPistol";
 
+// Supercharge 2.8
+str superchargefist = "TangoFist";
+str superchargepistol = "TangoPistol";
+str superchargerifleammo = "AssaultRifleAmmo";
+
 script "HXS_ModCompatibilityStartup" enter
 {
 // Mod Master Tokens
@@ -129,6 +135,12 @@ script "HXS_ModCompatibilityStartup" enter
 			&& CheckInventory(smoothdoompistol)
 			&& !CheckInventory(hxmod_smoothdoom))
 		{ GiveInventory(hxmod_smoothdoom, 1); }
+	// Supercharge 2.8
+		else if (CheckInventory(superchargefist)
+			&& CheckInventory(superchargepistol)
+			&& CheckInventory(superchargerifleammo)
+			&& !CheckInventory(hxmod_supercharge))
+		{ GiveInventory(hxmod_supercharge, 1); }
 	// No supported mod detected
 		else if (!CheckInventory(hxmod_none)) { GiveInventory(hxmod_none, 1); }
 }

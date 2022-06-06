@@ -7,6 +7,7 @@
 
 - **Mod Support:**
   - Beautiful Doom
+  - Supercharge
 
 ## v0.21
 
