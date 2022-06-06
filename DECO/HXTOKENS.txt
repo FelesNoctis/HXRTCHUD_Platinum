@@ -31,12 +31,6 @@ ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Invento
 ACTOR HX_QuadDamagePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
 ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_ShieldPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-/* ACTOR HX_BlueCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_BlueSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_RedCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_RedSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_YellowCardKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_YellowSkullKeyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 } */
 ACTOR HXMOD_VANILLA: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	BDLite 1.2
 ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

@@ -12,7 +12,9 @@
   - **Keys Bar** is now a panel that can toggle between 1x6 and 3x8 layouts, for when maps have crazy numbers of keys
 
 - **Mod Support:**
-  - Updated Brutal Doom Platinum v3.0 support to have generic fallbacks for BDPv2.0's addon weapons until support is confirmed
+  - Brutal Doom v21
+  - Brutal Doom Community Expansion
+  - Brutal Doom Platinum v3.0: Updated support to have generic fallbacks for BDPv2.0's addon weapons until full support is confirmed
 
 ## v0.20
 

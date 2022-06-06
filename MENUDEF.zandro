@@ -1,0 +1,79 @@
+//-------------------------------------------------------------------------------------------
+//
+// Zandronum 3.1
+// HUD menu
+//
+//-------------------------------------------------------------------------------------------
+
+OptionMenu "HUDOptions"
+{
+	Title "HUD Options"
+	Submenu "HXRTC HUD Options",			"HXRTCHUDPlat"
+	StaticText " "
+	
+	Submenu "Alternative HUD",			"AltHudOptions"
+	Submenu "Message Options", 			"MessageOptions"
+	StaticText " "
+	Option "Default Crosshair",			"crosshair", "Crosshairs"
+	Option "Force default crosshair",	"crosshairforce", "OnOff"
+	Option "Grow crosshair when picking up items",	"crosshairgrow", "OnOff"
+	ColorPicker "Crosshair color", 		"crosshaircolor"
+	Option "Crosshair shows health",	"crosshairhealth", "OnOff"
+	Option "Scale crosshair",			"crosshairscale", "OnOff"
+	Option "Voting display",			"cl_showfullscreenvote", "ZA_VotingDisplay"
+	Option "Hide vote screen after vote",		"cl_hidevotescreen", "YesNo" // [AK]
+	Option "Fullscreen HUD",			"cl_stfullscreenhud", "ZA_FullscreenHUD"
+	StaticText " "
+	Option "Large frag messages",		"cl_showlargefragmessages",	"YesNo" // [TP]
+	Option "Draw coop info",			"cl_drawcoopinfo", "YesNo" // [TP]
+	Option "Display nametags",			"displaynametags", "DisplayTagsTypes"
+	Option "Nametag color",				"nametagcolor", "TextColors", "displaynametags"
+	Option "Stretch status bar",		"st_scale", "OnOff"
+	Option "Stretch Fullscreen HUD",	"hud_scale", "OnOff"
+	Option "Use old ouch mug shot formula",	"st_oldouch", "OnOff"
+	StaticText " "
+	Option "Hexen weapon flashes",		"pf_hexenweaps",	"ZDoomHexen"
+	Option "Poison damage flashes",		"pf_poison",		"ZDoomHexen"
+	Option "Ice death flashes",			"pf_ice",			"ZDoomHexen"
+	Option "Poison Buildup flashes",	"pf_hazard",		"ZDoomStrife"
+}
+
+OptionMenu "HXRTCHUDPlat"
+{
+	Title "HXRTC HUD Options"
+
+	StaticText "Engine Settings", 1
+	Option "Stretch Fullscreen HUD", "hud_scale", "OnOff"
+	StaticText " "
+
+	StaticText "Panel Customization", 1
+	Option "Air Supply", "hxcus_HXAirMeter", "OnOff"
+	Option "Armor Save %", "hxcus_HXArmorSave", "OnOff"
+	Option "Current Item", "hxcus_HXArtifact", "OnOff"
+	Option "Keys Bar Extended", "hxcus_HXKeysExtended", "OnOff"
+	Option "Level Stats", "hxcus_HXPTKIS", "HXRTCHUDPlat_Cus_PTKIS"
+	Option "Level Stats Extended", "hxcus_HXKISExtended", "OnOff"
+	Option "Powerup Visibility", "hxcus_HXPowerupBox", "HXRTCHUDPlat_Cus_Powerups"
+	Option "Powerup Timer Visibility", "hxcus_HXPowerupTimer", "HXRTCHUDPlat_Cus_Powerups"
+	Option "Weapon Icon", "hxcus_HXWepIcon", "OnOff"
+	Option "Weapon Slots Bar", "hxcus_HXArmsBar", "OnOff"
+	StaticText " "
+
+	StaticText "Developer Tools", 1
+	Option "Tag Readout", "hxsys_debugtag", "OnOff"
+}
+
+OptionValue HXRTCHUDPlat_Cus_Powerups
+{
+	0.0, "Never"
+	1.0, "Only When Active"
+	2.0, "Always"
+}
+
+OptionValue HXRTCHUDPlat_Cus_PTKIS
+{
+	0.0, "None"
+	1.0, "Kills/Items/Secrets"
+	2.0, "Level Timer"
+	3.0, "Both K/I/S + Timer"
+}
