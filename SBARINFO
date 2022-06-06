@@ -380,11 +380,152 @@ StatusBar Fullscreen, FullscreenOffsets
 	InInventory not "HXSYS_VehicleHUDToken", 1 || "HXSYS_NormalHUDKillerToken", 1
 	{
 	// AMMO AND WEAPONS
+		/*	Led's Generic Weapon Mod
+		*
+		*/
+		InInventory "HXMOD_BeautifulDoom", 1
+		{
+		// AMMO TALLIES PANEL - Beautiful Doom
+			DrawImage "HXAMMTOP", -78, -35;
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -30, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -18, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -12, 0, alignment(left);
+
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,		horizontal, interpolate(64), -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,		horizontal, interpolate(64), -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,	horizontal, interpolate(64), -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,		horizontal, interpolate(64), -56, -12;
+
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,		-6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell,		-6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,	-6, -18;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,		-6, -12;
+
+			// Ammo Tally highlight and Current Ammo equipped by type
+			UsesAmmo
+			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+
+				WeaponAmmo Clip
+				{
+					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
+
+					InInventory "HX_BeautifulDoom_weapontype", 2
+					{
+						IsSelected "BD_Pistol"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 4; }
+						else IsSelected "BD_Chaingun"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+					}
+					else InInventory not "HX_BeautifulDoom_weapontype", 2
+					{ 
+						IsSelected "BD_Pistol"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+						else IsSelected "BD_Chaingun"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					}
+				}
+				WeaponAmmo Shell
+				{
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
+
+					// Mode 0 & 1 use the same thresholds
+					InInventory "HX_BeautifulDoom_weapontype", 2
+					{
+						IsSelected "BD_Shotgun"				{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+						else IsSelected "BD_SuperShotgun"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 1; }
+					}
+					else InInventory not "HX_BeautifulDoom_weapontype", 2
+					{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 10; }
+				}
+				WeaponAmmo RocketAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+
+					// Mode 0 & 1 use the same thresholds
+					InInventory "HX_BeautifulDoom_weapontype", 2
+					{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+					else InInventory not "HX_BeautifulDoom_weapontype", 2
+					{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+				}
+				WeaponAmmo Cell
+				{
+					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+					
+					// Mode 1 & 2 use the same thresholds
+					InInventory "HX_BeautifulDoom_weapontype", 1
+					{
+						IsSelected "BD_PlasmaRifle"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 60; }
+						else IsSelected "BD_BFG9000"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 80; }
+					}
+					else InInventory not "HX_BeautifulDoom_weapontype"
+					{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 80; }
+				}
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+
+		// ARMS & KEYS BARS - Beautiful Doom
+			// Keys
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -79;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -59, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -61;
+					drawkeybar 6, horizontal, reverse, auto, -12, -58, 0, 6, auto;
+				}
+			}
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -66;
+					drawkeybar 8, horizontal, reverse, reverserows, auto, -13, -46, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -48;
+					drawkeybar 6, horizontal, reverse, auto, -12, -45, 0, 6, auto;
+				}
+			}
+			
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -48;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -44;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -44;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -44;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -44;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -44;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -44;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -44;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -44;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -44;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
+			}
+		}
 		/*	Brutal Doom Lite 
 		*
 		*	SEKRIT will reorganize HUD appropriately
 		*/
-		InInventory "HXMOD_BDLite", 1
+		else InInventory "HXMOD_BDLite", 1
 		{
 			InInventory not "FlakCannon"
 			{
@@ -1870,7 +2011,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		*
 		*	Anything that doesn't change the default ammos should "Just Work"
 		*/
-		else
+		else InInventory "HXMOD_VANILLA", 1
 		{
 		// AMMO TALLIES PANEL - Vanilla
 			DrawImage "HXAMMTOP", -78, -35;

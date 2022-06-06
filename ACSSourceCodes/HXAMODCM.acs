@@ -5,6 +5,7 @@
 str hxmod_none = "HXMOD_VANILLA";
 str hxmod_resettoken = "HXMOD_IDontExist";
 str hxmod_bdlite = "HXMOD_BDLite";
+str hxmod_beautifuldoom = "HXMOD_BeautifulDoom";
 str hxmod_brutaldoom = "HXMOD_BrutalDoom";
 str hxmod_brutaldoomce = "HXMOD_BrutalDoomBWCE";
 str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
@@ -40,6 +41,11 @@ str vanillayellowcard = "YellowCard";
 str hxgen_yellowcard = "HX_YellowCardKeyToken";
 str vanillayellowskull = "YellowSkull";
 str hxgen_yellowskull = "HX_YellowSkullKeyToken"; */
+
+// Beautiful Doom
+str beautifulbloodcontrol = "BD_BloodyPrintControl";
+str beautifuloverlaycontrol = "BD_OverlayControl";
+str beautifulweaponcontrol = "BD_WeaponPickupControl";
 
 // BDLite
 str bdliteclass = "Doomer";
@@ -78,8 +84,14 @@ str smoothdoompistol = "PerkPistol";
 script "HXS_ModCompatibilityStartup" enter
 {
 // Mod Master Tokens
+	// Beautiful Doom 7.1.6
+		if (CheckInventory(beautifulbloodcontrol)
+			&& CheckInventory(beautifuloverlaycontrol)
+			&& CheckInventory(beautifulweaponcontrol)
+			&& !CheckInventory(hxmod_beautifuldoom))
+		{ GiveInventory(hxmod_beautifuldoom, 1); }	
 	// BDLite
-		if (CheckActorClass(0, bdliteclass)
+		else if (CheckActorClass(0, bdliteclass)
 			&& CheckInventory(bdlitefist)
 			&& CheckInventory(bdliterifle)
 			&& !CheckInventory(hxmod_bdlite))

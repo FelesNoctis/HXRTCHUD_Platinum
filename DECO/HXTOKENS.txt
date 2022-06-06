@@ -31,9 +31,13 @@ ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Invento
 ACTOR HX_QuadDamagePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
 ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_ShieldPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	No Mods Detected/Vanilla
 ACTOR HXMOD_VANILLA: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	BDLite 1.2
 ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Beautiful Doom
+ACTOR HXMOD_BeautifulDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BeautifulDoom_weapontype: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 //	Brutal Doom v21/Platinum
 ACTOR HXMOD_BrutalDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoomBWCE: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
@@ -59,7 +63,7 @@ ACTOR HX_LedsGenWep9mmAmmo: Ammo
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HXMOD_PerkSmootherWeaponsEnh: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_PerkSmooth_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_PerkSmooth_glovedfist: Inventory { Inventory.MaxAmount 1 }
+ACTOR HX_PerkSmooth_glovedfist: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	SmoothDoom 2.0 WIP
 ACTOR HXMOD_SmoothDoom2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_SmoothDoom2_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

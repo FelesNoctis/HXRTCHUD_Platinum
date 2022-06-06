@@ -24,6 +24,16 @@ script "HXS_CVARBridge35ticHandler" enter
 		HXF_CVARConvert_Generic("hxsys_debugtag", "HXSYS_DebugTagToken");
 		HXF_CVARConvert_HXPTKIS();
 
+	/*	Beautiful Doom 7.1.6
+	*
+	*	ACTOR HXMOD_BeautifulDoom
+	*	CVAR bool bdoom_weapons
+	*/
+		if (CheckInventory("HXMOD_BeautifulDoom"))
+		{
+			HXF_CVARConvert_Generic("bdoom_weapons", "HX_BeautifulDoom_weapontype");
+		}
+
 	/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
 	*
 	*	ACTOR HXMOD_PerkSmootherWeaponsEnh

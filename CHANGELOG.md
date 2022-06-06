@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.30
+
+- **General:**
+  - Major version change would have happened in 0.21, but the connection to BDv21 was just too good, so you get it here instead.
+
+- **Mod Support:**
+  - Beautiful Doom
+
 ## v0.21
 
 - **General:**
