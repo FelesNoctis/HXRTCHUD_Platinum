@@ -1183,7 +1183,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		{
 			InInventory not "IsPlayingAsPurist", 1
 			{
-			// NUKE PANEL - Brutal Doom v21/CE
+		// NUKE PANEL - Brutal Doom v21/CE
 				InInventory "NukeLauncher", 1
 				{
 					InInventory "HXCUS_WeaponIconToken", 1
@@ -1197,7 +1197,7 @@ StatusBar Fullscreen, FullscreenOffsets
 						InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
 					}
 				}
-			// AMMO TALLIES PANEL - Brutal Doom
+		// AMMO TALLIES PANEL - Brutal Doom
 				// Brutal Doom CE
 				InInventory AmmoMagnum || AmmoSlug
 				{	DrawImage "HXAMMTOP", -78, -89;
@@ -1535,7 +1535,7 @@ StatusBar Fullscreen, FullscreenOffsets
 						InInventory not "NoFatality" { DrawString HXSTATUSFONT, HXRTCDarkRed, "TEAr", -84, -29, 0; }
 					}
 				}
-			// ARMS & KEYS BARS - Brutal Doom
+		// ARMS & KEYS BARS - Brutal Doom
 				// Keys
 				InInventory "HXCUS_ArmsBarToken", 1
 				{
@@ -1630,7 +1630,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			}
 			else
 			{
-			// NUKE PANEL - Brutal Doom Purist
+		// NUKE PANEL - Brutal Doom Purist
 				InInventory "NukeLauncher", 1
 				{
 					InInventory "HXCUS_WeaponIconToken", 1
@@ -1644,7 +1644,7 @@ StatusBar Fullscreen, FullscreenOffsets
 						InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
 					}
 				}
-			// AMMO TALLIES PANEL - Brutal Doom Purist
+		// AMMO TALLIES PANEL - Brutal Doom Purist
 				// Clip and Mauser
 				InInventory ClassicUnmaker || ClassicMP40
 				{ 	DrawImage "HXAMMTOP", -78, -59;
@@ -1796,7 +1796,7 @@ StatusBar Fullscreen, FullscreenOffsets
 					// Ammoless
 					DrawImage "HXNOAVAI", -134, -33;
 				}
-			// ARMS & KEYS BARS - Brutal Doom Purist
+		// ARMS & KEYS BARS - Brutal Doom Purist
 				// Keys
 				InInventory "HXCUS_ArmsBarToken", 1
 				{
