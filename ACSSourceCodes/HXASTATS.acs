@@ -15,7 +15,6 @@ script "HXS_PlayerStats7ticHandler" enter
 
 		HXS_StatSync(GetActorProperty(0, APROP_Health), healthtoken);
 		HXS_StatSync(CheckInventory("BasicArmor"), armortoken);
-		HXS_StamFlip(CheckInventory("UsedStamina"), staminatoken);
 		HXS_PlayerAltitude();
 
 		// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
@@ -31,26 +30,37 @@ function void HXS_PlayerAltitude (void)
 	HXS_ItemManagement(hxaltitude, altitudetoken, tokencount);
 }
 
-function void HXS_StamFlip (int usedstamina, str token)
+function void HXS_StamFlip (int usedstamina, str token, int maxstamina)
 {
-	int bdmaxusedstamina = 110; // BD's max stamina count
-	int bdtokencorrection = bdmaxusedstamina - usedstamina; // the HX stamina tokens we should have
+	int tokencorrection = maxstamina - usedstamina; // the HX stamina tokens we should have
 	int tokencount = CheckInventory(token); // the HX stamina tokens we do have
 	int stickytoken = CheckInventory(staminastickytoken);
+	int stickytime = 15; // 15 x 7 = 105 tics, or 3 seconds
 
 	if (usedstamina)
 	{
-		if (!stickytoken) { GiveInventory(staminastickytoken, 15); }
-		if (bdtokencorrection > tokencount) { GiveInventory(token, bdtokencorrection - tokencount); }
-		else if (bdtokencorrection < tokencount) { TakeInventory(token, tokencount - bdtokencorrection); }
+		if (!stickytoken) { GiveInventory(staminastickytoken, stickytime); }
+		if (tokencorrection > tokencount) { GiveInventory(token, tokencorrection - tokencount); }
+		else if (tokencorrection < tokencount) { TakeInventory(token, tokencount - tokencorrection); }
 	}
-	else if (!usedstamina && tokencount != bdmaxusedstamina) { GiveInventory(token, bdmaxusedstamina); }
-	else if (!usedstamina && tokencount == bdmaxusedstamina && staminastickytoken) { TakeInventory(staminastickytoken, 1); }
+	else if (!usedstamina && tokencount != maxstamina) { GiveInventory(token, maxstamina); }
+	else if (!usedstamina && tokencount == maxstamina && staminastickytoken) { TakeInventory(staminastickytoken, 1); }
+}
+
+function void HXS_StamNormal (str token, int maxstamina)
+{
+	int tokencount = CheckInventory(token);
+	int stickytoken = CheckInventory(staminastickytoken);
+	int stickytime = 15; // 15 x 7 = 105 tics, or 3 seconds
+
+	if (tokencount && tokencount != maxstamina) { GiveInventory(staminastickytoken, stickytime); }
+	else if (stickytoken && (tokencount == maxstamina || !tokencount)) { TakeInventory(staminastickytoken, 1); }
 }
 
 function void HXS_StatSync (int stat, str token)
 {
-	int overstat = stat - 100;
+	int normalmax = 100;
+	int overstat = stat - normalmax;
 	int tokencount = CheckInventory(token);
 
 	HXS_ItemManagement(overstat, token, tokencount);

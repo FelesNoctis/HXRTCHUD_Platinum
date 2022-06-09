@@ -1,6 +1,7 @@
 #library "HXMBD"
 #include "zcommon.acs"
 #import "HXAMODCM.acs"
+#import "HXASTATS.acs"
 
 str bdgrenadetype = "nadetype";
 str bdhaste = "PowerSpeed2";
@@ -16,6 +17,8 @@ str bdmeatshieldzguy = "ZManShield";
 str bdquaddamage = "Powerquakedamage";
 str bdradsuit = "PowerMask";
 str bdshield = "PowerShield";
+str bdstamina = "UsedStamina";
+int bdstaminamax = 110;
 str bdtransformbaron = "PowerTransformBaron";
 str bdtransformmancubus = "PowerTransformMancubus";
 str bdtransformrevenant = "PowerTransformRevenant";
@@ -29,10 +32,11 @@ str bdvehicletankart = "PowerArtilleryTankSwitch";
 str hxbd_grenadetype = "HX_BrutalDoomPlat_grenadetype";
 str hxbd_meatammo = "HX_BrutalDoom_meatammo";
 str hxbd_meatshield = "HX_BrutalDoom_meatshield";
-str hxbd_tfduration = "HX_BrutalDoom_TransformationDuration";
+str hxbd_tfduration = "HX_BrutalDoom_transformationduration";
 str hxgen_haste = "HX_HastePowerUpToken";
 str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
 str hxgen_shield = "HX_ShieldPowerUpToken";
+str hxbd_staminatoken = "HX_BrutalDoom_staminatoken";
 
 script "HXS_BrutalDoom35ticHandler" enter
 {
@@ -76,6 +80,9 @@ script "HXS_BrutalDoom7ticHandler" enter
 	{
 		while (true)
 		{
+
+		// Stamina Control
+			if (CheckInventory(bditemtactical)) { HXS_StamFlip(CheckInventory(bdstamina), hxbd_staminatoken, bdstaminamax); }
 		// Powerup Management Tokens
 			// Haste (BDP)
 			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_PowerupTimer(bdhaste, hxgen_haste); }

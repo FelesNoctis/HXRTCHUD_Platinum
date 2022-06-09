@@ -1,0 +1,85 @@
+#library "HXMBD64"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+#import "HXASTATS.acs"
+
+str bd64ammodemonessence = "DemonEssence";
+str bd64ammodemonessencetoken = "HX_BD64_demonessencefound";
+str bd64bfg9000tactical = "64BFG9000";
+str bd64chainguntactical = "64ChaingunTACTICAL";
+str bd64classmoderntoken = "IsModern";
+str bd64stamina = "Stamina";
+int bd64staminamax = 100;
+
+script "HXS_BrutalDoom64_35ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_brutaldoom64)) {
+		while (true)
+		{
+/* 		// Key Management Tokens
+			// Blue Keys
+			HXS_ItemSync(vanillabluecard, hxgen_bluecard);
+			HXS_ItemSync(vanillablueskull, hxgen_blueskull);
+			// Red Keys
+			HXS_ItemSync(vanillaredcard, hxgen_redcard);
+			HXS_ItemSync(vanillaredskull, hxgen_redskull);
+			// Yellow Keys
+			HXS_ItemSync(vanillayellowcard, hxgen_yellowcard);
+			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull); */
+
+		// Powerup Management Tokens
+			// Berserk
+			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+
+		// Timer
+			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
+			delay(35);
+		}
+	}
+}
+
+script "HXS_BrutalDoom64_7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+	
+	if (CheckInventory(hxmod_brutaldoom64)) {
+		while (true)
+		{
+		// Stamina Control
+			HXS_StamNormal(bd64stamina, bd64staminamax);
+		// Powerup Management Tokens
+			// Infrared
+			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			// Invisibility
+			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			// Invulnerability
+			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			// Radsuit
+			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+
+		// Ammo DemonEssence Appearance Check
+			if (CheckInventory(bd64ammodemonessence) && !CheckInventory(bd64ammodemonessencetoken))
+				{ GiveInventory(bd64ammodemonessencetoken, 1); }
+
+		// Equipped Weapon Check
+/* 			if (CheckInventory(bditemtactical) || CheckInventory(bd64classmoderntoken))
+			{
+				// 64ChaingunTACTICAL = No magazine
+				if ((StrICmp(GetWeapon(), bd64chainguntactical) == 0 || StrICmp(GetWeapon(), bd64bfg9000tactical) == 0)
+					&& !CheckInventory(hxsys_weapononlyammo1))
+					{ GiveInventory(hxsys_weapononlyammo1, 1); }
+				else if ((StrICmp(GetWeapon(), bd64chainguntactical) != 0 || StrICmp(GetWeapon(), bd64bfg9000tactical) != 0)
+					&& CheckInventory(hxsys_weapononlyammo1))
+					{ TakeInventory(hxsys_weapononlyammo1, 1); }
+			} */
+
+		// Timer
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
+	}
+}

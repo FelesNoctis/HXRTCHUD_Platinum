@@ -7,6 +7,7 @@ str hxmod_resettoken = "HXMOD_IDontExist";
 str hxmod_bdlite = "HXMOD_BDLite";
 str hxmod_beautifuldoom = "HXMOD_BeautifulDoom";
 str hxmod_brutaldoom = "HXMOD_BrutalDoom";
+str hxmod_brutaldoom64 = "HXMOD_BrutalDoom64";
 str hxmod_brutaldoomce = "HXMOD_BrutalDoomBWCE";
 str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
@@ -18,6 +19,9 @@ str hxmod_supercharge = "HXMOD_Supercharge";
 str hxsys_normalhudkiller = "HXSYS_NormalHUDKillerToken";
 str hxsys_transformhud = "HXSYS_TransformationHUDToken";
 str hxsys_vehiclehud = "HXSYS_VehicleHUDToken";
+
+// Functionality Overrides
+str hxsys_weapononlyammo1 = "HXSYS_WeaponOnlyAmmo1";
 
 // General Items
 str vanillaberserk = "PowerStrength";
@@ -68,6 +72,16 @@ str bdclassdoomer3 = "Shotgun Start"; */
 // Brutal Doom Platinum
 str bdplattotallyamenudummy = "IsNOTAMenuDummy";
 
+// Brutal Doom 64
+str bd64classbasic = "64DoomPlayer";
+str bd64classmodern = "Modern";
+str bd64classtactical = "Tactical64DoomPlayer";
+str bd64classtacticalpistol = "Tactical64DoomPlayer_P";
+str bd64fist = "64Fist";
+str bd64pistol = "64Pistol";
+str bd64pistoltactical = "64PistolTactical";
+str bd64rifletactical = "64RifleTactical";
+
 // Led's Generic Weapon Mod
 str ledclass = "DoomGuy";
 str ledfist = "Knuckle";
@@ -102,6 +116,19 @@ script "HXS_ModCompatibilityStartup" enter
 			&& CheckInventory(bdliterifle)
 			&& !CheckInventory(hxmod_bdlite))
 		{ GiveInventory(hxmod_bdlite, 1); }	
+	// Brutal Doom 64
+		else if (CheckInventory(bd64fist)
+			&& !CheckInventory(hxmod_brutaldoom64))
+		{
+			if ((CheckInventory(bd64Pistol)
+				|| CheckInventory(bd64pistoltactical)
+				|| CheckInventory(bd64rifletactical))
+			&& (CheckActorClass(0, bd64classbasic)
+				|| CheckActorClass(0, bd64classtactical)
+				|| CheckActorClass(0, bd64classtacticalpistol)
+				|| CheckActorClass(0, bd64classmodern)))			
+			{ GiveInventory(hxmod_brutaldoom64, 1); }
+		}
 	// Brutal Doom General
 		else if (CheckInventory(bdgenplayer)
 			&& !CheckInventory(hxmod_brutaldoom))

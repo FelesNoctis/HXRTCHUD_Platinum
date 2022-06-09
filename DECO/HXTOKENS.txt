@@ -17,11 +17,11 @@ ACTOR HXSYS_AltitudeMetersToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.Ma
 ACTOR HXSYS_ArmorOverMaxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
 ACTOR HXSYS_DebugTagToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXSYS_HealthOverMaxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
+ACTOR HXSYS_NormalHUDKillerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXSYS_StaminaStickyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 15 }
-ACTOR HXSYS_StaminaToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 110 }
 ACTOR HXSYS_TransformationHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXSYS_VehicleHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HXSYS_NormalHUDKillerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXSYS_WeaponOnlyAmmo1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	HX General Mod Support
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
@@ -38,13 +38,14 @@ ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Beautiful Doom
 ACTOR HXMOD_BeautifulDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BeautifulDoom_weapontype: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
-//	Brutal Doom v21/Platinum
+//	Brutal Doom v21/CE/Platinum
 ACTOR HXMOD_BrutalDoom: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoomBWCE: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_BrutalDoomPlatinum: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoom_meatammo: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
 ACTOR HX_BrutalDoom_meatshield: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HX_BrutalDoom_TransformationDuration: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_BrutalDoom_staminatoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 110 }
+ACTOR HX_BrutalDoom_transformationduration: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_BrutalDoomPlat_glassslugs: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_grenadetype: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 3 }
 ACTOR HX_BrutalDoomPlat_helllaserguiderockets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
@@ -52,6 +53,9 @@ ACTOR HX_BrutalDoomPlat_laserguiderockets: Inventory { +INVENTORY.UNDROPPABLE In
 ACTOR HX_BrutalDoomPlat_needlegun: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_plasmashells: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BrutalDoomPlat_stickygrenades: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Brutal Doom 64
+ACTOR HXMOD_BrutalDoom64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BD64_demonessencefound: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Led's Generic Weapon Mod 20220412
 ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_LedsGenWep9mmAmmo: Ammo
