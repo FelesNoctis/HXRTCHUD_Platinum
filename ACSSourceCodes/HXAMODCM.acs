@@ -4,6 +4,7 @@
 // Mod Master Tokens
 str hxmod_none = "HXMOD_VANILLA";
 str hxmod_resettoken = "HXMOD_IDontExist";
+str hxmod_64art = "HXMOD_Doom64Art";
 str hxmod_bdlite = "HXMOD_BDLite";
 str hxmod_beautifuldoom = "HXMOD_BeautifulDoom";
 str hxmod_brutaldoom = "HXMOD_BrutalDoom";
@@ -127,7 +128,8 @@ script "HXS_ModCompatibilityStartup" enter
 				|| CheckActorClass(0, bd64classtactical)
 				|| CheckActorClass(0, bd64classtacticalpistol)
 				|| CheckActorClass(0, bd64classmodern)))			
-			{ GiveInventory(hxmod_brutaldoom64, 1); }
+			{	GiveInventory(hxmod_brutaldoom64, 1);
+				GiveInventory(hxmod_64art, 1); }
 		}
 	// Brutal Doom General
 		else if (CheckInventory(bdgenplayer)
