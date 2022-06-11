@@ -2,6 +2,7 @@
 *	CVAR TOKENS
 */
 //	HXRTC HUD Platinum
+ACTOR HXSYS_HUDACTIVE: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_AirMeterToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_ArmorSaveToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXCUS_ArmsBarToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
@@ -32,6 +33,8 @@ ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Invento
 ACTOR HX_QuadDamagePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
 ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_ShieldPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Mod Master Token
+ACTOR HXMOD_MODFOUND: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	No Mods Detected/Vanilla
 ACTOR HXMOD_VANILLA: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	BDLite 1.2
@@ -57,6 +60,9 @@ ACTOR HX_BrutalDoomPlat_stickygrenades: Inventory { +INVENTORY.UNDROPPABLE Inven
 //	Brutal Doom 64
 ACTOR HXMOD_BrutalDoom64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BD64_demonessencefound: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Doom CE
+ACTOR HXMOD_DoomCE_D64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_DoomCE_PSX: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Led's Generic Weapon Mod 20220412
 ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_LedsGenWep9mmAmmo: Ammo

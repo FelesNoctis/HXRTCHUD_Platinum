@@ -413,6 +413,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			InInventory GenderFemale, 1 { DrawMugShot "GAL", 5, 8, -65; }
 			else InInventory GenderMale, 1 { DrawMugShot "STM", 5, 8, -65; }
 		}
+		// Doom CE PSX
+		else InInventory "HXMOD_DoomCE_PSX", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
 		// SmoothDoom 2.0 WIP death mugshot
 		else InInventory "HXMOD_SmoothDoom2", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
 		// Vanilla mugshot
@@ -2601,7 +2603,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		*
 		*	Anything that doesn't change the default ammos should "Just Work"
 		*/
-		else InInventory "HXMOD_VANILLA", 1
+		else
 		{
 		// AMMO TALLIES PANEL - Vanilla
 			DrawImage "HXAMMTOP", -78, -35;

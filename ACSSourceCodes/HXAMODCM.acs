@@ -4,6 +4,7 @@
 // Mod Master Tokens
 str hxmod_none = "HXMOD_VANILLA";
 str hxmod_resettoken = "HXMOD_IDontExist";
+str hxmod_modfound = "HXMOD_MODFOUND";
 str hxmod_64art = "HXMOD_Doom64Art";
 str hxmod_bdlite = "HXMOD_BDLite";
 str hxmod_beautifuldoom = "HXMOD_BeautifulDoom";
@@ -11,6 +12,8 @@ str hxmod_brutaldoom = "HXMOD_BrutalDoom";
 str hxmod_brutaldoom64 = "HXMOD_BrutalDoom64";
 str hxmod_brutaldoomce = "HXMOD_BrutalDoomBWCE";
 str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
+str hxmod_CED64 = "HXMOD_DoomCE_D64";
+str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
 str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
@@ -83,6 +86,11 @@ str bd64pistol = "64Pistol";
 str bd64pistoltactical = "64PistolTactical";
 str bd64rifletactical = "64RifleTactical";
 
+// Doom CE - D64 and PSX
+str doomcepsxclass = "PsxDoomPlayer";
+str doomcepsxfist = "PsxFist";
+str doomcepsxpistol = "PsxPistol";
+
 // Led's Generic Weapon Mod
 str ledclass = "DoomGuy";
 str ledfist = "Knuckle";
@@ -110,13 +118,21 @@ script "HXS_ModCompatibilityStartup" enter
 			&& CheckInventory(beautifuloverlaycontrol)
 			&& CheckInventory(beautifulweaponcontrol)
 			&& !CheckInventory(hxmod_beautifuldoom))
-		{ GiveInventory(hxmod_beautifuldoom, 1); }	
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_beautifuldoom, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}	
 	// BDLite
 		else if (CheckActorClass(0, bdliteclass)
 			&& CheckInventory(bdlitefist)
 			&& CheckInventory(bdliterifle)
 			&& !CheckInventory(hxmod_bdlite))
-		{ GiveInventory(hxmod_bdlite, 1); }	
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_bdlite, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}	
 	// Brutal Doom 64
 		else if (CheckInventory(bd64fist)
 			&& !CheckInventory(hxmod_brutaldoom64))
@@ -128,8 +144,12 @@ script "HXS_ModCompatibilityStartup" enter
 				|| CheckActorClass(0, bd64classtactical)
 				|| CheckActorClass(0, bd64classtacticalpistol)
 				|| CheckActorClass(0, bd64classmodern)))			
-			{	GiveInventory(hxmod_brutaldoom64, 1);
-				GiveInventory(hxmod_64art, 1); }
+			{
+				GiveInventory(hxmod_modfound, 1);
+				GiveInventory(hxmod_brutaldoom64, 1);
+				GiveInventory(hxmod_64art, 1);
+				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			}
 		}
 	// Brutal Doom General
 		else if (CheckInventory(bdgenplayer)
@@ -138,40 +158,72 @@ script "HXS_ModCompatibilityStartup" enter
 			// Brutal Doom Platinum
 			if (CheckInventory(bdplattotallyamenudummy))
 			{
+				GiveInventory(hxmod_modfound, 1);
 				GiveInventory(hxmod_brutaldoom, 1);
 				GiveInventory(hxmod_brutaldoomplat, 1);
+				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 			}
 			// Brutal Doom v21 / CE
 			else if (CheckInventory(bditemnottactical)
 					|| CheckInventory(bditemtactical)
 					|| CheckInventory(bditempurist))
-			{ GiveInventory(hxmod_brutaldoom, 1); }
+			{
+				GiveInventory(hxmod_modfound, 1);
+				GiveInventory(hxmod_brutaldoom, 1);
+				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			}
 		}
+	// Doom CE - PSX
+		else if (CheckActorClass(0, doomcepsxclass)
+			&& CheckInventory(doomcepsxfist)
+			&& CheckInventory(doomcepsxpistol)
+			&& !CheckInventory(hxmod_CEPSX))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_CEPSX, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}	
 	// Led's Generic Weapon Mod
 		else if (CheckActorClass(0, ledclass)
 			&& CheckInventory(ledfist)
 			&& CheckInventory(ledminigunmag)
 			&& !CheckInventory(hxmod_ledgwmtoken))
-		{ GiveInventory(hxmod_ledgwmtoken, 1); }
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_ledgwmtoken, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
 	// PerK's Smoother Weapon Animations Enhanced
 		else if (CheckInventory(perkzfist)
 			&& CheckInventory(perkzpistol)
 			&& !CheckInventory(hxmod_perksmoothenh))
-		{ GiveInventory(hxmod_perksmoothenh, 1); }
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_perksmoothenh, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
 	// SmoothDoom 2.0 WIP
 		else if (CheckActorClass(0, smoothdoomclass)
 			&& CheckInventory(smoothdoomfist)
 			&& CheckInventory(smoothdoompistol)
 			&& !CheckInventory(hxmod_smoothdoom))
-		{ GiveInventory(hxmod_smoothdoom, 1); }
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_smoothdoom, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
 	// Supercharge 2.8
 		else if (CheckInventory(superchargefist)
 			&& CheckInventory(superchargepistol)
 			&& CheckInventory(superchargerifleammo)
 			&& !CheckInventory(hxmod_supercharge))
-		{ GiveInventory(hxmod_supercharge, 1); }
-	// No supported mod detected
-		else if (!CheckInventory(hxmod_none)) { GiveInventory(hxmod_none, 1); }
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_supercharge, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
+	// No mod detected
+		else if (!CheckInventory(hxmod_modfound)) { GiveInventory(hxmod_none, 1); }
 }
 
 function void HXS_ItemManagement (int moditemcount, str hxitem, int hxitemtokens)

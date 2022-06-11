@@ -1,0 +1,10 @@
+#library "HXAMSTR"
+#include "zcommon.acs"
+
+str hxsys_mastertoken = "HXSYS_HUDACTIVE";
+
+script "HXS_ActivePresence" enter
+{
+	if (!CheckInventory(hxsys_mastertoken))
+	{ GiveInventory(hxsys_mastertoken, 1); }
+}
