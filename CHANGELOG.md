@@ -6,9 +6,13 @@
   - Major version change would have happened in 0.21, but the connection to BDv21 was just too good, so you get it here instead.
   - Master Presence token added (HXSYS_HUDACTIVE) to allow reliable detection of the HUD by other mods.
 
+- **Bottom-Right Panels:**
+  - **Keys Bar** positioning and sizes have been adjusted for oversized keys, such as Doom64 keys, for supported mods
+
 - **Mod Support:**
   - Beautiful Doom 7.1.6
   - Brutal Doom 64 v2.5
+  - Doom CE 3.1.3: Doom64
   - Doom CE 3.1.3: PSX
   - Supercharge
 
