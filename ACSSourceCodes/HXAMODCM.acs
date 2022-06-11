@@ -87,6 +87,9 @@ str bd64pistoltactical = "64PistolTactical";
 str bd64rifletactical = "64RifleTactical";
 
 // Doom CE - D64 and PSX
+str doomced64class = "D64DoomPlayer";
+str doomced64fist = "D64Fist";
+str doomced64pistol = "D64Pistol";
 str doomcepsxclass = "PsxDoomPlayer";
 str doomcepsxfist = "PsxFist";
 str doomcepsxpistol = "PsxPistol";
@@ -172,6 +175,17 @@ script "HXS_ModCompatibilityStartup" enter
 				GiveInventory(hxmod_brutaldoom, 1);
 				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 			}
+		}
+	// Doom CE - D64
+		else if (CheckActorClass(0, doomced64class)
+			&& CheckInventory(doomced64fist)
+			&& CheckInventory(doomced64pistol)
+			&& !CheckInventory(hxmod_CED64))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_CED64, 1);
+			GiveInventory(hxmod_64art, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// Doom CE - PSX
 		else if (CheckActorClass(0, doomcepsxclass)
