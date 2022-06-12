@@ -4,6 +4,12 @@ Updating HXRTC HUD with a more flexible approach in mind for wider mod support.
 
 See thread: [ZDoom Forums](https://forum.zdoom.org/viewtopic.php?f=46&t=75282)
 
+## Installation & Usage
+
+- Download the Main File package matching your sourceport from the [Releases Page](https://github.com/FelesNoctis/HXRTCHUD_Platinum/releases).
+- Load after any major gameplay mod, or any mod supplying an SBARINFO lump.
+- Set screen size to 11 _(Options -> Display options)_
+
 ## Screenshots
 
 **Vanilla: all settings active**
@@ -14,3 +20,6 @@ See thread: [ZDoom Forums](https://forum.zdoom.org/viewtopic.php?f=46&t=75282)
 
 **Brutal Doom Platinum: all customizations off, berserk**
 ![Brutal Doom Platinum HUD: all customizations off, berserk](http://i.imgur.com/YzZ9kx3.png)
+
+**HUD Customization** _(as of v0.20)_
+![HUD customization settings](http://i.imgur.com/JxEgtDc.png)
