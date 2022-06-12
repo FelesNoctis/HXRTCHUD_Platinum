@@ -21,5 +21,5 @@ See thread: [ZDoom Forums](https://forum.zdoom.org/viewtopic.php?f=46&t=75282)
 **Brutal Doom Platinum: all customizations off, berserk**
 ![Brutal Doom Platinum HUD: all customizations off, berserk](http://i.imgur.com/YzZ9kx3.png)
 
-**HUD Customization** _(as of v0.20)_
-![HUD customization settings](http://i.imgur.com/JxEgtDc.png)
+**HUD Customization** _(as of v0.30)_
+![HUD customization settings](https://i.imgur.com/awynMyH.png)
