@@ -60,6 +60,16 @@ ACTOR HX_BrutalDoomPlat_stickygrenades: Inventory { +INVENTORY.UNDROPPABLE Inven
 //	Brutal Doom 64
 ACTOR HXMOD_BrutalDoom64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BD64_demonessencefound: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Doom 4 Vanilla
+ACTOR HXMOD_Doom4Vanilla: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_catoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_chtoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_pstoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_putoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_rotoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_sgtoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_sstoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D4V_swtoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Doom CE
 ACTOR HXMOD_DoomCE_D64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_DoomCE_PSX: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

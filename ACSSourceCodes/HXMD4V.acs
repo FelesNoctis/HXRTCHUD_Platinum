@@ -1,0 +1,87 @@
+#library "HXMD4V"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+#import "HXACVAR.acs"
+
+str d4v_catoggle = "catoggle";
+str d4v_chtoggle = "chtoggle";
+str d4v_pstoggle = "pstoggle";
+str d4v_putoggle = "putoggle";
+str d4v_rotoggle = "rotoggle";
+str d4v_sgtoggle = "sgtoggle";
+str d4v_sstoggle = "sstoggle";
+str d4v_swtoggle = "swtoggle";
+
+str hx_d4vcatoggletoken = "HX_D4V_catoggletoken";
+str hx_d4vchtoggletoken = "HX_D4V_chtoggletoken";
+str hx_d4vpstoggletoken = "HX_D4V_pstoggletoken";
+str hx_d4vputoggletoken = "HX_D4V_putoggletoken";
+str hx_d4vrotoggletoken = "HX_D4V_rotoggletoken";
+str hx_d4vsgtoggletoken = "HX_D4V_sgtoggletoken";
+str hx_d4vsstoggletoken = "HX_D4V_sstoggletoken";
+str hx_d4vswtoggletoken = "HX_D4V_swtoggletoken";
+
+script "HXS_Doom4Vanilla35ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_D4V)) {
+		while (true)
+		{
+/* 		// Key Management Tokens
+			// Blue Keys
+			HXS_ItemSync(vanillabluecard, hxgen_bluecard);
+			HXS_ItemSync(vanillablueskull, hxgen_blueskull);
+			// Red Keys
+			HXS_ItemSync(vanillaredcard, hxgen_redcard);
+			HXS_ItemSync(vanillaredskull, hxgen_redskull);
+			// Yellow Keys
+			HXS_ItemSync(vanillayellowcard, hxgen_yellowcard);
+			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull); */
+
+		// Powerup Management Tokens
+			// Berserk
+			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+
+		// Weapon Icon Management Tokens
+			HXF_CVARConvert_Generic(d4v_catoggle, hx_d4vcatoggletoken);
+			HXF_CVARConvert_Generic(d4v_chtoggle, hx_d4vchtoggletoken);
+			HXF_CVARConvert_Generic(d4v_pstoggle, hx_d4vpstoggletoken);
+			HXF_CVARConvert_Generic(d4v_putoggle, hx_d4vputoggletoken);
+			HXF_CVARConvert_Generic(d4v_rotoggle, hx_d4vrotoggletoken);
+			HXF_CVARConvert_Generic(d4v_sgtoggle, hx_d4vsgtoggletoken);
+			HXF_CVARConvert_Generic(d4v_sstoggle, hx_d4vsstoggletoken);
+			HXF_CVARConvert_Generic(d4v_swtoggle, hx_d4vswtoggletoken);
+
+		// Timer
+			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
+			delay(35);
+		}
+	}
+}
+
+script "HXS_Doom4Vanilla7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+	
+	if (CheckInventory(hxmod_D4V)) {
+		while (true)
+		{
+		// Powerup Management Tokens
+			// Infrared (Unused)
+			/* HXS_PowerupTimer(vanillainfrared, hxgen_infrared); */
+			// Invisibility (Unused)
+			/* HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility); */
+			// Invulnerability
+			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			// Radsuit
+			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+
+		// Timer
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
+	}
+}

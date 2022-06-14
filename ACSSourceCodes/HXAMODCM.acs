@@ -14,6 +14,7 @@ str hxmod_brutaldoomce = "HXMOD_BrutalDoomBWCE";
 str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
 str hxmod_CED64 = "HXMOD_DoomCE_D64";
 str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
+str hxmod_D4V = "HXMOD_Doom4Vanilla";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
 str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
@@ -85,6 +86,11 @@ str bd64fist = "64Fist";
 str bd64pistol = "64Pistol";
 str bd64pistoltactical = "64PistolTactical";
 str bd64rifletactical = "64RifleTactical";
+
+// Doom 4 Vanilla
+str d4vclass = "DoomSlayer";
+str d4vfist = "DH_Fist";
+str d4vpistol = "DH_Pistol2";
 
 // Doom CE - D64 and PSX
 str doomced64class = "D64DoomPlayer";
@@ -175,6 +181,16 @@ script "HXS_ModCompatibilityStartup" enter
 				GiveInventory(hxmod_brutaldoom, 1);
 				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 			}
+		}
+	// Doom 4 Vanilla
+		else if (CheckActorClass(0, d4vclass)
+			&& CheckInventory(d4vfist)
+			&& CheckInventory(d4vpistol)
+			&& !CheckInventory(hxmod_D4V))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_D4V, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// Doom CE - D64
 		else if (CheckActorClass(0, doomced64class)

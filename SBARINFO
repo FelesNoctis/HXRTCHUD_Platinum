@@ -96,8 +96,34 @@ StatusBar Fullscreen, FullscreenOffsets
 // POWERUP PANELS
 	InInventory not "HXSYS_NormalHUDKillerToken", 1
 	{
+	/*	Doom 4 Vanilla */
+		InInventory "HXMOD_Doom4Vanilla", 1
+		{
+			InInventory "HXCUS_PowerupBoxToken", 2	// Always
+			{
+				// Background panels + inactive icons
+				DrawImage "HX64IVNO", -50, 2;
+				DrawImage "HX64RDNO", -26, 2;
+				// Active icon + border
+				InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HX64IVOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -50, 2; }
+				InInventory "HX_RadSuitPowerUpToken" { DrawBar "HX64RDOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -26, 2; }		
+			}
+			else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
+			{
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HX64IVNO", -50, 2;
+					DrawBar "HX64IVOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -50, 2;
+				}
+				InInventory "HX_RadSuitPowerUpToken"
+				{
+					DrawImage "HX64RDNO", -26, 2;
+					DrawBar "HX64RDOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -26, 2;
+				}
+			}
+		}
 	/*	Standard, not Doom 64 */
-		InInventory not "HXMOD_Doom64Art", 1
+		else InInventory not "HXMOD_Doom64Art", 1
 		{
 			InInventory "HXCUS_PowerupBoxToken", 2	// Always
 			{
@@ -105,7 +131,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawImage "HXINVUNO", -98, 2;
 				DrawImage "HXBLURNO", -74, 2;
 				DrawImage "HXRADSNO", -50, 2;
-				DrawImage "HXLGHTNO", -26, 2;		
+				DrawImage "HXLGHTNO", -26, 2;
 				// Active icon + border
 				InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2; }
 				InInventory "HX_InvisibilityPowerUpToken" { DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2; }
@@ -145,7 +171,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawImage "HX64IVNO", -98, 2;
 				DrawImage "HX64BLNO", -74, 2;
 				DrawImage "HX64RDNO", -50, 2;
-				DrawImage "HX64LTNO", -26, 2;		
+				DrawImage "HX64LTNO", -26, 2;
 				// Active icon + border
 				InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HX64IVOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2; }
 				InInventory "HX_InvisibilityPowerUpToken" { DrawBar "HX64BLOK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2; }
@@ -204,8 +230,48 @@ StatusBar Fullscreen, FullscreenOffsets
 		}
 
 // POWERUP TIME INDICATORS
+	/*	Doom 4 Vanilla */
+		InInventory "HXMOD_Doom4Vanilla", 1
+		{
+			InInventory "HXCUS_PowerupTimerToken", 2	// Always
+			{
+				// Background panels
+				DrawImage "HXBUFFT", -50, 25;
+				DrawImage "HXBUFFT", -26, 25;
+				// Active timers
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HX64IVT", -50, 25;
+					DrawImage "HXSML058", -47, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -29, 29;
+				}
+				InInventory "HX_RadSuitPowerUpToken"
+				{
+					DrawImage "HX64RDT", -26, 25;
+					DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -5, 29;
+				}
+			}
+			else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
+			{
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HXBUFFT", -50, 25;
+					DrawImage "HX64IVT", -50, 25;
+					DrawImage "HXSML058", -47, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -29, 29;
+				}
+				InInventory "HX_RadSuitPowerUpToken"
+				{
+					DrawImage "HXBUFFT", -26, 25;
+					DrawImage "HX64RDT", -26, 25;
+					DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -5, 29;
+				}
+			}
+		}
 	/*	Standard, not Doom 64 */
-		InInventory not "HXMOD_Doom64Art", 1
+		else InInventory not "HXMOD_Doom64Art", 1
 		{
 			InInventory "HXCUS_PowerupTimerToken", 2	// Always
 			{
@@ -273,7 +339,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			}
 		}
 	/*	Standard, Doom 64 */
-		InInventory "HXMOD_Doom64Art", 1
+		else InInventory "HXMOD_Doom64Art", 1
 		{
 			InInventory "HXCUS_PowerupTimerToken", 2	// Always
 			{
@@ -2441,6 +2507,134 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
 			}
 		}
+		else InInventory "HXMOD_Doom4Vanilla", 1
+		{
+		// AMMO TALLIES PANEL - D4V
+			DrawImage "HXAMMTOP", -78, -35;
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -30, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -18, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -12, 0, alignment(left);
+
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,		horizontal, interpolate(64), -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,		horizontal, interpolate(64), -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,	horizontal, interpolate(64), -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,		horizontal, interpolate(64), -56, -12;
+
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,		-6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell,		-6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,	-6, -18;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,		-6, -12;
+
+			// Ammo Tally highlight and Current Ammo equipped by type
+			UsesAmmo
+			{
+				IsSelected not "DH_Chainsaw"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+				}
+				else
+				{
+					InInventory not "HX_D4V_swtoggletoken", 1 { DrawImage "HXNOAVAI", -134, -33; }
+					else
+					{
+						DrawImage "HXAMMO", -134, -33;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+						DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+					}
+				}
+
+				WeaponAmmo Clip
+				{
+					IsSelected not "DH_Chainsaw"
+					{
+						DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+					}
+					else InInventory "HX_D4V_swtoggletoken", 1
+					{
+						DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+					}
+				}
+				WeaponAmmo Shell
+				{
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 1;
+				}
+				WeaponAmmo RocketAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				WeaponAmmo Cell
+				{
+					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15;
+				}
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+		// ARMS & KEYS BARS - D4V
+			// Keys
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -79;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -59, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -61;
+					drawkeybar 6, horizontal, reverse, auto, -12, -58, 0, 6, auto;
+				}
+			}
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -66;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -46, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -48;
+					drawkeybar 6, horizontal, reverse, auto, -12, -45, 0, 6, auto;
+				}
+			}
+			
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -48;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -44;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -44;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -44;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -44;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -44;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -44;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -44;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -44;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -44;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
+			}
+		}
 		/*	Led's Generic Weapon Mod
 		*
 		*/
@@ -2854,10 +3048,61 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				else { DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst; }
 			}
+			/*	Brutal Doom
+			*
+			*	ACTOR HXMOD_BrutalDoom: mod token
+			*/
 			else InInventory "HXMOD_BrutalDoom", 1
 			{
 				DrawImage "HXWEAPON", -122, -53;
 				DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst;
+			}
+			/*	Doom 4 Vanilla
+			*
+			*	ACTOR HXMOD_Doom4Vanilla: mod token
+			*
+			*	Both pistols currently use the same image, otherwise swap based on CVAR
+			*/
+			else InInventory "HXMOD_Doom4Vanilla", 1
+			{
+				DrawImage "HXWEAPON", -134, -53;
+
+				IsSelected "DH_Chainsaw" 
+				{
+					InInventory "HX_D4V_swtoggletoken", 1 { DrawImage "VORTA0", -112, -43, center, 36, 12; }
+					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
+				}
+				else IsSelected "DH_Shotgun" 
+				{
+					InInventory "HX_D4V_sgtoggletoken", 1 { DrawImage "HELSA0", -112, -43, center, 36, 12; }
+					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
+				}
+				else IsSelected "DH_SuperShotgun" 
+				{
+					InInventory "HX_D4V_sstoggletoken", 1 { DrawImage "REPIA0", -112, -43, center, 36, 12; }
+					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
+				}
+				else IsSelected "DH_Chaingun" 
+				{
+					InInventory "HX_D4V_chtoggletoken", 1 { DrawImage "MGUNB0", -112, -43, center, 36, 12; }
+					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
+				}
+				else IsSelected "DH_RocketLauncher" 
+				{
+					InInventory "HX_D4V_rotoggletoken", 1 { DrawImage "GRAPA0", -112, -43, center, 36, 12; }
+					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
+				}
+				else IsSelected "DH_PlasmaRifle" 
+				{
+					InInventory "HX_D4V_putoggletoken", 1 { DrawImage "LTGSA0", -112, -43, center, 36, 12; }
+					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
+				}
+				else IsSelected "DH_BFG9000" 
+				{
+					InInventory "HX_D4V_catoggletoken", 1 { DrawImage "BFUGA0", -112, -43, center, 36, 12; }
+					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
+				}
+				else { DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst; }
 			}
 			/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
 			*
@@ -2966,12 +3211,12 @@ StatusBar Fullscreen, FullscreenOffsets
 	// Stamina Bar
 		InInventory "HXSYS_StaminaStickyToken", 1
 		{
-			DrawImage "HXSTAMFR", -77 + center, -15;
+			DrawImage "HXSTAMFR", -76 + center, -15;
 
 			InInventory "HXMOD_BrutalDoom", 1
-				{ DrawBar "HXSTAMOK", "HXSTAMNO", HX_BrutalDoom_staminatoken, horizontal, interpolate(8), -73 + center, -11; }
+				{ DrawBar "HXSTAMOK", "HXSTAMNO", HX_BrutalDoom_staminatoken, horizontal, interpolate(8), -72 + center, -11; }
 			InInventory "HXMOD_BrutalDoom64", 1
-				{ DrawBar "HXSTAMOK", "HXSTAMNO", Stamina, horizontal, interpolate(8), -73 + center, -11; }
+				{ DrawBar "HXSTAMOK", "HXSTAMNO", Stamina, horizontal, interpolate(8), -72 + center, -11; }
 		}
 	}
 
