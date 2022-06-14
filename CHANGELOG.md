@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.40
+
+- **Mod Support:**
+  - Doom 4 Vanilla
+
 ## v0.30
 
 - **General:**
