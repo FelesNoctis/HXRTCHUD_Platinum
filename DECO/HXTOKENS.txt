@@ -81,6 +81,50 @@ ACTOR HX_LedsGenWep9mmAmmo: Ammo
 	Inventory.MaxAmount 200
 	Ammo.BackpackMaxAmount 400
 }
+//	NAZIS V2
+ACTOR HXMOD_NazisV2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_NazisV2_12GaugeAmmo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 32
+	Ammo.BackpackMaxAmount 64
+}
+ACTOR HX_NazisV2_3006Ammo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 40
+	Ammo.BackpackMaxAmount 100
+}
+ACTOR HX_NazisV2_303Ammo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 40
+	Ammo.BackpackMaxAmount 100
+}
+ACTOR HX_NazisV2_357Ammo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 72
+	Ammo.BackpackMaxAmount 108
+}
+ACTOR HX_NazisV2_45ACPAmmo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 300
+	Ammo.BackpackMaxAmount 450
+}
+ACTOR HX_NazisV2_792KurzAmmo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 150
+	Ammo.BackpackMaxAmount 270
+}
+ACTOR HX_NazisV2_9mmAmmo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 256
+	Ammo.BackpackMaxAmount 480
+}
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HXMOD_PerkSmootherWeaponsEnh: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_PerkSmooth_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

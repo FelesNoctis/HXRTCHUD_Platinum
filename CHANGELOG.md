@@ -3,7 +3,8 @@
 ## v0.40
 
 - **Mod Support:**
-  - Doom 4 Vanilla
+  - Doom 4 Vanilla 3.2.1
+  - Weasel Presents: NAZIS V2
 
 ## v0.30
 

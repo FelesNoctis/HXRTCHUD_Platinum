@@ -2767,6 +2767,369 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -56;
 			}
 		}
+		/*	NAZIS V2
+		*
+		*/
+		else InInventory "HXMOD_NazisV2", 1
+		{
+		// FIREBRAND PANEL - NAZIS V2
+			InInventory "Firebrand", 1
+			{
+				InInventory "HXCUS_WeaponIconToken", 1
+				{
+					DrawImage "HXNZFBNO", -98, -73;
+					InInventory "PowerWeaponLevel2", 1 { DrawImage "HXNZFBOK", -98, -73; }
+				}
+				else
+				{
+					DrawImage "HXNZFBNO", -98, -53;
+					InInventory "PowerWeaponLevel2", 1 { DrawImage "HXNZFBOK", -98, -53; }
+				}
+			}
+		// AMMO TALLIES PANEL - NAZIS V2
+			DrawImage "HXAMMTOP", -78, -89;
+			DrawImage "HXAMMROW", -78, -79;
+			DrawImage "HXAMMROW", -78, -73;
+			DrawImage "HXAMMROW", -78, -67;
+			DrawImage "HXAMMROW", -78, -61;
+			DrawImage "HXAMMROW", -78, -55;
+			DrawImage "HXAMMROW", -78, -49;
+			DrawImage "HXAMMROW", -78, -43;
+			DrawImage "HXAMMROW", -78, -37;
+			DrawImage "HXAMMROW", -78, -31;
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"9x19", -73, -84, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	".357", -73, -78, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	" .45", -73, -72, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -66, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"TKRV", -73, -60, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MAUS", -73, -54, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	".303", -73, -48, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"3006", -73, -42, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"KURZ", -73, -36, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -30, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MINI", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -18, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+
+			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_9mmAmmo,		horizontal, interpolate(64), -56, -84;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_357Ammo,		horizontal, interpolate(64), -56, -78;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_45ACPAmmo,	horizontal, interpolate(64), -56, -72;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_12GaugeAmmo,	horizontal, interpolate(64), -56, -66;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo TokarevAmmo,			horizontal, interpolate(64), -56, -60;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo MauserAmmo,				horizontal, interpolate(64), -56, -54;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_303Ammo,		horizontal, interpolate(64), -56, -48;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_3006Ammo,	horizontal, interpolate(64), -56, -42;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_792KurzAmmo,	horizontal, interpolate(64), -56, -36;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo FlameAmmo,				horizontal, interpolate(64), -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo NebAmmo,				horizontal, interpolate(64), -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo PanzerAmmo,				horizontal, interpolate(64), -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", GrenadePickup,				horizontal, interpolate(64), -56, -12;
+
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HX_NazisV2_9mmAmmo,		-6, -84;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HX_NazisV2_357Ammo,		-6, -78;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HX_NazisV2_45ACPAmmo,		-6, -72;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HX_NazisV2_12GaugeAmmo,	-6, -66;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TokarevAmmo,				-6, -60;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MauserAmmo,				-6, -54;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HX_NazisV2_303Ammo,		-6, -48;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HX_NazisV2_3006Ammo,		-6, -42;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HX_NazisV2_792KurzAmmo,	-6, -36;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo FlameAmmo,					-6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo NebAmmo,					-6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PanzerAmmo,				-6, -18;
+			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		GrenadePickup,					-6, -12;
+
+			// Weapon Slot 2
+			InInventory "Luger9mm"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "9x19", -73, -84, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_9mmAmmo, -6, -84;
+			}
+			InInventory "Walther9mm"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "9x19", -73, -84, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_9mmAmmo, -6, -84;
+			}
+			InInventory "WeaselsRevolver"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, ".357", -73, -78, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS, HXRTCLightGrey, ammo HX_NazisV2_357Ammo, -6, -78;
+			}
+			InInventory "M1911"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, " .45", -73, -72, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_45ACPAmmo, -6, -72;
+			}
+			// Weapon Slot 3
+			InInventory "TrenchShotgun"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "SHEL", -73, -66, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_12GaugeAmmo, -6, -66;
+			}
+			InInventory "Browning5"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "SHEL", -73, -66, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_12GaugeAmmo, -6, -66;
+			}
+			InInventory "MP40"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "9x19", -73, -84, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_9mmAmmo, -6, -84;
+			}
+			InInventory "PPSH41"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "TKRV", -73, -60, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo TokarevAmmo, -6, -60;
+			}
+			InInventory "Thompson"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, " .45", -73, -72, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_45ACPAmmo, -6, -72;
+			}
+			InInventory "Sten"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "9x19", -73, -84, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_9mmAmmo, -6, -84;
+			}
+			// Weapon Slot 4
+			InInventory "Kar98k"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "MAUS", -73, -54, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo MauserAmmo, -6, -54;
+			}
+			InInventory "G43"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "MAUS", -73, -54, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo MauserAmmo, -6, -54;
+			}
+			InInventory "Enfield"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, ".303", -73, -48, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_303Ammo, -6, -48;
+			}
+			InInventory "Garand"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "3006", -73, -42, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_3006Ammo, -6, -42;
+			}
+			InInventory "STG44"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "KURZ", -73, -36, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_792KurzAmmo, -6, -36;
+			}
+			InInventory "FG42"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "MAUS", -73, -54, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo MauserAmmo, -6, -54;
+			}
+			// Weapon Slot 5
+			InInventory "Pyrolight"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "FLAM", -73, -30, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo FlameAmmo, -6, -30;
+			}
+			InInventory "Nebelwerfer"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "MINI", -73, -24, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo NebAmmo, -6, -24;
+			}
+			InInventory "Panzerschreck"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "ROCK", -73, -18, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo PanzerAmmo, -6, -18;
+			}
+			InInventory "UMG43"
+			{
+				DrawString HXGENERALFONTS, HXRTCLightGrey, "9x19", -73, -84, 0, alignment(left);
+				DrawNumber 4, HXINDEXFONTS,	HXRTCLightGrey, ammo HX_NazisV2_9mmAmmo, -6, -84;
+			}
+
+			// Ammo Tally highlight and Current Ammo equipped by type
+			UsesAmmo
+			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+
+				// Weapon Slot 2
+				IsSelected "Luger9mm"
+				{
+					DrawString HXGENERALFONTS, untranslated, "9x19", -73, -84, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_9mmAmmo, -6, -84;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				else IsSelected "Walther9mm"
+				{
+					DrawString HXGENERALFONTS, untranslated, "9x19", -73, -84, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_9mmAmmo, -6, -84;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				else IsSelected "WeaselsRevolver"
+				{
+					DrawString HXGENERALFONTS, untranslated, ".357", -73, -78, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo HX_NazisV2_357Ammo, -6, -78;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				else IsSelected "M1911"
+				{
+					DrawString HXGENERALFONTS, untranslated, " .45", -73, -72, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_45ACPAmmo, -6, -72;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				// Weapon Slot 3
+				else IsSelected "TrenchShotgun"
+				{
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -66, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_12GaugeAmmo, -6, -66;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				else IsSelected "Browning5"
+				{
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -66, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_12GaugeAmmo, -6, -66;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 1;
+				}
+				else IsSelected "MP40"
+				{
+					DrawString HXGENERALFONTS, untranslated, "9x19", -73, -84, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_9mmAmmo, -6, -84;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 8;
+				}
+				else IsSelected "PPSH41"
+				{
+					DrawString HXGENERALFONTS, untranslated, "TKRV", -73, -60, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo TokarevAmmo, -6, -60;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 18;
+				}
+				else IsSelected "Thompson"
+				{
+					DrawString HXGENERALFONTS, untranslated, " .45", -73, -72, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_45ACPAmmo, -6, -72;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5;
+				}
+				else IsSelected "Sten"
+				{
+					DrawString HXGENERALFONTS, untranslated, "9x19", -73, -84, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_9mmAmmo, -6, -84;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 8;
+				}
+				// Weapon Slot 4
+				else IsSelected "Kar98k"
+				{
+					DrawString HXGENERALFONTS, untranslated, "MAUS", -73, -54, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo MauserAmmo, -6, -54;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				else IsSelected "G43"
+				{
+					DrawString HXGENERALFONTS, untranslated, "MAUS", -73, -54, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo MauserAmmo, -6, -54;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 3;
+				}
+				else IsSelected "Enfield"
+				{
+					DrawString HXGENERALFONTS, untranslated, ".303", -73, -48, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_303Ammo, -6, -48;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 3;
+				}
+				else IsSelected "Garand"
+				{
+					DrawString HXGENERALFONTS, untranslated, "3006", -73, -42, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_3006Ammo, -6, -42;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				else IsSelected "STG44"
+				{
+					DrawString HXGENERALFONTS, untranslated, "KURZ", -73, -36, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_792KurzAmmo, -6, -36;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 8;
+				}
+				else IsSelected "FG42"
+				{
+					DrawString HXGENERALFONTS, untranslated, "MAUS", -73, -54, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo MauserAmmo, -6, -54;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5;
+				}
+				// Weapon Slot 5
+				else IsSelected "Pyrolight"
+				{
+					DrawString HXGENERALFONTS, untranslated, "FLAM", -73, -30, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo FlameAmmo, -6, -30;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15;
+				}
+				else IsSelected "Nebelwerfer"
+				{
+					DrawString HXGENERALFONTS, untranslated, "MINI", -73, -24, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo NebAmmo, -6, -24;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 30;
+				}
+				else IsSelected "Panzerschreck"
+				{
+					DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo PanzerAmmo, -6, -18;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 0;
+				}
+				else IsSelected "UMG43"
+				{
+					DrawString HXGENERALFONTS, untranslated, "9x19", -73, -84, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS,	untranslated, ammo HX_NazisV2_9mmAmmo, -6, -84;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50;
+				}
+				else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+		// ARMS & KEYS BARS - NAZIS V2
+			// Keys
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -133;
+					drawkeybar 12, horizontal, reverse, reverserows, auto, -13, -120, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -115;
+					drawkeybar 6, horizontal, reverse, auto, -12, -119, 0, 6, auto;
+				}
+			}
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -120;
+					drawkeybar 12, horizontal, reverse, reverserows, auto, -13, -107, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -102;
+					drawkeybar 6, horizontal, reverse, auto, -12, -106, 0, 6, auto;
+				}
+			}
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -102;
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -98;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -98;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -98;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -98;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -98;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -98;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -98;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -98;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -98;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -98;
+			}
+		}
 		/*	Supercharge 2.8
 		*
 		*/
@@ -3103,6 +3466,14 @@ StatusBar Fullscreen, FullscreenOffsets
 					else { DrawImage weaponicon, -112, -43, center, 36, 12; }
 				}
 				else { DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst; }
+			}
+			/*	NAZIS V2
+			*
+			*/
+			else InInventory "HXMOD_NazisV2", 1
+			{
+				DrawImage "HXWEAPON", -122, -53;
+				DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst;
 			}
 			/*	PerK's Smoother Weapon Animations Enhanced 3.2.1
 			*

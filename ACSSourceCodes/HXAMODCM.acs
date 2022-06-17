@@ -16,6 +16,7 @@ str hxmod_CED64 = "HXMOD_DoomCE_D64";
 str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
 str hxmod_D4V = "HXMOD_Doom4Vanilla";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
+str hxmod_nazisv2 = "HXMOD_NazisV2";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
 str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
 str hxmod_supercharge = "HXMOD_Supercharge";
@@ -104,6 +105,11 @@ str doomcepsxpistol = "PsxPistol";
 str ledclass = "DoomGuy";
 str ledfist = "Knuckle";
 str ledminigunmag = "MinigunMag";
+
+// NAZIS V2
+str nazisv2class = "WWNazisPlayer";
+str nazisv2grenade = "GrenadePickup";
+str nazisv2revolvermag = "WeaselsRevolverLoaded";
 
 // PerK's Smoother Weapon Animations Enhanced
 str perkzfist = "ZPerkFist";
@@ -221,6 +227,16 @@ script "HXS_ModCompatibilityStartup" enter
 		{
 			GiveInventory(hxmod_modfound, 1);
 			GiveInventory(hxmod_ledgwmtoken, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
+	// NAZIS V2
+		else if (CheckActorClass(0, nazisv2class)
+			&& CheckInventory(nazisv2grenade)
+			&& CheckInventory(nazisv2revolvermag)
+			&& !CheckInventory(hxmod_nazisv2))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_nazisv2, 1);
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// PerK's Smoother Weapon Animations Enhanced

@@ -1,0 +1,82 @@
+#library "HXMNAZI2"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+
+str nazisv2_12GaugeAmmo = "12GaugeAmmo";
+str nazisv2_3006Ammo = "3006Ammo";
+str nazisv2_303Ammo = "303Ammo";
+str nazisv2_357Ammo = "357Ammo";
+str nazisv2_45ACPAmmo = "45ACPAmmo";
+str nazisv2_792KurzAmmo = "792KurzAmmo";
+str nazisv2_9mmAmmo = "9mmAmmo";
+str hx_nazisv2_12GaugeAmmo = "HX_NazisV2_12GaugeAmmo";
+str hx_nazisv2_3006Ammo = "HX_NazisV2_3006Ammo";
+str hx_nazisv2_303Ammo = "HX_NazisV2_303Ammo";
+str hx_nazisv2_357Ammo = "HX_NazisV2_357Ammo";
+str hx_nazisv2_45ACPAmmo = "HX_NazisV2_45ACPAmmo";
+str hx_nazisv2_792KurzAmmo = "HX_NazisV2_792KurzAmmo";
+str hx_nazisv2_9mmAmmo = "HX_NazisV2_9mmAmmo";
+
+script "HXS_NazisV2_35ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_nazisv2)) {
+		while (true)
+		{
+/* 		// Key Management Tokens
+			// Blue Keys
+			HXS_ItemSync(vanillabluecard, hxgen_bluecard);
+			HXS_ItemSync(vanillablueskull, hxgen_blueskull);
+			// Red Keys
+			HXS_ItemSync(vanillaredcard, hxgen_redcard);
+			HXS_ItemSync(vanillaredskull, hxgen_redskull);
+			// Yellow Keys
+			HXS_ItemSync(vanillayellowcard, hxgen_yellowcard);
+			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull); */
+
+		// Powerup Management Tokens
+			// Berserk
+			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+
+		// Timer
+			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
+			delay(35);
+		}
+	}
+}
+
+script "HXS_NazisV2_7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+	
+	if (CheckInventory(hxmod_nazisv2)) {
+		while (true)
+		{
+		// Powerup Management Tokens
+			// Infrared
+			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			// Invisibility
+			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			// Invulnerability
+			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			// Radsuit
+			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+
+		// Numeric lead character bypass for SBARINFO
+			HXS_ItemSync(nazisv2_12GaugeAmmo, hx_nazisv2_12GaugeAmmo);
+			HXS_ItemSync(nazisv2_3006Ammo, hx_nazisv2_3006Ammo);
+			HXS_ItemSync(nazisv2_303Ammo, hx_nazisv2_303Ammo);
+			HXS_ItemSync(nazisv2_357Ammo, hx_nazisv2_357Ammo);
+			HXS_ItemSync(nazisv2_45ACPAmmo, hx_nazisv2_45ACPAmmo);
+			HXS_ItemSync(nazisv2_792KurzAmmo, hx_nazisv2_792KurzAmmo);
+			HXS_ItemSync(nazisv2_9mmAmmo, hx_nazisv2_9mmAmmo);
+
+		// Timer
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
+	}
+}
