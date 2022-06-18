@@ -502,12 +502,11 @@ StatusBar Fullscreen, FullscreenOffsets
 		{
 			DrawImage "HXARMTYP", 72, -49;
 			DrawImage "HXARMTFG", 72, -49;
-			InInventory not "NoFatality"
-			{
-				InInventory "HXMOD_Doom64Art", 1 { DrawImage "HX64BRSK", 72, -49; }
-				else { DrawImage "HXBERSRK", 72, -49; }
-			}
-			else { DrawImage "HXHEALTH", 72, -49; }
+			
+			InInventory "HXMOD_Doom64Art", 1 { DrawImage "HX64BRSK", 72, -49; }
+			else InInventory "HXMOD_NazisV2", 1 { DrawImage "HXNZBRSK", 72, -49; }
+			else InInventory "NoFatality", 1 { DrawImage "HXHEALTH", 72, -49; }
+			else { DrawImage "HXBERSRK", 72, -49; }
 		}
 
 		// ARMOR SAVE PERCENTAGE FRAME
