@@ -81,6 +81,9 @@ ACTOR HX_LedsGenWep9mmAmmo: Ammo
 	Inventory.MaxAmount 200
 	Ammo.BackpackMaxAmount 400
 }
+//	Lt. Typhon
+ACTOR HXMOD_BadAssBitch: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_LtTyphonBurningAngelToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 //	NAZIS V2
 ACTOR HXMOD_NazisV2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_NazisV2_12GaugeAmmo: Ammo

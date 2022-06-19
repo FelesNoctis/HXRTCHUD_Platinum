@@ -122,6 +122,32 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 			}
 		}
+	/*	Lt. Typhon */
+		else InInventory "HXMOD_BadAssBitch", 1
+		{
+			InInventory "HXCUS_PowerupBoxToken", 2	// Always
+			{
+				// Background panels + inactive icons
+				DrawImage "HXTYBANO", -50, 2;
+				DrawImage "HXINVUNO", -26, 2;
+				// Active icon + border
+				InInventory "HX_LtTyphonBurningAngelToken" { DrawBar "HXTYBAF0", "HXINVOFF", HX_LtTyphonBurningAngelToken, vertical, interpolate(64), -50, 2; }		
+				InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -26, 2; }
+			}
+			else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
+			{
+				InInventory "HX_LtTyphonBurningAngelToken"
+				{
+					DrawImage "HXTYBANO", -26, 2;
+					DrawBar "HXTYBAF0", "HXINVOFF", HX_LtTyphonBurningAngelToken, vertical, interpolate(64), -50, 2;
+				}
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HXINVUNO", -50, 2;
+					DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -26, 2;
+				}
+			}
+		}
 	/*	Standard, not Doom 64 */
 		else InInventory not "HXMOD_Doom64Art", 1
 		{
@@ -267,6 +293,47 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawImage "HX64RDT", -26, 25;
 					DrawImage "HXSML058", -23, 29;
 					DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -5, 29;
+				}
+			}
+		}
+	/*	Lt. Typhon */
+		InInventory "HXMOD_BadAssBitch", 1
+		{
+			InInventory "HXCUS_PowerupTimerToken", 2	// Always
+			{
+				// Background panels
+				DrawImage "HXBUFFT", -50, 25;
+				DrawImage "HXBUFFT", -26, 25;
+				// Active timers
+				InInventory "HX_LtTyphonBurningAngelToken"
+				{
+					DrawImage "HXTYBAT", -50, 25;
+					DrawImage "HXSML058", -47, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_LtTyphonBurningAngelToken, -29, 29;
+				}
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HXINVUT", -26, 25;
+					DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -5, 29;
+				}
+			}
+			else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
+			{
+				InInventory "HX_LtTyphonBurningAngelToken"
+				{
+					
+					DrawImage "HXBUFFT", -50, 25;
+					DrawImage "HXTYBAT", -50, 25;
+					DrawImage "HXSML058", -47, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_LtTyphonBurningAngelToken, -29, 29;
+				}
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HXBUFFT", -26, 25;
+					DrawImage "HXINVUT", -26, 25;
+					DrawImage "HXSML058", -23, 29; 
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -5, 29;
 				}
 			}
 		}
@@ -459,51 +526,88 @@ StatusBar Fullscreen, FullscreenOffsets
 	InInventory not "HXSYS_VehicleHUDToken", 1 || "HXSYS_NormalHUDKillerToken", 1
 	{
 	// DOOMGUY'S MUGSHOT
-		DrawImage "HXMGSHT", 2, -71;
-
-		// Mugshot reactive border - Invulnerability
-		InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", 2, -71; }
-		else { DrawImage "HXMGBFG", 2, -71; }
-		// Mugshot reactive corners - Berserk
-		InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", 2, -71; }
-		else { DrawImage "HXMGCGW", 2, -71; }
-
-		// Air Supply and Rage Meter (HXRTC Gold default)
-		InInventory "HXCUS_AirMeterToken", 1 { DrawBar "HXARBROK", "HXARRGNO", airtime, vertical, interpolate(64), 6, -67; }
-		InInventory "HXRTCPlayerRagePoints", 1 { DrawBar "HXRGBROK", "HXARRGNO", HXRTCPlayerRagePoints, vertical, interpolate(64), 41, -67; }
-
-		// Brutal Doom-related mugshots
-		InInventory "HXMOD_BrutalDoomPlatinum", 1 { DrawMugShot "STF", 5, 8, -65; }
-		else InInventory "HXMOD_BrutalDoom", 1
+		InInventory "HXMOD_BadAssBitch", 1
 		{
-			InInventory GenderFemale, 1 { DrawMugShot "GAL", 5, 8, -65; }
-			else InInventory GenderMale, 1 { DrawMugShot "STM", 5, 8, -65; }
+			DrawImage "HXMGSHT", 2, -78;
+
+			// Mugshot reactive border - Invulnerability
+			InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", 2, -78; }
+			else { DrawImage "HXMGBFG", 2, -78; }
+			// Mugshot reactive corners - Berserk
+			InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", 2, -78; }
+			else { DrawImage "HXMGCGW", 2, -78; }
+
+			// Air Supply and Rage Meter (HXRTC Gold default)
+			InInventory "HXCUS_AirMeterToken", 1 { DrawBar "HXARBROK", "HXARRGNO", airtime, vertical, interpolate(64), 6, -74; }
+			InInventory "HXRTCPlayerRagePoints", 1 { DrawBar "HXRGBROK", "HXARRGNO", HXRTCPlayerRagePoints, vertical, interpolate(64), 41, -74; }
+
+			DrawMugShot "STF", 5, 8, -72;
 		}
-		// Doom CE D64
-		else InInventory "HXMOD_DoomCE_D64", 1 { DrawMugShot "STF", 5, 7, -65; }
-		// Doom CE PSX
-		else InInventory "HXMOD_DoomCE_PSX", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
-		// SmoothDoom 2.0 WIP death mugshot
-		else InInventory "HXMOD_SmoothDoom2", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
-		// Vanilla mugshot
-		else { DrawMugShot "STF", 5, 8, -65; }
+		else
+		{
+			DrawImage "HXMGSHT", 2, -71;
+
+			// Mugshot reactive border - Invulnerability
+			InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", 2, -71; }
+			else { DrawImage "HXMGBFG", 2, -71; }
+			// Mugshot reactive corners - Berserk
+			InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", 2, -71; }
+			else { DrawImage "HXMGCGW", 2, -71; }
+
+			// Air Supply and Rage Meter (HXRTC Gold default)
+			InInventory "HXCUS_AirMeterToken", 1 { DrawBar "HXARBROK", "HXARRGNO", airtime, vertical, interpolate(64), 6, -67; }
+			InInventory "HXRTCPlayerRagePoints", 1 { DrawBar "HXRGBROK", "HXARRGNO", HXRTCPlayerRagePoints, vertical, interpolate(64), 41, -67; }
+
+			// Brutal Doom-related mugshots
+			InInventory "HXMOD_BrutalDoomPlatinum", 1 { DrawMugShot "STF", 5, 8, -65; }
+			else InInventory "HXMOD_BrutalDoom", 1
+			{
+				InInventory GenderFemale, 1 { DrawMugShot "GAL", 5, 8, -65; }
+				else InInventory GenderMale, 1 { DrawMugShot "STM", 5, 8, -65; }
+			}
+			// Doom CE D64
+			else InInventory "HXMOD_DoomCE_D64", 1 { DrawMugShot "STF", 5, 7, -65; }
+			// Doom CE PSX
+			else InInventory "HXMOD_DoomCE_PSX", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
+			// SmoothDoom 2.0 WIP death mugshot
+			else InInventory "HXMOD_SmoothDoom2", 1 { DrawMugShot "STF", 5, xdeathface, 8, -65; }
+			// Vanilla mugshot
+			else { DrawMugShot "STF", 5, 8, -65; }
+		}
 
 
 	// INVENTORY ARTIFACTS
 		InInventory "HXCUS_ArtifactToken"
 		{
-			DrawImage "HXINVSEL", 2, -106;
-			DrawSelectedInventory alwaysshowcounter, centerbottom, HXINDEXFONTS, 25, -75, 44, -81, untranslated;
+			InInventory "HXMOD_BadAssBitch", 1
+			{
+				DrawImage "HXINVSEL", 2, -113;
+				DrawSelectedInventory alwaysshowcounter, centerbottom, HXINDEXFONTS, 25, -82, 44, -88, untranslated;
+			}
+			else
+			{
+				DrawImage "HXINVSEL", 2, -106;
+				DrawSelectedInventory alwaysshowcounter, centerbottom, HXINDEXFONTS, 25, -75, 44, -81, untranslated;
+			}
 		}
 
 
 	// ITEM PANELS (BERSERK, ARMOR SAVE, ARMOR TYPE)
 		InInventory "HX_BerserkPowerUpToken", 1
 		{
-			DrawImage "HXARMTYP", 72, -49;
-			DrawImage "HXARMTFG", 72, -49;
+			InInventory "HXMOD_BadAssBitch", 1
+			{
+				DrawImage "HXARMTYP", 72, -56;
+				DrawImage "HXARMTFG", 72, -56;
+			}
+			else
+			{
+				DrawImage "HXARMTYP", 72, -49;
+				DrawImage "HXARMTFG", 72, -49;
+			}
 			
 			InInventory "HXMOD_Doom64Art", 1 { DrawImage "HX64BRSK", 72, -49; }
+			else InInventory "HXMOD_BadAssBitch", 1 { DrawImage "HXTYBR0", 72, -56; }
 			else InInventory "HXMOD_NazisV2", 1 { DrawImage "HXNZBRSK", 72, -49; }
 			else InInventory "NoFatality", 1 { DrawImage "HXHEALTH", 72, -49; }
 			else { DrawImage "HXBERSRK", 72, -49; }
@@ -512,24 +616,41 @@ StatusBar Fullscreen, FullscreenOffsets
 		// ARMOR SAVE PERCENTAGE FRAME
 		InInventory "HXCUS_ArmorSaveToken", 1
 		{
-			// Brutal Doom Platinum - Demon Protection Sigil
-			InInventory "HX_ShieldPowerUpToken", 1 && "HXMOD_BrutalDoomPlatinum", 1
-				{ DrawSwitchableImage BasicArmor > 0, "HXARMSVG", "HXARMSVC", 48, -62; }
-			// Standard
-			else { DrawImage "HXARMSVG", 48, -62; }
+			InInventory "HXMOD_BadAssBitch", 1
+			{
+				DrawImage "HXARMSVG", 48, -69;
+				DrawImage "HXARMSV", 48, -69;
+				DrawNumber 3, HXGENERALFONTS, untranslated, savepercent, interpolate(128), whennotzero, 64, -65, 0;
+				DrawSwitchableImage BasicArmor > 0, "HXSML010", "HXSML037", 65, -65;
+			}
+			else
+			{
+				// Brutal Doom Platinum - Demon Protection Sigil
+				InInventory "HX_ShieldPowerUpToken", 1 && "HXMOD_BrutalDoomPlatinum", 1
+					{ DrawSwitchableImage BasicArmor > 0, "HXARMSVG", "HXARMSVC", 48, -62; }
+				// Standard
+				else { DrawImage "HXARMSVG", 48, -62; }
 
-			DrawImage "HXARMSV", 48, -62;
-			DrawNumber 3, HXGENERALFONTS, untranslated, savepercent, interpolate(128), whennotzero, 64, -58, 0;
-			DrawSwitchableImage BasicArmor > 0, "HXSML010", "HXSML037", 65, -58;
+				DrawImage "HXARMSV", 48, -62;
+				DrawNumber 3, HXGENERALFONTS, untranslated, savepercent, interpolate(128), whennotzero, 64, -58, 0;
+				DrawSwitchableImage BasicArmor > 0, "HXSML010", "HXSML037", 65, -58;
+			}
 		}
 
 		// ARMOR FRAME
-		DrawImage "HXARMTYP", 48, -49;
+		InInventory "HXMOD_BadAssBitch", 1 { DrawImage "HXARMTYP", 48, -56; }
+		else { DrawImage "HXARMTYP", 48, -49; }
 		// Brutal Doom Platinum - Demon Protection Sigil
 		InInventory "HX_ShieldPowerUpToken", 1 && "HXMOD_BrutalDoomPlatinum", 1
 		{
 			DrawSwitchableImage BasicArmor > 0, "HXARMTFG", "HXARMTFC", 48, -49;
 			DrawSwitchableImage BasicArmor > 0, "HXARMTNO", "HXBDSIGP", 48, -49;
+		}
+		// Lt. Typhon
+		else InInventory "HXMOD_BadAssBitch", 1
+		{
+			DrawImage "HXARMTFG", 48, -56;
+			DrawImage armoricon, 60, -45, center, 16, 15;
 		}
 		// Standard
 		else
@@ -540,20 +661,46 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 	// HEALTH, ARMOR
-		DrawImage "HXHPTOP", 2, -26;
-		DrawImage "HXHPBOTS", 2, -14;
-		
-		// Health, Overhealth
-		DrawString HXGENERALFONTM, untranslated, "HEALTH", 44, -20, 0;
-		DrawBar "HXHABROK", "HXHABRBG", health (100), horizontal, interpolate(64), 46, -20;
-		InInventory "HXSYS_HealthOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HXSYS_HealthOverMaxToken, horizontal, interpolate(64), 46, -20; }
-		DrawNumber 4, CONFONT, yellow, health, interpolate(128), 122, -22, 0, red, 24, green, 51;
+		InInventory "HXMOD_BadAssBitch", 1
+		{
+			DrawImage "HXHPTOP", 2, -33;
+			DrawImage "HXHPROWS", 2, -21;
+			DrawImage "HXHPBOTL", 2, -14;
 
-		// Armor, Overarmor
-		DrawString HXGENERALFONTM, untranslated, "ARMOR", 43, -13, 1;
-		DrawBar "HXHABROK", "HXHABRBG", armor (100), horizontal, interpolate(64), 46, -13;
-		InInventory "HXSYS_ArmorOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HXSYS_ArmorOverMaxToken, horizontal, interpolate(64), 46, -13; }
-		DrawNumber 4, CONFONT, yellow, armor, interpolate(128), 122, -15, 0, red, 24, green, 51;
+			// Health, Overhealth
+			DrawString HXGENERALFONTM, untranslated, "HEALTH", 44, -27, 0;
+			DrawBar "HXHABROK", "HXHABRBG", health (100), horizontal, interpolate(64), 46, -27;
+			InInventory "HXSYS_HealthOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HXSYS_HealthOverMaxToken, horizontal, interpolate(64), 46, -27; }
+			DrawNumber 4, CONFONT, yellow, health, interpolate(128), 122, -29, 0, red, 24, green, 51;
+
+			// Armor, Overarmor
+			DrawString HXGENERALFONTM, untranslated, "ARMOR", 43, -20, 1;
+			DrawBar "HXHABROK", "HXHABRBG", armor (100), horizontal, interpolate(64), 46, -20;
+			InInventory "HXSYS_ArmorOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HXSYS_ArmorOverMaxToken, horizontal, interpolate(64), 46, -20; }
+			DrawNumber 4, CONFONT, yellow, armor, interpolate(128), 122, -22, 0, red, 24, green, 51;
+
+			// Bio Energy
+			DrawString HXGENERALFONTM, untranslated, "ENERGY", 44, -13, 0;
+			DrawBar "HXSPBROK", "HXSPBRBG", ammo BioAmmo, horizontal, interpolate(64), 46, -13;
+			DrawNumber 4, CONFONT, yellow, ammo BioAmmo, interpolate(128), 122, -15, 0, red, 24, green, 51;
+		}
+		else
+		{
+			DrawImage "HXHPTOP", 2, -26;
+			DrawImage "HXHPBOTS", 2, -14;
+
+			// Health, Overhealth
+			DrawString HXGENERALFONTM, untranslated, "HEALTH", 44, -20, 0;
+			DrawBar "HXHABROK", "HXHABRBG", health (100), horizontal, interpolate(64), 46, -20;
+			InInventory "HXSYS_HealthOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HXSYS_HealthOverMaxToken, horizontal, interpolate(64), 46, -20; }
+			DrawNumber 4, CONFONT, yellow, health, interpolate(128), 122, -22, 0, red, 24, green, 51;
+
+			// Armor, Overarmor
+			DrawString HXGENERALFONTM, untranslated, "ARMOR", 43, -13, 1;
+			DrawBar "HXHABROK", "HXHABRBG", armor (100), horizontal, interpolate(64), 46, -13;
+			InInventory "HXSYS_ArmorOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HXSYS_ArmorOverMaxToken, horizontal, interpolate(64), 46, -13; }
+			DrawNumber 4, CONFONT, yellow, armor, interpolate(128), 122, -15, 0, red, 24, green, 51;
+		}
 	}
 
 

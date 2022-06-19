@@ -16,6 +16,7 @@ str hxmod_CED64 = "HXMOD_DoomCE_D64";
 str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
 str hxmod_D4V = "HXMOD_Doom4Vanilla";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
+str hxmod_lttyphon = "HXMOD_BadAssBitch";
 str hxmod_nazisv2 = "HXMOD_NazisV2";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
 str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
@@ -105,6 +106,11 @@ str doomcepsxpistol = "PsxPistol";
 str ledclass = "DoomGuy";
 str ledfist = "Knuckle";
 str ledminigunmag = "MinigunMag";
+
+// Lt. Typhon
+str typhonclass = "VeteranDoomPlayer";
+str typhonbio = "VeteranBioAttack";
+str typhondumbbell = "VeteranDumbbell";
 
 // NAZIS V2
 str nazisv2class = "WWNazisPlayer";
@@ -227,6 +233,16 @@ script "HXS_ModCompatibilityStartup" enter
 		{
 			GiveInventory(hxmod_modfound, 1);
 			GiveInventory(hxmod_ledgwmtoken, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
+	// Lt. Typhon
+		else if (CheckActorClass(0, typhonclass)
+			&& CheckInventory(typhonbio)
+			&& CheckInventory(typhondumbbell)
+			&& !CheckInventory(hxmod_lttyphon))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_lttyphon, 1);
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// NAZIS V2
