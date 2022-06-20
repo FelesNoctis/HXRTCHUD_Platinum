@@ -697,7 +697,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawBar "HXSPBROK", "HXSPBRBG", ammo BioAmmo, horizontal, interpolate(64), 46, -13;
 			DrawNumber 4, CONFONT, yellow, ammo BioAmmo, interpolate(128), 122, -15, 0, red, 24, green, 51;
 
-			// BIO ARTIFACTS PANEL - Brutal Doom 64 (Tactical/Modern)
+			// BIO ARTIFACTS PANEL - Lt. Typhon
 			DrawImage "HXARTI3S", 127, -33;
 			DrawSwitchableImage "Bioshockobtained", "HXTYBSNO", "HXTYBSOK", 131, -29;
 			DrawSwitchableImage "Siriusobtained", "HXTYSRNO", "HXTYSROK", 131, -21;
