@@ -59,6 +59,10 @@ OptionMenu "HXRTCHUDPlat"
 	Option "Weapon Slots Bar", "hxcus_HXArmsBar", "OnOff"
 	StaticText " "
 
+	StaticText "Accessibility Settings", 1
+	Option "Low Motion (Lt. Typhon)", "hxcus_HXLowMotion", "OnOff"
+	StaticText " "
+
 	StaticText "Developer Tools", 1
 	Option "Tag Readout", "hxsys_debugtag", "OnOff"
 }

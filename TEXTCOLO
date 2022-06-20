@@ -34,6 +34,16 @@ Flat:
 	#202020
 }
 
+HXRTCCyan
+{
+	#00DDDD #00DDDD
+Console:
+	#000000 #00DDDD 0 127
+	#00DDDD #FFFFFF 128 256
+Flat:
+	#00DDDD
+}
+
 HXRTCYellow
 {
 	#FFFF20 #FFFF20

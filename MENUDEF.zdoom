@@ -18,7 +18,7 @@ OptionMenu "HXRTCHUDPlat"
 	StaticText "Engine Settings", 1
 	ScaleSlider "$SCALEMNU_HUD", "hud_scale", -1.0, 8.0, 1.0, "$SCALEMNU_USEUI", "$SCALEMNU_USEFS"
 	StaticText " "
-	
+
 	StaticText "Panel Customization", 1
 	Option "Air Supply", "hxcus_HXAirMeter", "OnOff"
 	Option "Armor Save %", "hxcus_HXArmorSave", "OnOff"
@@ -30,6 +30,10 @@ OptionMenu "HXRTCHUDPlat"
 	Option "Powerup Timer Visibility", "hxcus_HXPowerupTimer", "HXRTCHUDPlat_Cus_Powerups"
 	Option "Weapon Icon", "hxcus_HXWepIcon", "OnOff"
 	Option "Weapon Slots Bar", "hxcus_HXArmsBar", "OnOff"
+	StaticText " "
+
+	StaticText "Accessibility Settings", 1
+	Option "Low Motion (Lt. Typhon)", "hxcus_HXLowMotion", "OnOff"
 	StaticText " "
 
 	StaticText "Developer Tools", 1
