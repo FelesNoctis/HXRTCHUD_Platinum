@@ -2,6 +2,9 @@
 
 ## v0.40
 
+- **Bottom-Right Panels:**
+  - **Artifact Pieces** panel added for use with any mod that uses the 3-step weapon powerup system.
+
 - **Mod Support:**
   - Doom 4 Vanilla 3.2.1
   - Lt. Typhon V6

@@ -696,12 +696,6 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTM, untranslated, "ENERGY", 44, -13, 0;
 			DrawBar "HXSPBROK", "HXSPBRBG", ammo BioAmmo, horizontal, interpolate(64), 46, -13;
 			DrawNumber 4, CONFONT, yellow, ammo BioAmmo, interpolate(128), 122, -15, 0, red, 24, green, 51;
-
-			// BIO ARTIFACTS PANEL - Lt. Typhon
-			DrawImage "HXARTI3S", 127, -33;
-			DrawSwitchableImage "Bioshockobtained", "HXTYBSNO", "HXTYBSOK", 131, -29;
-			DrawSwitchableImage "Siriusobtained", "HXTYSRNO", "HXTYSROK", 131, -21;
-			DrawSwitchableImage "Kiblastobtained", "HXTYKINO", "HXTYKIOK", 131, -13;
 		}
 		else
 		{
@@ -719,6 +713,34 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawBar "HXHABROK", "HXHABRBG", armor (100), horizontal, interpolate(64), 46, -13;
 			InInventory "HXSYS_ArmorOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HXSYS_ArmorOverMaxToken, horizontal, interpolate(64), 46, -13; }
 			DrawNumber 4, CONFONT, yellow, armor, interpolate(128), 122, -15, 0, red, 24, green, 51;
+		}
+	// ARTIFACT PIECES PANEL
+		// Brutal Doom 64
+		InInventory "HXMOD_BrutalDoom64", 1
+		{
+/* 			InInventory "Unmaker", 1 || "UnmakerTACTICAL", 1
+			{ */
+				DrawImage "HXARTI3S", 127, -33;
+				DrawSwitchableImage "WeaponPower" >= 1, "HX64UA1N", "HX64UA1", 131, -29;
+				DrawSwitchableImage "WeaponPower" >= 2, "HX64UA2N", "HX64UA2", 131, -21;
+				DrawSwitchableImage "WeaponPower" >= 3, "HX64UA3N", "HX64UA3", 131, -13;
+/* 			} */
+		}
+		// Doom CE: Doom64
+		InInventory "HXMOD_DoomCE_D64", 1
+		{
+			DrawImage "HXARTI3S", 127, -33;
+			DrawSwitchableImage "UnmakerUpgrade1Icon", "HX64UA1N", "HX64UA1", 131, -29;
+			DrawSwitchableImage "UnmakerUpgrade2Icon", "HX64UA2N", "HX64UA2", 131, -21;
+			DrawSwitchableImage "UnmakerUpgrade3Icon", "HX64UA3N", "HX64UA3", 131, -13;
+		}
+		// Lt. Typhon
+		InInventory "HXMOD_BadAssBitch", 1
+		{
+			DrawImage "HXARTI3S", 127, -33;
+			DrawSwitchableImage "Bioshockobtained", "HXTYBSNO", "HXTYBSOK", 131, -29;
+			DrawSwitchableImage "Siriusobtained", "HXTYSRNO", "HXTYSROK", 131, -21;
+			DrawSwitchableImage "Kiblastobtained", "HXTYKINO", "HXTYKIOK", 131, -13;
 		}
 	}
 
@@ -2492,6 +2514,18 @@ StatusBar Fullscreen, FullscreenOffsets
 					{
 						DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
+
+						IsSelected "Unmaker"
+						{
+							DrawImage "HXBDCEU0", -118, -12;
+							InInventory "WeaponPower", 1 { DrawImage "HXBDCEU1", -118, -12; }
+							InInventory "WeaponPower", 2 { DrawImage "HXBDCEU2", -106, -12; }
+							InInventory "WeaponPower", 3 { DrawImage "HXBDCEU3", -94, -12; }
+						}
+					}
+					WeaponAmmo SoulAmmo
+					{
 						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0;
 
 						IsSelected "Unmaker"
