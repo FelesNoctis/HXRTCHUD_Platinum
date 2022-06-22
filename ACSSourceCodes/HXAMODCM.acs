@@ -15,6 +15,7 @@ str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
 str hxmod_CED64 = "HXMOD_DoomCE_D64";
 str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
 str hxmod_D4V = "HXMOD_Doom4Vanilla";
+str hxmod_faspons = "HXMOD_Faspons";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_lttyphon = "HXMOD_BadAssBitch";
 str hxmod_nazisv2 = "HXMOD_NazisV2";
@@ -101,6 +102,11 @@ str doomced64pistol = "D64Pistol";
 str doomcepsxclass = "PsxDoomPlayer";
 str doomcepsxfist = "PsxFist";
 str doomcepsxpistol = "PsxPistol";
+
+// Faspons
+str fasponsclass = "FasPlayer";
+str fasponsfist = "Knuckles";
+str fasponsrifle = "CombatRifle";
 
 // Led's Generic Weapon Mod
 str ledclass = "DoomGuy";
@@ -224,7 +230,17 @@ script "HXS_ModCompatibilityStartup" enter
 			GiveInventory(hxmod_modfound, 1);
 			GiveInventory(hxmod_CEPSX, 1);
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
-		}	
+		}
+	// Faspons
+		else if (CheckActorClass(0, fasponsclass)
+			&& CheckInventory(fasponsfist)
+			&& CheckInventory(fasponsrifle)
+			&& !CheckInventory(hxmod_faspons))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_faspons, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
 	// Led's Generic Weapon Mod
 		else if (CheckActorClass(0, ledclass)
 			&& CheckInventory(ledfist)

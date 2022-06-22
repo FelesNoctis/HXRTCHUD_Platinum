@@ -7,6 +7,7 @@
 
 - **Mod Support:**
   - Doom 4 Vanilla 3.2.1
+  - Faspons (REL: MAR 13 2020) & (DEV: MAR 16 2020)
   - Lt. Typhon V6
   - Weasel Presents: NAZIS V2
 

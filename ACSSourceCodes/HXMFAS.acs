@@ -1,0 +1,60 @@
+#library "HXMFAS"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+
+str fasponsberserk = "BerserkPower";
+
+script "HXS_Faspons35ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_faspons)) {
+		while (true)
+		{
+/* 		// Key Management Tokens
+			// Blue Keys
+			HXS_ItemSync(vanillabluecard, hxgen_bluecard);
+			HXS_ItemSync(vanillablueskull, hxgen_blueskull);
+			// Red Keys
+			HXS_ItemSync(vanillaredcard, hxgen_redcard);
+			HXS_ItemSync(vanillaredskull, hxgen_redskull);
+			// Yellow Keys
+			HXS_ItemSync(vanillayellowcard, hxgen_yellowcard);
+			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull); */
+
+		// Powerup Management Tokens
+			// Berserk
+			HXS_ItemSync(fasponsberserk, hxgen_berserk);
+
+		// Timer
+			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
+			delay(35);
+		}
+	}
+}
+
+script "HXS_Faspons7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+	
+	if (CheckInventory(hxmod_faspons)) {
+		while (true)
+		{
+		// Powerup Management Tokens
+			// Infrared
+			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			// Invisibility
+			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			// Invulnerability
+			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			// Radsuit
+			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+
+		// Timer
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
+	}
+}

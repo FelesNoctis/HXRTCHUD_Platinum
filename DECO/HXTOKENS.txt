@@ -74,6 +74,8 @@ ACTOR HX_D4V_swtoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmou
 //	Doom CE
 ACTOR HXMOD_DoomCE_D64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_DoomCE_PSX: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Faspons
+ACTOR HXMOD_Faspons: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Led's Generic Weapon Mod 20220412
 ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_LedsGenWep9mmAmmo: Ammo
