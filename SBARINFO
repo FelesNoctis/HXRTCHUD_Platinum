@@ -563,8 +563,14 @@ StatusBar Fullscreen, FullscreenOffsets
 			InInventory "HX_BerserkPowerUpToken" { DrawImage "HXMGCGR", 2, -71; }
 			else { DrawImage "HXMGCGW", 2, -71; }
 
-			// Air Supply and Rage Meter (HXRTC Gold default)
+			// Air Supply
 			InInventory "HXCUS_AirMeterToken", 1 { DrawBar "HXARBROK", "HXARRGNO", airtime, vertical, interpolate(64), 6, -67; }
+			// Rage Meter (HXRTC Gold default)
+			InInventory "HXMOD_Faspons", 1
+			{
+				InInventory not "FearMe", 1 { DrawBar "HXRGBRIN", "HXARRGNO", Adrenaline, vertical, interpolate(64), 41, -67; }
+				else { DrawBar "HXRGBROK", "HXARRGNO", Adrenaline, vertical, interpolate(64), 41, -67; }
+			}
 			InInventory "HXRTCPlayerRagePoints", 1 { DrawBar "HXRGBROK", "HXARRGNO", HXRTCPlayerRagePoints, vertical, interpolate(64), 41, -67; }
 
 			// Brutal Doom-related mugshots
