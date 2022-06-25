@@ -1,0 +1,72 @@
+#library "HXMZIOBW"
+#include "zcommon.acs"
+#import "HXAMODCM.acs"
+
+str ziobw_coltammo = "Clip";
+str ziobw_coltweap = "COLT";
+str ziobw_thompson = "Thompson";
+str hx_ziobw_coltusabletoken = "HX_ZioBW_ColtUsable";
+
+script "HXS_ZioBW35ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+
+	if (CheckInventory(hxmod_ziobrutalwolf)) {
+		while (true)
+		{
+		// Ammo Display Token
+			if (CheckInventory(ziobw_coltammo)
+				&& (CheckInventory(ziobw_coltweap) || CheckInventory(ziobw_thompson))
+				&& !CheckInventory(hx_ziobw_coltusabletoken))
+			{ GiveInventory(hx_ziobw_coltusabletoken, 1); }
+			else if (!CheckInventory(ziobw_coltammo)
+				&& CheckInventory(hx_ziobw_coltusabletoken))
+			{ TakeInventory(hx_ziobw_coltusabletoken, 1); }
+
+/* 		// Key Management Tokens
+			// Blue Keys
+			HXS_ItemSync(vanillabluecard, hxgen_bluecard);
+			HXS_ItemSync(vanillablueskull, hxgen_blueskull);
+			// Red Keys
+			HXS_ItemSync(vanillaredcard, hxgen_redcard);
+			HXS_ItemSync(vanillaredskull, hxgen_redskull);
+			// Yellow Keys
+			HXS_ItemSync(vanillayellowcard, hxgen_yellowcard);
+			HXS_ItemSync(vanillayellowskull, hxgen_yellowskull); */
+
+		// Powerup Management Tokens
+			// Berserk
+			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+
+		// Timer
+			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
+			delay(35);
+		}
+	}
+}
+/* 
+script "HXS_ZioBW7ticHandler" enter
+{
+	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
+	delay(35);
+	
+	if (CheckInventory(hxmod_ziobrutalwolf)) {
+		while (true)
+		{
+		// Powerup Management Tokens
+			// Infrared
+			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			// Invisibility
+			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			// Invulnerability
+			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			// Radsuit
+			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+
+		// Timer
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
+	}
+} */

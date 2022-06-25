@@ -22,6 +22,7 @@ str hxmod_nazisv2 = "HXMOD_NazisV2";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
 str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
 str hxmod_supercharge = "HXMOD_Supercharge";
+str hxmod_ziobrutalwolf = "HXMOD_ZioBrutalWolfenstein";
 
 // HUD Mode Switch
 str hxsys_normalhudkiller = "HXSYS_NormalHUDKillerToken";
@@ -89,6 +90,11 @@ str bd64fist = "64Fist";
 str bd64pistol = "64Pistol";
 str bd64pistoltactical = "64PistolTactical";
 str bd64rifletactical = "64RifleTactical";
+
+// Brutal Wolfenstein (ZioMcCall)
+str bwzioclass = "Doomer2";
+str bwziofist = "Melee_Attacks";
+str bwziopistolammo = "LUGERAmmoAlt";
 
 // Doom 4 Vanilla
 str d4vclass = "DoomSlayer";
@@ -188,6 +194,17 @@ script "HXS_ModCompatibilityStartup" enter
 				GiveInventory(hxmod_modfound, 1);
 				GiveInventory(hxmod_brutaldoom, 1);
 				GiveInventory(hxmod_brutaldoomplat, 1);
+				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			}
+			// Brutal Wolfenstein (ZioMcCall)
+			else if (CheckActorClass(0, bwzioclass)
+					&& CheckInventory(bwziofist)
+					&& CheckInventory(bwziopistolammo)
+					&& !CheckInventory(hxmod_ziobrutalwolf))
+			{
+				GiveInventory(hxmod_modfound, 1);
+				GiveInventory(hxmod_brutaldoom, 1);
+				GiveInventory(hxmod_ziobrutalwolf, 1);
 				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 			}
 			// Brutal Doom v21 / CE

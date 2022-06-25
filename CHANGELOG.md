@@ -10,6 +10,7 @@
   - Faspons (REL: MAR 13 2020) & (DEV: MAR 16 2020)
   - Lt. Typhon V6
   - Weasel Presents: NAZIS V2
+  - ZioMcCall's Brutal Wolfenstein
 
 ## v0.30
 
