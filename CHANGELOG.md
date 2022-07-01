@@ -11,6 +11,8 @@
   - Lt. Typhon V6
   - Omni-Wolf v1.2
   - Weasel Presents: NAZIS V2
+  - WolfenDoom Enhanced
+  - WolfenDoom V2
   - ZioMcCall's Brutal Wolfenstein v5.5
 
 ## v0.30

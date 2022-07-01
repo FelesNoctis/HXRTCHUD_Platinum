@@ -36,8 +36,19 @@ OptionMenu "HXRTCHUDPlat"
 	Option "Low Motion (Lt. Typhon)", "hxcus_HXLowMotion", "OnOff"
 	StaticText " "
 
+	StaticText "Mod-Specific Settings", 1
+	Option "WolfenDoom Compatibility", "hxmod_ForceWolfenDoom", "HXRTCHUDPlat_Cus_ForceWolfenDoom"
+	StaticText " "
+
 	StaticText "Developer Tools", 1
 	Option "Tag Readout", "hxsys_debugtag", "OnOff"
+}
+
+OptionValue HXRTCHUDPlat_Cus_ForceWolfenDoom
+{
+	0.0, "Off"
+	1.0, "On"
+	2.0, "On + Powerups"
 }
 
 OptionValue HXRTCHUDPlat_Cus_Powerups

@@ -22,6 +22,7 @@ script "HXS_CVARBridge35ticHandler" enter
 		HXF_CVARConvert_Generic("hxcus_HXPowerupBox", "HXCUS_PowerupBoxToken");
 		HXF_CVARConvert_Generic("hxcus_HXPowerupTimer", "HXCUS_PowerupTimerToken");
 		HXF_CVARConvert_Generic("hxcus_HXWepIcon", "HXCUS_WeaponIconToken");
+		HXF_CVARConvert_Generic("hxmod_ForceWolfenDoom", "HXMOD_ForceWolfenDoomToken");
 		HXF_CVARConvert_Generic("hxsys_debugtag", "HXSYS_DebugTagToken");
 		HXF_CVARConvert_HXPTKIS();
 

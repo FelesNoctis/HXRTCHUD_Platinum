@@ -9,4 +9,5 @@ user int hxcus_HXPowerupBox = 2;
 user int hxcus_HXPowerupTimer = 1;
 user int hxcus_HXPTKIS = 3;
 user bool hxcus_HXWepIcon = true;
+user int hxmod_ForceWolfenDoom = 0;
 user bool hxsys_debugtag = false;

@@ -162,6 +162,49 @@ StatusBar Fullscreen, FullscreenOffsets
 		{
 			// Nothing to see here!
 		}
+	/*	MODE: Forced Wolfendoom */
+		else InInventory "HXMOD_ForceWolfenDoomToken", 1
+		{
+			InInventory "HXMOD_ForceWolfenDoomToken", 2
+			{
+				InInventory "HXCUS_PowerupBoxToken", 2	// Always
+				{
+					// Background panels + inactive icons
+					DrawImage "HXINVUNO", -98, 2;
+					DrawImage "HXBLURNO", -74, 2;
+					DrawImage "HXRADSNO", -50, 2;
+					DrawImage "HXLGHTNO", -26, 2;
+					// Active icon + border
+					InInventory "HX_InvulnerabilityPowerUpToken" { DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2; }
+					InInventory "HX_InvisibilityPowerUpToken" { DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2; }
+					InInventory "HX_RadSuitPowerUpToken" { DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; }		
+					InInventory "HX_InfraredPowerUpToken" { DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
+				}
+				else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
+				{
+					InInventory "HX_InvulnerabilityPowerUpToken"
+					{
+						DrawImage "HXINVUNO", -98, 2;
+						DrawBar "HXINVUOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 2;
+					}
+					InInventory "HX_InvisibilityPowerUpToken"
+					{
+						DrawImage "HXBLURNO", -74, 2;
+						DrawBar "HXBLUROK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2;
+					}
+					InInventory "HX_RadSuitPowerUpToken"
+					{
+						DrawImage "HXRADSNO", -50, 2;
+						DrawBar "HXRADSOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2;
+					}
+					InInventory "HX_InfraredPowerUpToken"
+					{
+						DrawImage "HXLGHTNO", -26, 2;
+						DrawBar "HXLGHTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2;
+					}
+				}
+			}
+		}
 	/*	Standard, not Doom 64 */
 		else InInventory not "HXMOD_Doom64Art", 1
 		{
@@ -648,6 +691,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawNumber 3, HXGENERALFONTS, untranslated, savepercent, interpolate(128), whennotzero, 64, -65, 0;
 				DrawSwitchableImage BasicArmor > 0, "HXSML010", "HXSML037", 65, -65;
 			}
+			else InInventory "HXMOD_OmniWolf" { /* Nothing to see here! */ }
 			else
 			{
 				// Brutal Doom Platinum - Demon Protection Sigil
@@ -664,7 +708,9 @@ StatusBar Fullscreen, FullscreenOffsets
 
 		// ARMOR FRAME
 		InInventory "HXMOD_BadAssBitch", 1 { DrawImage "HXARMTYP", 48, -56; }
+		else InInventory "HXMOD_OmniWolf" { /* Nothing to see here! */ }
 		else { DrawImage "HXARMTYP", 48, -49; }
+
 		// Brutal Doom Platinum - Demon Protection Sigil
 		InInventory "HX_ShieldPowerUpToken", 1 && "HXMOD_BrutalDoomPlatinum", 1
 		{
@@ -677,6 +723,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "HXARMTFG", 48, -56;
 			DrawImage armoricon, 60, -45, center, 16, 15;
 		}
+		// Omni-Wolf
+		else InInventory "HXMOD_OmniWolf" { /* Nothing to see here! */ }
 		// Standard
 		else
 		{
@@ -4248,6 +4296,77 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -56;
 				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -56;
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -56;
+			}
+		}
+		/*	MODE: Forced WolfenDoom
+		*
+		*	The various versions of WolfenDoom are very similar in some ways but have
+		*	different ways to detect them (or even none at all). Due to how unique
+		*	WolfenDoom is, this has been handled by implementing a manual toggle.
+		*/
+		else InInventory "HXMOD_ForceWolfenDoomToken", 1
+		{
+		// AMMO TALLIES PANEL - Forced WolfenDoom
+			DrawImage "HXOWFLAG", -90, -27;
+			// Current and Max Ammo
+			UsesAmmo
+			{
+				DrawImage "HXAMMO1T", -164, -33;
+				// Left Ammo - Current
+				DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -160, -28;
+				DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -128, -29, 0, HXRTCRed, 66;
+				// Right Ammo - Max Capacity
+				DrawNumber 3, HXSTATUSFONT, untranslated, ammo1capacity, interpolate(128), -94, -29, 0, HXRTCRed, 66;
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -146, -33;
+			}
+		// ARMS & KEYS BARS - Forced WolfenDoom
+			// Keys
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -71;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -51, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -53;
+					drawkeybar 6, horizontal, reverse, auto, -12, -50, 0, 6, auto;
+				}
+			}
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -58;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -38, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -40;
+					drawkeybar 6, horizontal, reverse, auto, -12, -37, 0, 6, auto;
+				}
+			}
+			
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -40;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -36;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -36;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -36;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -36;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -36;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -36;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -36;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -36;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -36;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -36;
 			}
 		}
 		/*	Vanilla

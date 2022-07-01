@@ -26,6 +26,7 @@ ACTOR HXSYS_VehicleHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmo
 ACTOR HXSYS_WeaponOnlyAmmo1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	HX General Mod Support
 ACTOR HXMOD_Doom64Art: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_ForceWolfenDoomToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
