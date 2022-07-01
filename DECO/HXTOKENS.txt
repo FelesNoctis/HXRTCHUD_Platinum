@@ -136,6 +136,8 @@ ACTOR HX_NazisV2_9mmAmmo: Ammo
 }
 //	Omni-Wolf v1.2
 ACTOR HXMOD_OmniWolf: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_OmniWolf_HealthOverMaxToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 200 }
+ACTOR HX_OmniWolf_TreasurePercent: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HXMOD_PerkSmootherWeaponsEnh: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_PerkSmooth_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

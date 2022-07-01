@@ -709,6 +709,22 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawBar "HXSPBROK", "HXSPBRBG", ammo BioAmmo, horizontal, interpolate(64), 46, -13;
 			DrawNumber 4, CONFONT, yellow, ammo BioAmmo, interpolate(128), 122, -15, 0, red, 24, green, 51;
 		}
+		else InInventory "HXMOD_OmniWolf", 1
+		{
+			DrawImage "HXHPTOP", 2, -26;
+			DrawImage "HXHPBOTS", 2, -14;
+
+			// Health, Overhealth
+			DrawString HXGENERALFONTM, untranslated, "HEALTH", 44, -20, 0;
+			DrawBar "HXHABROK", "HXHABRBG", health (100), horizontal, interpolate(64), 46, -20;
+			InInventory "HX_OmniWolf_HealthOverMaxToken", 1 { DrawBar "HXHEBRHI", "HXHABRNO", HX_OmniWolf_HealthOverMaxToken, horizontal, interpolate(64), 46, -20; }
+			DrawNumber 4, CONFONT, yellow, health, interpolate(128), 122, -22, 0, red, 24, green, 51;
+
+			// Treasure Percentage
+			DrawString HXGENERALFONTM, untranslated, "LOOTED", 44, -13, 0;
+			DrawBar "HXHABROK", "HXHABRBG", HX_OmniWolf_TreasurePercent, horizontal, interpolate(64), 46, -13;
+			DrawNumber 4, CONFONT, yellow, HX_OmniWolf_TreasurePercent, interpolate(128), 122, -15, 0, red, 49, green, 100;
+		}
 		else
 		{
 			DrawImage "HXHPTOP", 2, -26;

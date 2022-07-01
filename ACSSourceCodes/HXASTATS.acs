@@ -9,16 +9,22 @@ str staminastickytoken = "HXSYS_StaminaStickyToken";
 str altitudetoken = "HXSYS_AltitudeMetersToken";
 
 script "HXS_PlayerStats7ticHandler" enter
-{	
-	while (true)
+{
+	// Wait 35 tics (1sec) before engaging, to make sure tokens have been given
+	delay(35);
+
+	if (!CheckInventory(hxmod_omniwolf))
 	{
+		while (true)
+		{
 
-		HXS_StatSync(GetActorProperty(0, APROP_Health), healthtoken);
-		HXS_StatSync(CheckInventory("BasicArmor"), armortoken);
-		HXS_PlayerAltitude();
+			HXS_StatSync(GetActorProperty(0, APROP_Health), healthtoken);
+			HXS_StatSync(CheckInventory("BasicArmor"), armortoken);
+			HXS_PlayerAltitude();
 
-		// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
-		delay(7);
+			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
+			delay(7);
+		}
 	}
 }
 

@@ -1,8 +1,11 @@
 #library "HXMOMWLF"
 #include "zcommon.acs"
 #import "HXAMODCM.acs"
+#import "HXASTATS.acs"
 
 str omniwolfblur = "PowerGhost";
+str omniwolfhealthtoken = "HX_OmniWolf_HealthOverMaxToken";
+str omniwolftreasuretoken = "HX_OmniWolf_TreasurePercent";
 
 script "HXS_OmniWolf35ticHandler" enter
 {
@@ -42,6 +45,10 @@ script "HXS_OmniWolf7ticHandler" enter
 	if (CheckInventory(hxmod_omniwolf)) {
 		while (true)
 		{
+		// Health & Treasure System
+			HXS_StatSync(GetActorProperty(0, APROP_Health), omniwolfhealthtoken);
+			HXS_TreasurePercent();
+
 		// Powerup Management Tokens
 			// Infrared
 			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
@@ -57,4 +64,16 @@ script "HXS_OmniWolf7ticHandler" enter
 			delay(7);
 		}
 	}
+}
+
+function void HXS_TreasurePercent (void)
+{
+	int hxtokencount = CheckInventory(omniwolftreasuretoken);
+	int itemsfound = GetLevelInfo(LEVELINFO_FOUND_ITEMS);
+	int itemstotal = GetLevelInfo(LEVELINFO_TOTAL_ITEMS);
+	int itemspercent = 0;
+
+	if (itemstotal) { itemspercent = Round(FixedDiv(itemsfound, itemstotal) * 100) >> 16; }
+
+	HXS_ItemManagement(itemspercent, omniwolftreasuretoken, hxtokencount);
 }
