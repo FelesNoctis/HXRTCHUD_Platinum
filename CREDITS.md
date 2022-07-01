@@ -19,6 +19,11 @@ _Modified from SHAKAGRAPHICS 04, copyright [unknown years] by Shakagraphics_
 _Modern LCD-7, copyright 2013 by Style-7 - Sizenko Alexander_  
 [http://www.styleseven.com](http://www.styleseven.com)
 
+## Images
+
+* __Omni-Wolf US Flag panel__
+_Modified from Stripes calling card, Call of Duty: Black Ops_
+
 ## Special Thanks
 
 * __Cotton_Disciple__ (again) for their work being my inspiration to start this whole mess, as well as _sekrit dev stuff_
