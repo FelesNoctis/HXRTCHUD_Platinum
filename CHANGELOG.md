@@ -9,8 +9,9 @@
   - Doom 4 Vanilla 3.2.1
   - Faspons (REL: MAR 13 2020) & (DEV: MAR 16 2020)
   - Lt. Typhon V6
+  - Omni-Wolf v1.2
   - Weasel Presents: NAZIS V2
-  - ZioMcCall's Brutal Wolfenstein
+  - ZioMcCall's Brutal Wolfenstein v5.5
 
 ## v0.30
 
