@@ -19,6 +19,7 @@ str hxmod_faspons = "HXMOD_Faspons";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_lttyphon = "HXMOD_BadAssBitch";
 str hxmod_nazisv2 = "HXMOD_NazisV2";
+str hxmod_omniwolf = "HXMOD_OmniWolf";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
 str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
 str hxmod_supercharge = "HXMOD_Supercharge";
@@ -128,6 +129,11 @@ str typhondumbbell = "VeteranDumbbell";
 str nazisv2class = "WWNazisPlayer";
 str nazisv2grenade = "GrenadePickup";
 str nazisv2revolvermag = "WeaselsRevolverLoaded";
+
+// NAZIS V2
+str omniwolfammo = "WolfBullets";
+str omniwolfclass = "BJBlazko";
+str omniwolfpistol = "WolfPistol";
 
 // PerK's Smoother Weapon Animations Enhanced
 str perkzfist = "ZPerkFist";
@@ -286,6 +292,16 @@ script "HXS_ModCompatibilityStartup" enter
 		{
 			GiveInventory(hxmod_modfound, 1);
 			GiveInventory(hxmod_nazisv2, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
+	// Omni-Wolf
+		else if (CheckActorClass(0, omniwolfclass)
+			&& CheckInventory(omniwolfammo)
+			&& CheckInventory(omniwolfpistol)
+			&& !CheckInventory(hxmod_omniwolf))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_omniwolf, 1);
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// PerK's Smoother Weapon Animations Enhanced

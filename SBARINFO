@@ -1163,7 +1163,7 @@ StatusBar Fullscreen, FullscreenOffsets
 		}
 		/*	Brutal Doom Platinum
 		*
-		*	The mod that inspired the overhaul of one of my favorite HUDs in the first place 
+		*	The mod that inspired the overhaul of one of my favorite HUDs in the first place
 		*	~Felis
 		*/
 		else InInventory "HXMOD_BrutalDoomPlatinum", 1
@@ -4014,6 +4014,81 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -98;
 			}
 		}
+		/*	Omni-Wolf v1.2
+		*
+		*	Omni-Wolf is a rather unique case. It only has one ammo type, which the HUD
+		*	pieces were never designed for. It's a pretty faithful recreation of the
+		*	original Wolfenstein all things considered, so it requires some special
+		*	attention and a bit of custom element work.
+		*/
+		else InInventory "HXMOD_OmniWolf", 1
+		{
+		// AMMO TALLIES PANEL - Omni-Wolf
+			DrawImage "HXOWFLAG", -90, -27;
+			// Current and Max Ammo
+			UsesAmmo
+			{
+				WeaponAmmo WolfBullets
+				{
+					DrawImage "HXAMMO1T", -164, -33;
+					// Left Ammo - Current
+					DrawBar "HXAMDLOK", "HXAMDUNO", ammo WolfBullets, vertical, interpolate(64), -160, -28;
+					DrawNumber 3, HXSTATUSFONT, untranslated, ammo WolfBullets, interpolate(128), -128, -29, 0, HXRTCRed, 66;
+					// Right Ammo - Max Capacity
+					DrawNumber 3, HXSTATUSFONT, untranslated, ammocapacity WolfBullets, interpolate(128), -94, -29, 0, HXRTCRed, 66;
+				}
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -146, -33;
+			}
+		// ARMS & KEYS BARS - Omni-Wolf
+			// Keys
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -71;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -51, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -53;
+					drawkeybar 6, horizontal, reverse, auto, -12, -50, 0, 6, auto;
+				}
+			}
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -58;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -38, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -40;
+					drawkeybar 6, horizontal, reverse, auto, -12, -37, 0, 6, auto;
+				}
+			}
+			
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -40;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -36;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -36;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -36;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -36;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -36;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -36;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -36;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -36;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -36;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -36;
+			}
+		}
 		/*	Supercharge 2.8
 		*
 		*/
@@ -4202,7 +4277,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				WeaponAmmo Shell
 				{
 					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24;
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -24;
 					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 1;
 				}
 				WeaponAmmo RocketAmmo

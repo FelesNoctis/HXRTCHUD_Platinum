@@ -134,6 +134,8 @@ ACTOR HX_NazisV2_9mmAmmo: Ammo
 	Inventory.MaxAmount 256
 	Ammo.BackpackMaxAmount 480
 }
+//	Omni-Wolf v1.2
+ACTOR HXMOD_OmniWolf: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	PerK's Smoother Weapon Animations Enhanced 3.2.1
 ACTOR HXMOD_PerkSmootherWeaponsEnh: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_PerkSmooth_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
