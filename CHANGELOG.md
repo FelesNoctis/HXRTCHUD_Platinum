@@ -5,9 +5,13 @@
 - **Bottom-Right Panels:**
   - **Artifact Pieces** panel added for use with any mod that uses the 3-step weapon powerup system.
 
+- **Settings:**
+  - **Mod-Specific** settings section added. Right now this only contains the toggle to force WolfenDoom layout.
+
 - **Mod Support:**
   - Doom 4 Vanilla 3.2.1
   - Faspons (REL: MAR 13 2020) & (DEV: MAR 16 2020)
+  - Kriegsland 1: Blutorden
   - Lt. Typhon V6
   - Omni-Wolf v1.2
   - Weasel Presents: NAZIS V2

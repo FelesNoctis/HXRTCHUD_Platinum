@@ -1,3 +1,9 @@
+flat HXKGIVF0
+	range HXKGIVF4 tics 3 oscillate
+
+flat HXKGLTF0
+	range HXKGLTF1 tics 6
+
 flat HXTYBAF0
 	range HXTYBAF3 tics 6
 

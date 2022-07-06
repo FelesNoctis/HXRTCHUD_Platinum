@@ -23,10 +23,11 @@ ACTOR HXSYS_NormalHUDKillerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.M
 ACTOR HXSYS_StaminaStickyToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 15 }
 ACTOR HXSYS_TransformationHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXSYS_VehicleHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-ACTOR HXSYS_WeaponOnlyAmmo1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	HX General Mod Support
 ACTOR HXMOD_Doom64Art: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_ForceWolfenDoomToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
+ACTOR HXMOD_WeaponDualWieldUniqueAmmo: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_WeaponOnlyAmmo1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
@@ -80,6 +81,8 @@ ACTOR HXMOD_DoomCE_D64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1
 ACTOR HXMOD_DoomCE_PSX: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Faspons
 ACTOR HXMOD_Faspons: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Kriegsland 1: Blutorden
+ACTOR HXMOD_Kriegsland1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Led's Generic Weapon Mod 20220412
 ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_LedsGenWep9mmAmmo: Ammo

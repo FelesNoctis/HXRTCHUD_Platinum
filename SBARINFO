@@ -122,6 +122,57 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 			}
 		}
+	/*	Kriegsland 1: Blutorden */
+		else InInventory "HXMOD_Kriegsland1", 1
+		{
+			InInventory "HXCUS_PowerupBoxToken", 2	// Always
+			{
+				// Background panels + inactive icons
+				DrawImage "HXKGIVNO", -74, 2;
+				DrawImage "HXKGRDNO", -50, 2;
+				DrawImage "HXKGLTNO", -26, 2;
+				// Active icon + border
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					InInventory not "HXCUS_LowMotionToken", 1
+						{ DrawBar "HXKGIVF0", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -74, 2; }
+					else
+						{ DrawBar "HXKGIVOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -74, 2; }
+				}
+				InInventory "HX_RadSuitPowerUpToken" { DrawBar "HXKGRDOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; }		
+				InInventory "HX_InfraredPowerUpToken"
+				{
+					InInventory not "HXCUS_LowMotionToken", 1
+						{ DrawBar "HXKGLTF0", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
+					else
+						{ DrawBar "HXKGLTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
+				}
+			}
+			else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
+			{
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HXKGIVNO", -74, 2;
+					InInventory not "HXCUS_LowMotionToken", 1
+						{ DrawBar "HXKGIVF0", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -74, 2; }
+					else
+						{ DrawBar "HXKGIVOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -74, 2; }
+				}
+				InInventory "HX_RadSuitPowerUpToken"
+				{
+					DrawImage "HXKGRDNO", -50, 2;
+					DrawBar "HXKGRDOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2;
+				}
+				InInventory "HX_InfraredPowerUpToken"
+				{
+					DrawImage "HXKGLTNO", -26, 2;
+					InInventory not "HXCUS_LowMotionToken", 1
+						{ DrawBar "HXKGLTF0", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
+					else
+						{ DrawBar "HXKGLTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
+				}
+			}
+		}
 	/*	Lt. Typhon */
 		else InInventory "HXMOD_BadAssBitch", 1
 		{
@@ -204,6 +255,8 @@ StatusBar Fullscreen, FullscreenOffsets
 					}
 				}
 			}
+			// else not "HXMOD_ForceWolfenDoomToken", 2
+			// (in which case we display nothing)
 		}
 	/*	Standard, not Doom 64 */
 		else InInventory not "HXMOD_Doom64Art", 1
@@ -353,8 +406,62 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 			}
 		}
+	/*	Kriegsland 1: Blutorden */
+		else InInventory "HXMOD_Kriegsland1", 1
+		{
+			InInventory "HXCUS_PowerupTimerToken", 2	// Always
+			{
+				// Background panels
+				DrawImage "HXBUFFT", -74, 25;
+				DrawImage "HXBUFFT", -50, 25;
+				DrawImage "HXBUFFT", -26, 25;
+				// Active timers
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HXKGIVT", -74, 25;
+					DrawImage "HXSML058", -71, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -53, 29;
+				}
+				InInventory "HX_RadSuitPowerUpToken"
+				{
+					DrawImage "HXKGRDT", -50, 25;
+					DrawImage "HXSML058", -47, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
+				}
+				InInventory "HX_InfraredPowerUpToken"
+				{
+					DrawImage "HXKGLTT", -26, 25;
+					DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
+				}
+			}
+			else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
+			{
+				InInventory "HX_InvulnerabilityPowerUpToken"
+				{
+					DrawImage "HXBUFFT", -74, 25;
+					DrawImage "HXKGIVT", -74, 25;
+					DrawImage "HXSML058", -71, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpToken, -53, 29;
+				}
+				InInventory "HX_RadSuitPowerUpToken"
+				{
+					DrawImage "HXBUFFT", -50, 25;
+					DrawImage "HXKGRDT", -50, 25;
+					DrawImage "HXSML058", -47, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_RadSuitPowerUpToken, -29, 29;
+				}
+				InInventory "HX_InfraredPowerUpToken"
+				{
+					DrawImage "HXBUFFT", -26, 25;
+					DrawImage "HXKGLTT", -26, 25;
+					DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
+				}
+			}
+		}
 	/*	Lt. Typhon */
-		InInventory "HXMOD_BadAssBitch", 1
+		else InInventory "HXMOD_BadAssBitch", 1
 		{
 			InInventory "HXCUS_PowerupTimerToken", 2	// Always
 			{
@@ -657,8 +764,10 @@ StatusBar Fullscreen, FullscreenOffsets
 
 
 	// ITEM PANELS (BERSERK, ARMOR SAVE, ARMOR TYPE)
+		// BERSERK
 		InInventory "HX_BerserkPowerUpToken", 1
 		{
+			// Frame
 			InInventory "HXMOD_BadAssBitch", 1
 			{
 				DrawImage "HXARMTYP", 72, -56;
@@ -670,12 +779,14 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawImage "HXARMTFG", 72, -49;
 			}
 			
+			// Icon
 			InInventory "HXMOD_Doom64Art", 1 { DrawImage "HX64BRSK", 72, -49; }
 			else InInventory "HXMOD_BadAssBitch", 1
 			{
 				InInventory not "HXCUS_LowMotionToken", 1 { DrawImage "HXTYBR0", 72, -56; }
 				else { DrawImage "HXTYBROK", 72, -56; }
 			}
+			else InInventory "HXMOD_Kriegsland1", 1 { DrawImage "HXKGBRSK", 72, -49; }
 			else InInventory "HXMOD_NazisV2", 1 { DrawImage "HXNZBRSK", 72, -49; }
 			else InInventory "NoFatality", 1 { DrawImage "HXHEALTH", 72, -49; }
 			else { DrawImage "HXBERSRK", 72, -49; }
@@ -711,21 +822,21 @@ StatusBar Fullscreen, FullscreenOffsets
 		else InInventory "HXMOD_OmniWolf" { /* Nothing to see here! */ }
 		else { DrawImage "HXARMTYP", 48, -49; }
 
-		// Brutal Doom Platinum - Demon Protection Sigil
+		// ARMOR ICON - Brutal Doom Platinum: Demon Protection Sigil
 		InInventory "HX_ShieldPowerUpToken", 1 && "HXMOD_BrutalDoomPlatinum", 1
 		{
 			DrawSwitchableImage BasicArmor > 0, "HXARMTFG", "HXARMTFC", 48, -49;
 			DrawSwitchableImage BasicArmor > 0, "HXARMTNO", "HXBDSIGP", 48, -49;
 		}
-		// Lt. Typhon
+		// ARMOR ICON - Lt. Typhon
 		else InInventory "HXMOD_BadAssBitch", 1
 		{
 			DrawImage "HXARMTFG", 48, -56;
 			DrawImage armoricon, 60, -45, center, 16, 15;
 		}
-		// Omni-Wolf
+		// ARMOR ICON - Omni-Wolf
 		else InInventory "HXMOD_OmniWolf" { /* Nothing to see here! */ }
-		// Standard
+		// ARMOR ICON - Standard
 		else
 		{
 			DrawImage "HXARMTFG", 48, -49;
@@ -3326,6 +3437,187 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -56;
 			}
 		}
+		/*	Kriegsland 1: Blutorden
+		*
+		*/
+		else InInventory "HXMOD_Kriegsland1", 1
+		{
+		// AMMO TALLIES PANEL - Kriegsland 1: Blutorden
+			DrawImage "HXAMMTOP", -78, -53;
+			DrawImage "HXAMMROW", -78, -43;
+			DrawImage "HXAMMROW", -78, -37;
+			DrawImage "HXAMMROW", -78, -31;
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"LCAL", -73, -48, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -42, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"HCAL", -73, -36, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"EXPL", -73, -30, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"BATT", -73, -18, 0, alignment(left);
+			InInventory "BOGR1", 1 { DrawString HXGENERALFONTS, HXRTCGold, "GREN", -73, -12, 0, alignment(left); }
+			else { DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "GREN", -73, -12, 0, alignment(left); }
+
+			DrawBar "HXAMMON", "HXAMMOFF", ammo BOCL1, horizontal, interpolate(64), -56, -48;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo BOSH1, horizontal, interpolate(64), -56, -42;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo BOHC1, horizontal, interpolate(64), -56, -36;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo BOEX1, horizontal, interpolate(64), -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo BOCE1, horizontal, interpolate(64), -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo BOBT1, horizontal, interpolate(64), -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo BOGR1, horizontal, interpolate(64), -56, -12;
+
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOCL1, -6, -48;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOSH1, -6, -42;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOHC1, -6, -36;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOEX1, -6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOCE1, -6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOBT1, -6, -18;
+			InInventory "BOGR1", 1 { DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo BOGR1, -6, -12; }
+			else { DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo BOGR1, -6, -12; }
+
+			// Ammo Tally highlight
+			UsesAmmo
+			{
+				WeaponAmmo BOCL1
+				{
+					DrawString HXGENERALFONTS, untranslated, "LCAL", -73, -48, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCL1, -6, -48;
+				}
+				WeaponAmmo BOSH1
+				{
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -42, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOSH1, -6, -42;
+				}
+				WeaponAmmo BOHC1
+				{
+					DrawString HXGENERALFONTS, untranslated, "HCAL", -73, -36, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOHC1, -6, -36;
+				}
+				WeaponAmmo BOEX1
+				{
+					DrawString HXGENERALFONTS, untranslated, "EXPL", -73, -30, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOEX1, -6, -30;
+				}
+				WeaponAmmo BOCE1
+				{
+					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCE1, -6, -24;
+				}
+				WeaponAmmo BOBT1
+				{
+					DrawString HXGENERALFONTS, untranslated, "BATT", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOBT1, -6, -18;
+				}
+			}
+			// Current Ammo equipped by type
+			UsesAmmo
+			{
+				InInventory not "HXMOD_WeaponDualWieldUniqueAmmo"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+
+					WeaponAmmo BOCL1
+					{
+						IsSelected "HDChaingunX2" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 40; }
+						else IsSelected "HDChaingun" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+						else IsSelected "HDPistolX2" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+					}
+					WeaponAmmo BOSH1 { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+					WeaponAmmo BOHC1
+					{
+						IsSelected "HDRifle" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+					}
+					WeaponAmmo BOEX1
+					{
+						IsSelected "HDPanzerfaust" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
+						else IsSelected "HDCarbine" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+					}
+					WeaponAmmo BOCE1
+					{
+						IsSelected "HDBFG9000" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+					}
+					WeaponAmmo BOBT1 { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+					WeaponAmmo BOGR1
+					{
+						IsSelected "HDGrenades" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
+					}
+				}
+				else
+				{
+					DrawImage "HXAMMODW", -154, -33;
+					// Left Ammo
+						DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -150, -28;
+						IsSelected "HDCrossAkimbo2" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
+						else IsSelected "HDCrossAkimbo3" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 50; }
+						else IsSelected "HDCrossAkimbo4" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
+						else { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 25; }
+					// Right Ammo
+						DrawBar "HXAMDROK", "HXAMDUNO", ammo2, vertical, interpolate(64), -87, -28;
+						IsSelected "HDCrossAkimbo2" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
+						else IsSelected "HDCrossAkimbo3" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 50; }
+						else IsSelected "HDCrossAkimbo4" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
+						else { DrawNumber 3, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+				}
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+		// ARMS & KEYS BARS - Kriegsland 1: Blutorden
+			// Keys
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -97;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -77, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -79;
+					drawkeybar 6, horizontal, reverse, auto, -12, -76, 0, 6, auto;
+				}
+			}
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					DrawImage "HXKEYSE", -90, -84;
+					drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -64, 0, 8, 8;
+				}
+				else
+				{
+					DrawImage "HXKEYS", -90, -66;
+					drawkeybar 6, horizontal, reverse, auto, -12, -63, 0, 6, auto;
+				}
+			}
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				DrawImage "HXARMS", -90, -66;
+
+				DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -62;
+				DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -62;
+				DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -62;
+				DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -62;
+				DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -62;
+				DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -62;
+				DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -62;
+				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -62;
+				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -62;
+				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -62;
+			}
+		}
 		/*	Led's Generic Weapon Mod
 		*
 		*/
@@ -4598,6 +4890,14 @@ StatusBar Fullscreen, FullscreenOffsets
 
 				IsSelected "Knuckles" { DrawImage "PKFSG0", -112, -43, center, 36, 12; }
 				else { DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst; }
+			}
+			/*	Kriegsland 1: Blutorden
+			*
+			*/
+			else InInventory "HXMOD_Kriegsland1", 1
+			{
+				DrawImage "HXWEAPON", -122, -53;
+				DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst;
 			}
 			/*	NAZIS V2
 			*

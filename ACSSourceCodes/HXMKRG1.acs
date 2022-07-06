@@ -1,22 +1,18 @@
-#library "HXMBD64"
+#library "HXMKRG1"
 #include "zcommon.acs"
 #import "HXAMODCM.acs"
-#import "HXASTATS.acs"
 
-str bd64ammodemonessence = "DemonEssence";
-str bd64ammodemonessencetoken = "HX_BD64_demonessencefound";
-str bd64bfg9000tactical = "64BFG9000";
-str bd64chainguntactical = "64ChaingunTACTICAL";
-str bd64classmoderntoken = "IsModern";
-str bd64stamina = "Stamina";
-int bd64staminamax = 100;
+str kriegsland1_berserk = "SuperBlow";
+str kriegsland1_crossmachineguns = "HDCrossAkimbo3";
+str kriegsland1_crosspistols = "HDCrossAkimbo1";
+str kriegsland1_crossthermals = "HDCrossAkimbo5";
 
-script "HXS_BrutalDoom64_35ticHandler" enter
+script "HXS_Kriegsland1_35ticHandler" enter
 {
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_brutaldoom64)) {
+	if (CheckInventory(hxmod_kriegsland1)) {
 		while (true)
 		{
 /* 		// Key Management Tokens
@@ -32,7 +28,7 @@ script "HXS_BrutalDoom64_35ticHandler" enter
 
 		// Powerup Management Tokens
 			// Berserk
-			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+			HXS_ItemSync(kriegsland1_berserk, hxgen_berserk);
 
 		// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
@@ -41,29 +37,35 @@ script "HXS_BrutalDoom64_35ticHandler" enter
 	}
 }
 
-script "HXS_BrutalDoom64_7ticHandler" enter
+script "HXS_Kriegsland1_7ticHandler" enter
 {
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 	
-	if (CheckInventory(hxmod_brutaldoom64)) {
+	if (CheckInventory(hxmod_kriegsland1)) {
 		while (true)
 		{
-		// Stamina Control
-			HXS_StamNormal(bd64stamina, bd64staminamax);
 		// Powerup Management Tokens
 			// Infrared
 			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
-			// Invisibility
-			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			// Invisibility - Removed
+			/* HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility); */
 			// Invulnerability
 			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
 			// Radsuit
 			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
 
-		// Ammo DemonEssence Appearance Check
-			if (CheckInventory(bd64ammodemonessence) && !CheckInventory(bd64ammodemonessencetoken))
-				{ GiveInventory(bd64ammodemonessencetoken, 1); }
+		// Unique Ammo Dual Wield Check
+			if ((CheckWeapon(kriegsland1_crosspistols)
+				|| CheckWeapon(kriegsland1_crossmachineguns)
+				|| CheckWeapon(kriegsland1_crossthermals))
+				&& !CheckInventory(hxmod_weapondualwielduniqueammo))
+			{ GiveInventory(hxmod_weapondualwielduniqueammo, 1); }
+			else if ((!CheckWeapon(kriegsland1_crosspistols)
+				&& !CheckWeapon(kriegsland1_crossmachineguns)
+				&& !CheckWeapon(kriegsland1_crossthermals))
+				&& CheckInventory(hxmod_weapondualwielduniqueammo))
+			{ TakeInventory(hxmod_weapondualwielduniqueammo, 1); }
 
 		// Timer
 			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive

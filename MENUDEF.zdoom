@@ -33,7 +33,7 @@ OptionMenu "HXRTCHUDPlat"
 	StaticText " "
 
 	StaticText "Accessibility Settings", 1
-	Option "Low Motion (Lt. Typhon)", "hxcus_HXLowMotion", "OnOff"
+	Option "Low Motion", "hxcus_HXLowMotion", "OnOff"
 	StaticText " "
 
 	StaticText "Mod-Specific Settings", 1

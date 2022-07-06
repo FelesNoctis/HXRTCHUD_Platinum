@@ -16,6 +16,7 @@ str hxmod_CED64 = "HXMOD_DoomCE_D64";
 str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
 str hxmod_D4V = "HXMOD_Doom4Vanilla";
 str hxmod_faspons = "HXMOD_Faspons";
+str hxmod_kriegsland1 = "HXMOD_Kriegsland1";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_lttyphon = "HXMOD_BadAssBitch";
 str hxmod_nazisv2 = "HXMOD_NazisV2";
@@ -31,7 +32,8 @@ str hxsys_transformhud = "HXSYS_TransformationHUDToken";
 str hxsys_vehiclehud = "HXSYS_VehicleHUDToken";
 
 // Functionality Overrides
-str hxsys_weapononlyammo1 = "HXSYS_WeaponOnlyAmmo1";
+str hxmod_weapondualwielduniqueammo = "HXMOD_WeaponDualWieldUniqueAmmo";
+str hxmod_weapononlyammo1 = "HXMOD_WeaponOnlyAmmo1";
 
 // General Items
 str vanillaberserk = "PowerStrength";
@@ -114,6 +116,11 @@ str doomcepsxpistol = "PsxPistol";
 str fasponsclass = "FasPlayer";
 str fasponsfist = "Knuckles";
 str fasponsrifle = "CombatRifle";
+
+// Kriegsland 1: Blutorden
+str kriegsland1class = "FKPlayer";
+str kriegsland1grenades = "HDGrenades";
+str kriegsland1melee = "HDKnife";
 
 // Led's Generic Weapon Mod
 str ledclass = "DoomGuy";
@@ -262,6 +269,16 @@ script "HXS_ModCompatibilityStartup" enter
 		{
 			GiveInventory(hxmod_modfound, 1);
 			GiveInventory(hxmod_faspons, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
+	// Kriegsland 1: Blutorden
+		else if (CheckActorClass(0, kriegsland1class)
+			&& CheckInventory(kriegsland1grenades)
+			&& CheckInventory(kriegsland1melee)
+			&& !CheckInventory(hxmod_kriegsland1))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_kriegsland1, 1);
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// Led's Generic Weapon Mod
