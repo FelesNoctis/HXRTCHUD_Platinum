@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.40
+## v0.55
 
 - **Bottom-Right Panels:**
   - **Artifact Pieces** panel added for use with any mod that uses the 3-step weapon powerup system.

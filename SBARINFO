@@ -3480,35 +3480,55 @@ StatusBar Fullscreen, FullscreenOffsets
 			// Ammo Tally highlight
 			UsesAmmo
 			{
-				WeaponAmmo BOCL1
-				{
-					DrawString HXGENERALFONTS, untranslated, "LCAL", -73, -48, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCL1, -6, -48;
+				InInventory not "HXMOD_WeaponDualWieldUniqueAmmo"
+				{ 
+					WeaponAmmo BOCL1
+					{
+						DrawString HXGENERALFONTS, untranslated, "LCAL", -73, -48, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCL1, -6, -48;
+					}
+					WeaponAmmo BOSH1
+					{
+						DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -42, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOSH1, -6, -42;
+					}
+					WeaponAmmo BOHC1
+					{
+						DrawString HXGENERALFONTS, untranslated, "HCAL", -73, -36, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOHC1, -6, -36;
+					}
+					WeaponAmmo BOEX1
+					{
+						DrawString HXGENERALFONTS, untranslated, "EXPL", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOEX1, -6, -30;
+					}
+					WeaponAmmo BOCE1
+					{
+						DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCE1, -6, -24;
+					}
+					WeaponAmmo BOBT1
+					{
+						DrawString HXGENERALFONTS, untranslated, "BATT", -73, -18, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOBT1, -6, -18;
+					}
 				}
-				WeaponAmmo BOSH1
+				else
 				{
-					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -42, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOSH1, -6, -42;
-				}
-				WeaponAmmo BOHC1
-				{
-					DrawString HXGENERALFONTS, untranslated, "HCAL", -73, -36, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOHC1, -6, -36;
-				}
-				WeaponAmmo BOEX1
-				{
-					DrawString HXGENERALFONTS, untranslated, "EXPL", -73, -30, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOEX1, -6, -30;
-				}
-				WeaponAmmo BOCE1
-				{
-					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCE1, -6, -24;
-				}
-				WeaponAmmo BOBT1
-				{
-					DrawString HXGENERALFONTS, untranslated, "BATT", -73, -18, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOBT1, -6, -18;
+					IsSelected "HDCrossAkimbo1", "HDCrossAkimbo3"
+					{
+						DrawString HXGENERALFONTS, untranslated, "LCAL", -73, -48, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCL1, -6, -48;
+						DrawString HXGENERALFONTS, untranslated, "HCAL", -73, -36, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOHC1, -6, -36;
+					}
+					IsSelected "HDCrossAkimbo5"
+					{
+						DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOCE1, -6, -24;
+						DrawString HXGENERALFONTS, untranslated, "BATT", -73, -18, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo BOBT1, -6, -18;
+					}
 				}
 			}
 			// Current Ammo equipped by type
@@ -3537,6 +3557,7 @@ StatusBar Fullscreen, FullscreenOffsets
 					{
 						IsSelected "HDPanzerfaust" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
 						else IsSelected "HDCarbine" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+						else IsSelected "HDCrossAkimbo4" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
 						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
 					}
 					WeaponAmmo BOCE1
@@ -3555,17 +3576,47 @@ StatusBar Fullscreen, FullscreenOffsets
 				{
 					DrawImage "HXAMMODW", -154, -33;
 					// Left Ammo
-						DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -150, -28;
-						IsSelected "HDCrossAkimbo2" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
-						else IsSelected "HDCrossAkimbo3" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 50; }
-						else IsSelected "HDCrossAkimbo4" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
-						else { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 25; }
+						IsSelected "HDCrossAkimbo1"
+						{
+							DrawBar "HXAMDLOK", "HXAMDUNO", ammo BOCL1, vertical, interpolate(64), -150, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo BOCL1, interpolate(128), -118, -29, 0, HXRTCRed, 10;
+						}
+						else IsSelected "HDCrossAkimbo3"
+						{
+							DrawBar "HXAMDLOK", "HXAMDUNO", ammo BOCL1, vertical, interpolate(64), -150, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo BOCL1, interpolate(128), -118, -29, 0, HXRTCRed, 50;
+						}
+						else IsSelected "HDCrossAkimbo5"
+						{
+							DrawBar "HXAMDLOK", "HXAMDUNO", ammo BOBT1, vertical, interpolate(64), -150, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo BOBT1, interpolate(128), -118, -29, 0, HXRTCRed, 25;
+						}
+						else
+						{
+							DrawBar "HXAMDLOK", "HXAMDUNO", ammo1, vertical, interpolate(64), -150, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 25;
+						}
 					// Right Ammo
-						DrawBar "HXAMDROK", "HXAMDUNO", ammo2, vertical, interpolate(64), -87, -28;
-						IsSelected "HDCrossAkimbo2" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
-						else IsSelected "HDCrossAkimbo3" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 50; }
-						else IsSelected "HDCrossAkimbo4" { DrawNumber 3, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -118, -29, 0, HXRTCRed, 10; }
-						else { DrawNumber 3, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+						IsSelected "HDCrossAkimbo1"
+						{
+							DrawBar "HXAMDROK", "HXAMDUNO", ammo BOHC1, vertical, interpolate(64), -87, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo BOHC1, interpolate(128), -84, -29, 0, HXRTCRed, 20;
+						}
+						else IsSelected "HDCrossAkimbo3"
+						{
+							DrawBar "HXAMDROK", "HXAMDUNO", ammo BOHC1, vertical, interpolate(64), -87, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo BOHC1, interpolate(128), -84, -29, 0, HXRTCRed, 50;
+						}
+						else IsSelected "HDCrossAkimbo5"
+						{
+							DrawBar "HXAMDROK", "HXAMDUNO", ammo BOCE1, vertical, interpolate(64), -87, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo BOCE1, interpolate(128), -84, -29, 0, HXRTCRed, 25;
+						}
+						else
+						{
+							DrawBar "HXAMDROK", "HXAMDUNO", ammo2, vertical, interpolate(64), -87, -28;
+							DrawNumber 3, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 25;
+						}
 				}
 			}
 			else
