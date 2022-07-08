@@ -150,5 +150,8 @@ ACTOR HX_PerkSmooth_glovedfist: Inventory { +INVENTORY.UNDROPPABLE Inventory.Max
 ACTOR HXMOD_SmoothDoom2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_SmoothDoom2_blackgloves: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_SmoothDoom2_doom64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-//	Supercharge 2.8
+//	Supercharge 2.8/2.9
 ACTOR HXMOD_Supercharge: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_Supercharge_v29: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_Supercharge_shotgun_skin: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_Supercharge_ssg_skin: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

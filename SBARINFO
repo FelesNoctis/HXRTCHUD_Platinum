@@ -4509,42 +4509,68 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "HXAMMROW", -78, -19;
 			DrawImage "HXAMMBOT", -78, -13;
 
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -42, 0, alignment(left);
+			InInventory "HXMOD_Supercharge_v29"
+					{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"BULL", -73, -42, 0, alignment(left); }
+			else	{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -42, 0, alignment(left); }
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -36, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SCRP", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"STMP", -73, -24, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -18, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -12, 0, alignment(left);
 
-			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,				horizontal, interpolate(64), -56, -42;
+			InInventory "HXMOD_Supercharge_v29"
+					{ DrawBar "HXAMMON", "HXAMMOFF", ammo TangoBulletClip,	horizontal, interpolate(64), -56, -42; }
+			else	{ DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,				horizontal, interpolate(64), -56, -42; }
 			DrawBar "HXAMMON", "HXAMMOFF", ammo TangoShell,			horizontal, interpolate(64), -56, -36;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo TangoScrapDrum,		horizontal, interpolate(64), -56, -30;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo TangoStomperAmmo,	horizontal, interpolate(64), -56, -24;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,			horizontal, interpolate(64), -56, -18;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,				horizontal, interpolate(64), -56, -12;
+			InInventory "HXMOD_Supercharge_v29"
+					{ DrawBar "HXAMMON", "HXAMMOFF", ammo TangoCell,	horizontal, interpolate(64), -56, -12; }
+			else	{ DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,			horizontal, interpolate(64), -56, -12; }
 
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip,				-6, -42;
+			InInventory "HXMOD_Supercharge_v29"
+					{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TangoBulletClip,	-6, -42; }
+			else	{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip,				-6, -42; }
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TangoShell,		-6, -36;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TangoScrapDrum,	-6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TangoStomperAmmo,	-6, -24;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,		-6, -18;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Cell,				-6, -12;
+			InInventory "HXMOD_Supercharge_v29"
+					{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TangoCell,	-6, -12; }
+			else	{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Cell,		-6, -12; }
 
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
 			{
 				DrawImage "HXAMMO", -134, -33;
 				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
-				DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+				IsSelected not "TangoMinigun"	{ DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0; }
+				else 							{ DrawString HXGENERALFONTM, untranslated, "CLIP", -90, -12, 0; }
 
-				WeaponAmmo Clip
+				WeaponAmmo Clip	// v2.8 ammo
 				{
-					DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -42;
+					IsSelected not "TangoMinigun"	// v2.9 incomplete weapon uses old ammo type
+					{
+						DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -42;
+					}
 
 					IsSelected "TangoPistol"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
 					else IsSelected "TangoAssaultRifle"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
 					else IsSelected "TangoChaingun"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else IsSelected "TangoMinigun"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
+				}
+				WeaponAmmo TangoBulletClip	// v2.9 ammo
+				{
+					DrawString HXGENERALFONTS, untranslated, "BULL", -73, -42, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo TangoBulletClip, -6, -42;
+
+					IsSelected "TangoPistol"			{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+					else IsSelected "TangoAssaultRifle"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+					else IsSelected "TangoChaingun"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else IsSelected "TangoMinigun"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
 					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
 				}
 				WeaponAmmo TangoShell
@@ -4580,10 +4606,19 @@ StatusBar Fullscreen, FullscreenOffsets
 					IsSelected "TangoRocketLauncher"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
 					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
 				}
-				WeaponAmmo Cell
+				WeaponAmmo Cell	// v2.8 ammo
 				{
 					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+
+					IsSelected "TangoPlasmaRifle"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+					else IsSelected "TangoBFG9000"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 80; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
+				}
+				WeaponAmmo TangoCell	// v2.9 ammo
+				{
+					DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo TangoCell, -6, -12;
 
 					IsSelected "TangoPlasmaRifle"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
 					else IsSelected "TangoBFG9000"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 80; }
@@ -5039,6 +5074,26 @@ StatusBar Fullscreen, FullscreenOffsets
 				{	// PerkPistol, Rifle
 					DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst;
 				}
+			}
+			/*	Supercharge 2.8
+			*
+			*/
+			else InInventory "HXMOD_Supercharge", 1
+			{
+				DrawImage "HXWEAPON", -134, -53;
+
+				IsSelected "TangoShotgun"
+				{
+					InInventory "HX_Supercharge_shotgun_skin", 1	{ DrawImage "VHOTA0", -112, -43, center, 36, 12; }
+					else											{ DrawImage "SHOTA0", -112, -43, center, 36, 12; }
+				}
+				else IsSelected "TangoSuperShotgun"
+				{
+					InInventory "HX_Supercharge_ssg_skin", 1	{ DrawImage "VSGPA0", -112, -43, center, 36, 12; }
+					else										{ DrawImage "SSGPA0", -112, -43, center, 36, 12; }
+				}
+				else
+				{ DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst; }
 			}
 			else 
 			{

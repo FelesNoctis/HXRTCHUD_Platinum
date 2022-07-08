@@ -1,7 +1,16 @@
 #library "HXMSUPCH"
 #include "zcommon.acs"
 #import "HXAMODCM.acs"
+#import "HXACVAR.acs"
 
+str superchangeversion29 = "HXMOD_Supercharge_v29";
+
+str superchangeskinshotguncvar = "sv_tango_shotgun_skin";
+str superchangeskinssgcvar = "sv_tango_super_shotgun_skin";
+str superchangeskinshotguntoken = "HX_Supercharge_shotgun_skin";
+str superchangeskinssgtoken = "HX_Supercharge_ssg_skin";
+
+str superchargeammotangobullet = "TangoBulletClip";
 str superchargeberserk = "TangoPowerStrength";
 
 script "HXS_Supercharge35ticHandler" enter
@@ -12,6 +21,15 @@ script "HXS_Supercharge35ticHandler" enter
 	if (CheckInventory(hxmod_supercharge)) {
 		while (true)
 		{
+		// v2.8/v2.9 Detector
+		if (CheckInventory(superchargeammotangobullet)
+			&& !CheckInventory(superchangeversion29))
+		{ GiveInventory(superchangeversion29, 1); }
+
+		// Skin Swap
+		HXF_CVARConvert_Generic(superchangeskinshotguncvar, superchangeskinshotguntoken);
+		HXF_CVARConvert_Generic(superchangeskinssgcvar, superchangeskinssgtoken);
+
 /* 		// Key Management Tokens
 			// Blue Keys
 			HXS_ItemSync(vanillabluecard, hxgen_bluecard);

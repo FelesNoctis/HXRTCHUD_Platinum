@@ -14,6 +14,7 @@
   - Kriegsland 1: Blutorden
   - Lt. Typhon V6
   - Omni-Wolf v1.2
+  - Supercharge v2.9 (with backwards compatible support for v2.8)
   - Weasel Presents: NAZIS V2
   - WolfenDoom Enhanced
   - WolfenDoom V2
@@ -33,7 +34,7 @@
   - Brutal Doom 64 v2.5
   - Doom CE 3.1.3: Doom64
   - Doom CE 3.1.3: PSX
-  - Supercharge
+  - Supercharge v2.8
 
 ## v0.21
 
