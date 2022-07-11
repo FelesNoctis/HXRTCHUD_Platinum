@@ -83,6 +83,10 @@ ACTOR HXMOD_DoomCE_PSX: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1
 ACTOR HXMOD_Faspons: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Kriegsland 1: Blutorden
 ACTOR HXMOD_Kriegsland1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Kriegsland 2: Untergrund
+ACTOR HXMOD_Kriegsland2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_Kriegsland2_InfraredToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_Kriegsland2_SpeedToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 31 }
 //	Led's Generic Weapon Mod 20220412
 ACTOR HXMOD_LedsGenericWeaponMod: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_LedsGenWep9mmAmmo: Ammo

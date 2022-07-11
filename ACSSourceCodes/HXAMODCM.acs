@@ -17,6 +17,7 @@ str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
 str hxmod_D4V = "HXMOD_Doom4Vanilla";
 str hxmod_faspons = "HXMOD_Faspons";
 str hxmod_kriegsland1 = "HXMOD_Kriegsland1";
+str hxmod_kriegsland2 = "HXMOD_Kriegsland2";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_lttyphon = "HXMOD_BadAssBitch";
 str hxmod_nazisv2 = "HXMOD_NazisV2";
@@ -121,6 +122,11 @@ str fasponsrifle = "CombatRifle";
 str kriegsland1class = "FKPlayer";
 str kriegsland1grenades = "HDGrenades";
 str kriegsland1melee = "HDKnife";
+
+// Kriegsland 2: Untergrund
+str kriegsland2class = "K2Player";
+str kriegsland2melee = "K2WeaponB";
+str kriegsland2pistol = "K2WeaponC";
 
 // Led's Generic Weapon Mod
 str ledclass = "DoomGuy";
@@ -279,6 +285,16 @@ script "HXS_ModCompatibilityStartup" enter
 		{
 			GiveInventory(hxmod_modfound, 1);
 			GiveInventory(hxmod_kriegsland1, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
+	// Kriegsland 2: Untergrund
+		else if (CheckActorClass(0, kriegsland2class)
+			&& CheckInventory(kriegsland2melee)
+			&& CheckInventory(kriegsland2pistol)
+			&& !CheckInventory(hxmod_kriegsland2))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_kriegsland2, 1);
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// Led's Generic Weapon Mod
