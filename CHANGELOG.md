@@ -10,12 +10,13 @@
 
 - **Mod Support:**
   - Doom 4 Vanilla 3.2.1
+  - Doom 64: Retribution v1.5
   - Faspons (REL: MAR 13 2020) & (DEV: MAR 16 2020)
   - Kriegsland 1: Blutorden v2.4 (ZScript & Orig)
   - Kriegsland 2: Untergrund v1.4 (ZScript & Orig)
   - Lt. Typhon V6
   - Omni-Wolf v1.2
-  - Supercharge v2.9 (with backwards compatible support for v2.8)
+  - Supercharge v2.9 (with backwards support for v2.8)
   - Weasel Presents: NAZIS V2
   - WolfenDoom Enhanced
   - WolfenDoom V2

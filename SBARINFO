@@ -346,6 +346,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				InInventory "HX_InvisibilityPowerUpToken" { DrawBar "HX64BLOK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 2; }
 				InInventory "HX_RadSuitPowerUpToken" { DrawBar "HX64RDOK", "HXINVOFF", HX_RadSuitPowerUpToken, vertical, interpolate(64), -50, 2; }		
 				InInventory "HX_InfraredPowerUpToken" { DrawBar "HX64LTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
+				// Doom 64: Retribution
+				InInventory "HX_D64RTRInfraredPowerUpToken" { DrawBar "HX64LTOK", "HXINVOFF", HX_D64RTRInfraredPowerUpToken, vertical, interpolate(64), -26, 2; }
 			}
 			else InInventory "HXCUS_PowerupBoxToken", 1	// Active only
 			{
@@ -368,6 +370,12 @@ StatusBar Fullscreen, FullscreenOffsets
 				{
 					DrawImage "HX64LTNO", -26, 2;
 					DrawBar "HX64LTOK", "HXINVOFF", HX_InfraredPowerUpToken, vertical, interpolate(64), -26, 2;
+				}
+				// Doom 64: Retribution
+				InInventory "HX_D64RTRInfraredPowerUpToken"
+				{
+					DrawImage "HX64LTNO", -26, 2;
+					DrawBar "HX64LTOK", "HXINVOFF", HX_D64RTRInfraredPowerUpToken, vertical, interpolate(64), -26, 2;
 				}
 			}
 		}
@@ -695,6 +703,13 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawImage "HXSML058", -23, 29;
 					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
 				}
+				// Doom 64: Retribution
+				InInventory "HX_D64RTRInfraredPowerUpToken"
+				{
+					DrawImage "HX64LTT", -26, 25;
+					DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_D64RTRInfraredPowerUpToken, -5, 29;
+				}
 			}
 			else InInventory "HXCUS_PowerupTimerToken", 1	// Active Only
 			{
@@ -725,6 +740,14 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawImage "HX64LTT", -26, 25;
 					DrawImage "HXSML058", -23, 29;
 					DrawNumber 3, HXINDEXFONTS, untranslated, HX_InfraredPowerUpToken, -5, 29;
+				}
+				// Doom 64: Retribution
+				InInventory "HX_D64RTRInfraredPowerUpToken"
+				{
+					DrawImage "HXBUFFT", -26, 25;
+					DrawImage "HX64LTT", -26, 25;
+					DrawImage "HXSML058", -23, 29;
+					DrawNumber 3, HXINDEXFONTS, untranslated, HX_D64RTRInfraredPowerUpToken, -5, 29;
 				}
 			}
 		}
@@ -1030,6 +1053,14 @@ StatusBar Fullscreen, FullscreenOffsets
 		}
 		// Doom CE: Doom64
 		InInventory "HXMOD_DoomCE_D64", 1
+		{
+			DrawImage "HXARTI3S", 127, -33;
+			DrawSwitchableImage "UnmakerUpgrade1Icon", "HX64UA1N", "HX64UA1", 131, -29;
+			DrawSwitchableImage "UnmakerUpgrade2Icon", "HX64UA2N", "HX64UA2", 131, -21;
+			DrawSwitchableImage "UnmakerUpgrade3Icon", "HX64UA3N", "HX64UA3", 131, -13;
+		}
+		// Doom 64: Retribution
+		InInventory "HXMOD_Doom64RTR", 1
 		{
 			DrawImage "HXARTI3S", 127, -33;
 			DrawSwitchableImage "UnmakerUpgrade1Icon", "HX64UA1N", "HX64UA1", 131, -29;
@@ -3422,6 +3453,212 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -44;
 				DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -44;
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
+			}
+		}
+		/*	Doom 64: Retribution
+		*
+		*/
+		else InInventory "HXMOD_Doom64RTR", 1
+		{
+		// AMMO TALLIES PANEL - D64:RTR
+			InInventory not "64Nailgun" || "64Flamethrower"
+			{	DrawImage "HXAMMTOP", -78, -35; }
+			else
+			{	DrawImage "HXAMMTOP", -78, -47;
+				DrawImage "HXAMMROW", -78, -37;
+				DrawImage "HXAMMROW", -78, -31; }
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			InInventory not "64Nailgun" || "64Flamethrower"
+			{	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -30, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -24, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -18, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -12, 0, alignment(left); }
+			else
+			{	DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CLIP", -73, -42, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "SHEL", -73, -36, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "ROCK", -73, -30, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "CELL", -73, -24, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "NAIL", -73, -18, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "FUEL", -73, -12, 0, alignment(left); }
+
+			InInventory not "64Nailgun" || "64Flamethrower"
+			{	DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,		horizontal, interpolate(64), -56, -30;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,		horizontal, interpolate(64), -56, -24;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,	horizontal, interpolate(64), -56, -18;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,		horizontal, interpolate(64), -56, -12; }
+			else
+			{	DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,				horizontal, interpolate(64), -56, -42;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,				horizontal, interpolate(64), -56, -36;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,			horizontal, interpolate(64), -56, -30;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,				horizontal, interpolate(64), -56, -24;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo HX_D64RTRNailAmmo,	horizontal, interpolate(64), -56, -18;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo HX_D64RTRFuelAmmo,	horizontal, interpolate(64), -56, -12; }
+
+			InInventory not "64Nailgun" || "64Flamethrower"
+			{	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,		-6, -30;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell,		-6, -24;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,	-6, -18;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,		-6, -12; }
+			else
+			{	DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,				-6, -42;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Shell,				-6, -36;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo RocketAmmo,			-6, -30;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Cell,				-6, -24;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo HX_D64RTRNailAmmo,	-6, -18;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo HX_D64RTRFuelAmmo,	-6, -12; }
+
+			// Ammo Tally highlight and Current Ammo equipped by type
+			UsesAmmo
+			{
+				DrawImage "HXAMMO", -134, -33;
+				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				IsSelected not "64Unmaker" { DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0; }
+
+				WeaponAmmo Clip
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -30; }
+					else
+					{	DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -42, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -42; }
+
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 20;
+				}
+				WeaponAmmo Shell
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -24; }
+					else
+					{	DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -36, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell,  -6, -36; }
+
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 6;
+				}
+				WeaponAmmo RocketAmmo
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18; }
+					else
+					{	DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -30; }
+
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+				}
+				WeaponAmmo Cell
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12; }
+					else
+					{	DrawString HXGENERALFONTS, untranslated, "CELL", -73, -24, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -24; }
+
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 30;
+
+					IsSelected "64Unmaker"
+					{
+						DrawImage "HXBDCEU0", -118, -12;
+						InInventory "UnmakerUpgrade1Icon", 1 { DrawImage "HXBDCEU1", -118, -12; }
+						InInventory "UnmakerUpgrade2Icon", 1 { DrawImage "HXBDCEU2", -106, -12; }
+						InInventory "UnmakerUpgrade3Icon", 1 { DrawImage "HXBDCEU3", -94, -12; }
+					}
+				}
+				IsSelected "64Nailgun"
+				{
+					DrawString HXGENERALFONTS, untranslated, "NAIL", -73, -18, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo HX_D64RTRNailAmmo, -6, -18;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 20;
+				}
+				IsSelected "64Flamethrower"
+				{
+					DrawString HXGENERALFONTS, untranslated, "FUEL", -73, -12, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo HX_D64RTRFuelAmmo, -6, -12;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25;
+				}
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+		// ARMS & KEYS BARS - D64:RTR
+			// Keys
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawImage "HXKEYSE", -90, -79;
+						drawkeybar 14, horizontal, reverse, reverserows, auto, -14, -62, 0, 7, 13; }
+					else
+					{	DrawImage "HXKEYSE", -90, -91;
+						drawkeybar 14, horizontal, reverse, reverserows, auto, -14, -74, 0, 7, 13; }
+				}
+				else
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawImage "HXKEYS", -90, -61;
+						drawkeybar 6, horizontal, reverse, auto, -13, -60, 0, 6, auto; }
+					else
+					{	DrawImage "HXKEYS", -90, -73;
+						drawkeybar 6, horizontal, reverse, auto, -13, -72, 0, 6, auto; }
+				}
+			}
+			else 
+			{
+				InInventory "HXCUS_KeysExtendedToken", 1
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawImage "HXKEYSE", -90, -66;
+						drawkeybar 14, horizontal, reverse, reverserows, auto, -14, -49, 0, 7, 13; }
+					else
+					{	DrawImage "HXKEYSE", -90, -78;
+						drawkeybar 14, horizontal, reverse, reverserows, auto, -14, -61, 0, 7, 13; }
+				}
+				else
+				{
+					InInventory not "64Nailgun" || "64Flamethrower"
+					{	DrawImage "HXKEYS", -90, -48;
+						drawkeybar 6, horizontal, reverse, auto, -13, -47, 0, 6, auto; }
+					else
+					{	DrawImage "HXKEYS", -90, -60;
+						drawkeybar 6, horizontal, reverse, auto, -13, -59, 0, 6, auto; }
+				}
+			}
+			
+			// Arms
+			InInventory "HXCUS_ArmsBarToken", 1
+			{
+				InInventory not "64Nailgun" || "64Flamethrower"
+				{	DrawImage "HXARMS", -90, -48;
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -44;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -44;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -44;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -44;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -44;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -44;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -44;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -44;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -44;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44; }
+				else
+				{	DrawImage "HXARMS", -90, -60;
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -56;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -56;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -56;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -56;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -56;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -56;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -56;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -56;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -56;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -56; }
 			}
 		}
 		/*	Faspons

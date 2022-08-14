@@ -76,6 +76,21 @@ ACTOR HX_D4V_rotoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmou
 ACTOR HX_D4V_sgtoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_D4V_sstoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_D4V_swtoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Doom 64: Retribution
+ACTOR HXMOD_Doom64RTR: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_D64RTRInfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_D64RTRFuelAmmo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 100
+	Ammo.BackpackMaxAmount 200
+}
+ACTOR HX_D64RTRNailAmmo: Ammo
+{
+	+INVENTORY.UNDROPPABLE
+	Inventory.MaxAmount 200
+	Ammo.BackpackMaxAmount 400
+}
 //	Doom CE
 ACTOR HXMOD_DoomCE_D64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_DoomCE_PSX: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

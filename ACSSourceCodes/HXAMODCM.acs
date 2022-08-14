@@ -15,6 +15,7 @@ str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
 str hxmod_CED64 = "HXMOD_DoomCE_D64";
 str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
 str hxmod_D4V = "HXMOD_Doom4Vanilla";
+str hxmod_D64RTR = "HXMOD_Doom64RTR";
 str hxmod_faspons = "HXMOD_Faspons";
 str hxmod_kriegsland1 = "HXMOD_Kriegsland1";
 str hxmod_kriegsland2 = "HXMOD_Kriegsland2";
@@ -105,6 +106,11 @@ str d4vclass = "DoomSlayer";
 str d4vfist = "DH_Fist";
 str d4vpistol = "DH_Pistol2";
 
+// Doom 64 Retribution
+str d64rtrclass = "64DoomPlayer";
+str d64rtrfist = "64Fist";
+str d64rtrplaying = "IsPlaying";
+
 // Doom CE - D64 and PSX
 str doomced64class = "D64DoomPlayer";
 str doomced64fist = "D64Fist";
@@ -164,7 +170,13 @@ str superchargerifleammo = "AssaultRifleAmmo";
 
 script "HXS_ModCompatibilityStartup" enter
 {
-// Mod Master Tokens
+	// Hud Killer for mod checking
+/* 	if (!CheckInventory(hxmod_modfound))
+	{
+		GiveInventory(hxsys_normalhudkiller, 1);
+	} */
+
+	// Mod Master Tokens
 	// Beautiful Doom 7.1.6
 		if (CheckInventory(beautifulbloodcontrol)
 			&& CheckInventory(beautifuloverlaycontrol)
@@ -185,21 +197,40 @@ script "HXS_ModCompatibilityStartup" enter
 			GiveInventory(hxmod_bdlite, 1);
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}	
-	// Brutal Doom 64
+	// Brutal Doom 64 && Doom 64: Retribution (due to shared startup actor names)
 		else if (CheckInventory(bd64fist)
-			&& !CheckInventory(hxmod_brutaldoom64))
+			&& (!CheckInventory(hxmod_brutaldoom64)
+				|| !CheckInventory(hxmod_D64RTR)))
 		{
-			if ((CheckInventory(bd64Pistol)
-				|| CheckInventory(bd64pistoltactical)
-				|| CheckInventory(bd64rifletactical))
+			/* log(s:"Running BD64/D64RTR Check"); */
+			// Brutal Doom 64
+			if (!CheckInventory(d64rtrplaying)
 			&& (CheckActorClass(0, bd64classbasic)
 				|| CheckActorClass(0, bd64classtactical)
 				|| CheckActorClass(0, bd64classtacticalpistol)
-				|| CheckActorClass(0, bd64classmodern)))			
+				|| CheckActorClass(0, bd64classmodern))
+			&& (CheckInventory(bd64Pistol)
+				|| CheckInventory(bd64pistoltactical)
+				|| CheckInventory(bd64rifletactical)))
 			{
 				GiveInventory(hxmod_modfound, 1);
 				GiveInventory(hxmod_brutaldoom64, 1);
 				GiveInventory(hxmod_64art, 1);
+				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+				/* log(s:"BD64 Caught"); */
+			}
+
+			// Doom 64: Retribution
+			if (!CheckInventory(hxmod_D64RTR)
+			&& CheckInventory(d64rtrplaying)
+			&& CheckActorClass(0, d64rtrclass)
+			&& CheckInventory(d64rtrfist))
+			{
+				GiveInventory(hxmod_modfound, 1);
+				GiveInventory(hxmod_D64RTR, 1);
+				GiveInventory(hxmod_64art, 1);
+				/* log(s:"D64:RTR Caught"); */
+				if (CheckInventory(hxmod_brutaldoom64)) { TakeInventory(hxmod_brutaldoom64, 1); /* log(s:"Removing BD64 token"); */ }
 				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 			}
 		}
