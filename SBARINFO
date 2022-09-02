@@ -1815,25 +1815,25 @@ StatusBar Fullscreen, FullscreenOffsets
 			{
 				DrawImage "BDPGRNV", -63, -63, center, 22, 12;
 				DrawString HXGENERALFONTS, HXRTCBDPPlasma,					"VOID", -10, -62, 0;
-				DrawNumber 4, HXINDEXFONTS, HXRTCBDPPlasma, ammo AmmoVoidGrenade,	-5,  -62, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCBDPPlasma, ammo AmmoVoidGrenade,	-5,  -62, 0, HXRTCRed, 1;
 			}
 			else InInventory "HX_BrutalDoomPlat_grenadetype", 2
 			{
 				DrawImage "BDPGRNP", -63, -63, center, 22, 12;
 				DrawString HXGENERALFONTS, HXRTCYellow,						"PIPE", -33, -62, 0;
-				DrawNumber 4, HXINDEXFONTS, HXRTCYellow, ammo AmmoPipeBomb,			-28, -62, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCYellow, ammo AmmoPipeBomb,			-28, -62, 0, HXRTCRed, 1;
 			}
 			else InInventory "HX_BrutalDoomPlat_grenadetype", 1
 			{
 				DrawImage "BDPGRNF", -63, -63, center, 22, 12;
 				DrawString HXGENERALFONTS, HXRTCBDPStickyGrenades,			"FREZ", -10, -69, 0;
-				DrawNumber 4, HXINDEXFONTS, HXRTCBDPStickyGrenades, ammo AmmoIceGrenade, -5, -69, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCBDPStickyGrenades, ammo AmmoIceGrenade, -5, -69, 0, HXRTCRed, 1;
 			}
 			else InInventory not "HX_BrutalDoomPlat_grenadetype"
 			{
 				DrawImage "BDPGRNC", -63, -63, center, 22, 12;
 				DrawString HXGENERALFONTS, HXRTCGold,						"CLST", -33, -69, 0;
-				DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo AmmoFragGrenade,		-28, -69, 0;
+				DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo AmmoFragGrenade,		-28, -69, 0, HXRTCRed, 1;
 			}
 
 		// NUKE PANEL - Brutal Doom Platinum
