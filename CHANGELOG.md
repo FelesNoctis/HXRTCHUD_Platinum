@@ -1,8 +1,14 @@
 # Changelog
 
+## v0.56
+
+- **Mod Support:**
+  - Brutal Doom 64 v2.5_r31: Updated support for 64SMGTactical and 64RocketLauncherTactical. This unfortunately isn't backwards compatible due to how the Rocket Launcher changed.
+  - Brutal Doom Platinum: Grenades now use the same "low ammo" indicators as weapon mags.
+
 ## v0.55
 
-- **Bottom-Right Panels:**
+- **Bottom-Left Panels:**
   - **Artifact Pieces** panel added for use with any mod that uses the 3-step weapon powerup system.
 
 - **Settings:**
