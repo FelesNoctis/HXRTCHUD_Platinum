@@ -2967,6 +2967,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 						IsSelected "64ChaingunTACTICAL"		{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
 						else IsSelected "64PistolTactical"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 3; }
+						else IsSelected "64SMGTactical" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
 						else IsSelected "64RifleTactical"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
 						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
 					}
@@ -2986,9 +2987,10 @@ StatusBar Fullscreen, FullscreenOffsets
 						DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
 						DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -30;
 
-						DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+						IsSelected "64RocketLauncherTactical"  { DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29; }
+						else { DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29; }
 
-						IsSelected "64RocketLauncherTactical"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+						IsSelected "64RocketLauncherTactical"	{ DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
 						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0; }
 					}
 					WeaponAmmo Cell
