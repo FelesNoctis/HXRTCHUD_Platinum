@@ -1929,37 +1929,37 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MAUS", -73, -42, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MG42", -73, -36, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -30, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"PNZR", -73, -24, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"AXES", -73, -18, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "PNZR", -73, -24, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCGold,			"AXES", -73, -18, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
 
 			InInventory "HX_ZioBW_ColtUsable", 1
-				{ DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,			horizontal, interpolate(64), -56, -78; }
-			DrawBar "HXAMMON", "HXAMMOFF", ammo WolfClip,			horizontal, interpolate(64), -56, -72;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo PPSHReserve,		horizontal, interpolate(64), -56, -66;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo M1CLIP,				horizontal, interpolate(64), -56, -60;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo KarClip,			horizontal, interpolate(64), -56, -54;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo TGAMMO,				horizontal, interpolate(64), -56, -48;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo MauserClip,			horizontal, interpolate(64), -56, -42;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo MGAmmoReserve,		horizontal, interpolate(64), -56, -36;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo GAS,				horizontal, interpolate(64), -56, -30;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo PanzerFaustAmmo,	horizontal, interpolate(64), -56, -24;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo AxeAmmo,			horizontal, interpolate(64), -56, -18;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,		horizontal, interpolate(64), -56, -12;
+				{ DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,		horizontal, interpolate(64), -56, -78; }
+			DrawBar "HXAMMON", "HXAMMOFF", ammo WolfClip,		horizontal, interpolate(64), -56, -72;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo PPSHReserve,	horizontal, interpolate(64), -56, -66;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo M1CLIP,			horizontal, interpolate(64), -56, -60;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo KarClip,		horizontal, interpolate(64), -56, -54;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo TGAMMO,			horizontal, interpolate(64), -56, -48;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo MauserClip,		horizontal, interpolate(64), -56, -42;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo MGAmmoReserve,	horizontal, interpolate(64), -56, -36;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo GAS,			horizontal, interpolate(64), -56, -30;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo PanzerFaustAmmo,				horizontal, interpolate(64), -56, -24;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo AxeAmmo,		horizontal, interpolate(64), -56, -18;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, interpolate(64), -56, -12;
 
 			InInventory "HX_ZioBW_ColtUsable", 1
-				{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,			-6, -78; }
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo WolfClip,			-6, -72;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PPSHReserve,		-6, -66;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo M1CLIP,			-6, -60;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo KarClip,			-6, -54;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TGAMMO,			-6, -48;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MauserClip,		-6, -42;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MGAmmoReserve,		-6, -36;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GAS,				-6, -30;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PanzerFaustAmmo,	-6, -24;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AxeAmmo,			-6, -18;
-			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,		-6, -12;
+				{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,		-6, -78; }
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo WolfClip,		-6, -72;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PPSHReserve,	-6, -66;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo M1CLIP,		-6, -60;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo KarClip,		-6, -54;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TGAMMO,		-6, -48;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MauserClip,	-6, -42;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MGAmmoReserve,	-6, -36;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GAS,			-6, -30;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PanzerFaustAmmo,			-6, -24;
+			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo AxeAmmo,		-6, -18;
+			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
 
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
