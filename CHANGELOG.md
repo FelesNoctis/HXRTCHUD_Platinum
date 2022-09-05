@@ -5,7 +5,7 @@
 - **Mod Updates:**
   - Brutal Doom 64 v2.5_r31: Updated support for 64SMGTactical and 64RocketLauncherTactical. This unfortunately isn't backwards compatible due to how the Rocket Launcher changed.
   - Brutal Doom Platinum v3.0: Grenades now use the same "low ammo" indicators as weapon mags.
-  - ZioMcCall's Brutal Wolfenstein v5.8: Panzerfaust support added, vertical mag ammo bar now correctly tracks magazine ammo, refactored "low ammo" thresholds for Gatling Gun (clip 200, low 50) and Flammenwerfer (max 20, low 5)
+  - ZioMcCall's Brutal Wolfenstein v5.8: Panzerfaust support added, vertical mag ammo bar now correctly tracks magazine ammo, refactored "low ammo" thresholds for Gatling Gun (clip 200, low 50) and Flammenwerfer (max 20, low 5), Throwing Axe reserve ammo invisibility improved as it's an on-demand weapon.
 
 ## v0.55
 
