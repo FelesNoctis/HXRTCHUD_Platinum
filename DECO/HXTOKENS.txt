@@ -30,16 +30,29 @@ ACTOR HXMOD_WeaponDualWieldUniqueAmmo: Inventory { +INVENTORY.UNDROPPABLE Invent
 ACTOR HXMOD_WeaponOnlyAmmo1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_HastePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
+ACTOR HX_InfraredPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_InvisibilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_InvisibilityPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_InvulnerabilityPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_QuadDamagePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
+ACTOR HX_QuadDamagePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_RadSuitPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_ShieldPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Mod Master Token
 ACTOR HXMOD_MODFOUND: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	No Mods Detected/Vanilla
 ACTOR HXMOD_VANILLA: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Ac!d's Eriguns
+ACTOR HXMOD_AcidEriguns: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_Acid_BuddhaPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_Acid_BuddhaPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_Acid_Eri_PINS: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
+ACTOR HX_Acid_Eri_PINV: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
+ACTOR HX_Acid_Eri_PSTR: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 //	BDLite 1.2
 ACTOR HXMOD_BDLite: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Beautiful Doom

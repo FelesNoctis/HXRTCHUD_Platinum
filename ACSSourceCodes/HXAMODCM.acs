@@ -6,6 +6,7 @@ str hxmod_none = "HXMOD_VANILLA";
 str hxmod_resettoken = "HXMOD_IDontExist";
 str hxmod_modfound = "HXMOD_MODFOUND";
 str hxmod_64art = "HXMOD_Doom64Art";
+str hxmod_acideriguns = "HXMOD_AcidEriguns";
 str hxmod_bdlite = "HXMOD_BDLite";
 str hxmod_beautifuldoom = "HXMOD_BeautifulDoom";
 str hxmod_brutaldoom = "HXMOD_BrutalDoom";
@@ -41,15 +42,21 @@ str hxmod_weapononlyammo1 = "HXMOD_WeaponOnlyAmmo1";
 str vanillaberserk = "PowerStrength";
 str hxgen_berserk = "HX_BerserkPowerUpToken";
 str hxgen_haste = "HX_HastePowerUpToken";
+str hxgen_hastelong = "HX_HastePowerUpLongTimerToken";
 str vanillainfrared = "PowerLightamp";
 str hxgen_infrared = "HX_InfraredPowerUpToken";
+str hxgen_infraredlong = "HX_InfraredPowerUpLongTimerToken";
 str vanillainvisibility = "PowerInvisibility";
 str hxgen_invisibility = "HX_InvisibilityPowerUpToken";
+str hxgen_invisibilitylong = "HX_InvisibilityPowerUpLongTimerToken";
 str vanillainvulnerability = "PowerInvulnerable";
 str hxgen_invulnerability = "HX_InvulnerabilityPowerUpToken";
+str hxgen_invulnerabilitylong = "HX_InvulnerabilityPowerUpLongTimerToken";
 str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
+str hxgen_quaddamagelong = "HX_QuadDamagePowerUpLongTimerToken";
 str vanillaradsuit = "PowerIronfeet";
 str hxgen_radsuit = "HX_RadSuitPowerUpToken";
+str hxgen_radsuitlong = "HX_RadSuitPowerUpLongTimerToken";
 /* str vanillabluecard = "BlueCard";
 str hxgen_bluecard = "HX_BlueCardKeyToken";
 str vanillablueskull = "BlueSkull";
@@ -62,6 +69,11 @@ str vanillayellowcard = "YellowCard";
 str hxgen_yellowcard = "HX_YellowCardKeyToken";
 str vanillayellowskull = "YellowSkull";
 str hxgen_yellowskull = "HX_YellowSkullKeyToken"; */
+
+// Ac!d's Eriguns
+str acidclass = "EriPlayer";
+str acidfist = "EriFist";
+str acidpistol = "EriPistol";
 
 // Beautiful Doom
 str beautifulbloodcontrol = "BD_BloodyPrintControl";
@@ -179,8 +191,18 @@ script "HXS_ModCompatibilityStartup" enter
 	} */
 
 	// Mod Master Tokens
+	// Ac!d's Eriguns
+		if (CheckActorClass(0, acidclass)
+			&& CheckInventory(acidfist)
+			&& CheckInventory(acidpistol)
+			&& !CheckInventory(hxmod_acideriguns))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_acideriguns, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}	
 	// Beautiful Doom 7.1.6
-		if (CheckInventory(beautifulbloodcontrol)
+		else if (CheckInventory(beautifulbloodcontrol)
 			&& CheckInventory(beautifuloverlaycontrol)
 			&& CheckInventory(beautifulweaponcontrol)
 			&& !CheckInventory(hxmod_beautifuldoom))
