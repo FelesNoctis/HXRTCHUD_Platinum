@@ -33,8 +33,6 @@ str hxbd_grenadetype = "HX_BrutalDoomPlat_grenadetype";
 str hxbd_meatammo = "HX_BrutalDoom_meatammo";
 str hxbd_meatshield = "HX_BrutalDoom_meatshield";
 str hxbd_tfduration = "HX_BrutalDoom_transformationduration";
-str hxgen_haste = "HX_HastePowerUpToken";
-str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
 str hxgen_shield = "HX_ShieldPowerUpToken";
 str hxbd_staminatoken = "HX_BrutalDoom_staminatoken";
 

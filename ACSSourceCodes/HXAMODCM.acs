@@ -40,12 +40,14 @@ str hxmod_weapononlyammo1 = "HXMOD_WeaponOnlyAmmo1";
 // General Items
 str vanillaberserk = "PowerStrength";
 str hxgen_berserk = "HX_BerserkPowerUpToken";
+str hxgen_haste = "HX_HastePowerUpToken";
 str vanillainfrared = "PowerLightamp";
 str hxgen_infrared = "HX_InfraredPowerUpToken";
 str vanillainvisibility = "PowerInvisibility";
 str hxgen_invisibility = "HX_InvisibilityPowerUpToken";
 str vanillainvulnerability = "PowerInvulnerable";
 str hxgen_invulnerability = "HX_InvulnerabilityPowerUpToken";
+str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
 str vanillaradsuit = "PowerIronfeet";
 str hxgen_radsuit = "HX_RadSuitPowerUpToken";
 /* str vanillabluecard = "BlueCard";
