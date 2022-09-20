@@ -2295,12 +2295,23 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawString HXGENERALFONTS, untranslated, "SOUL", -73, -18, 0, alignment(left);
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo SoulAmmo, -6, -18;
 
-					IsSelected not "HellishMissileLauncher"
+					IsSelected not "HellishMissileLauncher", "VorpalBlade"
 					{
 						DrawImage "HXAMMO", -134, -33;
 						DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
 						DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
 						DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 66;
+					}
+					else IsSelected "VorpalBlade"
+					{
+						DrawImage "HXAMMHOT", -134, -33;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
+						DrawString HXGENERALFONTM, HXRTCBDPDragon, "HEAT", -90, -12, 0;
+						InInventory "BladeCharge", 100
+							{ 	DrawString HXSTATUSFONT, HXRTCBDPDragon, "BUrN", -84, -29, 0;
+								/* DrawNumber 4, HXSTATUSFONT, HXRTCBDPDragon, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 25; */ }
+						else
+							{ DrawNumber 4, HXSTATUSFONT, HXRTCGold, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
 					}
 				}
 				WeaponAmmo Gas
