@@ -106,6 +106,7 @@ str bd64classmodern = "Modern";
 str bd64classtactical = "Tactical64DoomPlayer";
 str bd64classtacticalpistol = "Tactical64DoomPlayer_P";
 str bd64fist = "64Fist";
+str bd64fisttactical = "64FistTactical";
 str bd64pistol = "64Pistol";
 str bd64pistoltactical = "64PistolTactical";
 str bd64rifletactical = "64RifleTactical";
@@ -222,7 +223,8 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}	
 	// Brutal Doom 64 && Doom 64: Retribution (due to shared startup actor names)
-		else if (CheckInventory(bd64fist)
+		else if ((CheckInventory(bd64fist)
+				|| CheckInventory(bd64fisttactical))
 			&& (!CheckInventory(hxmod_brutaldoom64)
 				|| !CheckInventory(hxmod_D64RTR)))
 		{

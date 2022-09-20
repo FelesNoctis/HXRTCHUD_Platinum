@@ -1,8 +1,13 @@
 #library "HXMBD64"
 #include "zcommon.acs"
 #import "HXAMODCM.acs"
+#import "HXACVAR.acs"
 #import "HXASTATS.acs"
 
+str bd64altlasericon = "AlternativeLaserSkinCvar";
+str hx_bd64altlasericontoken = "HX_BD64_altLaserSkinCvar";
+str bd64altrifleicon = "AlternativeRifleSkinCvar";
+str hx_bd64altrifleicontoken = "HX_BD64_altRifleSkinCvar";
 str bd64ammodemonessence = "DemonEssence";
 str bd64ammodemonessencetoken = "HX_BD64_demonessencefound";
 str bd64bfg9000tactical = "64BFG9000";
@@ -33,6 +38,10 @@ script "HXS_BrutalDoom64_35ticHandler" enter
 		// Powerup Management Tokens
 			// Berserk
 			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+
+		// Weapon Icon Management Tokens
+			HXF_CVARConvert_Generic(bd64altlasericon, hx_bd64altlasericontoken);
+			HXF_CVARConvert_Generic(bd64altrifleicon, hx_bd64altrifleicontoken);
 
 		// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock

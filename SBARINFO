@@ -5939,13 +5939,32 @@ StatusBar Fullscreen, FullscreenOffsets
 	// CURRENT WEAPON ICON PANEL
 		InInventory "HXCUS_WeaponIconToken", 1
 		{
+			InInventory "HXMOD_BrutalDoom64", 1
+			{
+				DrawImage "HXWEAPON", -134, -53;
+				IsSelected "64Rifle", "64RifleTactical"
+				{
+					InInventory "HX_BD64_altRifleSkinCvar", 1
+						{ DrawImage "ARSDA0", -112, -43, center, 36, 12; }
+					else
+						{ DrawImage "RIFDA0", -112, -43, center, 36, 12; }
+				}
+				else IsSelected "Lasergun", "LasergunTactical"
+				{
+					InInventory "HX_BD64_altLaserSkinCvar", 1
+						{ DrawImage "LGUNB0", -112, -43, center, 36, 12; }
+					else
+						{ DrawImage "BD64LSR", -112, -43, center, 36, 12; }
+				}
+				else { DrawImage weaponicon, -112, -43, center, 36, 12, alticonfirst; }
+			}
 			/*	Brutal Doom Platinum
 			*
 			*	ACTOR HXMOD_BrutalDoomPlatinum: mod token
 			*
 			*	ACTOR MeatAmmo
 			*/
-			InInventory "HXMOD_BrutalDoomPlatinum", 1
+			else InInventory "HXMOD_BrutalDoomPlatinum", 1
 			{
 				DrawImage "HXWEAPON", -122, -53;
 
