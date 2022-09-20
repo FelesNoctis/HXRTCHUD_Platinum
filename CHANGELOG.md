@@ -2,6 +2,9 @@
 
 ## v0.56
 
+- **Top-Left Panels:**
+  - **KIS Panel** can now be configured for 4, 5, or 6 digits, to handle INSANE numbers of things.
+
 - **Mod Updates:**
   - Brutal Doom 64 v2.5_r31: Corrected mod detection script to include changed indicators. Updated support for 64SMGTactical and 64RocketLauncherTactical, which unfortunately isn't backwards compatible due to how the Rocket Launcher changed. Updated weapon icons for rifle and laser to respond to BD64's visual customization, new rocket launcher skin has no unique icon yet.
   - Brutal Doom Platinum v3.0: Grenades now use the same "low ammo" indicators as weapon mags.

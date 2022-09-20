@@ -52,7 +52,7 @@ OptionMenu "HXRTCHUDPlat"
 	Option "Current Item", "hxcus_HXArtifact", "OnOff"
 	Option "Keys Bar Extended", "hxcus_HXKeysExtended", "OnOff"
 	Option "Level Stats", "hxcus_HXPTKIS", "HXRTCHUDPlat_Cus_PTKIS"
-	Option "Level Stats Extended", "hxcus_HXKISExtended", "OnOff"
+	Option "Level Stats Length", "hxcus_HXKISExtended", "HXRTCHUDPlat_Cus_LevelStatsLength"
 	Option "Powerup Visibility", "hxcus_HXPowerupBox", "HXRTCHUDPlat_Cus_Powerups"
 	Option "Powerup Timer Visibility", "hxcus_HXPowerupTimer", "HXRTCHUDPlat_Cus_Powerups"
 	Option "Weapon Icon", "hxcus_HXWepIcon", "OnOff"
@@ -76,6 +76,13 @@ OptionValue HXRTCHUDPlat_Cus_ForceWolfenDoom
 	0.0, "Off"
 	1.0, "On"
 	2.0, "On + Powerups"
+}
+
+OptionValue HXRTCHUDPlat_Cus_LevelStatsLength
+{
+	0.0, "4 Digits"
+	1.0, "5 Digits"
+	2.0, "6 Digits"
 }
 
 OptionValue HXRTCHUDPlat_Cus_Powerups

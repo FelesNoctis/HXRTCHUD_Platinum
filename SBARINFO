@@ -33,17 +33,17 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawImage "HXPT", 2, 2;
 				DrawString CONFONT, white, time, 9, 6;
 
-				InInventory not "HXCUS_KISExtendedToken"
+				InInventory "HXCUS_KISExtendedToken", 2
 				{
-					DrawImage "HXKIS", 2, 19;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 24;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 30;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 36;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 24;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 30;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 36;
+					DrawImage "HXKISE2", 2, 19;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, kills, 43, 24;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, items, 43, 30;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, secrets, 43, 36;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, monsters, 75, 24;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, totalitems, 75, 30;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 75, 36;
 				}
-				else
+				else InInventory "HXCUS_KISExtendedToken", 1
 				{
 					DrawImage "HXKISE", 2, 19;
 					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, kills, 44, 24;
@@ -53,20 +53,30 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 30;
 					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 36;
 				}
+				else
+				{
+					DrawImage "HXKIS", 2, 19;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 24;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 30;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 36;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 24;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 30;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 36;
+				}
 			}
 			else
 			{
-				InInventory not "HXCUS_KISExtendedToken"
+				InInventory "HXCUS_KISExtendedToken", 2
 				{
-					DrawImage "HXKIS", 2, 2;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 7;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 13;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 19;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
-					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
+					DrawImage "HXKISE2", 2, 2;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, kills, 43, 7;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, items, 43, 13;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, secrets, 43, 19;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, monsters, 75, 7;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, totalitems, 75, 13;
+					DrawNumber 6, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 75, 19;
 				}
-				else
+				else InInventory "HXCUS_KISExtendedToken", 1
 				{
 					DrawImage "HXKISE", 2, 2;
 					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, kills, 44, 7;
@@ -75,6 +85,16 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
 					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
 					DrawNumber 5, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
+				}
+				else
+				{
+					DrawImage "HXKIS", 2, 2;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, kills, 49, 7;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, items, 49, 13;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, secrets, 49, 19;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, monsters, 74, 7;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalitems, 74, 13;
+					DrawNumber 4, HXINDEXFONTS, HXRTCLightWhite, totalsecrets, 74, 19;
 				}
 			}
 		}
