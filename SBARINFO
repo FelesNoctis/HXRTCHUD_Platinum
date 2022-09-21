@@ -127,9 +127,9 @@ StatusBar Fullscreen, FullscreenOffsets
 					*	This is a little akward due to how SBARINFO considers a value to be "Greater Than Or Equal To".
 					*	So we need to specifically declare "1", which is only Berserk, as blank.
 					*/
-					InInventory "HX_Acid_Eri_PSTR", 2 { DrawImage "HXQUADNO", -122, 2; }
+					InInventory "HX_Acid_Eri_PSTR", 2 { DrawImage "HXAEQDNO", -122, 2; }
 					else InInventory "HX_Acid_Eri_PSTR", 1 { /* Nothing to see here */ }
-					else { DrawImage "HXQUADNO", -122, 2; }
+					else { DrawImage "HXAEQDNO", -122, 2; }
 					// DrawImage "HXINVUNO", -98, 2; (Affected by settings)
 					// DrawImage "HXBLURNO", -74, 2; (Affected by settings)
 					DrawImage "HX64RDNO", -50, 2;
@@ -137,13 +137,13 @@ StatusBar Fullscreen, FullscreenOffsets
 
 				// Quad Damage
 					InInventory "HX_QuadDamagePowerUpToken"
-						{ DrawBar "HXQUADOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2; }
+						{ DrawBar "HXAEQDOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2; }
 				// Invulnerability & Buddha
 					InInventory "HX_Acid_Eri_PINV", 2
 					{
-						DrawImage "HXINVUNO", -98, 2;
+						DrawImage "HXAEBDNO", -98, 2;
 						InInventory "HX_Acid_BuddhaPowerUpToken", 1
-							{ DrawBar "HXINVUOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2; }
+							{ DrawBar "HXAEBDOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2; }
 					}
 					else InInventory "HX_Acid_Eri_PINV", 1
 					{
@@ -155,19 +155,19 @@ StatusBar Fullscreen, FullscreenOffsets
 					{
 						InInventory not "HX_Acid_BuddhaPowerUpToken", 1 || "HX_InvulnerabilityPowerUpToken", 1
 						{
-							DrawImage "HXINVUNO", -98, 2;
+							DrawImage "HXAEIBNO", -98, 2;
 						}
 						else InInventory "HX_Acid_BuddhaPowerUpToken", 1 && "HX_InvulnerabilityPowerUpToken", 1
 						{
 							DrawImage "HX64IVNO", -98, 38;
 							DrawBar "HX64IVOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 38;
-							DrawImage "HXINVUNO", -98, 2;
-							DrawBar "HXINVUOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
+							DrawImage "HXAEBDNO", -98, 2;
+							DrawBar "HXAEBDOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
 						}
 						else InInventory "HX_Acid_BuddhaPowerUpToken", 1
 						{
-							DrawImage "HXINVUNO", -98, 2;
-							DrawBar "HXINVUOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
+							DrawImage "HXAEBDNO", -98, 2;
+							DrawBar "HXAEBDOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
 						}
 						else InInventory "HX_InvulnerabilityPowerUpToken", 1
 						{ 
@@ -178,9 +178,9 @@ StatusBar Fullscreen, FullscreenOffsets
 				// Invisibility & Haste
 					InInventory "HX_Acid_Eri_PINS", 2
 					{
-						DrawImage "HXBDSHNO", -74, 2;
+						DrawImage "HXAEHSNO", -74, 2;
 						InInventory "HX_HastePowerUpToken", 1
-							{ DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2; }
+							{ DrawBar "HXAEHSOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2; }
 					}
 					else InInventory "HX_Acid_Eri_PINS", 1
 					{
@@ -192,19 +192,19 @@ StatusBar Fullscreen, FullscreenOffsets
 					{
 						InInventory not "HX_HastePowerUpToken", 1 || "HX_InvisibilityPowerUpToken", 1
 						{
-							DrawImage "HXBLURNO", -74, 2;
+							DrawImage "HXAEBHNO", -74, 2;
 						}
 						else InInventory "HX_HastePowerUpToken", 1 && "HX_InvisibilityPowerUpToken", 1
 						{
 							DrawImage "HX64BLNO", -74, 38;
 							DrawBar "HX64BLOK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 38;
-							DrawImage "HXBDSHNO", -74, 2;
-							DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
+							DrawImage "HXAEHSNO", -74, 2;
+							DrawBar "HXAEHSOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
 						}
 						else InInventory "HX_HastePowerUpToken", 1
 						{
-							DrawImage "HXBDSHNO", -74, 2;
-							DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
+							DrawImage "HXAEHSNO", -74, 2;
+							DrawBar "HXAEHSOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
 						}
 						else InInventory "HX_InvisibilityPowerUpToken", 1
 						{ 
@@ -221,14 +221,14 @@ StatusBar Fullscreen, FullscreenOffsets
 				// Quad Damage
 					InInventory "HX_QuadDamagePowerUpToken"
 					{
-						DrawImage "HXQUADNO", -122, 2;	// Background panel + inactive icon
-						DrawBar "HXQUADOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2;	// Active icon + border
+						DrawImage "HXAEQDNO", -122, 2;	// Background panel + inactive icon
+						DrawBar "HXAEQDOK", "HXINVOFF", HX_QuadDamagePowerUpToken, vertical, interpolate(64), -122, 2;	// Active icon + border
 					}
 				// Invulnerability & Buddha
 					InInventory "HX_Acid_Eri_PINV", 2 && "HX_Acid_BuddhaPowerUpToken", 1
 					{
-						DrawImage "HXINVUNO", -98, 2;
-						DrawBar "HXINVUOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
+						DrawImage "HXAEBDNO", -98, 2;
+						DrawBar "HXAEBDOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
 					}
 					else InInventory "HX_Acid_Eri_PINV", 1 && "HX_InvulnerabilityPowerUpToken", 1
 					{
@@ -241,13 +241,13 @@ StatusBar Fullscreen, FullscreenOffsets
 						{
 							DrawImage "HX64IVNO", -98, 38;
 							DrawBar "HX64IVOK", "HXINVOFF", HX_InvulnerabilityPowerUpToken, vertical, interpolate(64), -98, 38;
-							DrawImage "HXINVUNO", -98, 2;
-							DrawBar "HXINVUOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
+							DrawImage "HXAEBDNO", -98, 2;
+							DrawBar "HXAEBDOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
 						}
 						else InInventory "HX_Acid_BuddhaPowerUpToken", 1
 						{
-							DrawImage "HXINVUNO", -98, 2;
-							DrawBar "HXINVUOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
+							DrawImage "HXAEBDNO", -98, 2;
+							DrawBar "HXAEBDOK", "HXINVOFF", HX_Acid_BuddhaPowerUpToken, vertical, interpolate(64), -98, 2;
 						}
 						else InInventory "HX_InvulnerabilityPowerUpToken", 1
 						{ 
@@ -258,8 +258,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				// Invisibility & Haste
 					InInventory "HX_Acid_Eri_PINS", 2 && "HX_HastePowerUpToken", 1
 					{
-						DrawImage "HXBDSHNO", -74, 2;
-						DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
+						DrawImage "HXAEHSNO", -74, 2;
+						DrawBar "HXAEHSOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
 					}
 					else InInventory "HX_Acid_Eri_PINS", 1 && "HX_InvisibilityPowerUpToken", 1
 					{
@@ -272,13 +272,13 @@ StatusBar Fullscreen, FullscreenOffsets
 						{
 							DrawImage "HX64BLNO", -74, 38;
 							DrawBar "HX64BLOK", "HXINVOFF", HX_InvisibilityPowerUpToken, vertical, interpolate(64), -74, 38;
-							DrawImage "HXBDSHNO", -74, 2;
-							DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
+							DrawImage "HXAEHSNO", -74, 2;
+							DrawBar "HXAEHSOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
 						}
 						else InInventory "HX_HastePowerUpToken", 1
 						{
-							DrawImage "HXBDSHNO", -74, 2;
-							DrawBar "HXBDSHOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
+							DrawImage "HXAEHSNO", -74, 2;
+							DrawBar "HXAEHSOK", "HXINVOFF", HX_HastePowerUpToken, vertical, interpolate(64), -74, 2;
 						}
 						else InInventory "HX_InvisibilityPowerUpToken", 1
 						{ 
@@ -632,7 +632,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				// Quad Damage
 					InInventory "HX_QuadDamagePowerUpToken"
 					{
-						DrawImage "HXQUADT", -122, 25;	// Active timer border
+						DrawImage "HXAEQDT", -122, 25;	// Active timer border
 						DrawImage "HXSML058", -119, 29;	// Active colon character
 						DrawNumber 3, HXINDEXFONTS, untranslated, HX_QuadDamagePowerUpLongTimerToken, -101, 29;	// Time remaining
 					}
@@ -641,7 +641,7 @@ StatusBar Fullscreen, FullscreenOffsets
 					{
 						InInventory "HX_Acid_BuddhaPowerUpToken", 1
 						{
-							DrawImage "HXINVUT", -98, 25;
+							DrawImage "HXAEBDT", -98, 25;
 							DrawImage "HXSML058", -95, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_Acid_BuddhaPowerUpLongTimerToken, -77, 29;
 						}
@@ -663,13 +663,13 @@ StatusBar Fullscreen, FullscreenOffsets
 							DrawImage "HX64IVT", -98, 61;
 							DrawImage "HXSML058", -95, 65;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpLongTimerToken, -77, 65;
-							DrawImage "HXINVUT", -98, 25;
+							DrawImage "HXAEBDT", -98, 25;
 							DrawImage "HXSML058", -95, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_Acid_BuddhaPowerUpLongTimerToken, -77, 29;
 						}
 						else InInventory "HX_Acid_BuddhaPowerUpToken", 1
 						{
-							DrawImage "HXINVUT", -98, 25;
+							DrawImage "HXAEBDT", -98, 25;
 							DrawImage "HXSML058", -95, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_Acid_BuddhaPowerUpLongTimerToken, -77, 29;
 						}
@@ -685,7 +685,7 @@ StatusBar Fullscreen, FullscreenOffsets
 					{
 						InInventory "HX_HastePowerUpToken", 1
 						{
-							DrawImage "HXBDSHT", -74, 25;
+							DrawImage "HXAEHST", -74, 25;
 							DrawImage "HXSML058", -71, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpLongTimerToken, -53, 29;
 						}
@@ -707,13 +707,13 @@ StatusBar Fullscreen, FullscreenOffsets
 							DrawImage "HX64BLT", -74, 61;
 							DrawImage "HXSML058", -71, 65;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpLongTimerToken, -53, 65;
-							DrawImage "HXBDSHT", -74, 25;
+							DrawImage "HXAEHST", -74, 25;
 							DrawImage "HXSML058", -71, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpLongTimerToken, -53, 29;
 						}
 						else InInventory "HX_HastePowerUpToken", 1
 						{
-							DrawImage "HXBDSHT", -74, 25;
+							DrawImage "HXAEHST", -74, 25;
 							DrawImage "HXSML058", -71, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpLongTimerToken, -53, 29;
 						}
@@ -744,7 +744,7 @@ StatusBar Fullscreen, FullscreenOffsets
 					InInventory "HX_QuadDamagePowerUpToken"
 					{
 						DrawImage "HXBUFFT", -122, 25;	// Background panel
-						DrawImage "HXQUADT", -122, 25;	// Active timer border
+						DrawImage "HXAEQDT", -122, 25;	// Active timer border
 						DrawImage "HXSML058", -119, 29;	// Active colon character
 						DrawNumber 3, HXINDEXFONTS, untranslated, HX_QuadDamagePowerUpLongTimerToken, -101, 29;	// Time remaining
 					}
@@ -754,7 +754,7 @@ StatusBar Fullscreen, FullscreenOffsets
 						InInventory "HX_Acid_BuddhaPowerUpToken"
 						{
 							DrawImage "HXBUFFT", -98, 25;
-							DrawImage "HXINVUT", -98, 25;
+							DrawImage "HXAEBDT", -98, 25;
 							DrawImage "HXSML058", -95, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_Acid_BuddhaPowerUpLongTimerToken, -77, 29;
 						}
@@ -778,14 +778,14 @@ StatusBar Fullscreen, FullscreenOffsets
 							DrawImage "HXSML058", -95, 65;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvulnerabilityPowerUpLongTimerToken, -77, 65;
 							DrawImage "HXBUFFT", -98, 25;
-							DrawImage "HXINVUT", -98, 25;
+							DrawImage "HXAEBDT", -98, 25;
 							DrawImage "HXSML058", -95, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_Acid_BuddhaPowerUpLongTimerToken, -77, 29;
 						}
 						else InInventory "HX_Acid_BuddhaPowerUpToken", 1
 						{
 							DrawImage "HXBUFFT", -98, 25;
-							DrawImage "HXINVUT", -98, 25;
+							DrawImage "HXAEBDT", -98, 25;
 							DrawImage "HXSML058", -95, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_Acid_BuddhaPowerUpLongTimerToken, -77, 29;
 						}
@@ -803,7 +803,7 @@ StatusBar Fullscreen, FullscreenOffsets
 						InInventory "HX_HastePowerUpToken", 1
 						{
 							DrawImage "HXBUFFT", -74, 25;
-							DrawImage "HXBDSHT", -74, 25;
+							DrawImage "HXAEHST", -74, 25;
 							DrawImage "HXSML058", -71, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpLongTimerToken, -53, 29;
 						}
@@ -827,14 +827,14 @@ StatusBar Fullscreen, FullscreenOffsets
 							DrawImage "HXSML058", -71, 65;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_InvisibilityPowerUpLongTimerToken, -53, 65;
 							DrawImage "HXBUFFT", -74, 25;
-							DrawImage "HXBDSHT", -74, 25;
+							DrawImage "HXAEHST", -74, 25;
 							DrawImage "HXSML058", -71, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpLongTimerToken, -53, 29;
 						}
 						else InInventory "HX_HastePowerUpToken", 1
 						{
 							DrawImage "HXBUFFT", -74, 25;
-							DrawImage "HXBDSHT", -74, 25;
+							DrawImage "HXAEHST", -74, 25;
 							DrawImage "HXSML058", -71, 29;
 							DrawNumber 3, HXINDEXFONTS, untranslated, HX_HastePowerUpLongTimerToken, -53, 29;
 						}
@@ -1284,6 +1284,7 @@ StatusBar Fullscreen, FullscreenOffsets
 
 			// Mugshot reactive border - Invulnerability
 			InInventory "HX_InvulnerabilityPowerUpToken" { DrawImage "HXMGBFY", 2, -71; }
+			else InInventory "HX_Acid_BuddhaPowerUpToken" { DrawImage "HXMGBFY", 2, -71; }
 			else { DrawImage "HXMGBFG", 2, -71; }
 
 			// Mugshot reactive corners - Berserk
@@ -1355,6 +1356,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			
 			// Icon
 			InInventory "HXMOD_Doom64Art", 1 { DrawImage "HX64BRSK", 72, -49; }
+			InInventory "HXMOD_AcidEriguns", 1 { DrawImage "HXAEBRSK", 72, -49; }
 			else InInventory "HXMOD_BadAssBitch", 1
 			{
 				InInventory not "HXCUS_LowMotionToken", 1 { DrawImage "HXTYBR0", 72, -56; }
