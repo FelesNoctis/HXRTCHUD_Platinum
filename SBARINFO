@@ -2693,7 +2693,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo LeichenfaustAmmo
 				{
-					DrawString HXGENERALFONTS, untranslated, "PNZR", -73, -24, 0, alignment(left);
+					DrawString HXGENERALFONTS, untranslated, "1943", -73, -24, 0, alignment(left);
 					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PanzerFaustAmmo, -6, -24;
 
