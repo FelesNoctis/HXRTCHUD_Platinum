@@ -2547,7 +2547,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
 
 			InInventory "HX_ZioBW_ColtUsable", 1
-				{ DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,		horizontal, interpolate(64), -56, -84; }
+				{ DrawBar "HXAMMON", "HXAMMOFF", ammo ThompsonMag,	horizontal, interpolate(64), -56, -84; }
 			DrawBar "HXAMMON", "HXAMMOFF", ammo WolfClip,		horizontal, interpolate(64), -56, -78;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo PPSHReserve,	horizontal, interpolate(64), -56, -72;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo M1CLIP,			horizontal, interpolate(64), -56, -66;
@@ -2562,7 +2562,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, interpolate(64), -56, -12;
 
 			InInventory "HX_ZioBW_ColtUsable", 1
-				{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Clip,		-6, -84; }
+				{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo ThompsonMag,	-6, -84; }
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo WolfClip,		-6, -78;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PPSHReserve,	-6, -72;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo M1CLIP,		-6, -66;
@@ -2588,12 +2588,12 @@ StatusBar Fullscreen, FullscreenOffsets
 				else IsSelected "DoubleLuger", "MP40Akimbo"
 				{ DrawImage "HXAMMODE", -134, -33; }
 
-				WeaponAmmo Clip
+				WeaponAmmo ThompsonMag
 				{
 					InInventory "HX_ZioBW_ColtUsable", 1
 					{
 						DrawString HXGENERALFONTS, untranslated, "COLT", -73, -84, 0, alignment(left);
-						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip, -6, -84;
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo ThompsonMag, -6, -84;
 					}
 
 					IsSelected "COLT" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
@@ -2695,7 +2695,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				{
 					DrawString HXGENERALFONTS, untranslated, "1943", -73, -24, 0, alignment(left);
 					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PanzerFaustAmmo, -6, -24;
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo LeichenfaustAmmo, -6, -24;
 
 					DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 				}
