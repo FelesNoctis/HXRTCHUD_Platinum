@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.57
+
+- **Mod Updates:**
+  - ZioMcCall's Brutal Wolfenstein v6.0:
+    - Gewehr 43 support added.
+    - Leichenfaust 1943 support added.
+
 ## v0.56
 
 - **Top-Left Panels:**
