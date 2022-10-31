@@ -9,3 +9,15 @@ flat HXTYBAF0
 
 flat HXTYBR0
 	range HXTYBR5 tics 3
+
+flat HXTINF0
+	RANDOM
+	pic 1 rand 5 24
+	pic 1 rand 2 12
+	pic 2 rand 1 2
+	pic 3 rand 1 2
+	pic 4 rand 1 2
+	pic 5 rand 1 2
+	pic 6 rand 1 2
+	pic 7 rand 1 2
+	pic 8 rand 1 2

@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.60
+
+- **Mod Updates:**
+  - Brutal Doom Platinum v3.1:
+    - Haste Powerup's timer updated
+    - Haste's infinite ammo property now takes control of the Current Ammo window for its affected weapons!
+    - Railgun ammo tracking updated
+    - Unmaker Mode: Corrected missing 6-digit functionality for expanded displays
+    - Unmaker Mode: Low Motion is now implemented, locking numbers and bars
+
 ## v0.57
 
 - **Mod Updates:**

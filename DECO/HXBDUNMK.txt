@@ -8,12 +8,12 @@ ACTOR HX_BDP_UTime1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99 }
 ACTOR HX_BDP_UTime2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99 }
 ACTOR HX_BDP_UTime3: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99 }
 // Level Stats
-ACTOR HX_BDP_UKills: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
-ACTOR HX_BDP_UItems: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
-ACTOR HX_BDP_USecrets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
-ACTOR HX_BDP_UTotalMonsters: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
-ACTOR HX_BDP_UTotalItems: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
-ACTOR HX_BDP_UTotalSecrets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 99999 }
+ACTOR HX_BDP_UKills: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999999 }
+ACTOR HX_BDP_UItems: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999999 }
+ACTOR HX_BDP_USecrets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999999 }
+ACTOR HX_BDP_UTotalMonsters: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999999 }
+ACTOR HX_BDP_UTotalItems: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999999 }
+ACTOR HX_BDP_UTotalSecrets: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999999 }
 // Powerups
 ACTOR HX_BDP_UBuff1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_BDP_UBuff2: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }

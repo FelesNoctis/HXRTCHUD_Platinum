@@ -17,6 +17,7 @@ int max2 = 99;
 int max3 = 999;
 int max4 = 9999;
 int max5 = 99999;
+int max6 = 999999;
 
 // Randomized Tokens
 str timer1 = "HX_BDP_UTime1";
@@ -80,16 +81,16 @@ script "HXMOD_BDPUnmaker7ticHandler" enter
 				HX_RealityFailing(timer2, max2);
 				HX_RealityFailing(timer3, max2);
 				// Level Stats
-				if (!CheckInventory(hxsys_extendedstats))
+				if (CheckInventory(hxsys_extendedstats) == 2)
 				{
-					HX_RealityFailing(kills, max4);
-					HX_RealityFailing(items, max4);
-					HX_RealityFailing(secrets, max4);
-					HX_RealityFailing(totalmonsters, max4);
-					HX_RealityFailing(totalitems, max4);
-					HX_RealityFailing(totalsecrets, max4);
+					HX_RealityFailing(kills, max6);
+					HX_RealityFailing(items, max6);
+					HX_RealityFailing(secrets, max6);
+					HX_RealityFailing(totalmonsters, max6);
+					HX_RealityFailing(totalitems, max6);
+					HX_RealityFailing(totalsecrets, max6);
 				}
-				else
+				else if (CheckInventory(hxsys_extendedstats) == 1)
 				{
 					HX_RealityFailing(kills, max5);
 					HX_RealityFailing(items, max5);
@@ -97,6 +98,15 @@ script "HXMOD_BDPUnmaker7ticHandler" enter
 					HX_RealityFailing(totalmonsters, max5);
 					HX_RealityFailing(totalitems, max5);
 					HX_RealityFailing(totalsecrets, max5);
+				}
+				else
+				{
+					HX_RealityFailing(kills, max4);
+					HX_RealityFailing(items, max4);
+					HX_RealityFailing(secrets, max4);
+					HX_RealityFailing(totalmonsters, max4);
+					HX_RealityFailing(totalitems, max4);
+					HX_RealityFailing(totalsecrets, max4);
 				}
 				// Powerups
 				HX_RealityFailing(buff1, max3);
@@ -199,7 +209,21 @@ script "HXMOD_BDPUnmaker7ticHandler" enter
 function void HX_RealityFailing (str hxitem, int maxnum)
 {
 	int hxitemcount = CheckInventory(hxitem);
-	int randomnumber = Random (0, maxnum);
+	int randomnumber;
+
+	if (!CheckInventory(hxsys_lowmotion))
+	{
+		randomnumber = Random (0, maxnum);
+	}
+	else
+	{
+		if		(maxnum == max1) { randomnumber = 6; }
+		else if	(maxnum == max2) { randomnumber = 66; }
+		else if	(maxnum == max3) { randomnumber = 666; }
+		else if	(maxnum == max4) { randomnumber = 6666; }
+		else if	(maxnum == max5) { randomnumber = 66666; }
+		else if	(maxnum == max6) { randomnumber = 666666; }
+	}
 
 	HXS_ItemManagement(randomnumber, hxitem, hxitemcount);
 }

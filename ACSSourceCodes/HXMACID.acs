@@ -5,7 +5,7 @@
 
 str eri_buddha = "PowerEriBuddha";
 str hx_eri_buddha = "HX_Acid_BuddhaPowerUpToken";
-str hx_eri_buddhalong = "HX_Acid_BuddhaPowerUpLongTimerToken";
+str hx_eri_buddhalongtimer = "HX_Acid_BuddhaPowerUpLongTimerToken";
 str eri_haste = "EriPowerSpeed";
 str eri_infrared = "PowerEriInfrared";
 str eri_invisibility = "PowerEriBlurSphere";
@@ -57,25 +57,25 @@ script "HXS_AcidEriguns7ticHandler" enter
 		// Powerup Management Tokens
 			// Buddha
 			HXS_PowerupTimer(eri_buddha, hx_eri_buddha);
-			HXS_PowerupTimer(eri_buddha, hx_eri_buddhalong);
+			HXS_PowerupTimer(eri_buddha, hx_eri_buddhalongtimer);
 			// Haste
 			HXS_PowerupTimer(eri_haste, hxgen_haste);
-			HXS_PowerupTimer(eri_haste, hxgen_hastelong);
+			HXS_PowerupTimer(eri_haste, hxgen_hastelongtimer);
 			// Infrared
 			HXS_PowerupTimer(eri_infrared, hxgen_infrared);
-			HXS_PowerupTimer(eri_infrared, hxgen_infraredlong);
+			HXS_PowerupTimer(eri_infrared, hxgen_infraredlongtimer);
 			// Invisibility
 			HXS_PowerupTimer(eri_invisibility, hxgen_invisibility);
-			HXS_PowerupTimer(eri_invisibility, hxgen_invisibilitylong);
+			HXS_PowerupTimer(eri_invisibility, hxgen_invisibilitylongtimer);
 			// Invulnerability
 			HXS_PowerupTimer(eri_invulnerability, hxgen_invulnerability);
-			HXS_PowerupTimer(eri_invulnerability, hxgen_invulnerabilitylong);
+			HXS_PowerupTimer(eri_invulnerability, hxgen_invulnerabilitylongtimer);
 			// Quad Damage
 			HXS_PowerupTimer(eri_quaddamage, hxgen_quaddamage);
-			HXS_PowerupTimer(eri_quaddamage, hxgen_quaddamagelong);
+			HXS_PowerupTimer(eri_quaddamage, hxgen_quaddamagelongtimer);
 			// Radsuit
 			HXS_PowerupTimer(eri_radsuit, hxgen_radsuit);
-			HXS_PowerupTimer(eri_radsuit, hxgen_radsuitlong);
+			HXS_PowerupTimer(eri_radsuit, hxgen_radsuitlongtimer);
 
 		// Powerup Display Toggles
 			// Berserk & Quad Damage

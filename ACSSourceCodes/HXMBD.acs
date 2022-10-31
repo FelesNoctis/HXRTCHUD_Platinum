@@ -83,7 +83,7 @@ script "HXS_BrutalDoom7ticHandler" enter
 			if (CheckInventory(bditemtactical)) { HXS_StamFlip(CheckInventory(bdstamina), hxbd_staminatoken, bdstaminamax); }
 		// Powerup Management Tokens
 			// Haste (BDP)
-			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_PowerupTimer(bdhaste, hxgen_haste); }
+			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_PowerupTimer(bdhaste, hxgen_hasteshort); }
 			// Infrared
 			HXS_PowerupTimer(bdinfrared, hxgen_infrared);
 			// Invisibility

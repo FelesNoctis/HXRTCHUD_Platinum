@@ -31,6 +31,7 @@ ACTOR HXMOD_WeaponOnlyAmmo1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmo
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
 ACTOR HX_HastePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_HastePowerUpShortToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
 ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
 ACTOR HX_InfraredPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
 ACTOR HX_InvisibilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
