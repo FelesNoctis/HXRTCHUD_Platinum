@@ -1571,7 +1571,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -24, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -18, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+			InInventory "GrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+			else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 			DrawBar "HXAMMON", "HXAMMOFF", ammo Clip,			horizontal, interpolate(64), -56, -36;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,			horizontal, interpolate(64), -56, -30;
@@ -1583,7 +1584,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Shell,			-6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,	-6, -24;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Cell,			-6, -18;
-			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+			InInventory "GrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo, -6, -12; }
+			else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GrenadeAmmo, -6, -12; }
 
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
@@ -1874,7 +1876,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -30, 0, alignment(left);
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -24, 0, alignment(left);
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -18, 0, alignment(left);
-				DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+				InInventory "GrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+				else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 				DrawBar "HXAMMON", "HXAMMOFF", ammo RifleAmmo,		horizontal, interpolate(64), -56, -36;
 				DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,			horizontal, interpolate(64), -56, -30;
@@ -1886,7 +1889,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Shell,			-6, -30;
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,	-6, -24;
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PlasmaAmmo,	-6, -18;
-				DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+				InInventory "GrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo, -6, -12; }
+				else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GrenadeAmmo, -6, -12; }
 
 				// Ammo Tally highlight and Current Ammo equipped by type
 				UsesAmmo
@@ -1986,7 +1990,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -30, 0, alignment(left);
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -24, 0, alignment(left);
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAK", -73, -18, 0, alignment(left);
-				DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+				InInventory "GrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+				else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 				DrawBar "HXAMMON", "HXAMMOFF", ammo RifleAmmo,		horizontal, interpolate(64), -56, -42;
 				DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,			horizontal, interpolate(64), -56, -36;
@@ -2000,7 +2005,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,	-6, -30;
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PlasmaAmmo,	-6, -24;
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo FlakAmmo,		-6, -18;
-				DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+				InInventory "GrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo, -6, -12; }
+				else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GrenadeAmmo, -6, -12; }
 
 				// Ammo Tally highlight and Current Ammo equipped by type
 				UsesAmmo
@@ -2712,8 +2718,10 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -36, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"PNZR", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"1943", -73, -24, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCGold,			"AXES", -73, -18, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+			InInventory "AxeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"AXES", -73, -18, 0, alignment(left); }
+			else						{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"AXES", -73, -18, 0, alignment(left); }
+			InInventory "GrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+			else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 			InInventory "HX_ZioBW_ColtUsable", 1
 				{ DrawBar "HXAMMON", "HXAMMOFF", ammo ThompsonMag,	horizontal, interpolate(64), -56, -84; }
@@ -2742,8 +2750,10 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GAS,			-6, -36;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PanzerFaustAmmo,	-6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo LeichenfaustAmmo,	-6, -24;
-			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo AxeAmmo,		-6, -18;
-			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+			InInventory "AxeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo AxeAmmo,		-6, -18; }
+			else 						{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo AxeAmmo,		-6, -18; }
+			InInventory "GrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12; }
+			else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GrenadeAmmo,	-6, -12; }
 
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
@@ -3043,7 +3053,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SOUL", -73, -30, 0, alignment(left);
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"HELL", -73, -24, 0, alignment(left);
 				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -18, 0, alignment(left);
-				DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+				InInventory "GrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+				else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 				// Brutal Doom CE
 				InInventory AmmoMagnum || AmmoSlug
@@ -3087,7 +3098,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo SoulAmmo,				-6, -30;
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MiniHellRocketAmmo,	-6, -24;
 				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Gas,					-6, -18;
-				DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,			-6, -12;
+				InInventory "GrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo, -6, -12; }
+				else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GrenadeAmmo, -6, -12; }
 
 				// Ammo Tally highlight and Current Ammo equipped by type
 				UsesAmmo
@@ -3490,7 +3502,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				else InInventory not ClassicUnmaker || ClassicMP40
 				{	InInventory not Flamethrower2	{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "????", -73, -18, 0, alignment(left); }
 					else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "FLAM", -73, -18, 0, alignment(left); } }
-				DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+				InInventory "GrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+				else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 				// Clip and Mauser
 				InInventory ClassicUnmaker || ClassicMP40
@@ -3526,7 +3539,8 @@ StatusBar Fullscreen, FullscreenOffsets
 				else InInventory not ClassicUnmaker || ClassicMP40
 				{	InInventory not Flamethrower2	{ DrawString HXGENERALFONTS, HXRTCDarkGrey, "?", -6, -18; }
 					else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo Gas, -6, -18; } }
-				DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12;
+				InInventory "GrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo,	-6, -12; }
+				else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GrenadeAmmo,	-6, -12; }
 
 				// Ammo Tally highlight and Current Ammo equipped by type
 				UsesAmmo
@@ -4488,7 +4502,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"NATO", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -24, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -18, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+			InInventory "HandGrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+			else								{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 			DrawBar "HXAMMON", "HXAMMOFF", ammo RifleAmmo,			horizontal, interpolate(64), -56, -42;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,				horizontal, interpolate(64), -56, -36;
@@ -4502,7 +4517,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Nato,				-6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,		-6, -24;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Cell,				-6, -18;
-			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo HandGrenadeAmmo,	-6, -12;
+			InInventory "HandGrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo HandGrenadeAmmo, -6, -12; }
+			else								{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HandGrenadeAmmo, -6, -12; }
 
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
@@ -4628,8 +4644,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"EXPL", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -24, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"BATT", -73, -18, 0, alignment(left);
-			InInventory "BOGR1", 1 { DrawString HXGENERALFONTS, HXRTCGold, "GREN", -73, -12, 0, alignment(left); }
-			else { DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "GREN", -73, -12, 0, alignment(left); }
+			InInventory "BOGR1", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+			else					{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 			DrawBar "HXAMMON", "HXAMMOFF", ammo BOCL1, horizontal, interpolate(64), -56, -48;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo BOSH1, horizontal, interpolate(64), -56, -42;
@@ -4645,8 +4661,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOEX1, -6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOCE1, -6, -24;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOBT1, -6, -18;
-			InInventory "BOGR1", 1 { DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo BOGR1, -6, -12; }
-			else { DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo BOGR1, -6, -12; }
+			InInventory "BOGR1", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo BOGR1, -6, -12; }
+			else					{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo BOGR1, -6, -12; }
 
 			// Ammo Tally highlight
 			UsesAmmo
@@ -4856,8 +4872,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"8x33", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"1392", -73, -24, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"12PN", -73, -18, 0, alignment(left);
-			InInventory "K2AmmoGR1", 1 { DrawString HXGENERALFONTS, HXRTCGold, "GREN", -73, -12, 0, alignment(left); }
-			else { DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "GREN", -73, -12, 0, alignment(left); }
+			InInventory "K2AmmoGR1", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+			else						{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 			DrawBar "HXAMMON", "HXAMMOFF", ammo K2AmmoCL1,	horizontal, interpolate(64), -56, -36;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo K2AmmoMG1,	horizontal, interpolate(64), -56, -30;
@@ -4869,8 +4885,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo K2AmmoMG1, -6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo K2AmmoHV1, -6, -24;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo K2AmmoSH1, -6, -18;
-			InInventory "K2AmmoGR1", 1 { DrawNumber 4, HXINDEXFONTS, HXRTCGold, ammo K2AmmoGR1, -6, -12; }
-			else { DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo K2AmmoGR1, -6, -12; }
+			InInventory "K2AmmoGR1", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo K2AmmoGR1, -6, -12; }
+			else						{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo K2AmmoGR1, -6, -12; }
 
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
@@ -5705,7 +5721,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MINI", -73, -24, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -18, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left);
+			InInventory "GrenadePickup", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+			else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_9mmAmmo,		horizontal, interpolate(64), -56, -84;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo HX_NazisV2_357Ammo,		horizontal, interpolate(64), -56, -78;
@@ -5733,7 +5750,8 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo FlameAmmo,					-6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo NebAmmo,					-6, -24;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PanzerAmmo,				-6, -18;
-			DrawNumber 4, HXINDEXFONTS, HXRTCGold,		GrenadePickup,					-6, -12;
+			InInventory "GrenadePickup", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		GrenadePickup, -6, -12; }
+			else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	GrenadePickup, -6, -12; }
 
 			// Weapon Slot 2
 			InInventory "Luger9mm"
