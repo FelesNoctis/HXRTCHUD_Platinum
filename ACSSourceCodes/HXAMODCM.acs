@@ -22,6 +22,8 @@ str hxmod_kriegsland1 = "HXMOD_Kriegsland1";
 str hxmod_kriegsland2 = "HXMOD_Kriegsland2";
 str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
 str hxmod_lttyphon = "HXMOD_BadAssBitch";
+str hxmod_meatgrinder = "HXMOD_Meatgrinder";
+str hxmod_meatgrindermre = "HXMOD_Meatgrinder_MRE";
 str hxmod_nazisv2 = "HXMOD_NazisV2";
 str hxmod_omniwolf = "HXMOD_OmniWolf";
 str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
@@ -160,6 +162,10 @@ str ledminigunmag = "MinigunMag";
 str typhonclass = "VeteranDoomPlayer";
 str typhonbio = "VeteranBioAttack";
 str typhondumbbell = "VeteranDumbbell";
+
+// Meatgrinder
+str meatgrinderfist = "GrinderFist";
+str meatgrindergrenade = "GrenadeAmmo";
 
 // NAZIS V2
 str nazisv2class = "WWNazisPlayer";
@@ -374,6 +380,15 @@ script "HXS_ModCompatibilityStartup" enter
 		{
 			GiveInventory(hxmod_modfound, 1);
 			GiveInventory(hxmod_lttyphon, 1);
+			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+		}
+	// Meatgrinder
+		else if (CheckInventory(meatgrinderfist)
+			&& !CheckInventory(hxmod_meatgrinder))
+		{
+			GiveInventory(hxmod_modfound, 1);
+			GiveInventory(hxmod_meatgrinder, 1);
+			if (CheckInventory(meatgrindergrenade)) { GiveInventory(hxmod_meatgrindermre, 1); }
 			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 		}
 	// NAZIS V2

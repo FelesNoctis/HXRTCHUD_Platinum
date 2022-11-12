@@ -5350,6 +5350,315 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
 			}
 		}
+		/*	Meatgrinder v2
+		*	Meatgrinder v3 MrChoriCheese Edition Update 1
+		*
+		*/
+		else InInventory "HXMOD_Meatgrinder", 1
+		{
+		// AMMO TALLIES PANEL - Meatgrinder
+			InInventory "HXMOD_Meatgrinder_MRE", 1
+			{	DrawImage "HXAMMTOP", -78, -53;
+				DrawImage "HXAMMROW", -78, -43;
+				DrawImage "HXAMMROW", -78, -37;
+				DrawImage "HXAMMROW", -78, -31;}
+			else
+			{	DrawImage "HXAMMTOP", -78, -35; }
+			DrawImage "HXAMMROW", -78, -25;
+			DrawImage "HXAMMROW", -78, -19;
+			DrawImage "HXAMMBOT", -78, -13;
+
+			InInventory "HXMOD_Meatgrinder_MRE", 1
+			{
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -48, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"HEVY", -73, -42, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -36, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -30, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -24, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -18, 0, alignment(left);
+				InInventory "GrenadeAmmo", 1	{ DrawString HXGENERALFONTS, HXRTCGold,			"GREN", -73, -12, 0, alignment(left); }
+				else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
+
+				DrawBar "HXAMMON", "HXAMMOFF", ammo NormalClip,		horizontal, interpolate(64), -56, -48;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo HeavyClip,		horizontal, interpolate(64), -56, -42;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,			horizontal, interpolate(64), -56, -36;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo NewRocketAmmo,	horizontal, interpolate(64), -56, -30;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Gasoline,		horizontal, interpolate(64), -56, -24;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo NormalCell,		horizontal, interpolate(64), -56, -18;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, interpolate(64), -56, -12;
+
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo NormalClip,	-6, -48;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo HeavyClip,		-6, -42;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Shell,			-6, -36;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo NewRocketAmmo,	-6, -30;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Gasoline,		-6, -24;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo NormalCell,	-6, -18;
+				InInventory "GrenadeAmmo", 1	{ DrawNumber 4, HXINDEXFONTS, HXRTCGold,		ammo GrenadeAmmo, -6, -12; }
+				else							{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GrenadeAmmo, -6, -12; }
+			}
+			else
+			{
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CLIP", -73, -30, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -24, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"ROCK", -73, -18, 0, alignment(left);
+				DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"CELL", -73, -12, 0, alignment(left);
+
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Clip2,		horizontal, interpolate(64), -56, -30;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Shell,		horizontal, interpolate(64), -56, -24;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo RocketAmmo,	horizontal, interpolate(64), -56, -18;
+				DrawBar "HXAMMON", "HXAMMOFF", ammo Cell,		horizontal, interpolate(64), -56, -12;
+
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Clip2,			-6, -30;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Shell,			-6, -24;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo RocketAmmo,	-6, -18;
+				DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo Cell,			-6, -12;
+			}
+
+			// Ammo Tally highlight
+			UsesAmmo
+			{
+				InInventory "HXMOD_Meatgrinder_MRE", 1
+				{ 
+					WeaponAmmo NormalClip
+					{
+						DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -48, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo NormalClip, -6, -48;
+					}
+					WeaponAmmo HeavyClip
+					{
+						DrawString HXGENERALFONTS, untranslated, "HEVY", -73, -42, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo HeavyClip, -6, -42;
+					}
+					WeaponAmmo Shell
+					{
+						DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -36, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -36;
+					}
+					WeaponAmmo NewRocketAmmo
+					{
+						DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo NewRocketAmmo, -6, -30;
+					}
+					WeaponAmmo Gasoline
+					{
+						DrawString HXGENERALFONTS, untranslated, "FLAM", -73, -24, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Gasoline, -6, -24;
+					}
+					WeaponAmmo NormalCell
+					{
+						DrawString HXGENERALFONTS, untranslated, "CELL", -73, -18, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo NormalCell, -6, -18;
+					}
+				}
+				else
+				{ 
+					WeaponAmmo Clip2
+					{
+						DrawString HXGENERALFONTS, untranslated, "CLIP", -73, -30, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Clip2, -6, -30;
+					}
+					WeaponAmmo Shell
+					{
+						DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -24, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Shell, -6, -24;
+					}
+					WeaponAmmo RocketAmmo
+					{
+						DrawString HXGENERALFONTS, untranslated, "ROCK", -73, -18, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo RocketAmmo, -6, -18;
+					}
+					WeaponAmmo Cell
+					{
+						DrawString HXGENERALFONTS, untranslated, "CELL", -73, -12, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo Cell, -6, -12;
+					}
+				}
+			}
+			// Current Ammo equipped by type
+			UsesAmmo
+			{
+				IsSelected not "BestMachinegun"
+				{
+					DrawImage "HXAMMO", -134, -33;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+				}
+
+				WeaponAmmo NormalClip
+				{
+					IsSelected "CombatPistol" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
+					else IsSelected "CombatPistolSilenced" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
+					else IsSelected "UACSmg" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 30; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
+				}
+				WeaponAmmo Clip2
+				{
+					IsSelected "Machinegun" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+					else IsSelected "ChaingunCannon" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+				}
+				WeaponAmmo HeavyClip
+				{
+					IsSelected not "BestMachinegun"
+					{
+						IsSelected "Machinegun" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+						else IsSelected "ChaingunCannon" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+						else IsSelected "Sniper" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 25; }
+					}
+				}
+				WeaponAmmo Shell
+				{
+					IsSelected "NewShotgun" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+					else IsSelected "AutoShotgun" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+					else IsSelected "SSG" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+				}
+				WeaponAmmo RocketAmmo
+				{
+					IsSelected "MultiRocketLauncher" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+				}
+				WeaponAmmo NewRocketAmmo
+				{
+					IsSelected not "BestMachinegun"
+					{
+						IsSelected "MultiRocketLauncher" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+						else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
+					}
+				}
+				WeaponAmmo Gasoline
+ 				{
+					IsSelected "FatsoCannon" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else IsSelected "Flamethrower" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+				}
+				WeaponAmmo Cell
+				{
+					IsSelected "PlasmaThrower" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else IsSelected "BFG9K" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 80; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+				}
+				WeaponAmmo NormalCell
+				{
+					IsSelected "PlasmaThrower" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else IsSelected "BFG9K" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 80; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+				}
+				IsSelected "BestMachinegun"
+				{
+					DrawImage "HXAMMODW", -154, -33;
+					// Left Ammo
+						DrawBar "HXAMDLOK", "HXAMDUNO", ammo HeavyClip, vertical, interpolate(64), -150, -28;
+						DrawNumber 3, HXSTATUSFONT, untranslated, ammo HeavyClip, interpolate(128), -118, -29, 0, HXRTCRed, 50;
+					// Right Ammo
+						DrawBar "HXAMDROK", "HXAMDUNO", ammo NewRocketAmmo, vertical, interpolate(64), -87, -28;
+						DrawNumber 3, HXSTATUSFONT, untranslated, ammo NewRocketAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 5;
+				}
+			}
+			else
+			{
+				// Ammoless
+				DrawImage "HXNOAVAI", -134, -33;
+			}
+		// ARMS & KEYS BARS - Meatgrinder
+			// Keys
+			InInventory "HXMOD_Meatgrinder_MRE", 1
+			{
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -97;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -15, -79, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -79;
+						drawkeybar 6, horizontal, reverse, auto, -14, -78, 0, 6, auto;
+					}
+				}
+				else 
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -84;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -15, -66, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -66;
+						drawkeybar 6, horizontal, reverse, auto, -14, -65, 0, 6, auto;
+					}
+				}
+			}
+			else
+			{
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -79;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -59, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -61;
+						drawkeybar 6, horizontal, reverse, auto, -12, -58, 0, 6, auto;
+					}
+				}
+				else 
+				{
+					InInventory "HXCUS_KeysExtendedToken", 1
+					{
+						DrawImage "HXKEYSE", -90, -66;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -46, 0, 8, 8;
+					}
+					else
+					{
+						DrawImage "HXKEYS", -90, -48;
+						drawkeybar 6, horizontal, reverse, auto, -12, -45, 0, 6, auto;
+					}
+				}
+			}
+			// Arms
+			InInventory "HXMOD_Meatgrinder_MRE", 1
+			{
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					DrawImage "HXARMS", -90, -66;
+
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -62;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -62;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -62;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -62;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -62;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -62;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -62;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -62;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -62;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -62;
+				}
+			}
+			else
+			{
+				InInventory "HXCUS_ArmsBarToken", 1
+				{
+					DrawImage "HXARMS", -90, -48;
+
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -44;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -44;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -44;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -44;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -44;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -44;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -44;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -44;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -44;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
+				}
+			}
+		}
 		/*	NAZIS V2
 		*
 		*/
@@ -6154,6 +6463,9 @@ StatusBar Fullscreen, FullscreenOffsets
 	// CURRENT WEAPON ICON PANEL
 		InInventory "HXCUS_WeaponIconToken", 1
 		{
+			/*	Brutal Doom 64
+			*
+			*/
 			InInventory "HXMOD_BrutalDoom64", 1
 			{
 				DrawImage "HXWEAPON", -134, -53;
@@ -6295,6 +6607,16 @@ StatusBar Fullscreen, FullscreenOffsets
 			{
 				DrawImage "HXWEAPON", -122, -53;
 				DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst;
+			}
+			/*	Faspons
+			*
+			*/
+			else InInventory "HXMOD_Meatgrinder_MRE", 1
+			{
+				DrawImage "HXWEAPON", -122, -53;
+
+				IsSelected "GrinderFist" { DrawImage "FSTZA0", -100, -43, center, 36, 12; }
+				else { DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst; }
 			}
 			/*	NAZIS V2
 			*
