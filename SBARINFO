@@ -6626,7 +6626,7 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawImage "HXWEAPON", -122, -53;
 				DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst;
 			}
-			/*	Faspons
+			/*	Meatgrinder v3
 			*
 			*/
 			else InInventory "HXMOD_Meatgrinder_MRE", 1
