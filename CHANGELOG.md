@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.61
+
+- **Bottom-Right Panels:**
+  - **Ammo Tally** display of throwables will now fade to grey when the player is out of ammo for the throwable item, instead of staying orange.
+
+- **Mod Support:**
+  - Meatgrinder v2-C
+  - Meatgrinder MrChoriCheeseEdition update 1
+
 ## v0.60
 
 - **Mod Updates:**

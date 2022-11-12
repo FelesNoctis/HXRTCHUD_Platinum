@@ -5586,12 +5586,12 @@ StatusBar Fullscreen, FullscreenOffsets
 					InInventory "HXCUS_KeysExtendedToken", 1
 					{
 						DrawImage "HXKEYSE", -90, -97;
-						drawkeybar 24, horizontal, reverse, reverserows, auto, -15, -79, 0, 8, 8;
+						drawkeybar 14, horizontal, reverse, reverserows, auto, -14, -80, 0, 7, 13;
 					}
 					else
 					{
 						DrawImage "HXKEYS", -90, -79;
-						drawkeybar 6, horizontal, reverse, auto, -14, -78, 0, 6, auto;
+						drawkeybar 6, horizontal, reverse, auto, -13, -78, 0, 6, auto;
 					}
 				}
 				else 
@@ -5599,12 +5599,12 @@ StatusBar Fullscreen, FullscreenOffsets
 					InInventory "HXCUS_KeysExtendedToken", 1
 					{
 						DrawImage "HXKEYSE", -90, -84;
-						drawkeybar 24, horizontal, reverse, reverserows, auto, -15, -66, 0, 8, 8;
+						drawkeybar 14, horizontal, reverse, reverserows, auto, -14, -67, 0, 7, 13;
 					}
 					else
 					{
 						DrawImage "HXKEYS", -90, -66;
-						drawkeybar 6, horizontal, reverse, auto, -14, -65, 0, 6, auto;
+						drawkeybar 6, horizontal, reverse, auto, -13, -65, 0, 6, auto;
 					}
 				}
 			}
