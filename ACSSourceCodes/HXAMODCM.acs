@@ -2,194 +2,203 @@
 #include "zcommon.acs"
 
 // Mod Master Tokens
-str hxmod_none = "HXMOD_VANILLA";
-str hxmod_resettoken = "HXMOD_IDontExist";
-str hxmod_modfound = "HXMOD_MODFOUND";
-str hxmod_64art = "HXMOD_Doom64Art";
-str hxmod_acideriguns = "HXMOD_AcidEriguns";
-str hxmod_bdlite = "HXMOD_BDLite";
-str hxmod_beautifuldoom = "HXMOD_BeautifulDoom";
-str hxmod_brutaldoom = "HXMOD_BrutalDoom";
-str hxmod_brutaldoom64 = "HXMOD_BrutalDoom64";
-str hxmod_brutaldoomce = "HXMOD_BrutalDoomBWCE";
-str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
-str hxmod_CED64 = "HXMOD_DoomCE_D64";
-str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
-str hxmod_D4V = "HXMOD_Doom4Vanilla";
-str hxmod_D64RTR = "HXMOD_Doom64RTR";
-str hxmod_faspons = "HXMOD_Faspons";
-str hxmod_kriegsland1 = "HXMOD_Kriegsland1";
-str hxmod_kriegsland2 = "HXMOD_Kriegsland2";
-str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
-str hxmod_lttyphon = "HXMOD_BadAssBitch";
-str hxmod_meatgrinder = "HXMOD_Meatgrinder";
-str hxmod_meatgrindermre = "HXMOD_Meatgrinder_MRE";
-str hxmod_nazisv2 = "HXMOD_NazisV2";
-str hxmod_omniwolf = "HXMOD_OmniWolf";
-str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
-str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
-str hxmod_supercharge = "HXMOD_Supercharge";
-str hxmod_ziobrutalwolf = "HXMOD_ZioBrutalWolfenstein";
+	#libdefine hxmod_none "HXMOD_VANILLA"
+	#libdefine hxmod_resettoken "HXMOD_IDontExist"
+	#libdefine hxmod_modfound "HXMOD_MODFOUND"
+	#libdefine hxmod_64art "HXMOD_Doom64Art"
+	#libdefine hxmod_acideriguns "HXMOD_AcidEriguns"
+	#libdefine hxmod_bdlite "HXMOD_BDLite"
+	#libdefine hxmod_beautifuldoom "HXMOD_BeautifulDoom"
+	#libdefine hxmod_brutaldoom "HXMOD_BrutalDoom"
+	#libdefine hxmod_brutaldoom64 "HXMOD_BrutalDoom64"
+	#libdefine hxmod_brutaldoomce "HXMOD_BrutalDoomBWCE"
+	#libdefine hxmod_brutaldoomplat "HXMOD_BrutalDoomPlatinum"
+	#libdefine hxmod_CED64 "HXMOD_DoomCE_D64"
+	#libdefine hxmod_CEPSX "HXMOD_DoomCE_PSX"
+	#libdefine hxmod_combinedarms "HXMOD_CombinedArms"
+	#libdefine hxmod_combinedarmsgaiden "HXMOD_CombinedArmsGaiden"
+	#libdefine hxmod_D4V "HXMOD_Doom4Vanilla"
+	#libdefine hxmod_D64RTR "HXMOD_Doom64RTR"
+	#libdefine hxmod_faspons "HXMOD_Faspons"
+	#libdefine hxmod_kriegsland1 "HXMOD_Kriegsland1"
+	#libdefine hxmod_kriegsland2 "HXMOD_Kriegsland2"
+	#libdefine hxmod_ledgwmtoken "HXMOD_LedsGenericWeaponMod"
+	#libdefine hxmod_lttyphon "HXMOD_BadAssBitch"
+	#libdefine hxmod_meatgrinder "HXMOD_Meatgrinder"
+	#libdefine hxmod_meatgrindermre "HXMOD_Meatgrinder_MRE"
+	#libdefine hxmod_nazisv2 "HXMOD_NazisV2"
+	#libdefine hxmod_omniwolf "HXMOD_OmniWolf"
+	#libdefine hxmod_perksmoothenh "HXMOD_PerkSmootherWeaponsEnh"
+	#libdefine hxmod_smoothdoom "HXMOD_SmoothDoom2"
+	#libdefine hxmod_supercharge "HXMOD_Supercharge"
+	#libdefine hxmod_ziobrutalwolf "HXMOD_ZioBrutalWolfenstein"
 
 // HUD Mode Switch
-str hxsys_lowmotion = "HXCUS_LowMotionToken";
-str hxsys_normalhudkiller = "HXSYS_NormalHUDKillerToken";
-str hxsys_transformhud = "HXSYS_TransformationHUDToken";
-str hxsys_vehiclehud = "HXSYS_VehicleHUDToken";
+	#libdefine hxsys_lowmotion "HXCUS_LowMotionToken"
+	#libdefine hxsys_normalhudkiller "HXSYS_NormalHUDKillerToken"
+	#libdefine hxsys_transformhud "HXSYS_TransformationHUDToken"
+	#libdefine hxsys_vehiclehud "HXSYS_VehicleHUDToken"
 
 // Functionality Overrides
-str hxmod_weapondualwielduniqueammo = "HXMOD_WeaponDualWieldUniqueAmmo";
-str hxmod_weapononlyammo1 = "HXMOD_WeaponOnlyAmmo1";
+	#libdefine hxmod_weapondualwielduniqueammo "HXMOD_WeaponDualWieldUniqueAmmo"
+	#libdefine hxmod_weapononlyammo1 "HXMOD_WeaponOnlyAmmo1"
 
 // General Items
-str vanillaberserk = "PowerStrength";
-str hxgen_berserk = "HX_BerserkPowerUpToken";
-str hxgen_haste = "HX_HastePowerUpToken";
-str hxgen_hasteshort = "HX_HastePowerUpShortToken";
-str hxgen_hastelongtimer = "HX_HastePowerUpLongTimerToken";
-str vanillainfrared = "PowerLightamp";
-str hxgen_infrared = "HX_InfraredPowerUpToken";
-str hxgen_infraredlongtimer = "HX_InfraredPowerUpLongTimerToken";
-str vanillainvisibility = "PowerInvisibility";
-str hxgen_invisibility = "HX_InvisibilityPowerUpToken";
-str hxgen_invisibilitylongtimer = "HX_InvisibilityPowerUpLongTimerToken";
-str vanillainvulnerability = "PowerInvulnerable";
-str hxgen_invulnerability = "HX_InvulnerabilityPowerUpToken";
-str hxgen_invulnerabilitylongtimer = "HX_InvulnerabilityPowerUpLongTimerToken";
-str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
-str hxgen_quaddamagelongtimer = "HX_QuadDamagePowerUpLongTimerToken";
-str vanillaradsuit = "PowerIronfeet";
-str hxgen_radsuit = "HX_RadSuitPowerUpToken";
-str hxgen_radsuitlongtimer = "HX_RadSuitPowerUpLongTimerToken";
-/* str vanillabluecard = "BlueCard";
-str hxgen_bluecard = "HX_BlueCardKeyToken";
-str vanillablueskull = "BlueSkull";
-str hxgen_blueskull = "HX_BlueSkullKeyToken";
-str vanillaredcard = "RedCard";
-str hxgen_redcard = "HX_RedCardKeyToken";
-str vanillaredskull = "RedSkull";
-str hxgen_redskull = "HX_RedSkullKeyToken";
-str vanillayellowcard = "YellowCard";
-str hxgen_yellowcard = "HX_YellowCardKeyToken";
-str vanillayellowskull = "YellowSkull";
-str hxgen_yellowskull = "HX_YellowSkullKeyToken"; */
+	#libdefine vanillaberserk "Power#libdefineength"
+	#libdefine hxgen_berserk "HX_BerserkPowerUpToken"
+	#libdefine hxgen_haste "HX_HastePowerUpToken"
+	#libdefine hxgen_hasteshort "HX_HastePowerUpShortToken"
+	#libdefine hxgen_hastelongtimer "HX_HastePowerUpLongTimerToken"
+	#libdefine vanillainfrared "PowerLightamp"
+	#libdefine hxgen_infrared "HX_InfraredPowerUpToken"
+	#libdefine hxgen_infraredlongtimer "HX_InfraredPowerUpLongTimerToken"
+	#libdefine vanillainvisibility "PowerInvisibility"
+	#libdefine hxgen_invisibility "HX_InvisibilityPowerUpToken"
+	#libdefine hxgen_invisibilitylongtimer "HX_InvisibilityPowerUpLongTimerToken"
+	#libdefine vanillainvulnerability "PowerInvulnerable"
+	#libdefine hxgen_invulnerability "HX_InvulnerabilityPowerUpToken"
+	#libdefine hxgen_invulnerabilitylongtimer "HX_InvulnerabilityPowerUpLongTimerToken"
+	#libdefine hxgen_quaddamage "HX_QuadDamagePowerUpToken"
+	#libdefine hxgen_quaddamagelongtimer "HX_QuadDamagePowerUpLongTimerToken"
+	#libdefine vanillaradsuit "PowerIronfeet"
+	#libdefine hxgen_radsuit "HX_RadSuitPowerUpToken"
+	#libdefine hxgen_radsuitlongtimer "HX_RadSuitPowerUpLongTimerToken"
+	/* #libdefine vanillabluecard "BlueCard"
+	#libdefine hxgen_bluecard "HX_BlueCardKeyToken"
+	#libdefine vanillablueskull "BlueSkull"
+	#libdefine hxgen_blueskull "HX_BlueSkullKeyToken"
+	#libdefine vanillaredcard "RedCard"
+	#libdefine hxgen_redcard "HX_RedCardKeyToken"
+	#libdefine vanillaredskull "RedSkull"
+	#libdefine hxgen_redskull "HX_RedSkullKeyToken"
+	#libdefine vanillayellowcard "YellowCard"
+	#libdefine hxgen_yellowcard "HX_YellowCardKeyToken"
+	#libdefine vanillayellowskull "YellowSkull"
+	#libdefine hxgen_yellowskull "HX_YellowSkullKeyToken" */
 
 // Ac!d's Eriguns
-str acidclass = "EriPlayer";
-str acidfist = "EriFist";
-str acidpistol = "EriPistol";
+	#libdefine acidclass "EriPlayer"
+	#libdefine acidfist "EriFist"
+	#libdefine acidpistol "EriPistol"
 
 // Beautiful Doom
-str beautifulbloodcontrol = "BD_BloodyPrintControl";
-str beautifuloverlaycontrol = "BD_OverlayControl";
-str beautifulweaponcontrol = "BD_WeaponPickupControl";
+	#libdefine beautifulbloodcontrol "BD_BloodyPrintControl"
+	#libdefine beautifuloverlaycontrol "BD_OverlayControl"
+	#libdefine beautifulweaponcontrol "BD_WeaponPickupControl"
 
 // BDLite
-str bdliteclass = "Doomer";
-str bdlitefist = "BdMeleeAttacks";
-str bdliterifle = "BdRifle";
+	#libdefine bdliteclass "Doomer"
+	#libdefine bdlitefist "BdMeleeAttacks"
+	#libdefine bdliterifle "BdRifle"
 
 // Brutal Doom General
-str bdgenplayer = "IsPlayer";
-str bditemnottactical = "IsNOTTacticalClass";
-str bditempurist = "IsPlayingAsPurist";
-str bditemtactical = "IsTacticalClass";
-/* str bdclassarcadedoomer = "Arcade Rifle (No Reload)";
-str bdclassarcadedoomer2 = "Arcade Pistol (No Reload)";
-str bdclassarcadedoomer3 = "Arcade Shotgun (No Reload)";
-str bdclassbdoomer = "BDoomer";
-str bdclassdoomer2 = "Doomer2";
-str bdclassdoomer3 = "Shotgun Start"; */
+	#libdefine bdgenplayer "IsPlayer"
+	#libdefine bditemnottactical "IsNOTTacticalClass"
+	#libdefine bditempurist "IsPlayingAsPurist"
+	#libdefine bditemtactical "IsTacticalClass"
+	/* #libdefine bdclassarcadedoomer "Arcade Rifle (No Reload)"
+	#libdefine bdclassarcadedoomer2 "Arcade Pistol (No Reload)"
+	#libdefine bdclassarcadedoomer3 "Arcade Shotgun (No Reload)"
+	#libdefine bdclassbdoomer "BDoomer"
+	#libdefine bdclassdoomer2 "Doomer2"
+	#libdefine bdclassdoomer3 "Shotgun Start" */
 
 // Brutal Doom Platinum
-str bdplattotallyamenudummy = "IsNOTAMenuDummy";
+	#libdefine bdplattotallyamenudummy "IsNOTAMenuDummy"
 
 // Brutal Doom 64
-str bd64classbasic = "64DoomPlayer";
-str bd64classmodern = "Modern";
-str bd64classtactical = "Tactical64DoomPlayer";
-str bd64classtacticalpistol = "Tactical64DoomPlayer_P";
-str bd64fist = "64Fist";
-str bd64fisttactical = "64FistTactical";
-str bd64pistol = "64Pistol";
-str bd64pistoltactical = "64PistolTactical";
-str bd64rifletactical = "64RifleTactical";
+	#libdefine bd64classbasic "64DoomPlayer"
+	#libdefine bd64classmodern "Modern"
+	#libdefine bd64classtactical "Tactical64DoomPlayer"
+	#libdefine bd64classtacticalpistol "Tactical64DoomPlayer_P"
+	#libdefine bd64fist "64Fist"
+	#libdefine bd64fisttactical "64FistTactical"
+	#libdefine bd64pistol "64Pistol"
+	#libdefine bd64pistoltactical "64PistolTactical"
+	#libdefine bd64rifletactical "64RifleTactical"
 
 // Brutal Wolfenstein (ZioMcCall)
-str bwzioclass = "Doomer2";
-str bwziofist = "Melee_Attacks";
-str bwziopistolammo = "LUGERAmmoAlt";
+	#libdefine bwzioclass "Doomer2"
+	#libdefine bwziofist "Melee_Attacks"
+	#libdefine bwziopistolammo "LUGERAmmoAlt"
+
+// Combined_Arms
+	#libdefine combinedarmsclassarti "Artificer"
+	#libdefine combinedarmsclassblast "BlastMaster"
+	#libdefine combinedarmsclasslink "PastLinked"
+	#libdefine combinedarmsclassmonk "TechMonk"
+	#libdefine combinedarmssekrit "seekritthing"
 
 // Doom 4 Vanilla
-str d4vclass = "DoomSlayer";
-str d4vfist = "DH_Fist";
-str d4vpistol = "DH_Pistol2";
+	#libdefine d4vclass "DoomSlayer"
+	#libdefine d4vfist "DH_Fist"
+	#libdefine d4vpistol "DH_Pistol2"
 
 // Doom 64 Retribution
-str d64rtrclass = "64DoomPlayer";
-str d64rtrfist = "64Fist";
-str d64rtrplaying = "IsPlaying";
+	#libdefine d64rtrclass "64DoomPlayer"
+	#libdefine d64rtrfist "64Fist"
+	#libdefine d64rtrplaying "IsPlaying"
 
 // Doom CE - D64 and PSX
-str doomced64class = "D64DoomPlayer";
-str doomced64fist = "D64Fist";
-str doomced64pistol = "D64Pistol";
-str doomcepsxclass = "PsxDoomPlayer";
-str doomcepsxfist = "PsxFist";
-str doomcepsxpistol = "PsxPistol";
+	#libdefine doomced64class "D64DoomPlayer"
+	#libdefine doomced64fist "D64Fist"
+	#libdefine doomced64pistol "D64Pistol"
+	#libdefine doomcepsxclass "PsxDoomPlayer"
+	#libdefine doomcepsxfist "PsxFist"
+	#libdefine doomcepsxpistol "PsxPistol"
 
 // Faspons
-str fasponsclass = "FasPlayer";
-str fasponsfist = "Knuckles";
-str fasponsrifle = "CombatRifle";
+	#libdefine fasponsclass "FasPlayer"
+	#libdefine fasponsfist "Knuckles"
+	#libdefine fasponsrifle "CombatRifle"
 
 // Kriegsland 1: Blutorden
-str kriegsland1class = "FKPlayer";
-str kriegsland1grenades = "HDGrenades";
-str kriegsland1melee = "HDKnife";
+	#libdefine kriegsland1class "FKPlayer"
+	#libdefine kriegsland1grenades "HDGrenades"
+	#libdefine kriegsland1melee "HDKnife"
 
 // Kriegsland 2: Untergrund
-str kriegsland2class = "K2Player";
-str kriegsland2melee = "K2WeaponB";
-str kriegsland2pistol = "K2WeaponC";
+	#libdefine kriegsland2class "K2Player"
+	#libdefine kriegsland2melee "K2WeaponB"
+	#libdefine kriegsland2pistol "K2WeaponC"
 
 // Led's Generic Weapon Mod
-str ledclass = "DoomGuy";
-str ledfist = "Knuckle";
-str ledminigunmag = "MinigunMag";
+	#libdefine ledclass "DoomGuy"
+	#libdefine ledfist "Knuckle"
+	#libdefine ledminigunmag "MinigunMag"
 
 // Lt. Typhon
-str typhonclass = "VeteranDoomPlayer";
-str typhonbio = "VeteranBioAttack";
-str typhondumbbell = "VeteranDumbbell";
+	#libdefine typhonclass "VeteranDoomPlayer"
+	#libdefine typhonbio "VeteranBioAttack"
+	#libdefine typhondumbbell "VeteranDumbbell"
 
 // Meatgrinder
-str meatgrinderfist = "GrinderFist";
-str meatgrindergrenade = "GrenadeAmmo";
+	#libdefine meatgrinderfist "GrinderFist"
+	#libdefine meatgrindergrenade "GrenadeAmmo"
 
 // NAZIS V2
-str nazisv2class = "WWNazisPlayer";
-str nazisv2grenade = "GrenadePickup";
-str nazisv2revolvermag = "WeaselsRevolverLoaded";
+	#libdefine nazisv2class "WWNazisPlayer"
+	#libdefine nazisv2grenade "GrenadePickup"
+	#libdefine nazisv2revolvermag "WeaselsRevolverLoaded"
 
 // NAZIS V2
-str omniwolfammo = "WolfBullets";
-str omniwolfclass = "BJBlazko";
-str omniwolfpistol = "WolfPistol";
+	#libdefine omniwolfammo "WolfBullets"
+	#libdefine omniwolfclass "BJBlazko"
+	#libdefine omniwolfpistol "WolfPistol"
 
 // PerK's Smoother Weapon Animations Enhanced
-str perkzfist = "ZPerkFist";
-str perkzpistol = "ZPerkPistol";
+	#libdefine perkzfist "ZPerkFist"
+	#libdefine perkzpistol "ZPerkPistol"
 
 // SmoothDoom 2.0 WIP
-str smoothdoomclass = "PerkDPlayer";
-str smoothdoomfist = "PerkFist";
-str smoothdoompistol = "PerkPistol";
+	#libdefine smoothdoomclass "PerkDPlayer"
+	#libdefine smoothdoomfist "PerkFist"
+	#libdefine smoothdoompistol "PerkPistol"
 
 // Supercharge 2.8
-str superchargefist = "TangoFist";
-str superchargepistol = "TangoPistol";
-str superchargerifleammo = "AssaultRifleAmmo";
+	#libdefine superchargefist "TangoFist"
+	#libdefine superchargepistol "TangoPistol"
+	#libdefine superchargerifleammo "AssaultRifleAmmo"
 
 script "HXS_ModCompatibilityStartup" enter
 {
@@ -298,6 +307,26 @@ script "HXS_ModCompatibilityStartup" enter
 			{
 				GiveInventory(hxmod_modfound, 1);
 				GiveInventory(hxmod_brutaldoom, 1);
+				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			}
+		}
+	// Combined_Arms & Combined_Arms Gaiden
+		else if ((CheckActorClass(0, combinedarmsclassarti)
+			|| CheckActorClass(0, combinedarmsclassblast)
+			|| CheckActorClass(0, combinedarmsclasslink)
+			|| CheckActorClass(0, combinedarmsclassmonk))
+			&& !CheckInventory(hxmod_combinedarms))
+		{
+			if (CheckInventory(combinedarmssekrit))
+			{
+				GiveInventory(hxmod_modfound, 1);
+				GiveInventory(hxmod_combinedarms, 1);
+				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			}
+			else
+			{
+				GiveInventory(hxmod_modfound, 1);
+				GiveInventory(hxmod_combinedarmsgaiden, 1);
 				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
 			}
 		}
