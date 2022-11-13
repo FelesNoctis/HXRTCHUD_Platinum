@@ -4150,6 +4150,9 @@ StatusBar Fullscreen, FullscreenOffsets
 				DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -44;
 			}
 		}
+		/*	Doom 4 Vanilla
+		*
+		*/
 		else InInventory "HXMOD_Doom4Vanilla", 1
 		{
 		// AMMO TALLIES PANEL - D4V
@@ -7587,15 +7590,57 @@ StatusBar Fullscreen, FullscreenOffsets
 ***************************************/
 	InInventory "HXSYS_DebugTagToken", 1
 	{
+		// What clusterfuck are we running?
+		InInventory not "HXMOD_VANILLA"
+		{
+			InInventory "HXMOD_AcidEriguns", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Ac!d's Eriguns", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_BeautifulDoom", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Beautiful Doom", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_BDLite", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: BDLite", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_BrutalDoomPlatinum", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Brutal Doom Platinum", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_ZioBrutalWolfenstein", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Brutal Wolfenstein (ZioMcCall)", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_BrutalDoom", 1
+			{ 
+				InInventory "IsPlayingAsPurist", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Brutal Doom v21/CE (Purist)", 2, 54, 0, alignment(left), drawshadow(1,1); }
+				else { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Brutal Doom v21/CE (Tactical/Modern)", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			}
+			else InInventory "HXMOD_BrutalDoom64", 1
+			{ 
+				InInventory "IsTacticalClass", 1 || "IsModern", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Brutal Doom 64 (Tactical/Modern)", 2, 54, 0, alignment(left), drawshadow(1,1); }
+				else { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Brutal Doom 64 (Purist)", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			}
+			else InInventory "HXMOD_CombinedArms", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Combined_Arms", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_CombinedArmsGaiden", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Combined_Arms Gaiden", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_DoomCE_D64", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Doom CE: Doom64", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_DoomCE_PSX", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Doom CE: PSX", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_Doom4Vanilla", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Doom 4 Vanilla", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_Doom64RTR", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Doom 64: Retribution", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_Faspons", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Faspons", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_Kriegsland1", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Kriegsland 1: Blutorden", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_Kriegsland2", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Kriegsland 2: Untergrund", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_LedsGenericWeaponMod", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Led's Generic Weapon Mod", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_BadAssBitch", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Lt. Typhon", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_Meatgrinder", 1
+			{
+				InInventory "HXMOD_Meatgrinder_MRE", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Meatgrinder_v3", 2, 54, 0, alignment(left), drawshadow(1,1); }
+				else { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Meatgrinder_v2", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			}
+			else InInventory "HXMOD_NazisV2", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: NAZIS V2", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_OmniWolf", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Omni-Wolf", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_PerkSmootherWeaponsEnh", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: PerK's Smoother Weapon Animations Enhanced", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_SmoothDoom2", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: SmoothDoom 2.0", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_Supercharge", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Supercharge", 2, 54, 0, alignment(left), drawshadow(1,1); }
+			else InInventory "HXMOD_ForceWolfenDoomToken", 1 { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Wolfendoom", 2, 54, 0, alignment(left), drawshadow(1,1); }
+		}
+		else { DrawString HXGENERALFONTM, HXRTCGold, "MODE: Vanilla", 2, 54, 0, alignment(left), drawshadow(1,1); }
 		// Bruh, what's your class?
-		DrawString HXGENERALFONTM, HXRTCGold, playerclass, 2, 54, 0, alignment(left), drawshadow(1,1);
+		DrawString HXGENERALFONTM, HXRTCGold, playerclass, 2, 62, 0, alignment(left), drawshadow(1,1);
 		// What's that badass boomstick you got?
-		DrawString HXGENERALFONTM, HXRTCGold, weapontag, 2, 62, 0, alignment(left), drawshadow(1,1);
+		DrawString HXGENERALFONTM, HXRTCGold, weapontag, 2, 70, 0, alignment(left), drawshadow(1,1);
 		// How bout dat ammo, yo?!
-		DrawString HXGENERALFONTM, HXRTCGold, ammo1tag, 2, 70, 0, alignment(left), drawshadow(1,1);
-		DrawString HXGENERALFONTM, HXRTCGold, ammo2tag, 2, 78, 0, alignment(left), drawshadow(1,1);
-		DrawKeyBar 3, horizontal, auto, 2, 86;
-		DrawKeyBar 3, horizontal, auto, 2, 94, 3;
+		DrawString HXGENERALFONTM, HXRTCGold, ammo1tag, 2, 78, 0, alignment(left), drawshadow(1,1);
+		DrawString HXGENERALFONTM, HXRTCGold, ammo2tag, 2, 86, 0, alignment(left), drawshadow(1,1);
+		DrawKeyBar 3, horizontal, auto, 2, 94;
+		DrawKeyBar 3, horizontal, auto, 2, 102, 3;
 	}
 
 
