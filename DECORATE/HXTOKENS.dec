@@ -82,6 +82,8 @@ ACTOR HX_BD64_altRifleSkinCvar: Inventory { +INVENTORY.UNDROPPABLE Inventory.Max
 //	Brutal Wolfenstein (ZioMcCall)
 ACTOR HXMOD_ZioBrutalWolfenstein: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_ZioBW_ColtUsable: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+//	Combined_Arms
+ACTOR HXMOD_CombinedArms: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Doom 4 Vanilla
 ACTOR HXMOD_Doom4Vanilla: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_D4V_catoggletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
