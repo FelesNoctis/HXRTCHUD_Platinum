@@ -1,0 +1,3 @@
+#include DECORATE/GAMETYPE.dec
+#include DECORATE/HXTOKENS.dec
+#include DECORATE/HXBDUNMK.dec
