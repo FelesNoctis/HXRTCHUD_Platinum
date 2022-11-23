@@ -1,5 +1,6 @@
 #library "HXMBD64"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 #import "HXACVAR.acs"
 #import "HXASTATS.acs"
@@ -21,7 +22,7 @@ script "HXS_BrutalDoom64_35ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_brutaldoom64)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM64))) {
 		while (true)
 		{
 /* 		// Key Management Tokens
@@ -37,7 +38,7 @@ script "HXS_BrutalDoom64_35ticHandler" enter
 
 		// Powerup Management Tokens
 			// Berserk
-			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
 
 		// Weapon Icon Management Tokens
 			HXF_CVARConvert_Generic(bd64altlasericon, hx_bd64altlasericontoken);
@@ -55,20 +56,20 @@ script "HXS_BrutalDoom64_7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 	
-	if (CheckInventory(hxmod_brutaldoom64)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM64))) {
 		while (true)
 		{
 		// Stamina Control
 			HXS_StamNormal(bd64stamina, bd64staminamax);
 		// Powerup Management Tokens
 			// Infrared
-			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINFRARED), HXS_GetTokenString(HXGEN_INFRARED));
 			// Invisibility
-			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY));
 			// Invulnerability
-			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
-			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
 
 		// Ammo DemonEssence Appearance Check
 			if (CheckInventory(bd64ammodemonessence) && !CheckInventory(bd64ammodemonessencetoken))

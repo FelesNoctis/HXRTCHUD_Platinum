@@ -1,5 +1,6 @@
 #library "HXMKRG1"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
 str kriegsland1_berserk = "SuperBlow";
@@ -12,7 +13,7 @@ script "HXS_Kriegsland1_35ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_kriegsland1)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND1))) {
 		while (true)
 		{
 /* 		// Key Management Tokens
@@ -28,7 +29,7 @@ script "HXS_Kriegsland1_35ticHandler" enter
 
 		// Powerup Management Tokens
 			// Berserk
-			HXS_ItemSync(kriegsland1_berserk, hxgen_berserk);
+			HXS_ItemSync(kriegsland1_berserk, HXS_GetTokenString(HXGEN_BERSERK));
 
 		// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
@@ -42,30 +43,30 @@ script "HXS_Kriegsland1_7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 	
-	if (CheckInventory(hxmod_kriegsland1)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND1))) {
 		while (true)
 		{
 		// Powerup Management Tokens
 			// Infrared
-			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINFRARED), HXS_GetTokenString(HXGEN_INFRARED));
 			// Invisibility - Removed
-			/* HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility); */
+			/* HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY)); */
 			// Invulnerability
-			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
-			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
 
 		// Unique Ammo Dual Wield Check
 			if ((CheckWeapon(kriegsland1_crosspistols)
 				|| CheckWeapon(kriegsland1_crossmachineguns)
 				|| CheckWeapon(kriegsland1_crossthermals))
-				&& !CheckInventory(hxmod_weapondualwielduniqueammo))
-			{ GiveInventory(hxmod_weapondualwielduniqueammo, 1); }
+				&& !CheckInventory(HXS_GetTokenString(HXMOD_WEAPONDUALWIELDUNIQUEAMMO)))
+			{ GiveInventory(HXS_GetTokenString(HXMOD_WEAPONDUALWIELDUNIQUEAMMO), 1); }
 			else if ((!CheckWeapon(kriegsland1_crosspistols)
 				&& !CheckWeapon(kriegsland1_crossmachineguns)
 				&& !CheckWeapon(kriegsland1_crossthermals))
-				&& CheckInventory(hxmod_weapondualwielduniqueammo))
-			{ TakeInventory(hxmod_weapondualwielduniqueammo, 1); }
+				&& CheckInventory(HXS_GetTokenString(HXMOD_WEAPONDUALWIELDUNIQUEAMMO)))
+			{ TakeInventory(HXS_GetTokenString(HXMOD_WEAPONDUALWIELDUNIQUEAMMO), 1); }
 
 		// Timer
 			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive

@@ -1,5 +1,6 @@
 #library "HXMD64RT"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
 str d64rtrinfrared = "64PowerLightAmp";
@@ -15,7 +16,7 @@ script "HXS_D64RTR_35ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_D64RTR)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_D64RTR))) {
 		while (true)
 		{
 /* 		// Key Management Tokens
@@ -31,7 +32,7 @@ script "HXS_D64RTR_35ticHandler" enter
 
 		// Powerup Management Tokens
 			// Berserk
-			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
 
 		// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
@@ -45,18 +46,18 @@ script "HXS_D64RTR_7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 	
-	if (CheckInventory(hxmod_D64RTR)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_D64RTR))) {
 		while (true)
 		{
 		// Powerup Management Tokens
 			// Infrared
 			HXS_PowerupTimer(d64rtrinfrared, hx_d64rtrinfrared);
 			// Invisibility
-			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY));
 			// Invulnerability
-			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
-			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
 
 		// Numeric lead character bypass for SBARINFO
 			HXS_ItemSync(d64rtrfuelammo, hx_d64rtrfuelammo);

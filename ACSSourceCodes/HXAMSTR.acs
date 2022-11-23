@@ -1,10 +1,11 @@
 #library "HXAMSTR"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 
-str hxsys_mastertoken = "HXSYS_HUDACTIVE";
+	// #define hxsys_mastertoken "HXSYS_HUDACTIVE"
 
 script "HXS_ActivePresence" enter
 {
-	if (!CheckInventory(hxsys_mastertoken))
-	{ GiveInventory(hxsys_mastertoken, 1); }
+	if (!CheckInventory(HXS_GetTokenString(HXSYS_MASTERTOKEN)))
+	{ GiveInventory(HXS_GetTokenString(HXSYS_MASTERTOKEN), 1); }
 }

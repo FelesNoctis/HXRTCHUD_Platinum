@@ -1,11 +1,10 @@
 #library "HXMBDPUN"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 #import "HXMBD.acs"
 
 // Master Tokens
-/* str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum"; */
-/* str bdtransformunmaker = "UnmakerPhaserWeapon"; */
 str hx_rushactive = "HX_BDP_UnmakingSanity";
 
 // HUD States
@@ -65,7 +64,7 @@ script "HXMOD_BDPUnmaker7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_brutaldoomplat))
+	if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMPLAT)))
 	{
 		while (true)
 		{
@@ -211,7 +210,7 @@ function void HX_RealityFailing (str hxitem, int maxnum)
 	int hxitemcount = CheckInventory(hxitem);
 	int randomnumber;
 
-	if (!CheckInventory(hxsys_lowmotion))
+	if (!CheckInventory(HXS_GetTokenString(HXSYS_LOWMOTION)))
 	{
 		randomnumber = Random (0, maxnum);
 	}

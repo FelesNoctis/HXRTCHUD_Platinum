@@ -1,5 +1,6 @@
 #library "HXMBDL"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
 str bdlitebluecard = "SmoothBlueCard";
@@ -14,7 +15,7 @@ script "HXS_BDLite35ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_bdlite))
+	if (CheckInventory(HXS_GetTokenString(HXMOD_BDLITE)))
 	{
 		while (true)
 		{
@@ -31,7 +32,7 @@ script "HXS_BDLite35ticHandler" enter
 
 	// Powerup Management Tokens
 		// Berserk
-			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
 
 	// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
@@ -45,19 +46,19 @@ script "HXS_BDLite7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_bdlite))
+	if (CheckInventory(HXS_GetTokenString(HXMOD_BDLITE)))
 	{
 		while (true)
 		{
 		// Powerup Management Tokens
 			// Infrared
-			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINFRARED), HXS_GetTokenString(HXGEN_INFRARED));
 			// Invisibility
-			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY));
 			// Invulnerability
-			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
-			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
 
 		// Timer
 			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive

@@ -1,0 +1,261 @@
+#library "HXATOKEN"
+#include "zcommon.acs"
+
+// Range: 000000 : HUD Status Token
+	#libdefine HXSYS_MASTERTOKEN				000000
+// Range: 000001 - 000099 : HUD Mode Switch
+	#libdefine HXSYS_LOWMOTION					000001
+	#libdefine HXSYS_NORMALHUDKILLER			000002
+	#libdefine HXSYS_TRANSFORMHUD				000003
+	#libdefine HXSYS_VEHICLEHUD					000004
+// Range: 000100 - 000199 : Functionality Overrides
+	#libdefine HXMOD_64ART						000100
+	#libdefine HXMOD_WEAPONDUALWIELDUNIQUEAMMO	000101
+	#libdefine HXMOD_WEAPONONLYAMMO1			000102
+// Range: 001000 - 001999 : Mod Master Tokens
+	#libdefine HXMOD_NONE						001000
+	#libdefine HXMOD_RESETTOKEN					001001
+	#libdefine HXMOD_MODFOUND					001002
+	#libdefine HXMOD_ACIDERIGUNS				001003
+	#libdefine HXMOD_BDLITE						001004
+	#libdefine HXMOD_BEAUTIFULDOOM				001005
+	#libdefine HXMOD_BRUTALDOOM					001006
+	#libdefine HXMOD_BRUTALDOOM64				001007
+	#libdefine HXMOD_BRUTALDOOMCE				001008
+	#libdefine HXMOD_BRUTALDOOMPLAT				001009
+	#libdefine HXMOD_CED64						001010
+	#libdefine HXMOD_CEPSX						001011
+	#libdefine HXMOD_D4V						001012
+	#libdefine HXMOD_D64RTR						001013
+	#libdefine HXMOD_FASPONS					001014
+	#libdefine HXMOD_KRIEGSLAND1				001015
+	#libdefine HXMOD_KRIEGSLAND2				001016
+	#libdefine HXMOD_LEDGWMTOKEN				001017
+	#libdefine HXMOD_LTTYPHON					001018
+	#libdefine HXMOD_MEATGRINDER				001019
+	#libdefine HXMOD_MEATGRINDERMRE				001020
+	#libdefine HXMOD_NAZISV2					001021
+	#libdefine HXMOD_OMNIWOLF					001022
+	#libdefine HXMOD_PERKSMOOTHENH				001023
+	#libdefine HXMOD_SMOOTHDOOM					001024
+	#libdefine HXMOD_SUPERCHARGE				001025
+	#libdefine HXMOD_ZIOBRUTALWOLF				001026
+// Range: 009000 - 009999 : Item Tokens
+	// Vanilla Powerups
+	#libdefine VANILLABERSERK					009000
+	#libdefine HXGEN_BERSERK					009001
+	#libdefine VANILLAINFRARED					009002
+	#libdefine HXGEN_INFRARED					009003
+	#libdefine VANILLAINVISIBILITY				009004
+	#libdefine HXGEN_INVISIBILITY				009005
+	#libdefine VANILLAINVULNERABILITY			009006
+	#libdefine HXGEN_INVULNERABILITY			009007
+	#libdefine VANILLARADSUIT					009008
+	#libdefine HXGEN_RADSUIT					009009
+	// Non-Vanilla Powerups
+	#libdefine HXGEN_INFRAREDLONGTIMER			009010
+	#libdefine HXGEN_INVISIBILITYLONGTIMER		009011
+	#libdefine HXGEN_INVULNERABILITYLONGTIMER	009012
+	#libdefine HXGEN_RADSUITLONGTIMER			009013
+	#libdefine HXGEN_HASTE						009014
+	#libdefine HXGEN_HASTELONGTIMER				009015
+	#libdefine HXGEN_QUADDAMAGE					009016
+	#libdefine HXGEN_QUADDAMAGELONGTIMER		009017
+	#libdefine HXGEN_HASTESHORT					009018
+// Range: 010000 - 019999 : (A) Mod-Specific Tokens
+	// Ac!d's Eriguns
+		#libdefine ACIDCLASS					010000
+		#libdefine ACIDFIST						010001
+		#libdefine ACIDPISTOL					010002
+// Range: 020000 - 029999 : (B) Mod-Specific Tokens
+	// Beautiful Doom
+		#libdefine BEAUTIFULBLOODCONTROL		020000
+		#libdefine BEAUTIFULOVERLAYCONTROL		020001
+		#libdefine BEAUTIFULWEAPONCONTROL		020002
+	// BDLite
+		#libdefine BDLITECLASS					020003
+		#libdefine BDLITEFIST					020004
+		#libdefine BDLITERIFLE					020005
+	// Brutal Doom General
+		#libdefine BDGENPLAYER					020006
+		#libdefine BDITEMNOTTACTICAL			020007
+		#libdefine BDITEMPURIST					020008
+		#libdefine BDITEMTACTICAL				020009
+		// #define bdclassarcadedoomer "Arcade Rifle (No Reload)"
+		// #define bdclassarcadedoomer2 "Arcade Pistol (No Reload)"
+		// #define bdclassarcadedoomer3 "Arcade Shotgun (No Reload)"
+		// #define bdclassbdoomer "BDoomer"
+		// #define bdclassdoomer2 "Doomer2"
+		// #define bdclassdoomer3 "Shotgun Start"
+	// Brutal Doom Platinum
+		#libdefine BDPLATTOTALLYAMENUDUMMY		020010
+	// Brutal Doom 64
+		#libdefine BD64CLASSBASIC				020011
+		#libdefine BD64CLASSMODERN				020012
+		#libdefine BD64CLASSTACTICAL			020013
+		#libdefine BD64CLASSTACTICALPISTOL		020014
+		#libdefine BD64FIST						020015
+		#libdefine BD64FISTTACTICAL				020016
+		#libdefine BD64PISTOL					020017
+		#libdefine BD64PISTOLTACTICAL			020018
+		#libdefine BD64RIFLETACTICAL			020019
+	// Brutal Wolfenstein (ZioMcCall)
+		#libdefine BWZIOCLASS					020020
+		#libdefine BWZIOFIST					020021
+		#libdefine BWZIOPISTOLAMMO				020022
+// Range: 030000 - 039999 : (C) Mod-Specific Tokens
+// Range: 040000 - 049999 : (D) Mod-Specific Tokens
+// Range: 050000 - 059999 : (E) Mod-Specific Tokens
+// Range: 060000 - 069999 : (F) Mod-Specific Tokens
+// Range: 070000 - 079999 : (G) Mod-Specific Tokens
+// Range: 080000 - 089999 : (H) Mod-Specific Tokens
+// Range: 090000 - 099999 : (I) Mod-Specific Tokens
+// Range: 100000 - 109999 : (J) Mod-Specific Tokens
+// Range: 110000 - 119999 : (K) Mod-Specific Tokens
+// Range: 120000 - 129999 : (L) Mod-Specific Tokens
+// Range: 130000 - 139999 : (M) Mod-Specific Tokens
+// Range: 140000 - 149999 : (N) Mod-Specific Tokens
+// Range: 150000 - 159999 : (O) Mod-Specific Tokens
+// Range: 160000 - 169999 : (P) Mod-Specific Tokens
+// Range: 170000 - 179999 : (Q) Mod-Specific Tokens
+// Range: 180000 - 189999 : (R) Mod-Specific Tokens
+// Range: 190000 - 199999 : (S) Mod-Specific Tokens
+// Range: 200000 - 209999 : (T) Mod-Specific Tokens
+// Range: 210000 - 219999 : (U) Mod-Specific Tokens
+// Range: 220000 - 229999 : (V) Mod-Specific Tokens
+// Range: 230000 - 239999 : (W) Mod-Specific Tokens
+// Range: 240000 - 249999 : (X) Mod-Specific Tokens
+// Range: 250000 - 259999 : (Y) Mod-Specific Tokens
+// Range: 260000 - 269999 : (Z) Mod-Specific Tokens
+
+function str HXS_GetTokenString (int strnum)
+{
+    switch (strnum)
+	{
+		// Range: 000000 : HUD Status Token
+			case HXSYS_MASTERTOKEN: return "HXSYS_HUDACTIVE"; break;
+		// Range: 000001 - 000099 : HUD Mode Switch
+			case HXSYS_LOWMOTION: return "HXCUS_LowMotionToken"; break;
+			case HXSYS_NORMALHUDKILLER: return "HXSYS_NormalHUDKillerToken"; break;
+			case HXSYS_TRANSFORMHUD: return "HXSYS_TransformationHUDToken"; break;
+			case HXSYS_VEHICLEHUD: return "HXSYS_VehicleHUDToken"; break;
+		// Range: 000100 - 000199 : Functionality Overrides
+			case HXMOD_64ART: return "HXMOD_Doom64Art"; break;
+			case HXMOD_WEAPONDUALWIELDUNIQUEAMMO: return "HXMOD_WeaponDualWieldUniqueAmmo"; break;
+			case HXMOD_WEAPONONLYAMMO1: return "HXMOD_WeaponOnlyAmmo1"; break;
+		// Range: 001000 - 001999 : Mod Master Tokens
+			case HXMOD_NONE: return "HXMOD_VANILLA"; break;
+			case HXMOD_RESETTOKEN: return "HXMOD_IDontExist"; break;
+			case HXMOD_MODFOUND: return "HXMOD_MODFOUND"; break;
+			case HXMOD_ACIDERIGUNS: return "HXMOD_AcidEriguns"; break;
+			case HXMOD_BDLITE: return "HXMOD_BDLite"; break;
+			case HXMOD_BEAUTIFULDOOM: return "HXMOD_BeautifulDoom"; break;
+			case HXMOD_BRUTALDOOM: return "HXMOD_BrutalDoom"; break;
+			case HXMOD_BRUTALDOOM64: return "HXMOD_BrutalDoom64"; break;
+			case HXMOD_BRUTALDOOMCE: return "HXMOD_BrutalDoomBWCE"; break;
+			case HXMOD_BRUTALDOOMPLAT: return "HXMOD_BrutalDoomPlatinum"; break;
+			case HXMOD_CED64: return "HXMOD_DoomCE_D64"; break;
+			case HXMOD_CEPSX: return "HXMOD_DoomCE_PSX"; break;
+			case HXMOD_D4V: return "HXMOD_Doom4Vanilla"; break;
+			case HXMOD_D64RTR: return "HXMOD_Doom64RTR"; break;
+			case HXMOD_FASPONS: return "HXMOD_Faspons"; break;
+			case HXMOD_KRIEGSLAND1: return "HXMOD_Kriegsland1"; break;
+			case HXMOD_KRIEGSLAND2: return "HXMOD_Kriegsland2"; break;
+			case HXMOD_LEDGWMTOKEN: return "HXMOD_LedsGenericWeaponMod"; break;
+			case HXMOD_LTTYPHON: return "HXMOD_BadAssBitch"; break;
+			case HXMOD_MEATGRINDER: return "HXMOD_Meatgrinder"; break;
+			case HXMOD_MEATGRINDERMRE: return "HXMOD_Meatgrinder_MRE"; break;
+			case HXMOD_NAZISV2: return "HXMOD_NazisV2"; break;
+			case HXMOD_OMNIWOLF: return "HXMOD_OmniWolf"; break;
+			case HXMOD_PERKSMOOTHENH: return "HXMOD_PerkSmootherWeaponsEnh"; break;
+			case HXMOD_SMOOTHDOOM: return "HXMOD_SmoothDoom2"; break;
+			case HXMOD_SUPERCHARGE: return "HXMOD_Supercharge"; break;
+			case HXMOD_ZIOBRUTALWOLF: return "HXMOD_ZioBrutalWolfenstein"; break;
+		// Range: 009000 - 009999 : Item Tokens
+			case VANILLABERSERK: return "PowerStrength"; break;
+			case HXGEN_BERSERK: return "HX_BerserkPowerUpToken"; break;
+			case VANILLAINFRARED: return "PowerLightamp"; break;
+			case HXGEN_INFRARED: return "HX_InfraredPowerUpToken"; break;
+			case VANILLAINVISIBILITY: return "PowerInvisibility"; break;
+			case HXGEN_INVISIBILITY: return "HX_InvisibilityPowerUpToken"; break;
+			case VANILLAINVULNERABILITY: return "PowerInvulnerable"; break;
+			case HXGEN_INVISIBILITY: return "HX_InvulnerabilityPowerUpToken"; break;
+			case VANILLARADSUIT: return "PowerIronfeet"; break;
+			case HXGEN_RADSUIT: return "HX_RadSuitPowerUpToken"; break;
+			case HXGEN_INFRAREDLONGTIMER: return "HX_InfraredPowerUpLongTimerToken"; break;
+			case HXGEN_INVISIBILITYLONGTIMER: return "HX_InvisibilityPowerUpLongTimerToken"; break;
+			case HXGEN_INVULNERABILITYLONGTIMER: return "HX_InvulnerabilityPowerUpLongTimerToken"; break;
+			case HXGEN_RADSUITLONGTIMER: return "HX_RadSuitPowerUpLongTimerToken"; break;
+			case HXGEN_HASTE: return "HX_HastePowerUpToken"; break;
+			case HXGEN_HASTELONGTIMER: return "HX_HastePowerUpLongTimerToken"; break;
+			case HXGEN_QUADDAMAGE: return "HX_QuadDamagePowerUpToken"; break;
+			case HXGEN_QUADDAMAGELONGTIMER: return "HX_QuadDamagePowerUpLongTimerToken"; break;
+			case HXGEN_HASTESHORT: return "HX_HastePowerUpShortToken"; break;
+		// Range: 010000 - 019999 : (A) Mod-Specific Tokens
+			// Ac!d's Eriguns
+				case ACIDCLASS: return "EriPlayer"; break;
+				case ACIDFIST: return "EriFist"; break;
+				case ACIDPISTOL: return "EriPistol"; break;
+		// Range: 020000 - 029999 : (B) Mod-Specific Tokens
+			// Beautiful Doom
+				case BEAUTIFULBLOODCONTROL: return "BD_BloodyPrintControl"; break;
+				case BEAUTIFULOVERLAYCONTROL: return "BD_OverlayControl"; break;
+				case BEAUTIFULWEAPONCONTROL: return "BD_WeaponPickupControl"; break;
+			// BDLite
+				case BDLITECLASS: return "BD_BloodyPrintControl"; break;
+				case BDLITEFIST: return "BD_OverlayControl"; break;
+				case BDLITERIFLE: return "BD_WeaponPickupControl"; break;
+			// BDLite
+				case BDGENPLAYER: return "IsPlayer"; break;
+				case BDITEMNOTTACTICAL: return "IsNOTTacticalClass"; break;
+				case BDITEMPURIST: return "IsPlayingAsPurist"; break;
+				case BDITEMTACTICAL: return "IsTacticalClass"; break;
+			// Brutal Doom Platinum
+				case BDPLATTOTALLYAMENUDUMMY: return "IsNOTAMenuDummy"; break;
+			// Brutal Doom 64
+				case BD64CLASSBASIC: return "64DoomPlayer"; break;
+				case BD64CLASSMODERN: return "Modern"; break;
+				case BD64CLASSTACTICAL: return "Tactical64DoomPlayer"; break;
+				case BD64CLASSTACTICALPISTOL: return "Tactical64DoomPlayer_P"; break;
+				case BD64FIST: return "64Fist"; break;
+				case BD64FISTTACTICAL: return "64FistTactical"; break;
+				case BD64PISTOL: return "64Pistol"; break;
+				case BD64PISTOLTACTICAL: return "64PistolTactical"; break;
+				case BD64RIFLETACTICAL: return "64RifleTactical"; break;
+			// Brutal Wolfenstein (ZioMcCall)
+				case BWZIOCLASS: return "Doomer2"; break;
+				case BWZIOFIST: return "Melee_Attacks"; break;
+				case BWZIOPISTOLAMMO: return "LUGERAmmoAlt"; break;
+		// Range: 030000 - 039999 : (C) Mod-Specific Tokens
+		// Range: 040000 - 049999 : (D) Mod-Specific Tokens
+		// Range: 050000 - 059999 : (E) Mod-Specific Tokens
+		// Range: 060000 - 069999 : (F) Mod-Specific Tokens
+		// Range: 070000 - 079999 : (G) Mod-Specific Tokens
+		// Range: 080000 - 089999 : (H) Mod-Specific Tokens
+		// Range: 090000 - 099999 : (I) Mod-Specific Tokens
+		// Range: 100000 - 109999 : (J) Mod-Specific Tokens
+		// Range: 110000 - 119999 : (K) Mod-Specific Tokens
+		// Range: 120000 - 129999 : (L) Mod-Specific Tokens
+		// Range: 130000 - 139999 : (M) Mod-Specific Tokens
+		// Range: 140000 - 149999 : (N) Mod-Specific Tokens
+		// Range: 150000 - 159999 : (O) Mod-Specific Tokens
+		// Range: 160000 - 169999 : (P) Mod-Specific Tokens
+		// Range: 170000 - 179999 : (Q) Mod-Specific Tokens
+		// Range: 180000 - 189999 : (R) Mod-Specific Tokens
+		// Range: 190000 - 199999 : (S) Mod-Specific Tokens
+		// Range: 200000 - 209999 : (T) Mod-Specific Tokens
+		// Range: 210000 - 219999 : (U) Mod-Specific Tokens
+		// Range: 220000 - 229999 : (V) Mod-Specific Tokens
+		// Range: 230000 - 239999 : (W) Mod-Specific Tokens
+		// Range: 240000 - 249999 : (X) Mod-Specific Tokens
+		// Range: 250000 - 259999 : (Y) Mod-Specific Tokens
+		// Range: 260000 - 269999 : (Z) Mod-Specific Tokens
+		// Fallback
+			default:
+				log(s:"\cgHXRTC HUD ERR: \ciHX_TokenConstants::HXS_GetTokenString : Unassigned Value");
+				return ""; break;
+	}
+
+	log(s:"\cgHXRTC HUD CRIT-ERR: \ciHX_TokenConstants::HXS_GetTokenString : failed completely");
+	return "";
+}

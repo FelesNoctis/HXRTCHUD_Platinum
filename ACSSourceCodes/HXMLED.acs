@@ -1,5 +1,6 @@
 #library "HXMLED"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
 str led9mmAmmo = "9mmAmmo";
@@ -12,7 +13,7 @@ script "HXS_Leds35ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_ledgwmtoken))
+	if (CheckInventory(HXS_GetTokenString(HXMOD_LEDGWMTOKEN)))
 	{
 		while (true)
 		{
@@ -29,7 +30,7 @@ script "HXS_Leds35ticHandler" enter
 
 		// Powerup Management Tokens
 			// Berserk
-			HXS_ItemSync(ledberserk, hxgen_berserk);
+			HXS_ItemSync(ledberserk, HXS_GetTokenString(HXGEN_BERSERK));
 
 	// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
@@ -43,19 +44,19 @@ script "HXS_Leds7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_ledgwmtoken))
+	if (CheckInventory(HXS_GetTokenString(HXMOD_LEDGWMTOKEN)))
 	{
 		while (true)
 		{
 		// Powerup Management Tokens
 			// Infrared
-			HXS_PowerupTimer(vanillainfrared, hxgen_infrared);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINFRARED), HXS_GetTokenString(HXGEN_INFRARED));
 			// Invisibility
-			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY));
 			// Invulnerability
-			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
-			HXS_PowerupTimer(ledradsuit, hxgen_radsuit);
+			HXS_PowerupTimer(ledradsuit, HXS_GetTokenString(HXGEN_RADSUIT));
 
 			// Numeric lead character bypass for SBARINFO
 			HXS_ItemSync(led9mmAmmo, hxled9mmammo);

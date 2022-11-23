@@ -1,447 +1,348 @@
 #library "HXAMODCM"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 
-// Mod Master Tokens
-str hxmod_none = "HXMOD_VANILLA";
-str hxmod_resettoken = "HXMOD_IDontExist";
-str hxmod_modfound = "HXMOD_MODFOUND";
-str hxmod_64art = "HXMOD_Doom64Art";
-str hxmod_acideriguns = "HXMOD_AcidEriguns";
-str hxmod_bdlite = "HXMOD_BDLite";
-str hxmod_beautifuldoom = "HXMOD_BeautifulDoom";
-str hxmod_brutaldoom = "HXMOD_BrutalDoom";
-str hxmod_brutaldoom64 = "HXMOD_BrutalDoom64";
-str hxmod_brutaldoomce = "HXMOD_BrutalDoomBWCE";
-str hxmod_brutaldoomplat = "HXMOD_BrutalDoomPlatinum";
-str hxmod_CED64 = "HXMOD_DoomCE_D64";
-str hxmod_CEPSX = "HXMOD_DoomCE_PSX";
-str hxmod_D4V = "HXMOD_Doom4Vanilla";
-str hxmod_D64RTR = "HXMOD_Doom64RTR";
-str hxmod_faspons = "HXMOD_Faspons";
-str hxmod_kriegsland1 = "HXMOD_Kriegsland1";
-str hxmod_kriegsland2 = "HXMOD_Kriegsland2";
-str hxmod_ledgwmtoken = "HXMOD_LedsGenericWeaponMod";
-str hxmod_lttyphon = "HXMOD_BadAssBitch";
-str hxmod_meatgrinder = "HXMOD_Meatgrinder";
-str hxmod_meatgrindermre = "HXMOD_Meatgrinder_MRE";
-str hxmod_nazisv2 = "HXMOD_NazisV2";
-str hxmod_omniwolf = "HXMOD_OmniWolf";
-str hxmod_perksmoothenh = "HXMOD_PerkSmootherWeaponsEnh";
-str hxmod_smoothdoom = "HXMOD_SmoothDoom2";
-str hxmod_supercharge = "HXMOD_Supercharge";
-str hxmod_ziobrutalwolf = "HXMOD_ZioBrutalWolfenstein";
-
-// HUD Mode Switch
-str hxsys_lowmotion = "HXCUS_LowMotionToken";
-str hxsys_normalhudkiller = "HXSYS_NormalHUDKillerToken";
-str hxsys_transformhud = "HXSYS_TransformationHUDToken";
-str hxsys_vehiclehud = "HXSYS_VehicleHUDToken";
-
-// Functionality Overrides
-str hxmod_weapondualwielduniqueammo = "HXMOD_WeaponDualWieldUniqueAmmo";
-str hxmod_weapononlyammo1 = "HXMOD_WeaponOnlyAmmo1";
-
-// General Items
-str vanillaberserk = "PowerStrength";
-str hxgen_berserk = "HX_BerserkPowerUpToken";
-str hxgen_haste = "HX_HastePowerUpToken";
-str hxgen_hasteshort = "HX_HastePowerUpShortToken";
-str hxgen_hastelongtimer = "HX_HastePowerUpLongTimerToken";
-str vanillainfrared = "PowerLightamp";
-str hxgen_infrared = "HX_InfraredPowerUpToken";
-str hxgen_infraredlongtimer = "HX_InfraredPowerUpLongTimerToken";
-str vanillainvisibility = "PowerInvisibility";
-str hxgen_invisibility = "HX_InvisibilityPowerUpToken";
-str hxgen_invisibilitylongtimer = "HX_InvisibilityPowerUpLongTimerToken";
-str vanillainvulnerability = "PowerInvulnerable";
-str hxgen_invulnerability = "HX_InvulnerabilityPowerUpToken";
-str hxgen_invulnerabilitylongtimer = "HX_InvulnerabilityPowerUpLongTimerToken";
-str hxgen_quaddamage = "HX_QuadDamagePowerUpToken";
-str hxgen_quaddamagelongtimer = "HX_QuadDamagePowerUpLongTimerToken";
-str vanillaradsuit = "PowerIronfeet";
-str hxgen_radsuit = "HX_RadSuitPowerUpToken";
-str hxgen_radsuitlongtimer = "HX_RadSuitPowerUpLongTimerToken";
-/* str vanillabluecard = "BlueCard";
-str hxgen_bluecard = "HX_BlueCardKeyToken";
-str vanillablueskull = "BlueSkull";
-str hxgen_blueskull = "HX_BlueSkullKeyToken";
-str vanillaredcard = "RedCard";
-str hxgen_redcard = "HX_RedCardKeyToken";
-str vanillaredskull = "RedSkull";
-str hxgen_redskull = "HX_RedSkullKeyToken";
-str vanillayellowcard = "YellowCard";
-str hxgen_yellowcard = "HX_YellowCardKeyToken";
-str vanillayellowskull = "YellowSkull";
-str hxgen_yellowskull = "HX_YellowSkullKeyToken"; */
-
-// Ac!d's Eriguns
-str acidclass = "EriPlayer";
-str acidfist = "EriFist";
-str acidpistol = "EriPistol";
-
-// Beautiful Doom
-str beautifulbloodcontrol = "BD_BloodyPrintControl";
-str beautifuloverlaycontrol = "BD_OverlayControl";
-str beautifulweaponcontrol = "BD_WeaponPickupControl";
-
-// BDLite
-str bdliteclass = "Doomer";
-str bdlitefist = "BdMeleeAttacks";
-str bdliterifle = "BdRifle";
-
-// Brutal Doom General
-str bdgenplayer = "IsPlayer";
-str bditemnottactical = "IsNOTTacticalClass";
-str bditempurist = "IsPlayingAsPurist";
-str bditemtactical = "IsTacticalClass";
-/* str bdclassarcadedoomer = "Arcade Rifle (No Reload)";
-str bdclassarcadedoomer2 = "Arcade Pistol (No Reload)";
-str bdclassarcadedoomer3 = "Arcade Shotgun (No Reload)";
-str bdclassbdoomer = "BDoomer";
-str bdclassdoomer2 = "Doomer2";
-str bdclassdoomer3 = "Shotgun Start"; */
-
-// Brutal Doom Platinum
-str bdplattotallyamenudummy = "IsNOTAMenuDummy";
-
-// Brutal Doom 64
-str bd64classbasic = "64DoomPlayer";
-str bd64classmodern = "Modern";
-str bd64classtactical = "Tactical64DoomPlayer";
-str bd64classtacticalpistol = "Tactical64DoomPlayer_P";
-str bd64fist = "64Fist";
-str bd64fisttactical = "64FistTactical";
-str bd64pistol = "64Pistol";
-str bd64pistoltactical = "64PistolTactical";
-str bd64rifletactical = "64RifleTactical";
-
-// Brutal Wolfenstein (ZioMcCall)
-str bwzioclass = "Doomer2";
-str bwziofist = "Melee_Attacks";
-str bwziopistolammo = "LUGERAmmoAlt";
+// General Keys (Unused)
+/* 	#define vanillabluecard "BlueCard"
+	#define hxgen_bluecard "HX_BlueCardKeyToken"
+	#define vanillablueskull "BlueSkull"
+	#define hxgen_blueskull "HX_BlueSkullKeyToken"
+	#define vanillaredcard "RedCard"
+	#define hxgen_redcard "HX_RedCardKeyToken"
+	#define vanillaredskull "RedSkull"
+	#define hxgen_redskull "HX_RedSkullKeyToken"
+	#define vanillayellowcard "YellowCard"
+	#define hxgen_yellowcard "HX_YellowCardKeyToken"
+	#define vanillayellowskull "YellowSkull"
+	#define hxgen_yellowskull "HX_YellowSkullKeyToken" */
 
 // Doom 4 Vanilla
-str d4vclass = "DoomSlayer";
-str d4vfist = "DH_Fist";
-str d4vpistol = "DH_Pistol2";
+	#define d4vclass "DoomSlayer"
+	#define d4vfist "DH_Fist"
+	#define d4vpistol "DH_Pistol2"
 
 // Doom 64 Retribution
-str d64rtrclass = "64DoomPlayer";
-str d64rtrfist = "64Fist";
-str d64rtrplaying = "IsPlaying";
+	#define d64rtrclass "64DoomPlayer"
+	#define d64rtrfist "64Fist"
+	#define d64rtrplaying "IsPlaying"
 
 // Doom CE - D64 and PSX
-str doomced64class = "D64DoomPlayer";
-str doomced64fist = "D64Fist";
-str doomced64pistol = "D64Pistol";
-str doomcepsxclass = "PsxDoomPlayer";
-str doomcepsxfist = "PsxFist";
-str doomcepsxpistol = "PsxPistol";
+	#define doomced64class "D64DoomPlayer"
+	#define doomced64fist "D64Fist"
+	#define doomced64pistol "D64Pistol"
+	#define doomcepsxclass "PsxDoomPlayer"
+	#define doomcepsxfist "PsxFist"
+	#define doomcepsxpistol "PsxPistol"
 
 // Faspons
-str fasponsclass = "FasPlayer";
-str fasponsfist = "Knuckles";
-str fasponsrifle = "CombatRifle";
+	#define fasponsclass "FasPlayer"
+	#define fasponsfist "Knuckles"
+	#define fasponsrifle "CombatRifle"
 
 // Kriegsland 1: Blutorden
-str kriegsland1class = "FKPlayer";
-str kriegsland1grenades = "HDGrenades";
-str kriegsland1melee = "HDKnife";
+	#define kriegsland1class "FKPlayer"
+	#define kriegsland1grenades "HDGrenades"
+	#define kriegsland1melee "HDKnife"
 
 // Kriegsland 2: Untergrund
-str kriegsland2class = "K2Player";
-str kriegsland2melee = "K2WeaponB";
-str kriegsland2pistol = "K2WeaponC";
+	#define kriegsland2class "K2Player"
+	#define kriegsland2melee "K2WeaponB"
+	#define kriegsland2pistol "K2WeaponC"
 
 // Led's Generic Weapon Mod
-str ledclass = "DoomGuy";
-str ledfist = "Knuckle";
-str ledminigunmag = "MinigunMag";
+	#define ledclass "DoomGuy"
+	#define ledfist "Knuckle"
+	#define ledminigunmag "MinigunMag"
 
 // Lt. Typhon
-str typhonclass = "VeteranDoomPlayer";
-str typhonbio = "VeteranBioAttack";
-str typhondumbbell = "VeteranDumbbell";
+	#define typhonclass "VeteranDoomPlayer"
+	#define typhonbio "VeteranBioAttack"
+	#define typhondumbbell "VeteranDumbbell"
 
 // Meatgrinder
-str meatgrinderfist = "GrinderFist";
-str meatgrindergrenade = "GrenadeAmmo";
+	#define meatgrinderfist "GrinderFist"
+	#define meatgrindergrenade "GrenadeAmmo"
 
 // NAZIS V2
-str nazisv2class = "WWNazisPlayer";
-str nazisv2grenade = "GrenadePickup";
-str nazisv2revolvermag = "WeaselsRevolverLoaded";
+	#define nazisv2class "WWNazisPlayer"
+	#define nazisv2grenade "GrenadePickup"
+	#define nazisv2revolvermag "WeaselsRevolverLoaded"
 
 // NAZIS V2
-str omniwolfammo = "WolfBullets";
-str omniwolfclass = "BJBlazko";
-str omniwolfpistol = "WolfPistol";
+	#define omniwolfammo "WolfBullets"
+	#define omniwolfclass "BJBlazko"
+	#define omniwolfpistol "WolfPistol"
 
 // PerK's Smoother Weapon Animations Enhanced
-str perkzfist = "ZPerkFist";
-str perkzpistol = "ZPerkPistol";
+	#define perkzfist "ZPerkFist"
+	#define perkzpistol "ZPerkPistol"
 
 // SmoothDoom 2.0 WIP
-str smoothdoomclass = "PerkDPlayer";
-str smoothdoomfist = "PerkFist";
-str smoothdoompistol = "PerkPistol";
+	#define smoothdoomclass "PerkDPlayer"
+	#define smoothdoomfist "PerkFist"
+	#define smoothdoompistol "PerkPistol"
 
 // Supercharge 2.8
-str superchargefist = "TangoFist";
-str superchargepistol = "TangoPistol";
-str superchargerifleammo = "AssaultRifleAmmo";
+	#define superchargefist "TangoFist"
+	#define superchargepistol "TangoPistol"
+	#define superchargerifleammo "AssaultRifleAmmo"
 
 script "HXS_ModCompatibilityStartup" enter
 {
-	// Hud Killer for mod checking
-/* 	if (!CheckInventory(hxmod_modfound))
+	// Hud Killer for mod check debugging
+/* 	if (!CheckInventory(HXS_GetTokenString(HXMOD_MODFOUND)))
 	{
-		GiveInventory(hxsys_normalhudkiller, 1);
+		GiveInventory(HXS_GetTokenString(HXSYS_NORMALHUDKILLER), 1);
 	} */
 
-	// Mod Master Tokens
 	// Ac!d's Eriguns
-		if (CheckActorClass(0, acidclass)
-			&& CheckInventory(acidfist)
-			&& CheckInventory(acidpistol)
-			&& !CheckInventory(hxmod_acideriguns))
+		if (CheckActorClass(0, HXS_GetTokenString(ACIDCLASS))
+			&& CheckInventory(HXS_GetTokenString(ACIDFIST))
+			&& CheckInventory(HXS_GetTokenString(ACIDPISTOL))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_ACIDERIGUNS)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_acideriguns, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_ACIDERIGUNS), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}	
 	// Beautiful Doom 7.1.6
-		else if (CheckInventory(beautifulbloodcontrol)
-			&& CheckInventory(beautifuloverlaycontrol)
-			&& CheckInventory(beautifulweaponcontrol)
-			&& !CheckInventory(hxmod_beautifuldoom))
+		else if (CheckInventory(HXS_GetTokenString(BEAUTIFULBLOODCONTROL))
+			&& CheckInventory(HXS_GetTokenString(BEAUTIFULOVERLAYCONTROL))
+			&& CheckInventory(HXS_GetTokenString(BEAUTIFULWEAPONCONTROL))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_BEAUTIFULDOOM)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_beautifuldoom, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_BEAUTIFULDOOM), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}	
 	// BDLite
-		else if (CheckActorClass(0, bdliteclass)
-			&& CheckInventory(bdlitefist)
-			&& CheckInventory(bdliterifle)
-			&& !CheckInventory(hxmod_bdlite))
+		else if (CheckActorClass(0, HXS_GetTokenString(BDLITECLASS))
+			&& CheckInventory(HXS_GetTokenString(BDLITEFIST))
+			&& CheckInventory(HXS_GetTokenString(BDLITERIFLE))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_BDLITE)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_bdlite, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_BDLITE), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}	
 	// Brutal Doom 64 && Doom 64: Retribution (due to shared startup actor names)
-		else if ((CheckInventory(bd64fist)
-				|| CheckInventory(bd64fisttactical))
-			&& (!CheckInventory(hxmod_brutaldoom64)
-				|| !CheckInventory(hxmod_D64RTR)))
+		else if ((CheckInventory(HXS_GetTokenString(BD64FIST))
+				|| CheckInventory(HXS_GetTokenString(BD64FISTTACTICAL)))
+			&& (!CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM64))
+				|| !CheckInventory(HXS_GetTokenString(HXMOD_D64RTR))))
 		{
 			/* log(s:"Running BD64/D64RTR Check"); */
 			// Brutal Doom 64
 			if (!CheckInventory(d64rtrplaying)
-			&& (CheckActorClass(0, bd64classbasic)
-				|| CheckActorClass(0, bd64classtactical)
-				|| CheckActorClass(0, bd64classtacticalpistol)
-				|| CheckActorClass(0, bd64classmodern))
-			&& (CheckInventory(bd64Pistol)
-				|| CheckInventory(bd64pistoltactical)
-				|| CheckInventory(bd64rifletactical)))
+			&& (CheckActorClass(0, HXS_GetTokenString(BD64CLASSBASIC))
+				|| CheckActorClass(0, HXS_GetTokenString(BD64CLASSTACTICAL))
+				|| CheckActorClass(0, HXS_GetTokenString(BD64CLASSTACTICALPISTOL))
+				|| CheckActorClass(0, HXS_GetTokenString(BD64CLASSMODERN)))
+			&& (CheckInventory(HXS_GetTokenString(BD64PISTOL))
+				|| CheckInventory(HXS_GetTokenString(BD64PISTOLTACTICAL))
+				|| CheckInventory(HXS_GetTokenString(BD64RIFLETACTICAL))))
 			{
-				GiveInventory(hxmod_modfound, 1);
-				GiveInventory(hxmod_brutaldoom64, 1);
-				GiveInventory(hxmod_64art, 1);
-				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+				GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM64), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_64ART), 1);
+				if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 				/* log(s:"BD64 Caught"); */
 			}
 
 			// Doom 64: Retribution
-			if (!CheckInventory(hxmod_D64RTR)
+			if (!CheckInventory(HXS_GetTokenString(HXMOD_D64RTR))
 			&& CheckInventory(d64rtrplaying)
 			&& CheckActorClass(0, d64rtrclass)
 			&& CheckInventory(d64rtrfist))
 			{
-				GiveInventory(hxmod_modfound, 1);
-				GiveInventory(hxmod_D64RTR, 1);
-				GiveInventory(hxmod_64art, 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_D64RTR), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_64ART), 1);
 				/* log(s:"D64:RTR Caught"); */
-				if (CheckInventory(hxmod_brutaldoom64)) { TakeInventory(hxmod_brutaldoom64, 1); /* log(s:"Removing BD64 token"); */ }
-				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+				if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM64))) { TakeInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM64), 1); /* log(s:"Removing BD64 token"); */ }
+				if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 			}
 		}
 	// Brutal Doom General
-		else if (CheckInventory(bdgenplayer)
-			&& !CheckInventory(hxmod_brutaldoom))
+		else if (CheckInventory(HXS_GetTokenString(BDGENPLAYER))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM)))
 		{
 			// Brutal Doom Platinum
-			if (CheckInventory(bdplattotallyamenudummy))
+			if (CheckInventory(HXS_GetTokenString(BDPLATTOTALLYAMENUDUMMY)))
 			{
-				GiveInventory(hxmod_modfound, 1);
-				GiveInventory(hxmod_brutaldoom, 1);
-				GiveInventory(hxmod_brutaldoomplat, 1);
-				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+				GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMPLAT), 1);
+				if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 			}
 			// Brutal Wolfenstein (ZioMcCall)
-			else if (CheckActorClass(0, bwzioclass)
-					&& CheckInventory(bwziofist)
-					&& CheckInventory(bwziopistolammo)
-					&& !CheckInventory(hxmod_ziobrutalwolf))
+			else if (CheckActorClass(0, HXS_GetTokenString(BWZIOCLASS))
+					&& CheckInventory(HXS_GetTokenString(BWZIOFIST))
+					&& CheckInventory(HXS_GetTokenString(BWZIOPISTOLAMMO))
+					&& !CheckInventory(HXS_GetTokenString(HXMOD_ZIOBRUTALWOLF)))
 			{
-				GiveInventory(hxmod_modfound, 1);
-				GiveInventory(hxmod_brutaldoom, 1);
-				GiveInventory(hxmod_ziobrutalwolf, 1);
-				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+				GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_ZIOBRUTALWOLF), 1);
+				if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 			}
 			// Brutal Doom v21 / CE
-			else if (CheckInventory(bditemnottactical)
-					|| CheckInventory(bditemtactical)
-					|| CheckInventory(bditempurist))
+			else if (CheckInventory(HXS_GetTokenString(BDITEMNOTTACTICAL))
+					|| CheckInventory(HXS_GetTokenString(BDITEMTACTICAL))
+					|| CheckInventory(HXS_GetTokenString(BDITEMPURIST)))
 			{
-				GiveInventory(hxmod_modfound, 1);
-				GiveInventory(hxmod_brutaldoom, 1);
-				if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+				GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM), 1);
+				if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 			}
+			// None of the above
+			else if (!CheckInventory(HXS_GetTokenString(HXMOD_NONE))
+				&&	!CheckInventory(HXS_GetTokenString(HXMOD_MODFOUND)))
+			{ GiveInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Doom 4 Vanilla
 		else if (CheckActorClass(0, d4vclass)
 			&& CheckInventory(d4vfist)
 			&& CheckInventory(d4vpistol)
-			&& !CheckInventory(hxmod_D4V))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_D4V)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_D4V, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_D4V), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Doom CE - D64
 		else if (CheckActorClass(0, doomced64class)
 			&& CheckInventory(doomced64fist)
 			&& CheckInventory(doomced64pistol)
-			&& !CheckInventory(hxmod_CED64))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_CED64)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_CED64, 1);
-			GiveInventory(hxmod_64art, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_CED64), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_64ART), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Doom CE - PSX
 		else if (CheckActorClass(0, doomcepsxclass)
 			&& CheckInventory(doomcepsxfist)
 			&& CheckInventory(doomcepsxpistol)
-			&& !CheckInventory(hxmod_CEPSX))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_CEPSX)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_CEPSX, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_CEPSX), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Faspons
 		else if (CheckActorClass(0, fasponsclass)
 			&& CheckInventory(fasponsfist)
 			&& CheckInventory(fasponsrifle)
-			&& !CheckInventory(hxmod_faspons))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_FASPONS)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_faspons, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_FASPONS), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Kriegsland 1: Blutorden
 		else if (CheckActorClass(0, kriegsland1class)
 			&& CheckInventory(kriegsland1grenades)
 			&& CheckInventory(kriegsland1melee)
-			&& !CheckInventory(hxmod_kriegsland1))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND1)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_kriegsland1, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND1), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Kriegsland 2: Untergrund
 		else if (CheckActorClass(0, kriegsland2class)
 			&& CheckInventory(kriegsland2melee)
 			&& CheckInventory(kriegsland2pistol)
-			&& !CheckInventory(hxmod_kriegsland2))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND2)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_kriegsland2, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND2), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Led's Generic Weapon Mod
 		else if (CheckActorClass(0, ledclass)
 			&& CheckInventory(ledfist)
 			&& CheckInventory(ledminigunmag)
-			&& !CheckInventory(hxmod_ledgwmtoken))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_LEDGWMTOKEN)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_ledgwmtoken, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_LEDGWMTOKEN), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Lt. Typhon
 		else if (CheckActorClass(0, typhonclass)
 			&& CheckInventory(typhonbio)
 			&& CheckInventory(typhondumbbell)
-			&& !CheckInventory(hxmod_lttyphon))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_LTTYPHON)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_lttyphon, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_LTTYPHON), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Meatgrinder
 		else if (CheckInventory(meatgrinderfist)
-			&& !CheckInventory(hxmod_meatgrinder))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_MEATGRINDER)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_meatgrinder, 1);
-			if (CheckInventory(meatgrindergrenade)) { GiveInventory(hxmod_meatgrindermre, 1); }
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_MEATGRINDER), 1);
+			if (CheckInventory(meatgrindergrenade)) { GiveInventory(HXS_GetTokenString(HXMOD_MEATGRINDERMRE), 1); }
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// NAZIS V2
 		else if (CheckActorClass(0, nazisv2class)
 			&& CheckInventory(nazisv2grenade)
 			&& CheckInventory(nazisv2revolvermag)
-			&& !CheckInventory(hxmod_nazisv2))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_NAZISV2)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_nazisv2, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_NAZISV2), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Omni-Wolf
 		else if (CheckActorClass(0, omniwolfclass)
 			&& CheckInventory(omniwolfammo)
 			&& CheckInventory(omniwolfpistol)
-			&& !CheckInventory(hxmod_omniwolf))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_OMNIWOLF)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_omniwolf, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_OMNIWOLF), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// PerK's Smoother Weapon Animations Enhanced
 		else if (CheckInventory(perkzfist)
 			&& CheckInventory(perkzpistol)
-			&& !CheckInventory(hxmod_perksmoothenh))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_PERKSMOOTHENH)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_perksmoothenh, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_PERKSMOOTHENH), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// SmoothDoom 2.0 WIP
 		else if (CheckActorClass(0, smoothdoomclass)
 			&& CheckInventory(smoothdoomfist)
 			&& CheckInventory(smoothdoompistol)
-			&& !CheckInventory(hxmod_smoothdoom))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_SMOOTHDOOM)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_smoothdoom, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_SMOOTHDOOM), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Supercharge 2.8
 		else if (CheckInventory(superchargefist)
 			&& CheckInventory(superchargepistol)
 			&& CheckInventory(superchargerifleammo)
-			&& !CheckInventory(hxmod_supercharge))
+			&& !CheckInventory(HXS_GetTokenString(HXMOD_SUPERCHARGE)))
 		{
-			GiveInventory(hxmod_modfound, 1);
-			GiveInventory(hxmod_supercharge, 1);
-			if (CheckInventory(hxmod_none)) { TakeInventory(hxmod_none, 1); }
+			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+			GiveInventory(HXS_GetTokenString(HXMOD_SUPERCHARGE), 1);
+			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// No mod detected
-		else if (!CheckInventory(hxmod_modfound)) { GiveInventory(hxmod_none, 1); }
+		else if (!CheckInventory(HXS_GetTokenString(HXMOD_NONE))
+			&&	!CheckInventory(HXS_GetTokenString(HXMOD_MODFOUND)))
+		{ GiveInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 }
 
 function void HXS_ItemManagement (int moditemcount, str hxitem, int hxitemtokens)

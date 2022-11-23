@@ -1,27 +1,29 @@
 #library "HXMACID"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 #import "HXACVAR.acs"
 
-str eri_buddha = "PowerEriBuddha";
-str hx_eri_buddha = "HX_Acid_BuddhaPowerUpToken";
-str hx_eri_buddhalongtimer = "HX_Acid_BuddhaPowerUpLongTimerToken";
-str eri_haste = "EriPowerSpeed";
-str eri_infrared = "PowerEriInfrared";
-str eri_invisibility = "PowerEriBlurSphere";
-str eri_invulnerability = "PowerEriInvulnerabilitySphere";
-str eri_quaddamage = "PowerEriQuadDamage";
-str eri_radsuit = "PowerEriRadSuit";
-str hx_eri_pins = "HX_Acid_Eri_PINS";
-str hx_eri_pinv = "HX_Acid_Eri_PINV";
-str hx_eri_pstr = "HX_Acid_Eri_PSTR";
+// Ac!d's Eriguns
+	#define eri_buddha "PowerEriBuddha"
+	#define hx_eri_buddha "HX_Acid_BuddhaPowerUpToken"
+	#define hx_eri_buddhalongtimer "HX_Acid_BuddhaPowerUpLongTimerToken"
+	#define eri_haste "EriPowerSpeed"
+	#define eri_infrared "PowerEriInfrared"
+	#define eri_invisibility "PowerEriBlurSphere"
+	#define eri_invulnerability "PowerEriInvulnerabilitySphere"
+	#define eri_quaddamage "PowerEriQuadDamage"
+	#define eri_radsuit "PowerEriRadSuit"
+	#define hx_eri_pins "HX_Acid_Eri_PINS"
+	#define hx_eri_pinv "HX_Acid_Eri_PINV"
+	#define hx_eri_pstr "HX_Acid_Eri_PSTR"
 
 script "HXS_AcidEriguns35ticHandler" enter
 {
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_acideriguns)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_ACIDERIGUNS))) {
 		while (true)
 		{
 /* 		// Key Management Tokens
@@ -37,7 +39,7 @@ script "HXS_AcidEriguns35ticHandler" enter
 
 		// Powerup Management Tokens
 			// Berserk
-			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
 
 		// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
@@ -51,7 +53,7 @@ script "HXS_AcidEriguns7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 	
-	if (CheckInventory(hxmod_acideriguns)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_ACIDERIGUNS))) {
 		while (true)
 		{
 		// Powerup Management Tokens
@@ -59,23 +61,23 @@ script "HXS_AcidEriguns7ticHandler" enter
 			HXS_PowerupTimer(eri_buddha, hx_eri_buddha);
 			HXS_PowerupTimer(eri_buddha, hx_eri_buddhalongtimer);
 			// Haste
-			HXS_PowerupTimer(eri_haste, hxgen_haste);
-			HXS_PowerupTimer(eri_haste, hxgen_hastelongtimer);
+			HXS_PowerupTimer(eri_haste, HXS_GetTokenString(HXGEN_HASTE));
+			HXS_PowerupTimer(eri_haste, HXS_GetTokenString(HXGEN_HASTELONGTIMER));
 			// Infrared
-			HXS_PowerupTimer(eri_infrared, hxgen_infrared);
-			HXS_PowerupTimer(eri_infrared, hxgen_infraredlongtimer);
+			HXS_PowerupTimer(eri_infrared, HXS_GetTokenString(HXGEN_INFRARED));
+			HXS_PowerupTimer(eri_infrared, HXS_GetTokenString(HXGEN_INFRAREDLONGTIMER));
 			// Invisibility
-			HXS_PowerupTimer(eri_invisibility, hxgen_invisibility);
-			HXS_PowerupTimer(eri_invisibility, hxgen_invisibilitylongtimer);
+			HXS_PowerupTimer(eri_invisibility, HXS_GetTokenString(HXGEN_INVISIBILITY));
+			HXS_PowerupTimer(eri_invisibility, HXS_GetTokenString(HXGEN_INVISIBILITYLONGTIMER));
 			// Invulnerability
-			HXS_PowerupTimer(eri_invulnerability, hxgen_invulnerability);
-			HXS_PowerupTimer(eri_invulnerability, hxgen_invulnerabilitylongtimer);
+			HXS_PowerupTimer(eri_invulnerability, HXS_GetTokenString(HXGEN_INVULNERABILITY));
+			HXS_PowerupTimer(eri_invulnerability, HXS_GetTokenString(HXGEN_INVULNERABILITYLONGTIMER));
 			// Quad Damage
-			HXS_PowerupTimer(eri_quaddamage, hxgen_quaddamage);
-			HXS_PowerupTimer(eri_quaddamage, hxgen_quaddamagelongtimer);
+			HXS_PowerupTimer(eri_quaddamage, HXS_GetTokenString(HXGEN_QUADDAMAGE));
+			HXS_PowerupTimer(eri_quaddamage, HXS_GetTokenString(HXGEN_QUADDAMAGELONGTIMER));
 			// Radsuit
-			HXS_PowerupTimer(eri_radsuit, hxgen_radsuit);
-			HXS_PowerupTimer(eri_radsuit, hxgen_radsuitlongtimer);
+			HXS_PowerupTimer(eri_radsuit, HXS_GetTokenString(HXGEN_RADSUIT));
+			HXS_PowerupTimer(eri_radsuit, HXS_GetTokenString(HXGEN_RADSUITLONGTIMER));
 
 		// Powerup Display Toggles
 			// Berserk & Quad Damage

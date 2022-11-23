@@ -1,5 +1,6 @@
 #library "HXMKRG2"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
 str kriegsland2_berserk = "SpeedBoost";
@@ -14,7 +15,7 @@ str hx_kriegsland2_speedtoken = "HX_Kriegsland2_SpeedToken";
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_kriegsland2)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND2))) {
 		while (true)
 		{
  		// Key Management Tokens
@@ -40,7 +41,7 @@ script "HXS_Kriegsland2_7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 	
-	if (CheckInventory(hxmod_kriegsland2)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND2))) {
 		while (true)
 		{
 		// Powerup Management Tokens - Permanent
@@ -50,11 +51,11 @@ script "HXS_Kriegsland2_7ticHandler" enter
 			// Berserk
 			HXS_PowerupTimer(kriegsland2_berserk, hx_kriegsland2_speedtoken);
 			// Invisibility
-			/* HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility); */
+			/* HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY)); */
 			// Invulnerability
-			HXS_PowerupTimer(kriegsland2_invul, hxgen_invulnerability);
+			HXS_PowerupTimer(kriegsland2_invul, HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
-			HXS_PowerupTimer(kriegsland2_radsuit, hxgen_radsuit);
+			HXS_PowerupTimer(kriegsland2_radsuit, HXS_GetTokenString(HXGEN_RADSUIT));
 
 		// Timer
 			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive

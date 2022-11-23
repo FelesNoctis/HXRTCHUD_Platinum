@@ -1,5 +1,6 @@
 #library "HXMCED64"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
 str doomced64berserk = "D64PowerStrength";
@@ -11,7 +12,7 @@ script "HXS_DoomCED6435ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_CED64)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_CED64))) {
 		while (true)
 		{
 /* 		// Key Management Tokens
@@ -27,7 +28,7 @@ script "HXS_DoomCED6435ticHandler" enter
 
 		// Powerup Management Tokens
 			// Berserk
-			HXS_ItemSync(doomced64berserk, hxgen_berserk);
+			HXS_ItemSync(doomced64berserk, HXS_GetTokenString(HXGEN_BERSERK));
 
 		// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
@@ -41,18 +42,18 @@ script "HXS_DoomCED647ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 	
-	if (CheckInventory(hxmod_CED64)) {
+	if (CheckInventory(HXS_GetTokenString(HXMOD_CED64))) {
 		while (true)
 		{
 		// Powerup Management Tokens
 			// Infrared
-			HXS_PowerupTimer(doomced64infrared, hxgen_infrared);
+			HXS_PowerupTimer(doomced64infrared, HXS_GetTokenString(HXGEN_INFRARED));
 			// Invisibility
-			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY));
 			// Invulnerability
-			HXS_PowerupTimer(doomced64invulnerability, hxgen_invulnerability);
+			HXS_PowerupTimer(doomced64invulnerability, HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
-			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
 
 		// Timer
 			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive

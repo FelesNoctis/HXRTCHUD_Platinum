@@ -1,19 +1,21 @@
 #library "HXASTATS"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str healthtoken = "HXSYS_HealthOverMaxToken";
-str armortoken = "HXSYS_ArmorOverMaxToken";
-str staminatoken = "HXSYS_StaminaToken";
-str staminastickytoken = "HXSYS_StaminaStickyToken";
-str altitudetoken = "HXSYS_AltitudeMetersToken";
+// General
+	#define healthtoken "HXSYS_HealthOverMaxToken"
+	#define armortoken "HXSYS_ArmorOverMaxToken"
+	#define staminatoken "HXSYS_StaminaToken"
+	#define staminastickytoken "HXSYS_StaminaStickyToken"
+	#define altitudetoken "HXSYS_AltitudeMetersToken"
 
 script "HXS_PlayerStats7ticHandler" enter
 {
 	// Wait 35 tics (1sec) before engaging, to make sure tokens have been given
 	delay(35);
 
-	if (!CheckInventory(hxmod_omniwolf))
+	if (!CheckInventory(HXS_GetTokenString(HXMOD_OMNIWOLF)))
 	{
 		while (true)
 		{

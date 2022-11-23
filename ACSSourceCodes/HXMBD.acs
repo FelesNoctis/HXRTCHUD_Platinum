@@ -1,5 +1,6 @@
 #library "HXMBD"
 #include "zcommon.acs"
+#import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 #import "HXASTATS.acs"
 
@@ -41,7 +42,7 @@ script "HXS_BrutalDoom35ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_brutaldoom))
+	if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM)))
 	{
 		while (true)
 		{
@@ -58,7 +59,7 @@ script "HXS_BrutalDoom35ticHandler" enter
 
 	// Powerup Management Tokens
 		// Berserk
-			HXS_ItemSync(vanillaberserk, hxgen_berserk);
+			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
 		// Shield
 			HXS_ItemSync(bdshield, hxgen_shield);
 
@@ -74,29 +75,29 @@ script "HXS_BrutalDoom7ticHandler" enter
 	// Wait 35 tics (1sec) before engaging, to make sure the token has been given
 	delay(35);
 
-	if (CheckInventory(hxmod_brutaldoom))
+	if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOM)))
 	{
 		while (true)
 		{
 
 		// Stamina Control
-			if (CheckInventory(bditemtactical)) { HXS_StamFlip(CheckInventory(bdstamina), hxbd_staminatoken, bdstaminamax); }
+			if (CheckInventory(HXS_GetTokenString(BDITEMTACTICAL))) { HXS_StamFlip(CheckInventory(bdstamina), hxbd_staminatoken, bdstaminamax); }
 		// Powerup Management Tokens
 			// Haste (BDP)
-			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_PowerupTimer(bdhaste, hxgen_hasteshort); }
+			if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMPLAT))) { HXS_PowerupTimer(bdhaste, HXS_GetTokenString(HXGEN_HASTESHORT)); }
 			// Infrared
-			HXS_PowerupTimer(bdinfrared, hxgen_infrared);
+			HXS_PowerupTimer(bdinfrared, HXS_GetTokenString(HXGEN_INFRARED));
 			// Invisibility
-			HXS_PowerupTimer(vanillainvisibility, hxgen_invisibility);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY));
 			// Invulnerability
-			HXS_PowerupTimer(vanillainvulnerability, hxgen_invulnerability);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Quad Damage (BDP)
-			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_PowerupTimer(bdquaddamage, hxgen_quaddamage); }
+			if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMPLAT))) { HXS_PowerupTimer(bdquaddamage, HXS_GetTokenString(HXGEN_QUADDAMAGE)); }
 			// Radsuit
-			HXS_PowerupTimer(vanillaradsuit, hxgen_radsuit);
+			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
 		
 		// Grenade Check
-			if (CheckInventory(hxmod_brutaldoomplat)) { HXS_ItemSync(bdgrenadetype, hxbd_grenadetype); }
+			if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMPLAT))) { HXS_ItemSync(bdgrenadetype, hxbd_grenadetype); }
 
 		// Meat Shield Check
 			if (CheckInventory(bdmeatshieldcguy)
@@ -122,20 +123,20 @@ script "HXS_BrutalDoom7ticHandler" enter
 				|| CheckInventory(bdvehiclemech)
 				|| CheckInventory(bdvehicletank)
 				|| CheckInventory(bdvehicletankart))
-			{ GiveInventory(hxsys_vehiclehud, 1); }
+			{ GiveInventory(HXS_GetTokenString(HXSYS_VEHICLEHUD), 1); }
 			else
-			{ TakeInventory(hxsys_vehiclehud, 1); }
+			{ TakeInventory(HXS_GetTokenString(HXSYS_VEHICLEHUD), 1); }
 
 		// Transformation Check
 			if (CheckInventory(bdtransformbaron)
 				|| CheckInventory(bdtransformmancubus)
 				|| CheckInventory(bdtransformrevenant)
 				|| CheckInventory(bdtransformunmaker))
-			{ GiveInventory(hxsys_transformhud, 1); }
+			{ GiveInventory(HXS_GetTokenString(HXSYS_TRANSFORMHUD), 1); }
 			else
-			{ TakeInventory(hxsys_transformhud, 1); }
+			{ TakeInventory(HXS_GetTokenString(HXSYS_TRANSFORMHUD), 1); }
 
-			if (CheckInventory(hxsys_transformhud))
+			if (CheckInventory(HXS_GetTokenString(HXSYS_TRANSFORMHUD)))
 			{
 				if (CheckInventory(bdtransformbaron)) { HXS_PowerupTimer(bdtransformbaron, hxbd_tfduration); }
 				if (CheckInventory(bdtransformmancubus)) { HXS_PowerupTimer(bdtransformmancubus, hxbd_tfduration); }
@@ -146,8 +147,8 @@ script "HXS_BrutalDoom7ticHandler" enter
 
 
 		// Unmaker HUD Killer
-			if (CheckInventory(bdtransformunmaker))	{ GiveInventory(hxsys_normalhudkiller, 1); }
-			else									{ TakeInventory(hxsys_normalhudkiller, 1); }
+			if (CheckInventory(bdtransformunmaker))	{ GiveInventory(HXS_GetTokenString(HXSYS_NORMALHUDKILLER), 1); }
+			else									{ TakeInventory(HXS_GetTokenString(HXSYS_NORMALHUDKILLER), 1); }
 
 		// Timer
 			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive
