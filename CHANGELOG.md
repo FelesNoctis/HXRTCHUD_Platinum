@@ -5,6 +5,10 @@
 - **General:**
   - Mod control scripts have been entirely overhauled due to reaching the limit of level-scope vars that were allowed. All control vars are now constants (#define and #libdefine).
 
+- **Mod Updates:**
+  - Faspons:
+    - Ammo counter changed from ammo1 to ammo2, because hurr durr how did we miss this before?
+
 ## v0.61
 
 - **Bottom-Right Panels:**

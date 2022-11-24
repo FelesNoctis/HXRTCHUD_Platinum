@@ -4527,7 +4527,7 @@ StatusBar Fullscreen, FullscreenOffsets
 			UsesAmmo
 			{
 				DrawImage "HXAMMO", -134, -33;
-				DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
+				IsSelected not "Minigun" { DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29; }
 				DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
 
 				WeaponAmmo RifleAmmo
@@ -4553,6 +4553,7 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawNumber 4, HXINDEXFONTS, untranslated, ammo Nato, -6, -30;
 
 					IsSelected "Minigun" {
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo1, vertical, interpolate(64), -130, -29;
 						InInventory not "MiniEmpty", 1 { DrawNumber 4, HXSTATUSFONT, untranslated, ammo1, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
 						else DrawNumber 4, HXSTATUSFONT, HXRTCRed, ammo1, interpolate(128), -84, -29, 0;
 					}
