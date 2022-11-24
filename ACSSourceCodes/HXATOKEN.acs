@@ -291,9 +291,9 @@ function str HXS_GetTokenString (int strnum)
 				case BEAUTIFULOVERLAYCONTROL: return "BD_OverlayControl"; break;
 				case BEAUTIFULWEAPONCONTROL: return "BD_WeaponPickupControl"; break;
 			// BDLite
-				case BDLITECLASS: return "BD_BloodyPrintControl"; break;
-				case BDLITEFIST: return "BD_OverlayControl"; break;
-				case BDLITERIFLE: return "BD_WeaponPickupControl"; break;
+				case BDLITECLASS: return "Doomer"; break;
+				case BDLITEFIST: return "BdMeleeAttacks"; break;
+				case BDLITERIFLE: return "BdRifle"; break;
 			// BDLite
 				case BDGENPLAYER: return "IsPlayer"; break;
 				case BDITEMNOTTACTICAL: return "IsNOTTacticalClass"; break;
