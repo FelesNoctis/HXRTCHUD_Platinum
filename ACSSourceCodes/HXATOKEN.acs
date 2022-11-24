@@ -268,7 +268,7 @@ function str HXS_GetTokenString (int strnum)
 			case VANILLAINVISIBILITY: return "PowerInvisibility"; break;
 			case HXGEN_INVISIBILITY: return "HX_InvisibilityPowerUpToken"; break;
 			case VANILLAINVULNERABILITY: return "PowerInvulnerable"; break;
-			case HXGEN_INVISIBILITY: return "HX_InvulnerabilityPowerUpToken"; break;
+			case HXGEN_INVULNERABILITY: return "HX_InvulnerabilityPowerUpToken"; break;
 			case VANILLARADSUIT: return "PowerIronfeet"; break;
 			case HXGEN_RADSUIT: return "HX_RadSuitPowerUpToken"; break;
 			case HXGEN_INFRAREDLONGTIMER: return "HX_InfraredPowerUpLongTimerToken"; break;
