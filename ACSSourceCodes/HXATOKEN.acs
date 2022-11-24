@@ -1,6 +1,9 @@
 #library "HXATOKEN"
 #include "zcommon.acs"
 
+// EXCLUDE:
+// HXACVAR.acs, HXATOKEN.acs, HXTOKENS.dec, SBARINFO
+
 // Range: 000000 : HUD Status Token
 	#libdefine HXSYS_MASTERTOKEN				000000
 // Range: 000001 - 000099 : HUD Mode Switch
@@ -40,6 +43,20 @@
 	#libdefine HXMOD_SMOOTHDOOM					001024
 	#libdefine HXMOD_SUPERCHARGE				001025
 	#libdefine HXMOD_ZIOBRUTALWOLF				001026
+// Range: 008000 - 008999 : Keys
+	// Vanilla Keys
+	#libdefine VANILLABLUECARD					008000
+	#libdefine HXGEN_BLUECARD					008001
+	#libdefine VANILLABLUESKULL					008002
+	#libdefine HXGEN_BLUESKULL					008003
+	#libdefine VANILLAREDCARD					008004
+	#libdefine HXGEN_REDCARD					008005
+	#libdefine VANILLAREDSKULL					008006
+	#libdefine HXGEN_REDSKULL					008007
+	#libdefine VANILLAYELLOWCARD				008008
+	#libdefine HXGEN_YELLOWCARD					008009
+	#libdefine VANILLAYELLOWSKULL				008010
+	#libdefine HXGEN_YELLOWSKULL				008011
 // Range: 009000 - 009999 : Item Tokens
 	// Vanilla Powerups
 	#libdefine VANILLABERSERK					009000
@@ -105,21 +122,78 @@
 		#libdefine BWZIOPISTOLAMMO				020022
 // Range: 030000 - 039999 : (C) Mod-Specific Tokens
 // Range: 040000 - 049999 : (D) Mod-Specific Tokens
+	// Doom 4 Vanilla
+		#libdefine D4VCLASS						040000
+		#libdefine D4VFIST						040001
+		#libdefine D4VPISTOL					040002
+	// Doom 64 Retribution
+		#libdefine D64RTRCLASS					040003
+		#libdefine D64RTRFIST					040004
+		#libdefine D64RTRPLAYING				040005
+	// Doom CE - D64 and PSX
+		#libdefine DOOMCED64CLASS				040006
+		#libdefine DOOMCED64FIST				040007
+		#libdefine DOOMCED64PISTOL				040008
+		#libdefine DOOMCEPSXCLASS				040009
+		#libdefine DOOMCEPSXFIST				040010
+		#libdefine DOOMCEPSXPISTOL				040011
 // Range: 050000 - 059999 : (E) Mod-Specific Tokens
 // Range: 060000 - 069999 : (F) Mod-Specific Tokens
+	// Faspons
+		#libdefine FASPONSCLASS					060000
+		#libdefine FASPONSFIST					060001
+		#libdefine FASPONSRIFLE					060002
 // Range: 070000 - 079999 : (G) Mod-Specific Tokens
 // Range: 080000 - 089999 : (H) Mod-Specific Tokens
 // Range: 090000 - 099999 : (I) Mod-Specific Tokens
 // Range: 100000 - 109999 : (J) Mod-Specific Tokens
 // Range: 110000 - 119999 : (K) Mod-Specific Tokens
+	// Kriegsland 1: Blutorden
+		#libdefine KRIEGSLAND1CLASS				110000
+		#libdefine KRIEGSLAND1GRENADES			110001
+		#libdefine KRIEGSLAND1MELEE				110002
+	// Kriegsland 2: Untergrund
+		#libdefine KRIEGSLAND2CLASS				110003
+		#libdefine KRIEGSLAND2MELEE				110004
+		#libdefine KRIEGSLAND2PISTOL			110005
 // Range: 120000 - 129999 : (L) Mod-Specific Tokens
+	// Led's Generic Weapon Mod
+		#libdefine LEDCLASS						120000
+		#libdefine LEDFIST						120001
+		#libdefine LEDMINIGUNMAG				120002
+	// Lt. Typhon
+		#libdefine TYPHONCLASS					120003
+		#libdefine TYPHONBIO					120004
+		#libdefine TYPHONDUMBBELL				120005
 // Range: 130000 - 139999 : (M) Mod-Specific Tokens
+	// Meatgrinder
+		#libdefine MEATGRINDERFIST				130000
+		#libdefine MEATGRINDERGRENADE			130001
 // Range: 140000 - 149999 : (N) Mod-Specific Tokens
+	// NAZIS V2
+		#libdefine NAZISV2CLASS					140000
+		#libdefine NAZISV2GRENADE				140001
+		#libdefine NAZISV2REVOLVERMAG			140002
 // Range: 150000 - 159999 : (O) Mod-Specific Tokens
+	// Omni-Wolf
+		#libdefine OMNIWOLFAMMO					150000
+		#libdefine OMNIWOLFCLASS				150001
+		#libdefine OMNIWOLFPISTOL				150002
 // Range: 160000 - 169999 : (P) Mod-Specific Tokens
+	// PerK's Smoother Weapon Animations Enhanced
+		#libdefine PERKZFIST					160000
+		#libdefine PERKZPISTOL					160001
 // Range: 170000 - 179999 : (Q) Mod-Specific Tokens
 // Range: 180000 - 189999 : (R) Mod-Specific Tokens
 // Range: 190000 - 199999 : (S) Mod-Specific Tokens
+	// SmoothDoom 2.0 WIP
+		#libdefine SMOOTHDOOMCLASS				190000
+		#libdefine SMOOTHDOOMFIST				190001
+		#libdefine SMOOTHDOOMPISTOL				190002
+	// Supercharge 2.8
+		#libdefine SUPERCHARGEFIST				190003
+		#libdefine SUPERCHARGEPISTOL			190004
+		#libdefine SUPERCHARGERIFLEAMMO			190005
 // Range: 200000 - 209999 : (T) Mod-Specific Tokens
 // Range: 210000 - 219999 : (U) Mod-Specific Tokens
 // Range: 220000 - 229999 : (V) Mod-Specific Tokens
@@ -171,6 +245,19 @@ function str HXS_GetTokenString (int strnum)
 			case HXMOD_SMOOTHDOOM: return "HXMOD_SmoothDoom2"; break;
 			case HXMOD_SUPERCHARGE: return "HXMOD_Supercharge"; break;
 			case HXMOD_ZIOBRUTALWOLF: return "HXMOD_ZioBrutalWolfenstein"; break;
+		// Range: 008000 - 008999 : Keys
+			case VANILLABLUECARD: return "BlueCard"; break;
+			case HXGEN_BLUECARD: return "HX_BlueCardKeyToken"; break;
+			case VANILLABLUESKULL: return "BlueSkull"; break;
+			case HXGEN_BLUESKULL: return "HX_BlueSkullKeyToken"; break;
+			case VANILLAREDCARD: return "RedCard"; break;
+			case HXGEN_REDCARD: return "HX_RedCardKeyToken"; break;
+			case VANILLAREDSKULL: return "RedSkull"; break;
+			case HXGEN_REDSKULL: return "HX_RedSkullKeyToken"; break;
+			case VANILLAYELLOWCARD: return "YellowCard"; break;
+			case HXGEN_YELLOWCARD: return "HX_YellowCardKeyToken"; break;
+			case VANILLAYELLOWSKULL: return "YellowSkull"; break;
+			case HXGEN_YELLOWSKULL: return "HX_YellowSkullKeyToken"; break;
 		// Range: 009000 - 009999 : Item Tokens
 			case VANILLABERSERK: return "PowerStrength"; break;
 			case HXGEN_BERSERK: return "HX_BerserkPowerUpToken"; break;
@@ -228,21 +315,78 @@ function str HXS_GetTokenString (int strnum)
 				case BWZIOPISTOLAMMO: return "LUGERAmmoAlt"; break;
 		// Range: 030000 - 039999 : (C) Mod-Specific Tokens
 		// Range: 040000 - 049999 : (D) Mod-Specific Tokens
+			// Doom 4 Vanilla
+				case D4VCLASS: return "DoomSlayer"; break;
+				case D4VFIST: return "DH_Fist"; break;
+				case D4VPISTOL: return "DH_Pistol2"; break;
+			// Doom 64 Retribution
+				case D64RTRCLASS: return "64DoomPlayer"; break;
+				case D64RTRFIST: return "64Fist"; break;
+				case D64RTRPLAYING: return "IsPlaying"; break;
+			// Doom CE - D64 and PSX
+				case DOOMCED64CLASS: return "D64DoomPlayer"; break;
+				case DOOMCED64FIST: return "D64Fist"; break;
+				case DOOMCED64PISTOL: return "D64Pistol"; break;
+				case DOOMCEPSXCLASS: return "PsxDoomPlayer"; break;
+				case DOOMCEPSXFIST: return "PsxFist"; break;
+				case DOOMCEPSXPISTOL: return "PsxPistol"; break;
 		// Range: 050000 - 059999 : (E) Mod-Specific Tokens
 		// Range: 060000 - 069999 : (F) Mod-Specific Tokens
+			// Faspons
+				case FASPONSCLASS: return "FasPlayer"; break;
+				case FASPONSFIST: return "Knuckles"; break;
+				case FASPONSRIFLE: return "CombatRifle"; break;
 		// Range: 070000 - 079999 : (G) Mod-Specific Tokens
 		// Range: 080000 - 089999 : (H) Mod-Specific Tokens
 		// Range: 090000 - 099999 : (I) Mod-Specific Tokens
 		// Range: 100000 - 109999 : (J) Mod-Specific Tokens
 		// Range: 110000 - 119999 : (K) Mod-Specific Tokens
+			// Kriegsland 1: Blutorden
+				case KRIEGSLAND1CLASS: return "FKPlayer"; break;
+				case KRIEGSLAND1GRENADES: return "HDGrenades"; break;
+				case KRIEGSLAND1MELEE: return "HDKnife"; break;
+			// Kriegsland 1: Blutorden
+				case KRIEGSLAND2CLASS: return "K2Player"; break;
+				case KRIEGSLAND2MELEE: return "K2WeaponB"; break;
+				case KRIEGSLAND2PISTOL: return "K2WeaponC"; break;
 		// Range: 120000 - 129999 : (L) Mod-Specific Tokens
+			// Led's Generic Weapon Mod
+				case LEDCLASS: return "DoomGuy"; break;
+				case LEDFIST: return "Knuckle"; break;
+				case LEDMINIGUNMAG: return "MinigunMag"; break;
+			// Lt. Typhon
+				case TYPHONCLASS: return "VeteranDoomPlayer"; break;
+				case TYPHONBIO: return "VeteranBioAttack"; break;
+				case TYPHONDUMBBELL: return "VeteranDumbbell"; break;
 		// Range: 130000 - 139999 : (M) Mod-Specific Tokens
+			// Meatgrinder
+				case MEATGRINDERFIST: return "GrinderFist"; break;
+				case MEATGRINDERGRENADE: return "GrenadeAmmo"; break;
 		// Range: 140000 - 149999 : (N) Mod-Specific Tokens
+			// NAZIS V2
+				case NAZISV2CLASS: return "WWNazisPlayer"; break;
+				case NAZISV2GRENADE: return "GrenadePickup"; break;
+				case NAZISV2REVOLVERMAG: return "WeaselsRevolverLoaded"; break;
 		// Range: 150000 - 159999 : (O) Mod-Specific Tokens
+			// Omni-Wolf
+				case OMNIWOLFAMMO: return "WolfBullets"; break;
+				case OMNIWOLFCLASS: return "BJBlazko"; break;
+				case OMNIWOLFPISTOL: return "WolfPistol"; break;
 		// Range: 160000 - 169999 : (P) Mod-Specific Tokens
+			// PerK's Smoother Weapon Animations Enhanced
+				case PERKZFIST: return "ZPerkFist"; break;
+				case PERKZPISTOL: return "ZPerkPistol"; break;
 		// Range: 170000 - 179999 : (Q) Mod-Specific Tokens
 		// Range: 180000 - 189999 : (R) Mod-Specific Tokens
 		// Range: 190000 - 199999 : (S) Mod-Specific Tokens
+			// SmoothDoom 2.0 WIP
+				case SMOOTHDOOMCLASS: return "PerkDPlayer"; break;
+				case SMOOTHDOOMFIST: return "PerkFist"; break;
+				case SMOOTHDOOMPISTOL: return "PerkPistol"; break;
+			// Supercharge 2.8
+				case SUPERCHARGEFIST: return "TangoFist"; break;
+				case SUPERCHARGEPISTOL: return "TangoPistol"; break;
+				case SUPERCHARGERIFLEAMMO: return "AssaultRifleAmmo"; break;
 		// Range: 200000 - 209999 : (T) Mod-Specific Tokens
 		// Range: 210000 - 219999 : (U) Mod-Specific Tokens
 		// Range: 220000 - 229999 : (V) Mod-Specific Tokens

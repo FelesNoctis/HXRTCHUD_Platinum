@@ -2,91 +2,6 @@
 #include "zcommon.acs"
 #import "HXATOKEN.acs"
 
-// General Keys (Unused)
-/* 	#define vanillabluecard "BlueCard"
-	#define hxgen_bluecard "HX_BlueCardKeyToken"
-	#define vanillablueskull "BlueSkull"
-	#define hxgen_blueskull "HX_BlueSkullKeyToken"
-	#define vanillaredcard "RedCard"
-	#define hxgen_redcard "HX_RedCardKeyToken"
-	#define vanillaredskull "RedSkull"
-	#define hxgen_redskull "HX_RedSkullKeyToken"
-	#define vanillayellowcard "YellowCard"
-	#define hxgen_yellowcard "HX_YellowCardKeyToken"
-	#define vanillayellowskull "YellowSkull"
-	#define hxgen_yellowskull "HX_YellowSkullKeyToken" */
-
-// Doom 4 Vanilla
-	#define d4vclass "DoomSlayer"
-	#define d4vfist "DH_Fist"
-	#define d4vpistol "DH_Pistol2"
-
-// Doom 64 Retribution
-	#define d64rtrclass "64DoomPlayer"
-	#define d64rtrfist "64Fist"
-	#define d64rtrplaying "IsPlaying"
-
-// Doom CE - D64 and PSX
-	#define doomced64class "D64DoomPlayer"
-	#define doomced64fist "D64Fist"
-	#define doomced64pistol "D64Pistol"
-	#define doomcepsxclass "PsxDoomPlayer"
-	#define doomcepsxfist "PsxFist"
-	#define doomcepsxpistol "PsxPistol"
-
-// Faspons
-	#define fasponsclass "FasPlayer"
-	#define fasponsfist "Knuckles"
-	#define fasponsrifle "CombatRifle"
-
-// Kriegsland 1: Blutorden
-	#define kriegsland1class "FKPlayer"
-	#define kriegsland1grenades "HDGrenades"
-	#define kriegsland1melee "HDKnife"
-
-// Kriegsland 2: Untergrund
-	#define kriegsland2class "K2Player"
-	#define kriegsland2melee "K2WeaponB"
-	#define kriegsland2pistol "K2WeaponC"
-
-// Led's Generic Weapon Mod
-	#define ledclass "DoomGuy"
-	#define ledfist "Knuckle"
-	#define ledminigunmag "MinigunMag"
-
-// Lt. Typhon
-	#define typhonclass "VeteranDoomPlayer"
-	#define typhonbio "VeteranBioAttack"
-	#define typhondumbbell "VeteranDumbbell"
-
-// Meatgrinder
-	#define meatgrinderfist "GrinderFist"
-	#define meatgrindergrenade "GrenadeAmmo"
-
-// NAZIS V2
-	#define nazisv2class "WWNazisPlayer"
-	#define nazisv2grenade "GrenadePickup"
-	#define nazisv2revolvermag "WeaselsRevolverLoaded"
-
-// NAZIS V2
-	#define omniwolfammo "WolfBullets"
-	#define omniwolfclass "BJBlazko"
-	#define omniwolfpistol "WolfPistol"
-
-// PerK's Smoother Weapon Animations Enhanced
-	#define perkzfist "ZPerkFist"
-	#define perkzpistol "ZPerkPistol"
-
-// SmoothDoom 2.0 WIP
-	#define smoothdoomclass "PerkDPlayer"
-	#define smoothdoomfist "PerkFist"
-	#define smoothdoompistol "PerkPistol"
-
-// Supercharge 2.8
-	#define superchargefist "TangoFist"
-	#define superchargepistol "TangoPistol"
-	#define superchargerifleammo "AssaultRifleAmmo"
-
 script "HXS_ModCompatibilityStartup" enter
 {
 	// Hud Killer for mod check debugging
@@ -133,7 +48,7 @@ script "HXS_ModCompatibilityStartup" enter
 		{
 			/* log(s:"Running BD64/D64RTR Check"); */
 			// Brutal Doom 64
-			if (!CheckInventory(d64rtrplaying)
+			if (!CheckInventory(HXS_GetTokenString(D64RTRPLAYING))
 			&& (CheckActorClass(0, HXS_GetTokenString(BD64CLASSBASIC))
 				|| CheckActorClass(0, HXS_GetTokenString(BD64CLASSTACTICAL))
 				|| CheckActorClass(0, HXS_GetTokenString(BD64CLASSTACTICALPISTOL))
@@ -151,9 +66,9 @@ script "HXS_ModCompatibilityStartup" enter
 
 			// Doom 64: Retribution
 			if (!CheckInventory(HXS_GetTokenString(HXMOD_D64RTR))
-			&& CheckInventory(d64rtrplaying)
-			&& CheckActorClass(0, d64rtrclass)
-			&& CheckInventory(d64rtrfist))
+			&& CheckInventory(HXS_GetTokenString(D64RTRPLAYING))
+			&& CheckActorClass(0, HXS_GetTokenString(D64RTRCLASS))
+			&& CheckInventory(HXS_GetTokenString(D64RTRFIST)))
 			{
 				GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
 				GiveInventory(HXS_GetTokenString(HXMOD_D64RTR), 1);
@@ -201,9 +116,9 @@ script "HXS_ModCompatibilityStartup" enter
 			{ GiveInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Doom 4 Vanilla
-		else if (CheckActorClass(0, d4vclass)
-			&& CheckInventory(d4vfist)
-			&& CheckInventory(d4vpistol)
+		else if (CheckActorClass(0, HXS_GetTokenString(D4VCLASS))
+			&& CheckInventory(HXS_GetTokenString(D4VFIST))
+			&& CheckInventory(HXS_GetTokenString(D4VPISTOL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_D4V)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -211,9 +126,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Doom CE - D64
-		else if (CheckActorClass(0, doomced64class)
-			&& CheckInventory(doomced64fist)
-			&& CheckInventory(doomced64pistol)
+		else if (CheckActorClass(0, HXS_GetTokenString(DOOMCED64CLASS))
+			&& CheckInventory(HXS_GetTokenString(DOOMCED64FIST))
+			&& CheckInventory(HXS_GetTokenString(DOOMCED64PISTOL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_CED64)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -222,9 +137,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Doom CE - PSX
-		else if (CheckActorClass(0, doomcepsxclass)
-			&& CheckInventory(doomcepsxfist)
-			&& CheckInventory(doomcepsxpistol)
+		else if (CheckActorClass(0, HXS_GetTokenString(DOOMCEPSXCLASS))
+			&& CheckInventory(HXS_GetTokenString(DOOMCEPSXFIST))
+			&& CheckInventory(HXS_GetTokenString(DOOMCEPSXPISTOL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_CEPSX)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -232,9 +147,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Faspons
-		else if (CheckActorClass(0, fasponsclass)
-			&& CheckInventory(fasponsfist)
-			&& CheckInventory(fasponsrifle)
+		else if (CheckActorClass(0, HXS_GetTokenString(FASPONSCLASS))
+			&& CheckInventory(HXS_GetTokenString(FASPONSFIST))
+			&& CheckInventory(HXS_GetTokenString(FASPONSRIFLE))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_FASPONS)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -242,9 +157,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Kriegsland 1: Blutorden
-		else if (CheckActorClass(0, kriegsland1class)
-			&& CheckInventory(kriegsland1grenades)
-			&& CheckInventory(kriegsland1melee)
+		else if (CheckActorClass(0, HXS_GetTokenString(KRIEGSLAND1CLASS))
+			&& CheckInventory(HXS_GetTokenString(KRIEGSLAND1GRENADES))
+			&& CheckInventory(HXS_GetTokenString(KRIEGSLAND1MELEE))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND1)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -252,9 +167,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Kriegsland 2: Untergrund
-		else if (CheckActorClass(0, kriegsland2class)
-			&& CheckInventory(kriegsland2melee)
-			&& CheckInventory(kriegsland2pistol)
+		else if (CheckActorClass(0, HXS_GetTokenString(KRIEGSLAND2CLASS))
+			&& CheckInventory(HXS_GetTokenString(KRIEGSLAND2MELEE))
+			&& CheckInventory(HXS_GetTokenString(KRIEGSLAND2PISTOL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_KRIEGSLAND2)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -262,9 +177,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Led's Generic Weapon Mod
-		else if (CheckActorClass(0, ledclass)
-			&& CheckInventory(ledfist)
-			&& CheckInventory(ledminigunmag)
+		else if (CheckActorClass(0, HXS_GetTokenString(LEDCLASS))
+			&& CheckInventory(HXS_GetTokenString(LEDFIST))
+			&& CheckInventory(HXS_GetTokenString(LEDMINIGUNMAG))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_LEDGWMTOKEN)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -272,9 +187,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Lt. Typhon
-		else if (CheckActorClass(0, typhonclass)
-			&& CheckInventory(typhonbio)
-			&& CheckInventory(typhondumbbell)
+		else if (CheckActorClass(0, HXS_GetTokenString(TYPHONCLASS))
+			&& CheckInventory(HXS_GetTokenString(TYPHONBIO))
+			&& CheckInventory(HXS_GetTokenString(TYPHONDUMBBELL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_LTTYPHON)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -282,18 +197,18 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Meatgrinder
-		else if (CheckInventory(meatgrinderfist)
+		else if (CheckInventory(HXS_GetTokenString(MEATGRINDERFIST))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_MEATGRINDER)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
 			GiveInventory(HXS_GetTokenString(HXMOD_MEATGRINDER), 1);
-			if (CheckInventory(meatgrindergrenade)) { GiveInventory(HXS_GetTokenString(HXMOD_MEATGRINDERMRE), 1); }
+			if (CheckInventory(HXS_GetTokenString(MEATGRINDERGRENADE))) { GiveInventory(HXS_GetTokenString(HXMOD_MEATGRINDERMRE), 1); }
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// NAZIS V2
-		else if (CheckActorClass(0, nazisv2class)
-			&& CheckInventory(nazisv2grenade)
-			&& CheckInventory(nazisv2revolvermag)
+		else if (CheckActorClass(0, HXS_GetTokenString(NAZISV2CLASS))
+			&& CheckInventory(HXS_GetTokenString(NAZISV2GRENADE))
+			&& CheckInventory(HXS_GetTokenString(NAZISV2REVOLVERMAG))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_NAZISV2)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -301,9 +216,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Omni-Wolf
-		else if (CheckActorClass(0, omniwolfclass)
-			&& CheckInventory(omniwolfammo)
-			&& CheckInventory(omniwolfpistol)
+		else if (CheckActorClass(0, HXS_GetTokenString(OMNIWOLFCLASS))
+			&& CheckInventory(HXS_GetTokenString(OMNIWOLFAMMO))
+			&& CheckInventory(HXS_GetTokenString(OMNIWOLFPISTOL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_OMNIWOLF)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -311,8 +226,8 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// PerK's Smoother Weapon Animations Enhanced
-		else if (CheckInventory(perkzfist)
-			&& CheckInventory(perkzpistol)
+		else if (CheckInventory(HXS_GetTokenString(PERKZFIST))
+			&& CheckInventory(HXS_GetTokenString(PERKZPISTOL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_PERKSMOOTHENH)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -320,9 +235,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// SmoothDoom 2.0 WIP
-		else if (CheckActorClass(0, smoothdoomclass)
-			&& CheckInventory(smoothdoomfist)
-			&& CheckInventory(smoothdoompistol)
+		else if (CheckActorClass(0, HXS_GetTokenString(SMOOTHDOOMCLASS))
+			&& CheckInventory(HXS_GetTokenString(SMOOTHDOOMFIST))
+			&& CheckInventory(HXS_GetTokenString(SMOOTHDOOMPISTOL))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_SMOOTHDOOM)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
@@ -330,9 +245,9 @@ script "HXS_ModCompatibilityStartup" enter
 			if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 		}
 	// Supercharge 2.8
-		else if (CheckInventory(superchargefist)
-			&& CheckInventory(superchargepistol)
-			&& CheckInventory(superchargerifleammo)
+		else if (CheckInventory(HXS_GetTokenString(SUPERCHARGEFIST))
+			&& CheckInventory(HXS_GetTokenString(SUPERCHARGEPISTOL))
+			&& CheckInventory(HXS_GetTokenString(SUPERCHARGERIFLEAMMO))
 			&& !CheckInventory(HXS_GetTokenString(HXMOD_SUPERCHARGE)))
 		{
 			GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
