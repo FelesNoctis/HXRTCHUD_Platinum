@@ -106,6 +106,7 @@
 		// #define bdclassdoomer3 "Shotgun Start"
 	// Brutal Doom Platinum
 		#libdefine BDPLATTOTALLYAMENUDUMMY		020010
+		#libdefine BDTRANSFORMUNMAKER			020023
 	// Brutal Doom 64
 		#libdefine BD64CLASSBASIC				020011
 		#libdefine BD64CLASSMODERN				020012
@@ -190,10 +191,11 @@
 		#libdefine SMOOTHDOOMCLASS				190000
 		#libdefine SMOOTHDOOMFIST				190001
 		#libdefine SMOOTHDOOMPISTOL				190002
-	// Supercharge 2.8
+	// Supercharge
 		#libdefine SUPERCHARGEFIST				190003
 		#libdefine SUPERCHARGEPISTOL			190004
 		#libdefine SUPERCHARGERIFLEAMMO			190005
+		#libdefine SUPERCHANGEVERSION29			190006
 // Range: 200000 - 209999 : (T) Mod-Specific Tokens
 // Range: 210000 - 219999 : (U) Mod-Specific Tokens
 // Range: 220000 - 229999 : (V) Mod-Specific Tokens
@@ -299,6 +301,7 @@ function str HXS_GetTokenString (int strnum)
 				case BDITEMTACTICAL: return "IsTacticalClass"; break;
 			// Brutal Doom Platinum
 				case BDPLATTOTALLYAMENUDUMMY: return "IsNOTAMenuDummy"; break;
+				case BDTRANSFORMUNMAKER: return "UnmakerPhaserWeapon"; break;
 			// Brutal Doom 64
 				case BD64CLASSBASIC: return "64DoomPlayer"; break;
 				case BD64CLASSMODERN: return "Modern"; break;
@@ -387,6 +390,7 @@ function str HXS_GetTokenString (int strnum)
 				case SUPERCHARGEFIST: return "TangoFist"; break;
 				case SUPERCHARGEPISTOL: return "TangoPistol"; break;
 				case SUPERCHARGERIFLEAMMO: return "AssaultRifleAmmo"; break;
+				case SUPERCHANGEVERSION29: return "HXMOD_Supercharge_v29"; break;
 		// Range: 200000 - 209999 : (T) Mod-Specific Tokens
 		// Range: 210000 - 219999 : (U) Mod-Specific Tokens
 		// Range: 220000 - 229999 : (V) Mod-Specific Tokens

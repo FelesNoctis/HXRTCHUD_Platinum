@@ -3,12 +3,13 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str kriegsland2_berserk = "SpeedBoost";
-str kriegsland2_infrared = "UberLightAmp";
-str kriegsland2_invul = "K2GodPower";
-str kriegsland2_radsuit = "K2BioPower";
-str hx_kriegsland2_infraredtoken = "HX_Kriegsland2_InfraredToken";
-str hx_kriegsland2_speedtoken = "HX_Kriegsland2_SpeedToken";
+// Kriegsland 2: Untergrund
+	#define kriegsland2_berserk "SpeedBoost"
+	#define kriegsland2_infrared "UberLightAmp"
+	#define kriegsland2_invul "K2GodPower"
+	#define kriegsland2_radsuit "K2BioPower"
+	#define hx_kriegsland2_infraredtoken "HX_Kriegsland2_InfraredToken"
+	#define hx_kriegsland2_speedtoken "HX_Kriegsland2_SpeedToken"
 
 /* script "HXS_Kriegsland2_35ticHandler" enter
 {

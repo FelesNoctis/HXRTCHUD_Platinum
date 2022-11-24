@@ -3,10 +3,11 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str doomcepsxberserk = "PsxPowerStrength";
-str doomcepsxinfrared = "PsxPowerLightAmp";
-str doomcepsxinvisibility = "PsxPowerInvisibility";
-str doomcepsxinvulnerability = "PsxPowerInvulnerable";
+// Doom CE - PSX
+	#define doomcepsxberserk "PsxPowerStrength"
+	#define doomcepsxinfrared "PsxPowerLightAmp"
+	#define doomcepsxinvisibility "PsxPowerInvisibility"
+	#define doomcepsxinvulnerability "PsxPowerInvulnerable"
 
 script "HXS_DoomCEPSX35ticHandler" enter
 {

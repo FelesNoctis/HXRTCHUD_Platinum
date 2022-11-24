@@ -3,9 +3,10 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str typhon_berserk = "PowerVeteranStrength";
-str typhon_burningangel = "PowerNoDamage";
-str hx_burningangel = "HX_LtTyphonBurningAngelToken";
+// Lt. Typhon
+	#define typhon_berserk "PowerVeteranStrength"
+	#define typhon_burningangel "PowerNoDamage"
+	#define hx_burningangel "HX_LtTyphonBurningAngelToken"
 
 script "HXS_LtTyphon35ticHandler" enter
 {

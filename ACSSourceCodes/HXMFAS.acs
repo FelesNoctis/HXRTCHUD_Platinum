@@ -3,7 +3,8 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str fasponsberserk = "BerserkPower";
+// Faspons
+	#define fasponsberserk "BerserkPower"
 
 script "HXS_Faspons35ticHandler" enter
 {

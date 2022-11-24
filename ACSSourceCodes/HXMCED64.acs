@@ -3,9 +3,10 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str doomced64berserk = "D64PowerStrength";
-str doomced64infrared = "D64PowerLightAmp";
-str doomced64invulnerability = "D64PowerInvulnerable";
+// Doom CE - D64
+	#define doomced64berserk "D64PowerStrength"
+	#define doomced64infrared "D64PowerLightAmp"
+	#define doomced64invulnerability "D64PowerInvulnerable"
 
 script "HXS_DoomCED6435ticHandler" enter
 {

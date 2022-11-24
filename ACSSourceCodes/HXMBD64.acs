@@ -5,17 +5,18 @@
 #import "HXACVAR.acs"
 #import "HXASTATS.acs"
 
-str bd64altlasericon = "AlternativeLaserSkinCvar";
-str hx_bd64altlasericontoken = "HX_BD64_altLaserSkinCvar";
-str bd64altrifleicon = "AlternativeRifleSkinCvar";
-str hx_bd64altrifleicontoken = "HX_BD64_altRifleSkinCvar";
-str bd64ammodemonessence = "DemonEssence";
-str bd64ammodemonessencetoken = "HX_BD64_demonessencefound";
-str bd64bfg9000tactical = "64BFG9000";
-str bd64chainguntactical = "64ChaingunTACTICAL";
-str bd64classmoderntoken = "IsModern";
-str bd64stamina = "Stamina";
-int bd64staminamax = 100;
+// Brutal Doom 64
+	#define bd64altlasericon "AlternativeLaserSkinCvar"
+	#define hx_bd64altlasericontoken "HX_BD64_altLaserSkinCvar"
+	#define bd64altrifleicon "AlternativeRifleSkinCvar"
+	#define hx_bd64altrifleicontoken "HX_BD64_altRifleSkinCvar"
+	#define bd64ammodemonessence "DemonEssence"
+	#define bd64ammodemonessencetoken "HX_BD64_demonessencefound"
+	#define bd64bfg9000tactical "64BFG9000"
+	#define bd64chainguntactical "64ChaingunTACTICAL"
+	#define bd64classmoderntoken "IsModern"
+	#define bd64stamina "Stamina"
+	#define bd64staminamax 100
 
 script "HXS_BrutalDoom64_35ticHandler" enter
 {

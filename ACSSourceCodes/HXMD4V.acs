@@ -4,23 +4,23 @@
 #import "HXAMODCM.acs"
 #import "HXACVAR.acs"
 
-str d4v_catoggle = "catoggle";
-str d4v_chtoggle = "chtoggle";
-str d4v_pstoggle = "pstoggle";
-str d4v_putoggle = "putoggle";
-str d4v_rotoggle = "rotoggle";
-str d4v_sgtoggle = "sgtoggle";
-str d4v_sstoggle = "sstoggle";
-str d4v_swtoggle = "swtoggle";
-
-str hx_d4vcatoggletoken = "HX_D4V_catoggletoken";
-str hx_d4vchtoggletoken = "HX_D4V_chtoggletoken";
-str hx_d4vpstoggletoken = "HX_D4V_pstoggletoken";
-str hx_d4vputoggletoken = "HX_D4V_putoggletoken";
-str hx_d4vrotoggletoken = "HX_D4V_rotoggletoken";
-str hx_d4vsgtoggletoken = "HX_D4V_sgtoggletoken";
-str hx_d4vsstoggletoken = "HX_D4V_sstoggletoken";
-str hx_d4vswtoggletoken = "HX_D4V_swtoggletoken";
+// Doom 4 Vanilla
+	#define d4v_catoggle "catoggle"
+	#define d4v_chtoggle "chtoggle"
+	#define d4v_pstoggle "pstoggle"
+	#define d4v_putoggle "putoggle"
+	#define d4v_rotoggle "rotoggle"
+	#define d4v_sgtoggle "sgtoggle"
+	#define d4v_sstoggle "sstoggle"
+	#define d4v_swtoggle "swtoggle"
+	#define hx_d4vcatoggletoken "HX_D4V_catoggletoken"
+	#define hx_d4vchtoggletoken "HX_D4V_chtoggletoken"
+	#define hx_d4vpstoggletoken "HX_D4V_pstoggletoken"
+	#define hx_d4vputoggletoken "HX_D4V_putoggletoken"
+	#define hx_d4vrotoggletoken "HX_D4V_rotoggletoken"
+	#define hx_d4vsgtoggletoken "HX_D4V_sgtoggletoken"
+	#define hx_d4vsstoggletoken "HX_D4V_sstoggletoken"
+	#define hx_d4vswtoggletoken "HX_D4V_swtoggletoken"
 
 script "HXS_Doom4Vanilla35ticHandler" enter
 {

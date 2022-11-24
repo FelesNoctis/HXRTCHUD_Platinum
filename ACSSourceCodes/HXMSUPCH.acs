@@ -4,15 +4,13 @@
 #import "HXAMODCM.acs"
 #import "HXACVAR.acs"
 
-str superchangeversion29 = "HXMOD_Supercharge_v29";
-
-str superchangeskinshotguncvar = "sv_tango_shotgun_skin";
-str superchangeskinssgcvar = "sv_tango_super_shotgun_skin";
-str superchangeskinshotguntoken = "HX_Supercharge_shotgun_skin";
-str superchangeskinssgtoken = "HX_Supercharge_ssg_skin";
-
-str superchargeammotangobullet = "TangoBulletClip";
-str superchargeberserk = "TangoPowerStrength";
+// Supercharge
+	#define superchangeskinshotguncvar "sv_tango_shotgun_skin"
+	#define superchangeskinssgcvar "sv_tango_super_shotgun_skin"
+	#define superchangeskinshotguntoken "HX_Supercharge_shotgun_skin"
+	#define superchangeskinssgtoken "HX_Supercharge_ssg_skin"
+	#define superchargeammotangobullet "TangoBulletClip"
+	#define superchargeberserk "TangoPowerStrength"
 
 script "HXS_Supercharge35ticHandler" enter
 {
@@ -24,8 +22,8 @@ script "HXS_Supercharge35ticHandler" enter
 		{
 		// v2.8/v2.9 Detector
 		if (CheckInventory(superchargeammotangobullet)
-			&& !CheckInventory(superchangeversion29))
-		{ GiveInventory(superchangeversion29, 1); }
+			&& !CheckInventory(HXS_GetTokenString(SUPERCHANGEVERSION29)))
+		{ GiveInventory(HXS_GetTokenString(SUPERCHANGEVERSION29), 1); }
 
 		// Skin Swap
 		HXF_CVARConvert_Generic(superchangeskinshotguncvar, superchangeskinshotguntoken);

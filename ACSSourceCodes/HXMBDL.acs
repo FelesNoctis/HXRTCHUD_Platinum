@@ -3,12 +3,13 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str bdlitebluecard = "SmoothBlueCard";
-str bdliteblueskull = "SmoothSkullBlu";
-str bdliteredcard = "SmoothRedCard";
-str bdliteredskull = "SmoothSkullRed";
-str bdliteyellowcard = "SmoothYellowCard";
-str bdliteyellowskull = "SmoothSkullYel";
+// BDLite
+	// #define bdlitebluecard "SmoothBlueCard"
+	// #define bdliteblueskull "SmoothSkullBlu"
+	// #define bdliteredcard "SmoothRedCard"
+	// #define bdliteredskull "SmoothSkullRed"
+	// #define bdliteyellowcard "SmoothYellowCard"
+	// #define bdliteyellowskull "SmoothSkullYel"
 
 script "HXS_BDLite35ticHandler" enter
 {

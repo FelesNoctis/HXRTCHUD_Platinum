@@ -3,13 +3,13 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str d64rtrinfrared = "64PowerLightAmp";
-str hx_d64rtrinfrared = "HX_D64RTRInfraredPowerUpToken";
-
-str d64rtrfuelammo = "64FuelAmmo";
-str hx_d64rtrfuelammo = "HX_D64RTRFuelAmmo";
-str d64rtrnailammo = "64NailAmmo";
-str hx_d64rtrnailammo = "HX_D64RTRNailAmmo";
+// Doom 64 Retribution
+	#define d64rtrinfrared "64PowerLightAmp"
+	#define hx_d64rtrinfrared "HX_D64RTRInfraredPowerUpToken"
+	#define d64rtrfuelammo "64FuelAmmo"
+	#define hx_d64rtrfuelammo "HX_D64RTRFuelAmmo"
+	#define d64rtrnailammo "64NailAmmo"
+	#define hx_d64rtrnailammo "HX_D64RTRNailAmmo"
 
 script "HXS_D64RTR_35ticHandler" enter
 {

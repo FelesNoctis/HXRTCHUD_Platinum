@@ -4,9 +4,10 @@
 #import "HXAMODCM.acs"
 #import "HXASTATS.acs"
 
-str omniwolfblur = "PowerGhost";
-str omniwolfhealthtoken = "HX_OmniWolf_HealthOverMaxToken";
-str omniwolftreasuretoken = "HX_OmniWolf_TreasurePercent";
+// Omni-Wolf
+	#define omniwolfblur "PowerGhost"
+	#define omniwolfhealthtoken "HX_OmniWolf_HealthOverMaxToken"
+	#define omniwolftreasuretoken "HX_OmniWolf_TreasurePercent"
 
 script "HXS_OmniWolf35ticHandler" enter
 {

@@ -4,38 +4,38 @@
 #import "HXAMODCM.acs"
 #import "HXASTATS.acs"
 
-str bdgrenadetype = "nadetype";
-str bdhaste = "PowerSpeed2";
-str bdinfrared = "PowerTorch";
-str bditemmeatammo = "MeatAmmo";
-str bdmeatshieldcguy = "CGuyShield";
-str bdmeatshieldmarine = "EvilMarineShield";
-str bdmeatshieldimp = "ImpShield";
-str bdmeatshieldnazi = "NaziShield";
-str bdmeatshieldsguy = "SGuyShield";
-str bdmeatshieldzciv = "ZombieCivilianShield";
-str bdmeatshieldzguy = "ZManShield";
-str bdquaddamage = "Powerquakedamage";
-str bdradsuit = "PowerMask";
-str bdshield = "PowerShield";
-str bdstamina = "UsedStamina";
-int bdstaminamax = 110;
-str bdtransformbaron = "PowerTransformBaron";
-str bdtransformmancubus = "PowerTransformMancubus";
-str bdtransformrevenant = "PowerTransformRevenant";
-str bdtransformunmaker = "UnmakerPhaserWeapon";
-str bdvehiclebike = "PowerBikeSwitch";
-str bdvehicleheavymg = "PowerHeavyMachinegunSwitch";
-str bdvehiclehelicopter = "PowerattackhelicopterSwitch";
-str bdvehiclemech = "PowerMechSwitch";
-str bdvehicletank = "PowerTankSwitch";
-str bdvehicletankart = "PowerArtilleryTankSwitch";
-str hxbd_grenadetype = "HX_BrutalDoomPlat_grenadetype";
-str hxbd_meatammo = "HX_BrutalDoom_meatammo";
-str hxbd_meatshield = "HX_BrutalDoom_meatshield";
-str hxbd_tfduration = "HX_BrutalDoom_transformationduration";
-str hxgen_shield = "HX_ShieldPowerUpToken";
-str hxbd_staminatoken = "HX_BrutalDoom_staminatoken";
+// Brutal Doom General
+	#define bdgrenadetype "nadetype"
+	#define bdhaste "PowerSpeed2"
+	#define bdinfrared "PowerTorch"
+	#define bditemmeatammo "MeatAmmo"
+	#define bdmeatshieldcguy "CGuyShield"
+	#define bdmeatshieldmarine "EvilMarineShield"
+	#define bdmeatshieldimp "ImpShield"
+	#define bdmeatshieldnazi "NaziShield"
+	#define bdmeatshieldsguy "SGuyShield"
+	#define bdmeatshieldzciv "ZombieCivilianShield"
+	#define bdmeatshieldzguy "ZManShield"
+	#define bdquaddamage "Powerquakedamage"
+	#define bdradsuit "PowerMask"
+	#define bdshield "PowerShield"
+	#define bdstamina "UsedStamina"
+	#define bdstaminamax 110
+	#define bdtransformbaron "PowerTransformBaron"
+	#define bdtransformmancubus "PowerTransformMancubus"
+	#define bdtransformrevenant "PowerTransformRevenant"
+	#define bdvehiclebike "PowerBikeSwitch"
+	#define bdvehicleheavymg "PowerHeavyMachinegunSwitch"
+	#define bdvehiclehelicopter "PowerattackhelicopterSwitch"
+	#define bdvehiclemech "PowerMechSwitch"
+	#define bdvehicletank "PowerTankSwitch"
+	#define bdvehicletankart "PowerArtilleryTankSwitch"
+	#define hxbd_grenadetype "HX_BrutalDoomPlat_grenadetype"
+	#define hxbd_meatammo "HX_BrutalDoom_meatammo"
+	#define hxbd_meatshield "HX_BrutalDoom_meatshield"
+	#define hxbd_tfduration "HX_BrutalDoom_transformationduration"
+	#define hxgen_shield "HX_ShieldPowerUpToken"
+	#define hxbd_staminatoken "HX_BrutalDoom_staminatoken"
 
 script "HXS_BrutalDoom35ticHandler" enter
 {
@@ -116,7 +116,7 @@ script "HXS_BrutalDoom7ticHandler" enter
 			if (CheckInventory(bdtransformbaron)
 				|| CheckInventory(bdtransformmancubus)
 				|| CheckInventory(bdtransformrevenant)
-				|| CheckInventory(bdtransformunmaker)
+				|| CheckInventory(HXS_GetTokenString(BDTRANSFORMUNMAKER))
 				|| CheckInventory(bdvehiclebike)
 				|| CheckInventory(bdvehicleheavymg)
 				|| CheckInventory(bdvehiclehelicopter)
@@ -131,7 +131,7 @@ script "HXS_BrutalDoom7ticHandler" enter
 			if (CheckInventory(bdtransformbaron)
 				|| CheckInventory(bdtransformmancubus)
 				|| CheckInventory(bdtransformrevenant)
-				|| CheckInventory(bdtransformunmaker))
+				|| CheckInventory(HXS_GetTokenString(BDTRANSFORMUNMAKER)))
 			{ GiveInventory(HXS_GetTokenString(HXSYS_TRANSFORMHUD), 1); }
 			else
 			{ TakeInventory(HXS_GetTokenString(HXSYS_TRANSFORMHUD), 1); }
@@ -147,7 +147,7 @@ script "HXS_BrutalDoom7ticHandler" enter
 
 
 		// Unmaker HUD Killer
-			if (CheckInventory(bdtransformunmaker))	{ GiveInventory(HXS_GetTokenString(HXSYS_NORMALHUDKILLER), 1); }
+			if (CheckInventory(HXS_GetTokenString(BDTRANSFORMUNMAKER)))	{ GiveInventory(HXS_GetTokenString(HXSYS_NORMALHUDKILLER), 1); }
 			else									{ TakeInventory(HXS_GetTokenString(HXSYS_NORMALHUDKILLER), 1); }
 
 		// Timer

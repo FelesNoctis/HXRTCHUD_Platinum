@@ -3,20 +3,21 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str nazisv2_12GaugeAmmo = "12GaugeAmmo";
-str nazisv2_3006Ammo = "3006Ammo";
-str nazisv2_303Ammo = "303Ammo";
-str nazisv2_357Ammo = "357Ammo";
-str nazisv2_45ACPAmmo = "45ACPAmmo";
-str nazisv2_792KurzAmmo = "792KurzAmmo";
-str nazisv2_9mmAmmo = "9mmAmmo";
-str hx_nazisv2_12GaugeAmmo = "HX_NazisV2_12GaugeAmmo";
-str hx_nazisv2_3006Ammo = "HX_NazisV2_3006Ammo";
-str hx_nazisv2_303Ammo = "HX_NazisV2_303Ammo";
-str hx_nazisv2_357Ammo = "HX_NazisV2_357Ammo";
-str hx_nazisv2_45ACPAmmo = "HX_NazisV2_45ACPAmmo";
-str hx_nazisv2_792KurzAmmo = "HX_NazisV2_792KurzAmmo";
-str hx_nazisv2_9mmAmmo = "HX_NazisV2_9mmAmmo";
+// NAZIS V2
+	#define nazisv2_12GaugeAmmo "12GaugeAmmo"
+	#define nazisv2_3006Ammo "3006Ammo"
+	#define nazisv2_303Ammo "303Ammo"
+	#define nazisv2_357Ammo "357Ammo"
+	#define nazisv2_45ACPAmmo "45ACPAmmo"
+	#define nazisv2_792KurzAmmo "792KurzAmmo"
+	#define nazisv2_9mmAmmo "9mmAmmo"
+	#define hx_nazisv2_12GaugeAmmo "HX_NazisV2_12GaugeAmmo"
+	#define hx_nazisv2_3006Ammo "HX_NazisV2_3006Ammo"
+	#define hx_nazisv2_303Ammo "HX_NazisV2_303Ammo"
+	#define hx_nazisv2_357Ammo "HX_NazisV2_357Ammo"
+	#define hx_nazisv2_45ACPAmmo "HX_NazisV2_45ACPAmmo"
+	#define hx_nazisv2_792KurzAmmo "HX_NazisV2_792KurzAmmo"
+	#define hx_nazisv2_9mmAmmo "HX_NazisV2_9mmAmmo"
 
 script "HXS_NazisV2_35ticHandler" enter
 {

@@ -3,10 +3,11 @@
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
 
-str kriegsland1_berserk = "SuperBlow";
-str kriegsland1_crossmachineguns = "HDCrossAkimbo3";
-str kriegsland1_crosspistols = "HDCrossAkimbo1";
-str kriegsland1_crossthermals = "HDCrossAkimbo5";
+// Kriegsland 1: Blutorden
+	#define kriegsland1_berserk "SuperBlow"
+	#define kriegsland1_crossmachineguns "HDCrossAkimbo3"
+	#define kriegsland1_crosspistols "HDCrossAkimbo1"
+	#define kriegsland1_crossthermals "HDCrossAkimbo5"
 
 script "HXS_Kriegsland1_35ticHandler" enter
 {
