@@ -15,7 +15,7 @@
 	#libdefine HXMOD_64ART						000100
 	#libdefine HXMOD_WEAPONDUALWIELDUNIQUEAMMO	000101
 	#libdefine HXMOD_WEAPONONLYAMMO1			000102
-// Range: 001000 - 001999 : Mod Master Tokens
+// Range: 001000 - 001999 : Mod Master Tokens : Last 001027
 	#libdefine HXMOD_NONE						001000
 	#libdefine HXMOD_RESETTOKEN					001001
 	#libdefine HXMOD_MODFOUND					001002
@@ -24,6 +24,7 @@
 	#libdefine HXMOD_BEAUTIFULDOOM				001005
 	#libdefine HXMOD_BRUTALDOOM					001006
 	#libdefine HXMOD_BRUTALDOOM64				001007
+	#libdefine HXMOD_BRUTALDOOMBLACK			001027
 	#libdefine HXMOD_BRUTALDOOMCE				001008
 	#libdefine HXMOD_BRUTALDOOMPLAT				001009
 	#libdefine HXMOD_CED64						001010
@@ -84,7 +85,7 @@
 		#libdefine ACIDCLASS					010000
 		#libdefine ACIDFIST						010001
 		#libdefine ACIDPISTOL					010002
-// Range: 020000 - 029999 : (B) Mod-Specific Tokens
+// Range: 020000 - 029999 : (B) Mod-Specific Tokens : Last 020025
 	// Beautiful Doom
 		#libdefine BEAUTIFULBLOODCONTROL		020000
 		#libdefine BEAUTIFULOVERLAYCONTROL		020001
@@ -121,6 +122,9 @@
 		#libdefine BWZIOCLASS					020020
 		#libdefine BWZIOFIST					020021
 		#libdefine BWZIOPISTOLAMMO				020022
+	// Brutal Doom Black Edition
+		#libdefine BDBECLASS					020024
+		#libdefine BDBENULL						020025
 // Range: 030000 - 039999 : (C) Mod-Specific Tokens
 // Range: 040000 - 049999 : (D) Mod-Specific Tokens
 	// Doom 4 Vanilla
@@ -228,6 +232,7 @@ function str HXS_GetTokenString (int strnum)
 			case HXMOD_BEAUTIFULDOOM: return "HXMOD_BeautifulDoom"; break;
 			case HXMOD_BRUTALDOOM: return "HXMOD_BrutalDoom"; break;
 			case HXMOD_BRUTALDOOM64: return "HXMOD_BrutalDoom64"; break;
+			case HXMOD_BRUTALDOOMBLACK: return "HXMOD_BrutalDoomBlackEdition"; break;
 			case HXMOD_BRUTALDOOMCE: return "HXMOD_BrutalDoomBWCE"; break;
 			case HXMOD_BRUTALDOOMPLAT: return "HXMOD_BrutalDoomPlatinum"; break;
 			case HXMOD_CED64: return "HXMOD_DoomCE_D64"; break;
@@ -294,7 +299,7 @@ function str HXS_GetTokenString (int strnum)
 				case BDLITECLASS: return "Doomer"; break;
 				case BDLITEFIST: return "BdMeleeAttacks"; break;
 				case BDLITERIFLE: return "BdRifle"; break;
-			// BDLite
+			// Brutal Doom General
 				case BDGENPLAYER: return "IsPlayer"; break;
 				case BDITEMNOTTACTICAL: return "IsNOTTacticalClass"; break;
 				case BDITEMPURIST: return "IsPlayingAsPurist"; break;
@@ -316,6 +321,9 @@ function str HXS_GetTokenString (int strnum)
 				case BWZIOCLASS: return "Doomer2"; break;
 				case BWZIOFIST: return "Melee_Attacks"; break;
 				case BWZIOPISTOLAMMO: return "LUGERAmmoAlt"; break;
+			// Brutal Doom Black Edition
+				case BDBECLASS: return "BEDoomer"; break;
+				case BDBENULL: return "NullWeapon"; break;
 		// Range: 030000 - 039999 : (C) Mod-Specific Tokens
 		// Range: 040000 - 049999 : (D) Mod-Specific Tokens
 			// Doom 4 Vanilla

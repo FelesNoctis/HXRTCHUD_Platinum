@@ -90,6 +90,15 @@ script "HXS_ModCompatibilityStartup" enter
 				GiveInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMPLAT), 1);
 				if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
 			}
+			// Brutal Doom Black Edition
+			else if (CheckActorClass(0, HXS_GetTokenString(BDBECLASS))
+					&& CheckInventory(HXS_GetTokenString(BDBENULL))
+					&& !CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMBLACK)))
+			{
+				GiveInventory(HXS_GetTokenString(HXMOD_MODFOUND), 1);
+				GiveInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMBLACK), 1);
+				if (CheckInventory(HXS_GetTokenString(HXMOD_NONE))) { TakeInventory(HXS_GetTokenString(HXMOD_NONE), 1); }
+			}
 			// Brutal Wolfenstein (ZioMcCall)
 			else if (CheckActorClass(0, HXS_GetTokenString(BWZIOCLASS))
 					&& CheckInventory(HXS_GetTokenString(BWZIOFIST))

@@ -79,6 +79,8 @@ ACTOR HXMOD_BrutalDoom64: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount
 ACTOR HX_BD64_demonessencefound: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BD64_altLaserSkinCvar: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BD64_altRifleSkinCvar: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+// Brutal Doom Black Edition
+ACTOR HXMOD_BrutalDoomBlackEdition: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Brutal Wolfenstein (ZioMcCall)
 ACTOR HXMOD_ZioBrutalWolfenstein: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_ZioBW_ColtUsable: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
