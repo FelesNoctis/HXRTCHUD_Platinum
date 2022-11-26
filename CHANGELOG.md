@@ -1,5 +1,10 @@
 # Changelog
 
+## DEV
+
+- **General:**
+  - Stamina module scripting now references a CVAR that may be used for additional customization at a later date.
+
 ## v0.65
 
 - **General:**

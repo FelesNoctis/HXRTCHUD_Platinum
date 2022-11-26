@@ -9,6 +9,7 @@
 	#define staminatoken "HXSYS_StaminaToken"
 	#define staminastickytoken "HXSYS_StaminaStickyToken"
 	#define altitudetoken "HXSYS_AltitudeMetersToken"
+	#define hudfadetime "hxcus_HXFadeTimeSeconds"
 
 script "HXS_PlayerStats7ticHandler" enter
 {
@@ -38,12 +39,13 @@ function void HXS_PlayerAltitude (void)
 	HXS_ItemManagement(hxaltitude, altitudetoken, tokencount);
 }
 
+// This function should be called from a 7-tic handler
 function void HXS_StamFlip (int usedstamina, str token, int maxstamina)
 {
 	int tokencorrection = maxstamina - usedstamina; // the HX stamina tokens we should have
 	int tokencount = CheckInventory(token); // the HX stamina tokens we do have
 	int stickytoken = CheckInventory(staminastickytoken);
-	int stickytime = 15; // 15 x 7 = 105 tics, or 3 seconds
+	int stickytime = 5 * GetCVar(hudfadetime); // 5 x 7tics = 35tics, or 1 second
 
 	if (usedstamina)
 	{
@@ -52,14 +54,15 @@ function void HXS_StamFlip (int usedstamina, str token, int maxstamina)
 		else if (tokencorrection < tokencount) { TakeInventory(token, tokencount - tokencorrection); }
 	}
 	else if (!usedstamina && tokencount != maxstamina) { GiveInventory(token, maxstamina); }
-	else if (!usedstamina && tokencount == maxstamina && staminastickytoken) { TakeInventory(staminastickytoken, 1); }
+	else if (!usedstamina && tokencount == maxstamina && stickytoken) { TakeInventory(staminastickytoken, 1); }
 }
 
+// This function should be called from a 7-tic handler
 function void HXS_StamNormal (str token, int maxstamina)
 {
 	int tokencount = CheckInventory(token);
 	int stickytoken = CheckInventory(staminastickytoken);
-	int stickytime = 15; // 15 x 7 = 105 tics, or 3 seconds
+	int stickytime = 5 * GetCVar(hudfadetime); // 5 x 7tics = 35tics, or 1 second
 
 	if (tokencount && tokencount != maxstamina) { GiveInventory(staminastickytoken, stickytime); }
 	else if (stickytoken && (tokencount == maxstamina || !tokencount)) { TakeInventory(staminastickytoken, 1); }

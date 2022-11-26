@@ -2,6 +2,7 @@ user bool hxcus_HXAirMeter = false;
 user bool hxcus_HXArmorSave = true;
 user bool hxcus_HXArmsBar = true;
 user bool hxcus_HXArtifact = false;
+user int hxcus_HXFadeTimeSeconds = 3;
 user bool hxcus_HXKeysExtended = false;
 user int hxcus_HXKISExtended = 0;
 user bool hxcus_HXLowMotion = false;
