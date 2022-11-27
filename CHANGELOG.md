@@ -5,6 +5,10 @@
 - **General:**
   - Stamina module scripting now references a CVAR that may be used for additional customization at a later date.
 
+- **Mod Updates:**
+  - Brutal Doom Platinum v3.1:
+    - Nuke availability panel now only appears if you've found a weapon that utilizes it, similar to how the BDv21/CE HUD operates.
+
 ## v0.65
 
 - **General:**

@@ -2924,15 +2924,18 @@ StatusBar Fullscreen, FullscreenOffsets
 			}
 
 		// NUKE PANEL - Brutal Doom Platinum
-			InInventory "HXCUS_WeaponIconToken", 1
+			InInventory "BFG10k", 1 || "NukeLauncher", 1
 			{
-				DrawImage "HXBDNKNO", -98, -73;
-				InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -73; }
-			}
-			else
-			{
-				DrawImage "HXBDNKNO", -98, -53;
-				InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
+				InInventory "HXCUS_WeaponIconToken", 1
+				{
+					DrawImage "HXBDNKNO", -98, -73;
+					InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -73; }
+				}
+				else
+				{
+					DrawImage "HXBDNKNO", -98, -53;
+					InInventory "Nuke", 1 { DrawImage "HXBDNKOK", -98, -53; }
+				}
 			}
 
 		// ARMS & KEYS BARS - Brutal Doom Platinum
