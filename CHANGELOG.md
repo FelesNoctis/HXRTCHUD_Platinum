@@ -5,6 +5,9 @@
 - **General:**
   - Stamina module scripting now references a CVAR that may be used for additional customization at a later date.
 
+- **Bottom-Left Panels:**
+  - **Mugshot** panel border tweaks to allow Invul to fill in the corners when the player doesn't have Berserk.
+
 - **Mod Updates:**
   - Brutal Doom Platinum v3.1:
     - Nuke availability panel now only appears if you've found a weapon that utilizes it, similar to how the BDv21/CE HUD operates.

@@ -2,9 +2,12 @@
 #include "zcommon.acs"
 #import "HXATOKEN.acs"
 #import "HXAMODCM.acs"
+#import "HXACVAR.acs"
 #import "HXASTATS.acs"
 
 // Brutal Doom Black Edition
+	#define bdbegunnergameplaymodecvar "begunnergameplaymode"
+	#define hx_bdbegunnergameplaymodetoken "HX_BDBLK_begunnergameplaymodetoken"
 	#define bdbestamina "Stamina"
 
 script "HXS_BrutalDoomBlackEdition35ticHandler" enter
@@ -18,6 +21,9 @@ script "HXS_BrutalDoomBlackEdition35ticHandler" enter
 		// Powerup Management Tokens
 			// Berserk
 			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
+
+		// Weapon Icon Management Tokens
+			HXF_CVARConvert_Generic(bdbegunnergameplaymodecvar, hx_bdbegunnergameplaymodetoken);
 
 		// Timer
 			// Wait 35 tics (~1sec) before repeating, since we want this to be a clock
