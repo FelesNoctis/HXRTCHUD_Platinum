@@ -6,6 +6,14 @@
 #import "HXASTATS.acs"
 
 // Brutal Doom Black Edition
+	#define bdbecubeitem "SoulCube"
+	#define bdbecubelvl5 "SoulCubeLvl5"
+	#define bdbecubelvl4 "SoulCubeLvl4"
+	#define bdbecubelvl3 "SoulCubeLvl3"
+	#define bdbecubelvl2 "SoulCubeLvl2"
+	#define hx_bdbedemonmodeavailabletoken "HX_BDBLK_demonmodeavailabletoken"
+	#define bdbedemonmodecount "DMSoulCount"
+	#define hx_bdbedemonsoulcounttoken "HX_BDBLK_demonsoulcounttoken"
 	#define bdbegunnergameplaymodecvar "begunnergameplaymode"
 	#define hx_bdbegunnergameplaymodetoken "HX_BDBLK_begunnergameplaymodetoken"
 	#define bdbestamina "Stamina"
@@ -51,6 +59,20 @@ script "HXS_BrutalDoomBlackEdition7ticHandler" enter
 			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
 			// Radsuit
 			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
+
+		// Demon Mode Availability Check
+			if	((!CheckInventory(hx_bdbedemonmodeavailabletoken))
+				&&	(CheckInventory (bdbecubelvl2)
+					|| CheckInventory (bdbecubelvl3)
+					|| CheckInventory (bdbecubelvl4)
+					|| CheckInventory (bdbecubelvl5)))
+			{ GiveInventory(hx_bdbedemonmodeavailabletoken, 1); }
+			else if	(CheckInventory(hx_bdbedemonmodeavailabletoken)
+					&& !CheckInventory(bdbecubeitem))
+			{ TakeInventory(hx_bdbedemonmodeavailabletoken, 1); }
+
+		// Demon Mode Soul Management
+			HXS_ItemSync(bdbedemonmodecount, hx_bdbedemonsoulcounttoken);
 
 		// Timer
 			// Wait 7 tics (1/5sec) before repeating, since we want this to be reasonably responsive

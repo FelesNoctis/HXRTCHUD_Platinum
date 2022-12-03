@@ -2126,26 +2126,56 @@ StatusBar Fullscreen, FullscreenOffsets
 		*/
 		else InInventory "HXMOD_BrutalDoomBlackEdition", 1
 		{
-		// NUKE PANEL - Brutal Doom Black Edition
+		// SOULS PANELS - Brutal Doom Black Edition
 			InInventory "SoulCube", 1
 			{
-				InInventory "HXCUS_WeaponIconToken", 1
+				InInventory "HX_BDBLK_demonmodeavailabletoken", 1
 				{
-					DrawBar "HXBD64DY", "HXBD64DN", ammo SoulAmmo, vertical, interpolate(64), -98, -73;
-					InInventory "SoulCubeLvl5", 1		{ InInventory "SoulAmmo", 20 { DrawImage "HXBD64DF", -98, -73; } }
-					else InInventory "SoulCubeLvl4", 1	{ InInventory "SoulAmmo", 22 { DrawImage "HXBD64DF", -98, -73; } }
-					else InInventory "SoulCubeLvl3", 1	{ InInventory "SoulAmmo", 23 { DrawImage "HXBD64DF", -98, -73; } }
-					else InInventory "SoulCubeLvl2", 1	{ InInventory "SoulAmmo", 24 { DrawImage "HXBD64DF", -98, -73; } }
-					else 								{ InInventory "SoulAmmo", 25 { DrawImage "HXBD64DF", -98, -73; } }
+					InInventory "HXCUS_WeaponIconToken", 1
+					{
+						DrawBar "HXBDBEDY", "HXBDBEDN", HX_BDBLK_demonsoulcounttoken, vertical, interpolate(64), -98, -73;
+						InInventory "HX_BDBLK_demonsoulcounttoken", 65 { DrawImage "HXBDBEDF", -98, -73; }
+
+						DrawBar "HXBDBESY", "HXBDBESN", ammo SoulAmmo, vertical, interpolate(64), -118, -73;
+						InInventory "SoulCubeLvl5", 1		{ InInventory "SoulAmmo", 20 { DrawImage "HXBDBESF", -118, -73; } }
+						else InInventory "SoulCubeLvl4", 1	{ InInventory "SoulAmmo", 22 { DrawImage "HXBDBESF", -118, -73; } }
+						else InInventory "SoulCubeLvl3", 1	{ InInventory "SoulAmmo", 23 { DrawImage "HXBDBESF", -118, -73; } }
+						else InInventory "SoulCubeLvl2", 1	{ InInventory "SoulAmmo", 24 { DrawImage "HXBDBESF", -118, -73; } }
+						else 								{ InInventory "SoulAmmo", 25 { DrawImage "HXBDBESF", -118, -73; } }
+					}
+					else
+					{
+						DrawBar "HXBDBEDY", "HXBDBEDN", HX_BDBLK_demonsoulcounttoken, vertical, interpolate(64), -98, -53;
+						InInventory "HX_BDBLK_demonsoulcounttoken", 65 { DrawImage "HXBDBEDF", -98, -53; }
+
+						DrawBar "HXBDBESY", "HXBDBESN", ammo SoulAmmo, vertical, interpolate(64), -118, -53;
+						InInventory "SoulCubeLvl5", 1		{ InInventory "SoulAmmo", 20 { DrawImage "HXBDBESF", -118, -53; } }
+						else InInventory "SoulCubeLvl4", 1	{ InInventory "SoulAmmo", 22 { DrawImage "HXBDBESF", -118, -53; } }
+						else InInventory "SoulCubeLvl3", 1	{ InInventory "SoulAmmo", 23 { DrawImage "HXBDBESF", -118, -53; } }
+						else InInventory "SoulCubeLvl2", 1	{ InInventory "SoulAmmo", 24 { DrawImage "HXBDBESF", -118, -53; } }
+						else 								{ InInventory "SoulAmmo", 25 { DrawImage "HXBDBESF", -118, -53; } }
+					}
 				}
 				else
 				{
-					DrawBar "HXBD64DY", "HXBD64DN", ammo SoulAmmo, vertical, interpolate(64), -98, -53;
-					InInventory "SoulCubeLvl5", 1		{ InInventory "SoulAmmo", 20 { DrawImage "HXBD64DF", -98, -53; } }
-					else InInventory "SoulCubeLvl4", 1	{ InInventory "SoulAmmo", 22 { DrawImage "HXBD64DF", -98, -53; } }
-					else InInventory "SoulCubeLvl3", 1	{ InInventory "SoulAmmo", 23 { DrawImage "HXBD64DF", -98, -53; } }
-					else InInventory "SoulCubeLvl2", 1	{ InInventory "SoulAmmo", 24 { DrawImage "HXBD64DF", -98, -53; } }
-					else 								{ InInventory "SoulAmmo", 25 { DrawImage "HXBD64DF", -98, -53; } }
+					InInventory "HXCUS_WeaponIconToken", 1
+					{
+						DrawBar "HXBDBESY", "HXBDBESN", ammo SoulAmmo, vertical, interpolate(64), -98, -73;
+						InInventory "SoulCubeLvl5", 1		{ InInventory "SoulAmmo", 20 { DrawImage "HXBDBESF", -98, -73; } }
+						else InInventory "SoulCubeLvl4", 1	{ InInventory "SoulAmmo", 22 { DrawImage "HXBDBESF", -98, -73; } }
+						else InInventory "SoulCubeLvl3", 1	{ InInventory "SoulAmmo", 23 { DrawImage "HXBDBESF", -98, -73; } }
+						else InInventory "SoulCubeLvl2", 1	{ InInventory "SoulAmmo", 24 { DrawImage "HXBDBESF", -98, -73; } }
+						else 								{ InInventory "SoulAmmo", 25 { DrawImage "HXBDBESF", -98, -73; } }
+					}
+					else
+					{
+						DrawBar "HXBDBESY", "HXBDBESN", ammo SoulAmmo, vertical, interpolate(64), -98, -53;
+						InInventory "SoulCubeLvl5", 1		{ InInventory "SoulAmmo", 20 { DrawImage "HXBDBESF", -98, -53; } }
+						else InInventory "SoulCubeLvl4", 1	{ InInventory "SoulAmmo", 22 { DrawImage "HXBDBESF", -98, -53; } }
+						else InInventory "SoulCubeLvl3", 1	{ InInventory "SoulAmmo", 23 { DrawImage "HXBDBESF", -98, -53; } }
+						else InInventory "SoulCubeLvl2", 1	{ InInventory "SoulAmmo", 24 { DrawImage "HXBDBESF", -98, -53; } }
+						else 								{ InInventory "SoulAmmo", 25 { DrawImage "HXBDBESF", -98, -53; } }
+					}
 				}
 			}
 		// AMMO TALLIES PANEL - Brutal Doom Black Edition
@@ -2370,91 +2400,91 @@ StatusBar Fullscreen, FullscreenOffsets
 
 				WeaponAmmo ChainSawGas
 				{
-					DrawBar "HXAMCLOK", "HXAMCLNO", ChainSawGas, vertical, interpolate(64), -130, -29;
-					DrawNumber 4, HXSTATUSFONT, untranslated, ChainSawGas, interpolate(128), -84, -29, 0, HXRTCRed, 80;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo ChainSawGas, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo ChainSawGas, interpolate(128), -84, -29, 0, HXRTCRed, 80;
 				}
 				WeaponAmmo PistolBullets
 				{
 					IsSelected "BDPistol"
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", PistolAmmo, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, PistolAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 5;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo PistolAmmo, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo PistolAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 5;
 					}
 					else
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", PistolBullets, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, PistolBullets, interpolate(128), -84, -29, 0, HXRTCRed, 5;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo PistolBullets, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo PistolBullets, interpolate(128), -84, -29, 0, HXRTCRed, 5;
 					}
 				}
 				WeaponAmmo Shell2
 				{
 					IsSelected "Shot_Gun"
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", ShotgunAmmo, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, ShotgunAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 4;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo ShotgunAmmo, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo ShotgunAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 4;
 					}
 					else
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", Shell2, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, Shell2, interpolate(128), -84, -29, 0, HXRTCRed, 4;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo Shell2, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo Shell2, interpolate(128), -84, -29, 0, HXRTCRed, 4;
 					}
 				}
 				WeaponAmmo SSGShell
 				{
 					IsSelected "SSG"
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", SSGAmmo, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, SSGAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 1;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo SSGAmmo, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo SSGAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 1;
 					}
 					else
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", SSGShell, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, SSGShell, interpolate(128), -84, -29, 0, HXRTCRed, 1;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo SSGShell, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo SSGShell, interpolate(128), -84, -29, 0, HXRTCRed, 1;
 					}
 				}
 				WeaponAmmo RifleClip
 				{
 					IsSelected "Rifle"
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", RifleAmmo, vertical, interpolate(64), -130, -29;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo RifleAmmo, vertical, interpolate(64), -130, -29;
 						InInventory "FiringMode", 2			{ DrawString HXGENERALFONTM, untranslated, "BURST",		-87, -12, 0; }
 						else InInventory "FiringMode", 1	{ DrawString HXGENERALFONTM, untranslated, "SINGLE",	-84, -12, 0; }
 						else								{ DrawString HXGENERALFONTM, untranslated, "AUTO",		-90, -12, 0; }
-						DrawNumber 4, HXSTATUSFONT, untranslated, RifleAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 12;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo RifleAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 12;
 					}
 					else
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", RifleClip, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, RifleClip, interpolate(128), -84, -29, 0, HXRTCRed, 12;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo RifleClip, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo RifleClip, interpolate(128), -84, -29, 0, HXRTCRed, 12;
 					}
 				}
 				WeaponAmmo Clip2
 				{
 					IsSelected "MiniGun"
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", Clip2, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, Clip2, interpolate(128), -84, -29, 0, HXRTCRed, 50;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo Clip2, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo Clip2, interpolate(128), -84, -29, 0, HXRTCRed, 50;
 					}
 					else IsSelected "MP40"
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", MP40Ammo, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, MP40Ammo, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo MP40Ammo, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo MP40Ammo, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 					}
 					else
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", Clip2, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, Clip2, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo Clip2, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo Clip2, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 					}
 				}
 				WeaponAmmo BuzzsawAmmo
 				{
-					DrawBar "HXAMCLOK", "HXAMCLNO", BuzzsawAmmo, vertical, interpolate(64), -130, -29;
-					DrawNumber 4, HXSTATUSFONT, untranslated, BuzzsawAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 50;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo BuzzsawAmmo, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo BuzzsawAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 50;
 				}
 				WeaponAmmo GrenadeAmmo
 				{
-					DrawBar "HXAMCLOK", "HXAMCLNO", GrenadeAmmo, vertical, interpolate(64), -130, -29;
-					DrawNumber 4, HXSTATUSFONT, untranslated, GrenadeAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 5;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo GrenadeAmmo, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo GrenadeAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 5;
 				}
 				WeaponAmmo RocketAmmo2
 				{
@@ -2463,57 +2493,57 @@ StatusBar Fullscreen, FullscreenOffsets
 					{
 						DrawImage "HXAMMODU", -134, -33;
 						// Left Ammo
-						DrawBar "HXAMDLOK", "HXAMDUNO", RocketRounds, vertical, interpolate(64), -130, -28;
-						DrawNumber 3, HXSTATUSFONT, untranslated, RocketRounds, interpolate(128), -98, -29, 0, HXRTCRed, 2;
+						DrawBar "HXAMDLOK", "HXAMDUNO", ammo RocketRounds, vertical, interpolate(64), -130, -28;
+						DrawNumber 3, HXSTATUSFONT, untranslated, ammo RocketRounds, interpolate(128), -98, -29, 0, HXRTCRed, 2;
 						// Right Ammo
 						DrawBar "HXAMDROK", "HXAMDUNO", RocketAmount, vertical, interpolate(64), -87, -28;
 						DrawNumber 1, HXSTATUSFONT, untranslated, RocketAmount, interpolate(128), -84, -29, 0, HXRTCRed, 0;
 					}
 					else
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", RocketAmmo2, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, RocketAmmo2, interpolate(128), -84, -29, 0, HXRTCRed, 2;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo RocketAmmo2, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo RocketAmmo2, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 					}
 				}
 				WeaponAmmo Cell2
 				{
 					IsSelected "Plasma_Gun"
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", PlasmaAmmo, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, PlasmaAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo PlasmaAmmo, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo PlasmaAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 					}
 					else
 					{
-						DrawBar "HXAMCLOK", "HXAMCLNO", Cell2, vertical, interpolate(64), -130, -29;
-						DrawNumber 4, HXSTATUSFONT, untranslated, Cell2, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+						DrawBar "HXAMCLOK", "HXAMCLNO", ammo Cell2, vertical, interpolate(64), -130, -29;
+						DrawNumber 4, HXSTATUSFONT, untranslated, ammo Cell2, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 					}
 				}
 				WeaponAmmo BFGPlasma
 				{
-					DrawBar "HXAMCLOK", "HXAMCLNO", BFGPlasma, vertical, interpolate(64), -130, -29;
-					DrawNumber 4, HXSTATUSFONT, untranslated, BFGPlasma, interpolate(128), -84, -29, 0, HXRTCRed, 40;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo BFGPlasma, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo BFGPlasma, interpolate(128), -84, -29, 0, HXRTCRed, 40;
 				}
 				WeaponAmmo MiniHellRocketAmmo
 				{
-					DrawBar "HXAMCLOK", "HXAMCLNO", MiniHellRocketAmmo, vertical, interpolate(64), -130, -29;
-					DrawNumber 4, HXSTATUSFONT, untranslated, MiniHellRocketAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo MiniHellRocketAmmo, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo MiniHellRocketAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 10;
 				}
 				WeaponAmmo Gas
 				{
-					DrawBar "HXAMCLOK", "HXAMCLNO", Gas, vertical, interpolate(64), -130, -29;
-					DrawNumber 4, HXSTATUSFONT, untranslated, Gas, interpolate(128), -84, -29, 0, HXRTCRed, 45;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo Gas, vertical, interpolate(64), -130, -29;
+					DrawNumber 4, HXSTATUSFONT, untranslated, ammo Gas, interpolate(128), -84, -29, 0, HXRTCRed, 45;
 				}
 			}
 			else IsSelected "SoulCube"
 			{
 					DrawImage "HXAMMODW", -154, -33;
 				// Left Ammo, red fade configured for scaling upgrades
-					DrawBar "HXAMDLOK", "HXAMDUNO", SoulAmmo, vertical, interpolate(64), -150, -28;
-					InInventory "SoulCubeLvl5", 1		{ DrawNumber 3, HXSTATUSFONT, untranslated, SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 19; }
-					else InInventory "SoulCubeLvl4", 1	{ DrawNumber 3, HXSTATUSFONT, untranslated, SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 21; }
-					else InInventory "SoulCubeLvl3", 1	{ DrawNumber 3, HXSTATUSFONT, untranslated, SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 22; }
-					else InInventory "SoulCubeLvl2", 1	{ DrawNumber 3, HXSTATUSFONT, untranslated, SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 23; }
-					else 								{ DrawNumber 3, HXSTATUSFONT, untranslated, SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 24; }
+					DrawBar "HXAMDLOK", "HXAMDUNO", ammo SoulAmmo, vertical, interpolate(64), -150, -28;
+					InInventory "SoulCubeLvl5", 1		{ DrawNumber 3, HXSTATUSFONT, untranslated, ammo SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 19; }
+					else InInventory "SoulCubeLvl4", 1	{ DrawNumber 3, HXSTATUSFONT, untranslated, ammo SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 21; }
+					else InInventory "SoulCubeLvl3", 1	{ DrawNumber 3, HXSTATUSFONT, untranslated, ammo SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 22; }
+					else InInventory "SoulCubeLvl2", 1	{ DrawNumber 3, HXSTATUSFONT, untranslated, ammo SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 23; }
+					else 								{ DrawNumber 3, HXSTATUSFONT, untranslated, ammo SoulAmmo, interpolate(128), -118, -29, 0, HXRTCRed, 24; }
 				// Right Ammo, red fade when demon mode isn't available
 					DrawBar "HXAMDROK", "HXAMDUNO", DMSoulCount, vertical, interpolate(64), -87, -28;
 					DrawNumber 3, HXSTATUSFONT, untranslated, DMSoulCount, interpolate(128), -84, -29, 0, HXRTCRed, 65;
@@ -2543,15 +2573,19 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawBar "HXAMCLOK", "HXAMCLNO", PowerupTime DemonMorphFullBright4, vertical, interpolate(64), -130, -29;
 					DrawNumber 3, HXSTATUSFONT, HXRTCYellow, PowerupTime DemonMorphFullBright2, interpolate(128), -84, -29, 0, HXRTCRed, 3;
 				}
+				else
+				{
+					DrawString HXSTATUSFONT, HXRTCYellow, "HOW?", -84, -29, 0;
+				}
 			}
 			else
 			{
 				IsSelected "Melee_Attacks"
 				{
 					DrawImage "HXAMMO", -134, -33;
-					DrawBar "HXAMCLOK", "HXAMCLNO", PistolAmmo, vertical, interpolate(64), -130, -29;
+					DrawBar "HXAMCLOK", "HXAMCLNO", ammo PistolAmmo, vertical, interpolate(64), -130, -29;
 					DrawString HXGENERALFONTM, HXRTCLightGrey, "QUICK", -87, -12, 0;
-					DrawNumber 4, HXSTATUSFONT, HXRTCLightGrey, PistolAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 5;
+					DrawNumber 4, HXSTATUSFONT, HXRTCLightGrey, ammo PistolAmmo, interpolate(128), -84, -29, 0, HXRTCRed, 5;
 				}
 				// Ammoless
 				else { DrawImage "HXNOAVAI", -134, -33; }
