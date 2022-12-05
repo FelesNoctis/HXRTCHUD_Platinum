@@ -294,3 +294,29 @@ function void HXS_PowerupTimer (str moditem, str hxitem)
 
 	HXS_ItemManagement(moditemduration, hxitem, hxitemcount);
 }
+
+/*
+moditem = source mod's inventory item to look for
+hxbufftoken = hx inventory item used to display buff time on HUD
+seconds = intended duration of the buff
+hxcountertoken = hx inventory item with a high max value that can be safely used to track tic cycles
+tics = how often the calling script loops (usually 7 or 35)
+*/
+function void HXS_PowerupTimerManual (str moditem, str hxbufftoken, int seconds, str hxcountertoken, int tics)
+{
+	int ticsyclestosecond = 35 / tics;
+	int secondstotictotal = seconds * ticsyclestosecond;
+	int hxcountertokenamount = CheckInventory(hxcountertoken);
+
+	if (CheckInventory(moditem))
+	{
+		if		(!hxcountertokenamount)	{ GiveInventory(hxcountertoken, secondstotictotal); }
+		else if	(hxcountertokenamount)	{ TakeInventory(hxcountertoken, 1); }
+	}
+	else if (hxcountertokenamount)		{ TakeInventory(hxcountertoken, 9999); }
+
+	int powerupduration = CheckInventory(hxcountertoken) / ticsyclestosecond;
+	int hxbufftokencount = CheckInventory(hxbufftoken);
+
+	HXS_ItemManagement(powerupduration, hxbufftoken, hxbufftokencount);
+}

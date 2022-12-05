@@ -25,23 +25,32 @@ ACTOR HXSYS_TransformationHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory
 ACTOR HXSYS_VehicleHUDToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	HX General Mod Support
 ACTOR HXMOD_Doom64Art: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HXMOD_BuffTracker1Token: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HXMOD_BuffTracker2Token: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HXMOD_BuffTracker3Token: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HXMOD_BuffTracker4Token: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HXMOD_BuffTracker5Token: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HXMOD_ForceWolfenDoomToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 ACTOR HXMOD_WeaponDualWieldUniqueAmmo: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HXMOD_WeaponOnlyAmmo1: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BerserkPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BuddhaPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
+ACTOR HX_BuddhaPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_HastePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
-ACTOR HX_HastePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_HastePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_HastePowerUpShortToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
 ACTOR HX_InfraredPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
-ACTOR HX_InfraredPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_InfraredPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_InvisibilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
-ACTOR HX_InvisibilityPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_InvisibilityPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_InvulnerabilityPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
-ACTOR HX_InvulnerabilityPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_InvulnerabilityPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_QuadDamagePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 30 }
-ACTOR HX_QuadDamagePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_QuadDamagePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_RadSuitPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
-ACTOR HX_RadSuitPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_RadSuitPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
+ACTOR HX_RegeneratePowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 120 }
+ACTOR HX_RegeneratePowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_ShieldPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Mod Master Token
 ACTOR HXMOD_MODFOUND: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
@@ -50,7 +59,7 @@ ACTOR HXMOD_VANILLA: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 //	Ac!d's Eriguns
 ACTOR HXMOD_AcidEriguns: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_Acid_BuddhaPowerUpToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 60 }
-ACTOR HX_Acid_BuddhaPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 999 }
+ACTOR HX_Acid_BuddhaPowerUpLongTimerToken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 9999 }
 ACTOR HX_Acid_Eri_PINS: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 ACTOR HX_Acid_Eri_PINV: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 ACTOR HX_Acid_Eri_PSTR: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
@@ -82,8 +91,10 @@ ACTOR HX_BD64_altRifleSkinCvar: Inventory { +INVENTORY.UNDROPPABLE Inventory.Max
 // Brutal Doom Black Edition
 ACTOR HXMOD_BrutalDoomBlackEdition: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BDBLK_begunnergameplaymodetoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+ACTOR HX_BDBLK_buddhapoweruptoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 90 }
 ACTOR HX_BDBLK_demonmodeavailabletoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_BDBLK_demonsoulcounttoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 65 }
+ACTOR HX_BDBLK_regenerationpoweruptoken: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 33 }
 //	Brutal Wolfenstein (ZioMcCall)
 ACTOR HXMOD_ZioBrutalWolfenstein: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 ACTOR HX_ZioBW_ColtUsable: Inventory { +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }

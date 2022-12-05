@@ -11,8 +11,13 @@
 	#libdefine HXSYS_NORMALHUDKILLER			000002
 	#libdefine HXSYS_TRANSFORMHUD				000003
 	#libdefine HXSYS_VEHICLEHUD					000004
-// Range: 000100 - 000199 : Functionality Overrides
+// Range: 000100 - 000199 : Functionality Overrides : Last 000107
 	#libdefine HXMOD_64ART						000100
+	#libdefine HXMOD_BUFFTRACKER1				000103
+	#libdefine HXMOD_BUFFTRACKER2				000104
+	#libdefine HXMOD_BUFFTRACKER3				000105
+	#libdefine HXMOD_BUFFTRACKER4				000106
+	#libdefine HXMOD_BUFFTRACKER5				000107
 	#libdefine HXMOD_WEAPONDUALWIELDUNIQUEAMMO	000101
 	#libdefine HXMOD_WEAPONONLYAMMO1			000102
 // Range: 001000 - 001999 : Mod Master Tokens : Last 001027
@@ -58,7 +63,7 @@
 	#libdefine HXGEN_YELLOWCARD					008009
 	#libdefine VANILLAYELLOWSKULL				008010
 	#libdefine HXGEN_YELLOWSKULL				008011
-// Range: 009000 - 009999 : Item Tokens
+// Range: 009000 - 009999 : Item Tokens : Last 009023
 	// Vanilla Powerups
 	#libdefine VANILLABERSERK					009000
 	#libdefine HXGEN_BERSERK					009001
@@ -71,15 +76,20 @@
 	#libdefine VANILLARADSUIT					009008
 	#libdefine HXGEN_RADSUIT					009009
 	// Non-Vanilla Powerups
+	#libdefine HXGEN_BUDDHA						009020
+	#libdefine HXGEN_BUDDHALONGTIMER			009021
+	#libdefine HXGEN_HASTE						009014
+	#libdefine HXGEN_HASTELONGTIMER				009015
+	#libdefine HXGEN_HASTESHORT					009018
 	#libdefine HXGEN_INFRAREDLONGTIMER			009010
 	#libdefine HXGEN_INVISIBILITYLONGTIMER		009011
 	#libdefine HXGEN_INVULNERABILITYLONGTIMER	009012
-	#libdefine HXGEN_RADSUITLONGTIMER			009013
-	#libdefine HXGEN_HASTE						009014
-	#libdefine HXGEN_HASTELONGTIMER				009015
 	#libdefine HXGEN_QUADDAMAGE					009016
 	#libdefine HXGEN_QUADDAMAGELONGTIMER		009017
-	#libdefine HXGEN_HASTESHORT					009018
+	#libdefine HXGEN_RADSUITLONGTIMER			009013
+	#libdefine HXGEN_REGENERATE					009022
+	#libdefine HXGEN_REGENERATELONGTIMER		009023
+	#libdefine HXGEN_TORCH						009019
 // Range: 010000 - 019999 : (A) Mod-Specific Tokens
 	// Ac!d's Eriguns
 		#libdefine ACIDCLASS					010000
@@ -223,6 +233,11 @@ function str HXS_GetTokenString (int strnum)
 			case HXMOD_64ART: return "HXMOD_Doom64Art"; break;
 			case HXMOD_WEAPONDUALWIELDUNIQUEAMMO: return "HXMOD_WeaponDualWieldUniqueAmmo"; break;
 			case HXMOD_WEAPONONLYAMMO1: return "HXMOD_WeaponOnlyAmmo1"; break;
+			case HXMOD_BUFFTRACKER1: return "HXMOD_BuffTracker1Token"; break;
+			case HXMOD_BUFFTRACKER2: return "HXMOD_BuffTracker2Token"; break;
+			case HXMOD_BUFFTRACKER3: return "HXMOD_BuffTracker3Token"; break;
+			case HXMOD_BUFFTRACKER4: return "HXMOD_BuffTracker4Token"; break;
+			case HXMOD_BUFFTRACKER5: return "HXMOD_BuffTracker5Token"; break;
 		// Range: 001000 - 001999 : Mod Master Tokens
 			case HXMOD_NONE: return "HXMOD_VANILLA"; break;
 			case HXMOD_RESETTOKEN: return "HXMOD_IDontExist"; break;
@@ -285,6 +300,11 @@ function str HXS_GetTokenString (int strnum)
 			case HXGEN_QUADDAMAGE: return "HX_QuadDamagePowerUpToken"; break;
 			case HXGEN_QUADDAMAGELONGTIMER: return "HX_QuadDamagePowerUpLongTimerToken"; break;
 			case HXGEN_HASTESHORT: return "HX_HastePowerUpShortToken"; break;
+			case HXGEN_TORCH: return "PowerTorch"; break;
+			case HXGEN_BUDDHA: return "HX_BuddhaPowerUpToken"; break;
+			case HXGEN_BUDDHALONGTIMER: return "HX_BuddhaPowerUpLongTimerToken"; break;
+			case HXGEN_REGENERATE: return "HX_RegeneratePowerUpToken"; break;
+			case HXGEN_REGENERATELONGTIMER: return "HX_RegeneratePowerUpLongTimerToken"; break;
 		// Range: 010000 - 019999 : (A) Mod-Specific Tokens
 			// Ac!d's Eriguns
 				case ACIDCLASS: return "EriPlayer"; break;

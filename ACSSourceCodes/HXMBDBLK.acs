@@ -16,6 +16,14 @@
 	#define hx_bdbedemonsoulcounttoken "HX_BDBLK_demonsoulcounttoken"
 	#define bdbegunnergameplaymodecvar "begunnergameplaymode"
 	#define hx_bdbegunnergameplaymodetoken "HX_BDBLK_begunnergameplaymodetoken"
+	#define bdbepowerbuddha "PowerBuddha"
+	#define hx_bdbepowerbuddha "HX_BDBLK_buddhapoweruptoken"
+	#define bdbepowerhaste "PowerD4Haste"
+	#define bdbepowerironfeet "BEPowerIronFeet"
+	#define bdbepowerquaddamage "PowerD4QuadDamage"
+	#define bdbepowerregeneration "PowerD4Regen"
+	#define hx_bdbepowerregeneration "HX_BDBLK_regenerationpoweruptoken"
+	#define bdbepowertorch "BEPowerTorch"
 	#define bdbestamina "Stamina"
 
 script "HXS_BrutalDoomBlackEdition35ticHandler" enter
@@ -26,9 +34,6 @@ script "HXS_BrutalDoomBlackEdition35ticHandler" enter
 	if (CheckInventory(HXS_GetTokenString(HXMOD_BRUTALDOOMBLACK))) {
 		while (true)
 		{
-		// Powerup Management Tokens
-			// Berserk
-			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
 
 		// Weapon Icon Management Tokens
 			HXF_CVARConvert_Generic(bdbegunnergameplaymodecvar, hx_bdbegunnergameplaymodetoken);
@@ -51,14 +56,27 @@ script "HXS_BrutalDoomBlackEdition7ticHandler" enter
 		// Stamina Control
 			HXS_StamNormal(bdbestamina, GetAmmoCapacity(bdbestamina));
 		// Powerup Management Tokens
+			// Berserk
+			HXS_ItemSync(HXS_GetTokenString(VANILLABERSERK), HXS_GetTokenString(HXGEN_BERSERK));
+			// Buddha
+			HXS_PowerupTimer(bdbepowerbuddha, hx_bdbepowerbuddha);
+			// Haste
+			HXS_PowerupTimerManual(bdbepowerhaste, HXS_GetTokenString(HXGEN_HASTELONGTIMER), 60, HXS_GetTokenString(HXMOD_BUFFTRACKER1), 7);
+			HXS_ItemSync(HXS_GetTokenString(HXGEN_HASTELONGTIMER), HXS_GetTokenString(HXGEN_HASTE));
 			// Infrared
-			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINFRARED), HXS_GetTokenString(HXGEN_INFRARED));
+			HXS_PowerupTimer(bdbepowertorch, HXS_GetTokenString(HXGEN_INFRARED));
 			// Invisibility
 			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVISIBILITY), HXS_GetTokenString(HXGEN_INVISIBILITY));
 			// Invulnerability
 			HXS_PowerupTimer(HXS_GetTokenString(VANILLAINVULNERABILITY), HXS_GetTokenString(HXGEN_INVULNERABILITY));
+			// Quad Damage
+			HXS_PowerupTimerManual(bdbepowerquaddamage, HXS_GetTokenString(HXGEN_QUADDAMAGELONGTIMER), 30, HXS_GetTokenString(HXMOD_BUFFTRACKER2), 7);
+			HXS_ItemSync(HXS_GetTokenString(HXGEN_QUADDAMAGELONGTIMER), HXS_GetTokenString(HXGEN_QUADDAMAGE));
 			// Radsuit
-			HXS_PowerupTimer(HXS_GetTokenString(VANILLARADSUIT), HXS_GetTokenString(HXGEN_RADSUIT));
+			HXS_PowerupTimer(bdbepowerironfeet, HXS_GetTokenString(HXGEN_RADSUIT));
+			// Regeneration
+			HXS_PowerupTimerManual(bdbepowerregeneration, HXS_GetTokenString(HXGEN_REGENERATELONGTIMER), 33, HXS_GetTokenString(HXMOD_BUFFTRACKER3), 7);
+			HXS_ItemSync(HXS_GetTokenString(HXGEN_REGENERATELONGTIMER), hx_bdbepowerregeneration);
 
 		// Demon Mode Availability Check
 			if	((!CheckInventory(hx_bdbedemonmodeavailabletoken))
@@ -80,3 +98,13 @@ script "HXS_BrutalDoomBlackEdition7ticHandler" enter
 		}
 	}
 }
+
+// function void HXS_BDBE_HasteManager (void)
+// {
+// 	if (CheckInventory(bdbepowerhaste))
+// 	{
+// 		if		(!CheckInventory(HXS_GetTokenString(HXGEN_HASTELONGTIMER)))	{ GiveInventory(HXS_GetTokenString(HXGEN_HASTELONGTIMER), 300); }
+// 		else if	(CheckInventory(HXS_GetTokenString(HXGEN_HASTELONGTIMER)))	{ TakeInventory(HXS_GetTokenString(HXGEN_HASTELONGTIMER), 1); }
+// 	}
+// 	else if (CheckInventory(HXS_GetTokenString(HXGEN_HASTELONGTIMER)))		{ TakeInventory(HXS_GetTokenString(HXGEN_HASTELONGTIMER), 9999); }
+// }
