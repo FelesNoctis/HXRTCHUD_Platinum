@@ -2,7 +2,7 @@
 
 ## General
 
-* __Co-Author and Tester__*
+* __Co-Author and Tester__
 Shockwave_S08
 * __Original HXRTC HUD__  
 _Hexereticdoom_
