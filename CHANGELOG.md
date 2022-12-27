@@ -3,6 +3,7 @@
 ## DEV
 
 - **General:**
+  - Newly scripted "manual" powerup tracking system implemented for those that have obscured duration control.
   - Stamina module scripting now references a CVAR that may be used for additional customization at a later date.
 
 - **Bottom-Left Panels:**
@@ -11,6 +12,10 @@
 - **Mod Updates:**
   - Brutal Doom Platinum v3.1:
     - Nuke availability panel now only appears if you've found a weapon that utilizes it, similar to how the BDv21/CE HUD operates.
+
+- **Mod Support:**
+  - Brutal Doom Black Edition v3.36
+    - Known Issue: Some powerups may repeat their countdown as they can stack their duration, but due to using an "handler" actor with no TID controlling the total duration by user variable, I can't access it with ACS. ZScript may be able to do so, but that's out of scope for the project at this time.
 
 ## v0.65
 
