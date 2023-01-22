@@ -3476,10 +3476,11 @@ StatusBar Fullscreen, FullscreenOffsets
 		{
 		// AMMO TALLIES PANEL - Brutal Wolfenstein (ZioMcCall)
 			InInventory "HX_ZioBW_ColtUsable", 1
-			{	DrawImage "HXAMMTOP", -78, -89;
-				DrawImage "HXAMMROW", -78, -79; }
+			{	DrawImage "HXAMMTOP", -78, -95;
+				DrawImage "HXAMMROW", -78, -85; }
 			else
-			{	DrawImage "HXAMMTOP", -78, -83; }
+			{	DrawImage "HXAMMTOP", -78, -89; }
+			DrawImage "HXAMMROW", -78, -79;
 			DrawImage "HXAMMROW", -78, -73;
 			DrawImage "HXAMMROW", -78, -67;
 			DrawImage "HXAMMROW", -78, -61;
@@ -3493,14 +3494,15 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawImage "HXAMMBOT", -78, -13;
 
 			InInventory "HX_ZioBW_ColtUsable", 1
-				{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "COLT", -73, -84, 0, alignment(left); }
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"9x19", -73, -78, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"7.62", -73, -72, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"3006", -73, -66, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"7.92", -73, -60, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -54, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MAUS", -73, -48, 0, alignment(left);
-			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MG42", -73, -42, 0, alignment(left);
+				{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey, "COLT", -73, -90, 0, alignment(left); }
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"9x19", -73, -84, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"7.62", -73, -78, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"3006", -73, -72, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"7.92", -73, -66, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"SHEL", -73, -60, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MAUS", -73, -54, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"MG42", -73, -48, 0, alignment(left);
+			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"TSLA", -73, -42, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"FLAM", -73, -36, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"PNZR", -73, -30, 0, alignment(left);
 			DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"1943", -73, -24, 0, alignment(left);
@@ -3510,14 +3512,15 @@ StatusBar Fullscreen, FullscreenOffsets
 			else							{ DrawString HXGENERALFONTS, HXRTCVeryDarkGrey,	"GREN", -73, -12, 0, alignment(left); }
 
 			InInventory "HX_ZioBW_ColtUsable", 1
-				{ DrawBar "HXAMMON", "HXAMMOFF", ammo ThompsonMag,	horizontal, interpolate(64), -56, -84; }
-			DrawBar "HXAMMON", "HXAMMOFF", ammo WolfClip,		horizontal, interpolate(64), -56, -78;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo PPSHReserve,	horizontal, interpolate(64), -56, -72;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo M1CLIP,			horizontal, interpolate(64), -56, -66;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo KarClip,		horizontal, interpolate(64), -56, -60;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo TGAMMO,			horizontal, interpolate(64), -56, -54;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo MauserClip,		horizontal, interpolate(64), -56, -48;
-			DrawBar "HXAMMON", "HXAMMOFF", ammo MGAmmoReserve,	horizontal, interpolate(64), -56, -42;
+				{ DrawBar "HXAMMON", "HXAMMOFF", ammo ThompsonMag,	horizontal, interpolate(64), -56, -90; }
+			DrawBar "HXAMMON", "HXAMMOFF", ammo WolfClip,		horizontal, interpolate(64), -56, -84;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo PPSHReserve,	horizontal, interpolate(64), -56, -78;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo M1CLIP,			horizontal, interpolate(64), -56, -72;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo KarClip,		horizontal, interpolate(64), -56, -66;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo TGAMMO,			horizontal, interpolate(64), -56, -60;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo MauserClip,		horizontal, interpolate(64), -56, -54;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo MGAmmoReserve,	horizontal, interpolate(64), -56, -48;
+			DrawBar "HXAMMON", "HXAMMOFF", ammo TeslaAmmo,		horizontal, interpolate(64), -56, -42;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo GAS,			horizontal, interpolate(64), -56, -36;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo PanzerFaustAmmo,	horizontal, interpolate(64), -56, -30;
 			DrawBar "HXAMMON", "HXAMMOFF", ammo LeichenfaustAmmo,	horizontal, interpolate(64), -56, -24;
@@ -3525,14 +3528,15 @@ StatusBar Fullscreen, FullscreenOffsets
 			DrawBar "HXAMMON", "HXAMMOFF", ammo GrenadeAmmo,	horizontal, interpolate(64), -56, -12;
 
 			InInventory "HX_ZioBW_ColtUsable", 1
-				{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo ThompsonMag,	-6, -84; }
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo WolfClip,		-6, -78;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PPSHReserve,	-6, -72;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo M1CLIP,		-6, -66;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo KarClip,		-6, -60;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TGAMMO,		-6, -54;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MauserClip,	-6, -48;
-			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MGAmmoReserve,	-6, -42;
+				{ DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey, ammo ThompsonMag,	-6, -90; }
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo WolfClip,		-6, -84;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PPSHReserve,	-6, -78;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo M1CLIP,		-6, -72;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo KarClip,		-6, -66;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TGAMMO,		-6, -60;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MauserClip,	-6, -54;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo MGAmmoReserve,	-6, -48;
+			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo TeslaAmmo, -6, -42;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo GAS,			-6, -36;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo PanzerFaustAmmo,	-6, -30;
 			DrawNumber 4, HXINDEXFONTS, HXRTCDarkGrey,	ammo LeichenfaustAmmo,	-6, -24;
@@ -3544,21 +3548,23 @@ StatusBar Fullscreen, FullscreenOffsets
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
 			{
-				IsSelected not "DoubleLuger", "MP40Akimbo"
-				{
-					DrawImage "HXAMMO", -134, -33;
-					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
-					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
-				}
-				else IsSelected "DoubleLuger", "MP40Akimbo"
-				{ DrawImage "HXAMMODE", -134, -33; }
+				IsSelected "DoubleLuger", "MP40Akimbo"
+ 				{ DrawImage "HXAMMODE", -134, -33; }
+ 				else IsSelected "WaltherAkimbo"
+ 				{ DrawImage "HXAMMODE", -134, -33; }
+ 				else
+ 				{
+ 					DrawImage "HXAMMO", -134, -33;
+ 					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
+ 					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+ 				}
 
 				WeaponAmmo ThompsonMag
 				{
 					InInventory "HX_ZioBW_ColtUsable", 1
 					{
-						DrawString HXGENERALFONTS, untranslated, "COLT", -73, -84, 0, alignment(left);
-						DrawNumber 4, HXINDEXFONTS, untranslated, ammo ThompsonMag, -6, -84;
+						DrawString HXGENERALFONTS, untranslated, "COLT", -73, -90, 0, alignment(left);
+						DrawNumber 4, HXINDEXFONTS, untranslated, ammo ThompsonMag, -6, -90;
 					}
 
 					IsSelected "COLT" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
@@ -3567,39 +3573,47 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo WolfClip
 				{
-					DrawString HXGENERALFONTS, untranslated, "9x19", -73, -78, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo WolfClip,  -6, -78;
+					DrawString HXGENERALFONTS, untranslated, "9x19", -73, -84, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo WolfClip,  -6, -84;
 
 					IsSelected "LUGER" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
+					else IsSelected "WaltherP38" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
 					else IsSelected "SecretWeapon_MP40" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
 					else IsSelected "DoubleLuger"
 					{
 						DrawBar "HXAMDLOK", "HXAMCLNO", LUGERLeftMag, vertical, interpolate(64), -130, -28;
 						DrawBar "HXAMDROK", "HXAMCLNO", LUGERRightMag, vertical, interpolate(64), -87, -28;
-						DrawNumber 4, HXSTATUSFONT, untranslated, LUGERLeftMag, interpolate(128), -108, -29, 0, HXRTCRed, 4;
-						DrawNumber 4, HXSTATUSFONT, untranslated, LUGERRightMag, interpolate(128), -84, -29, 0, HXRTCRed, 4;
+						DrawNumber 4, HXSTATUSFONT, untranslated, LUGERLeftMag, interpolate(128), -108, -29, 0, HXRTCRed, 2;
+						DrawNumber 4, HXSTATUSFONT, untranslated, LUGERRightMag, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 					}
 					else IsSelected "MP40Akimbo"
 					{
 						DrawBar "HXAMDLOK", "HXAMCLNO", MP40AmmoLeft, vertical, interpolate(64), -130, -28;
 						DrawBar "HXAMDROK", "HXAMCLNO", MP40AmmoRight, vertical, interpolate(64), -87, -28;
-						DrawNumber 4, HXSTATUSFONT, untranslated, MP40AmmoLeft, interpolate(128), -108, -29, 0, HXRTCRed, 14;
-						DrawNumber 4, HXSTATUSFONT, untranslated, MP40AmmoRight, interpolate(128), -84, -29, 0, HXRTCRed, 14;
+						DrawNumber 4, HXSTATUSFONT, untranslated, MP40AmmoLeft, interpolate(128), -108, -29, 0, HXRTCRed, 10;
+						DrawNumber 4, HXSTATUSFONT, untranslated, MP40AmmoRight, interpolate(128), -84, -29, 0, HXRTCRed, 10;
+					}
+					else IsSelected "WaltherAkimbo"
+					{
+						DrawBar "HXAMDLOK", "HXAMCLNO", WaltherLefttMag, vertical, interpolate(64), -130, -28;
+						DrawBar "HXAMDROK", "HXAMCLNO", WaltherRightMag, vertical, interpolate(64), -87, -28;
+						DrawNumber 4, HXSTATUSFONT, untranslated, WaltherLefttMag, interpolate(128), -108, -29, 0, HXRTCRed, 2;
+						DrawNumber 4, HXSTATUSFONT, untranslated, WaltherRightMag, interpolate(128), -84, -29, 0, HXRTCRed, 2;
 					}
 					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0; }
 				}
 				WeaponAmmo PPSHReserve
 				{
-					DrawString HXGENERALFONTS, untranslated, "7.62", -73, -72, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PPSHReserve, -6, -72;
+					DrawString HXGENERALFONTS, untranslated, "7.62", -73, -78, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo PPSHReserve, -6, -78;
 
 					IsSelected "PPSH41" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
 					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0; }
 				}
 				WeaponAmmo M1CLIP
 				{
-					DrawString HXGENERALFONTS, untranslated, "3006", -73, -66, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo M1CLIP, -6, -66;
+					DrawString HXGENERALFONTS, untranslated, "3006", -73, -72, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo M1CLIP, -6, -72;
 					
 					IsSelected "BWBar" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
 					else IsSelected "M1GARAND" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
@@ -3607,25 +3621,26 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo KarClip
 				{
-					DrawString HXGENERALFONTS, untranslated, "7.92", -73, -60, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo KarClip, -6, -60;
+					DrawString HXGENERALFONTS, untranslated, "7.92", -73, -66, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo KarClip, -6, -66;
 					
 					IsSelected "STG44" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 10; }
 					else IsSelected "DoubleSTG44" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
+					else IsSelected "FG42" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 5; }
 					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0; }
 				}
 				WeaponAmmo TGAMMO
 				{
-					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -54, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo TGAMMO, -6, -54;
+					DrawString HXGENERALFONTS, untranslated, "SHEL", -73, -60, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo TGAMMO, -6, -60;
 					
 					IsSelected "TRGUN" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
 					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0; }
 				}
 				WeaponAmmo MauserClip
 				{
-					DrawString HXGENERALFONTS, untranslated, "MAUS", -73, -48, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo MauserClip, -6, -48;
+					DrawString HXGENERALFONTS, untranslated, "MAUS", -73, -54, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo MauserClip, -6, -54;
 					
 					IsSelected "KARABINE98" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
 					else IsSelected "G43" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 2; }
@@ -3633,11 +3648,19 @@ StatusBar Fullscreen, FullscreenOffsets
 				}
 				WeaponAmmo MGAmmoReserve
 				{
-					DrawString HXGENERALFONTS, untranslated, "MG42", -73, -42, 0, alignment(left);
-					DrawNumber 4, HXINDEXFONTS, untranslated, ammo MGAmmoReserve, -6, -42;
+					DrawString HXGENERALFONTS, untranslated, "MG42", -73, -48, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo MGAmmoReserve, -6, -48;
 					
 					IsSelected "MG42" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 15; }
 					else IsSelected "BWGatling" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 50; }
+					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0; }
+				}
+				WeaponAmmo TeslaAmmo
+				{
+					DrawString HXGENERALFONTS, untranslated, "TSLA", -73, -42, 0, alignment(left);
+					DrawNumber 4, HXINDEXFONTS, untranslated, ammo TeslaAmmo, -6, -42;
+
+					IsSelected "TeslaGun" { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0, HXRTCRed, 20; }
 					else { DrawNumber 4, HXSTATUSFONT, untranslated, ammo2, interpolate(128), -84, -29, 0; }
 				}
 				WeaponAmmo GAS
@@ -3686,26 +3709,26 @@ StatusBar Fullscreen, FullscreenOffsets
 				{
 					InInventory not "HX_ZioBW_ColtUsable", 1
 					{
-						DrawImage "HXKEYSE", -90, -127;
-						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -107, 0, 8, 8;
+						DrawImage "HXKEYSE", -90, -133;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -113, 0, 8, 8;
 					}
 					else
 					{
-						DrawImage "HXKEYSE", -90, -133;
-						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -113, 0, 8, 8;
+						DrawImage "HXKEYSE", -90, -139;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -119, 0, 8, 8;
 					}
 				}
 				else
 				{
 					InInventory not "HX_ZioBW_ColtUsable", 1
 					{
-						DrawImage "HXKEYS", -90, -109;
-						drawkeybar 6, horizontal, reverse, auto, -12, -106, 0, 6, auto;
+						DrawImage "HXKEYS", -90, -115;
+						drawkeybar 6, horizontal, reverse, auto, -12, -112, 0, 6, auto;
 					}
 					else
 					{
-						DrawImage "HXKEYS", -90, -115;
-						drawkeybar 6, horizontal, reverse, auto, -12, -112, 0, 6, auto;
+						DrawImage "HXKEYS", -90, -121;
+						drawkeybar 6, horizontal, reverse, auto, -12, -118, 0, 6, auto;
 					}
 				}
 			}
@@ -3715,26 +3738,26 @@ StatusBar Fullscreen, FullscreenOffsets
 				{
 					InInventory not "HX_ZioBW_ColtUsable", 1
 					{
-						DrawImage "HXKEYSE", -90, -114;
-						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -94, 0, 8, 8;
+						DrawImage "HXKEYSE", -90, -120;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -100, 0, 8, 8;
 					}
 					else
 					{
-						DrawImage "HXKEYSE", -90, -120;
-						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -100, 0, 8, 8;
+						DrawImage "HXKEYSE", -90, -128;
+						drawkeybar 24, horizontal, reverse, reverserows, auto, -13, -106, 0, 8, 8;
 					}
 				}
 				else
 				{
 					InInventory not "HX_ZioBW_ColtUsable", 1
 					{
-						DrawImage "HXKEYS", -90, -96;
-						drawkeybar 6, horizontal, reverse, auto, -12, -93, 0, 6, auto;
+						DrawImage "HXKEYS", -90, -102;
+						drawkeybar 6, horizontal, reverse, auto, -12, -99, 0, 6, auto;
 					}
 					else
 					{
-						DrawImage "HXKEYS", -90, -102;
-						drawkeybar 6, horizontal, reverse, auto, -12, -99, 0, 6, auto;
+						DrawImage "HXKEYS", -90, -108;
+						drawkeybar 6, horizontal, reverse, auto, -12, -105, 0, 6, auto;
 					}
 				}
 			}
@@ -3743,21 +3766,6 @@ StatusBar Fullscreen, FullscreenOffsets
 			InInventory "HXCUS_ArmsBarToken", 1
 			{
 				InInventory not "HX_ZioBW_ColtUsable", 1
-				{
-					DrawImage "HXARMS", -90, -96;
-
-					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -92;
-					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -92;
-					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -92;
-					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -92;
-					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -92;
-					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -92;
-					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -92;
-					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -92;
-					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -92;
-					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -92;
-				}
-				else
 				{
 					DrawImage "HXARMS", -90, -102;
 
@@ -3771,6 +3779,22 @@ StatusBar Fullscreen, FullscreenOffsets
 					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -98;
 					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -98;
 					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -98;
+				}
+				else
+				{
+					DrawImage "HXARMS", -90, -108
+;
+
+					DrawSwitchableImage weaponslot 1, "HXGNUM1", "HXYSNUM1", -58, -104;
+					DrawSwitchableImage weaponslot 2, "HXGNUM2", "HXYSNUM2", -53, -104;
+					DrawSwitchableImage weaponslot 3, "HXGNUM3", "HXYSNUM3", -48, -104;
+					DrawSwitchableImage weaponslot 4, "HXGNUM4", "HXYSNUM4", -43, -104;
+					DrawSwitchableImage weaponslot 5, "HXGNUM5", "HXYSNUM5", -38, -104;
+					DrawSwitchableImage weaponslot 6, "HXGNUM6", "HXYSNUM6", -33, -104;
+					DrawSwitchableImage weaponslot 7, "HXGNUM7", "HXYSNUM7", -28, -104;
+					DrawSwitchableImage weaponslot 8, "HXGNUM8", "HXYSNUM8", -23, -104;
+					DrawSwitchableImage weaponslot 9, "HXGNUM9", "HXYSNUM9", -18, -104;
+					DrawSwitchableImage weaponslot 0, "HXGNUM0", "HXYSNUM0", -13, -104;
 				}
 			}
 		}
