@@ -3548,22 +3548,16 @@ StatusBar Fullscreen, FullscreenOffsets
 			// Ammo Tally highlight and Current Ammo equipped by type
 			UsesAmmo
 			{
-				IsSelected not "DoubleLuger", "MP40Akimbo"
-				{
-					DrawImage "HXAMMO", -134, -33;
-					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
-					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
-				}
-				else IsSelected not "WaltherAkimbo"
-				{
-					DrawImage "HXAMMO", -134, -33;
-					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
-					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
-				}
-				else IsSelected "DoubleLuger", "MP40Akimbo"
-				{ DrawImage "HXAMMODE", -134, -33; }
-				else IsSelected "WaltherAkimbo"
-				{ DrawImage "HXAMMODE", -134, -33; }
+				IsSelected "DoubleLuger", "MP40Akimbo"
+ 				{ DrawImage "HXAMMODE", -134, -33; }
+ 				else IsSelected "WaltherAkimbo"
+ 				{ DrawImage "HXAMMODE", -134, -33; }
+ 				else
+ 				{
+ 					DrawImage "HXAMMO", -134, -33;
+ 					DrawBar "HXAMCLOK", "HXAMCLNO", ammo2, vertical, interpolate(64), -130, -29;
+ 					DrawString HXGENERALFONTM, untranslated, "AMMO", -90, -12, 0;
+ 				}
 
 				WeaponAmmo ThompsonMag
 				{
