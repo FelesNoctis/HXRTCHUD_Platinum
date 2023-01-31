@@ -7357,8 +7357,11 @@ StatusBar Fullscreen, FullscreenOffsets
 				IsSelected "Melee_Attacks"			{ DrawImage "ZBWFIST",	-100, -43, center, 36, 12; }
 				else IsSelected "GNOMO"				{ DrawImage "ZBWAXE1",	-100, -43, center, 36, 12; }
 				// AXE2 - Throwing Axe
+				else IsSelected "CameraWeapon"		{ DrawImage "HXBD64DY",	-100, -43, center, 36, 12; }
 				else IsSelected "LUGER"				{ DrawImage "ZBWLUG1",	-100, -43, center, 36, 12; }
 				else IsSelected "DoubleLuger"		{ DrawImage "ZBWLUG2",	-100, -43, center, 36, 12; }
+				else IsSelected "WaltherP38"		{ DrawImage "WLTRB0",	-100, -43, center, 36, 12; }
+				else IsSelected "WaltherAkimbo"		{ DrawImage "ZBWP382",	-100, -43, center, 36, 12; }
 				else IsSelected "COLT"				{ DrawImage "COLPA0",	-100, -43, center, 36, 12; }
 				else IsSelected "Thompson"			{ DrawImage "ZBWTMPSN",	-100, -43, center, 36, 12; }
 				// PPSH41 - PPSH-41
@@ -7367,12 +7370,16 @@ StatusBar Fullscreen, FullscreenOffsets
 				else IsSelected "BWBar"				{ DrawImage "ZBWBAR",	-100, -43, center, 36, 12; }
 				else IsSelected "STG44"				{ DrawImage "ZBWSTG1",	-100, -43, center, 36, 12; }
 				else IsSelected "DoubleSTG44"		{ DrawImage "ZBWSTG2",	-100, -43, center, 36, 12; }
+				else IsSelected "FG42"				{ DrawImage "PK42A0",	-100, -43, center, 36, 12; }
 				else IsSelected "TRGUN"				{ DrawImage "ZBWTRNCH",	-100, -43, center, 36, 12; }
 				else IsSelected "M1GARAND"			{ DrawImage "GAPKA0",	-100, -43, center, 36, 12; }
+				else IsSelected "G43"				{ DrawImage "PK42A0",	-100, -43, center, 36, 12; } // Placeholder, no sprite in mod
 				else IsSelected "KARABINE98"		{ DrawImage "ZBWKAR98",	-100, -43, center, 36, 12; }
 				else IsSelected "MG42"				{ DrawImage "ZBWMG42",	-100, -43, center, 36, 12; }
 				// BWGatling - Gatling Gun
 				else IsSelected "Flamethrower_BW"	{ DrawImage "ZBWFLMTR", -100, -43, center, 36, 12; }
+				else IsSelected "TeslaGun"			{ DrawImage "ZBWTESLA", -100, -43, center, 36, 12; }
+				else IsSelected "LeichenFaust1943"	{ DrawImage "ZBWLFBFG", -100, -43, center, 36, 12; }
 				else { DrawImage weaponicon, -100, -43, center, 36, 12, alticonfirst; }
 			}
 			/*	Brutal Doom
